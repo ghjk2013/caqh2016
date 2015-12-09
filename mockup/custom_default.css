@@ -376,14 +376,14 @@ body {
 	border-radius: 3px;
 }
 .homeuser_bg .organ_03block .login_main .midbg form fieldset .input_bg #acct:focus , .homeuser_bg .organ_03block .login_main .midbg form fieldset .input_bg #password:focus {
-	border-color: #2996cc;
+	border-color: #424fab;
 
 }
 .homeuser_bg #idLogin {
 	float: left;
 	width: 100%;
 	text-align: center;
-	background: #2996cc;
+	background: #424fab;
 	color: #ffffff;
 	padding: 4px 0px;
 	border-radius: 3px;
@@ -392,7 +392,7 @@ body {
 	margin-top: 10px;
 }
 .homeuser_bg #idLogin:hover {
-	background: #3ba8de;
+	background: #616eca;
 	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.16);
 }
 .homeuser_bg #idLogin a {
@@ -509,7 +509,7 @@ input[type="checkbox"]:checked + label:before {
 .homeuser_bg .organ_03block .login_main .midbg:before{
 	position: relative;
     content: "\f234";
-    color: #2996cc;
+    color: #424fab;
     font-family: FontAwesome;
     text-align: center;
     font-size: 43px;
