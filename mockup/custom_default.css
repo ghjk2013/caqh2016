@@ -325,7 +325,7 @@ body {
 .homeuser_bg .organ_03block .signup {
 	font-size: 20px;
     font-family: open_sans_regular;
-    color: #2996cc;
+    color: #424fab;
     
 }
 .homeuser_bg .organ_03block .login_main {
@@ -392,7 +392,7 @@ body {
 	margin-top: 10px;
 }
 .homeuser_bg #idLogin:hover {
-	background: #616eca;
+	background: #525fbb;
 	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.16);
 }
 .homeuser_bg #idLogin a {
@@ -413,7 +413,7 @@ body {
 	float: right;
 	/*width: 100%;*/
 	margin-top: 18px;
-	color: #2996cc;
+	color: #424fab;
 	font-size: 14px;
 	/*font-style: italic;*/
 	/*font-family: Segoe UI;*/
@@ -424,7 +424,7 @@ body {
 	float: left;
 	/*width: 100%;*/
 	margin-top: 18px;
-	color: #2996cc;
+	color: #424fab;
 	font-size: 14px;
 	
 }
@@ -466,7 +466,7 @@ body {
         left: 0;
         width: 13px;
         height: 13px;
-        border: 1px solid #2996cc;
+        border: 1px solid #424fab;
         margin-top: 1px;
     }
  
