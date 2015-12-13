@@ -1,3 +1,4 @@
+/*Font start*/
 @font-face{
 	font-family:'FontAwesome';
 	src:url('fonts/fontawesome-webfont.eot?v=4.4.0');
@@ -34,7 +35,7 @@
     font-style: normal;
 
 }
-
+/*Font end*/
 
 html {
 	overflow: auto;
@@ -49,8 +50,14 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 html {
-	overflow-y: auto;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 fieldset, img, abbr {
 	border: 0;
@@ -320,7 +327,7 @@ body {
     margin-top: 18px;
     text-align: center;
     color: #818285;
-    padding-top: 85px;
+    /*padding-top: 85px;*/
 }
 .homeuser_bg .organ_03block .signup {
 	font-size: 20px;
@@ -335,15 +342,37 @@ body {
 	padding-top: 22px;
 }
 .homeuser_bg .organ_03block .login_main .midbg {
-	float: left;
-	width: 309px;
+	/*float: left;*/
+	/*width: 309px;*/
 	background: #f0f2f3;
 	border-radius: 0px;
 	box-shadow: 0px 0px 0px;
 	padding: 27px 44px;
 	border-radius: 5px;
     box-shadow: 2px 2px 2px 2px #c3c3c3;
-    margin-bottom: 10px
+    margin-bottom: 10px;
+    -webkit-animation: shake 400ms ease-in-out;
+    animation: shake 400ms ease-in-out;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes shake {
+    0% {transform: translateX(0);}
+  12.5% {transform: translateX(-6px) rotateY(-5deg)}
+  37.5% {transform: translateX(5px) rotateY(4deg)}
+  62.5% {transform: translateX(-3px) rotateY(-2deg)}
+  87.5% {transform: translateX(2px) rotateY(1deg)}
+  100% {transform: translateX(0)}
+}
+
+/* Standard syntax */
+@keyframes shake {
+    0% {transform: translateX(0);}
+  12.5% {transform: translateX(-6px) rotateY(-5deg)}
+  37.5% {transform: translateX(5px) rotateY(4deg)}
+  62.5% {transform: translateX(-3px) rotateY(-2deg)}
+  87.5% {transform: translateX(2px) rotateY(1deg)}
+  100% {transform: translateX(0)}
 }
 .homeuser_bg #loginform h2 {
 	display: none;
@@ -364,16 +393,25 @@ body {
 	margin: 0px;
 }
 .homeuser_bg .organ_03block .login_main .midbg form fieldset .input_bg #acct, .homeuser_bg .organ_03block .login_main .midbg form fieldset .input_bg #password {
-	width: 284px;
+	width: 100%;
 	border: 1px solid #e0e2e3;
-	padding: 9px 12px;
+	padding: 7px 12px;
 	float: left;
-	height: 16px;
+	/*height: 16px;*/
 	margin: 0px 0px 2px 0px;
 	font-size: 15px;
 	color: #818285;
 	/*font-family: serif;*/
 	border-radius: 3px;
+	
+	
+}
+
+.error {
+	background: #fff url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMHB4IiBoZWlnaHQ9IjIwcHgiIHZpZXdCb3g9IjAgMCAyMCAyMCI+CiAgPHBhdGggZmlsbD0iI0RGMzMyMCIgZD0iTTEwLDEzLjZjLTAuMywwLTAuNi0wLjMtMC42LTAuNlY3YzAtMC4zLDAuMy0wLjYsMC42LTAuNnMwLjYsMC4zLDAuNiwwLjZ2NiBDMTAuNiwxMy4zLDEwLjMsMTMuNiwxMCwxMy42eiIvPgogIDxwYXRoIGZpbGw9IiNERjMzMjAiIGQ9Ik0xMCwxNi42Yy0wLjMsMC0wLjYtMC4zLTAuNi0wLjZ2LTAuNWMwLTAuMywwLjMtMC42LDAuNi0wLjZzMC42LDAuMywwLjYsMC42VjE2IEMxMC42LDE2LjMsMTAuMywxNi42LDEwLDE2LjZ6Ii8+CiAgPHBhdGggZmlsbD0iI0RGMzMyMCIgZD0iTTEwLDEuOWMwLjYsMCwwLjksMC4zLDEuMSwwLjZsNy42LDEzLjRsMC4xLDAuMmMwLjEsMC4zLDAuMiwwLjQsMC4yLDAuNiBjMCwwLjItMC4xLDAuNC0wLjIsMC42bDAsMGwwLDAuMUMxOC41LDE3LjcsMTgsMTgsMTcuNiwxOEgyLjRjLTAuNCwwLTAuOS0wLjMtMS4xLTAuN2wwLTAuMWwwLDBDMS4xLDE3LDEsMTYuOSwxLDE2LjUgYzAtMC4xLDAuMi0wLjUsMC4zLTAuNkw4LjgsMi41QzksMi4xLDkuNSwxLjksMTAsMS45IE0xMCwwLjlDOS4yLDAuOSw4LjQsMS4zLDgsMkwwLjQsMTUuNEMwLjIsMTUuOCwwLDE2LjIsMCwxNi41IGMwLDAuNSwwLjEsMC45LDAuNCwxLjNjMC40LDAuNywxLjIsMS4yLDIsMS4yaDE1LjJjMC44LDAsMS42LTAuNSwyLTEuMmMwLjMtMC40LDAuNC0wLjgsMC40LTEuMmMwLTAuNS0wLjItMC44LTAuNC0xLjJMMTEuOSwyIEMxMS40LDEuMywxMC43LDAuOSwxMCwwLjlMMTAsMC45eiIvPgo8L3N2Zz4K") no-repeat scroll calc(100% - 10px) 50%;
+    border-color: #df3320 !important;
+    padding-right: 40px  !important;
+    z-index: 1 !important;
 }
 .homeuser_bg .organ_03block .login_main .midbg form fieldset .input_bg #acct:focus , .homeuser_bg .organ_03block .login_main .midbg form fieldset .input_bg #password:focus {
 	border-color: #424fab;
@@ -429,64 +467,7 @@ body {
 	
 }
 
-.input-helper {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 5px;
-    
-    
-}
 
-.input-helper:before {
-        content: '';
-        display: block;
-        position: absolute;
-    }
- 
-.input-helper--radio {
-    padding-left: 18px;
- 
-    &:before {
-        top: 3px;
-        left: 0;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        border: 1px solid #222;
-    }
-}
- 
-.input-helper--checkbox {
-    padding-left: 20px;
- 
-    
-}
-.input-helper--checkbox:before {
-        top: 2px;
-        left: 0;
-        width: 13px;
-        height: 13px;
-        border: 1px solid #424fab;
-        margin-top: 1px;
-    }
- 
-input[type="radio"] {
-    display: none;
- 
-    &:checked + label:before {
-        background: #222;
-    }
-}
- 
-input[type="checkbox"] {
-    display: none;
- 
-    
-}
-
-input[type="checkbox"]:checked + label:before {
-        background: #222;
-    }
     
     
 .homeuser_bg .organ_03block .login_main .midbg .entp-txt-blck {
@@ -518,7 +499,7 @@ input[type="checkbox"]:checked + label:before {
     border-radius: 46px;*/
     width: auto;
     margin-bottom: 9px;
-    float: left;
+    /*float: left;*/
     left: 52%;
     margin-left: -50px;
 }
@@ -534,3 +515,4 @@ input[type="checkbox"]:checked + label:before {
 .homeuser_bg {
 	height: 100%;
 }
+

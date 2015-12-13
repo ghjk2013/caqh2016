@@ -8,9 +8,12 @@
 
       <link href="overlay.css" media="screen" rel="stylesheet" type="text/css">
       <link href="custom_default.css" media="screen" rel="stylesheet" type="text/css">
+      <link href="tooltip.css" media="screen" rel="stylesheet" type="text/css">
+      <link href="checkbox.css" media="screen" rel="stylesheet" type="text/css">
       <link href="default.css" media="screen" rel="stylesheet" type="text/css">
       <link href="fonts.css" media="screen" rel="stylesheet" type="text/css">
       <link href="jquery.css" media="screen" rel="stylesheet" type="text/css">
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
    </head>
    <body style="min-width:1100px;" class="">
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -40,20 +43,26 @@ Spent more time with patients, not with health plan paperwork. </div>
                <!--Login block start onclick="window.location='movius'"-->
                <div class="login_main entr-adm-lgin-scrn">
                   <div class="midbg selected_color">
-                     <span class="entp-txt-blck" style="display:none;"></span>
+                     <span class="entp-txt-blck" style=""></span>
                      <div style="color:red;" id="modifystatus"></div>
                      <form accept-charset="UTF-8" action="/cafe/login/login" id="loginform" method="post">
                         <div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="7GoC0UG/tb8t8Oi7pl2j6HmwmlYCDFA/Hi6ybdQBoUc=" type="hidden"></div>
                         <h2 style="font-size:14px;margin-top:0px;padding-top:0px;text-transform:none">Email Adderss</h2>
                         <fieldset style="margin-bottom:5px;">
                            <div class="input_bg">
-                              <input id="acct" name="acct" placeholder="User name" type="text">
+                           		<div class="on-focus clearfix" style="position: relative;  ">
+	                              <input id="acct" name="acct" placeholder="User name" type="text" class="error">
+								  <div class="tool-tip left ">You'll use this when you log in and if you ever need to reset your password.</div>
+							    </div>	
                            </div>
                         </fieldset>
                         <h2 style="font-size:14px;margin-top:0px;padding-top:0px;text-transform:none">Password</h2>
                         <fieldset>
                            <div class="input_bg" onkeydown="if(event.keyCode == 13){ $('#modifystatus').html(''); $('#loginform').submit();return false;}">
-                              <input autocomplete="off" id="password" name="password" placeholder="Password" type="password">
+          					<div class="on-focus clearfix" style="position: relative;  ">
+								<input autocomplete="off" id="password" name="password" placeholder="Password" type="password">
+								<div class="tool-tip left">Tool Tip</div>
+							</div>		
                            </div>
                         </fieldset>
                         <!-- <fieldset>
@@ -74,7 +83,7 @@ Spent more time with patients, not with health plan paperwork. </div>
 	                            <label href="#null" class="input-helper input-helper--checkbox" for="keepme_i"  title="">keep me logged in.</label>
 	                       </div>
                            
-                           <a href="#null" id="frgt" title="">Forgot password?</a>
+                           <a href="#null" id="frgt" title="">Need help ?</a>
                         </fieldset>
                         
                      </form>
@@ -103,5 +112,6 @@ Spent more time with patients, not with health plan paperwork. </div>
             </script> 
          </div>
       </div>
+
    </body>
 </html>
