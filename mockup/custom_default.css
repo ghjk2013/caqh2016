@@ -133,8 +133,9 @@ body {
 	font-size: 14px;
 	position: relative;
 	z-index: 2;
-	cursor: pointer;
+/*	cursor: pointer;  */
 	font-weight: 600;
+	width: 190px;
 }
 
 .container ul.topnav > li a {
@@ -151,9 +152,8 @@ body {
 	height: 9px;
 	margin: 0 0 0 8px;
 }
-.container ul.topnav > li > a:hover {
-	color: #ffffff;
-	background: url(images/topnav_arrow_hover1.png) 0 0 repeat-x;
+.container ul.topnav > li > a:hover {	
+	background-color: #8ADFD8;
 	float: left;
 	padding: 0px 30px 0 35px;
 	line-height: 45px;
@@ -531,6 +531,10 @@ body {
     margin-top: 5px;
     padding: 1px;
     width: auto;
+}
+.attest > a:hover {
+    background-color: #8ADFD8;
+	border-radius: 20px;
 }
 #power-gauge g.arc {
 		fill: steelblue;
