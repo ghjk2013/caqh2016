@@ -16,7 +16,7 @@ h1 {
 .accordion {
   /*font-family: "Open Sans";*/
   font-size: 13px;
-  font-size: 0.8125rem;
+  /*font-size: 0.8125rem;*/
   font-weight: 300;
   color: #4a6e78;
   max-width: 100%;
@@ -30,7 +30,7 @@ h1 {
 .accordion li p {
   display: none;
   padding: 10px 25px 30px;
-  color: #6b97a4;
+  /*color: #000;*/
 }
 .accordion a {
   width: 100%;
@@ -39,7 +39,7 @@ h1 {
   font-weight: 600;
   line-height: 3;
   font-size: 14px;
-  font-size: 0.875rem;
+  /*font-size: 0.875rem;*/
   text-indent: 15px;
   user-select: none;
 }
@@ -63,7 +63,7 @@ h1 {
 }
 .accordion p {
   font-size: 13px;
-  font-size: 0.8125rem;
+  /*font-size: 0.8125rem;*/
   line-height: 2;
   padding: 10px;
 }
