@@ -27,7 +27,7 @@ h1 {
   border-bottom: 1px solid #d9e5e8;
   position: relative;
 }
-.accordion li p {
+.accordion li ul {
   display: none;
   padding: 10px 25px 30px;
   /*color: #000;*/
@@ -61,7 +61,7 @@ h1 {
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.accordion p {
+.accordion ul {
   font-size: 14px;
   /*font-size: 0.8125rem;*/
   line-height: 2;
