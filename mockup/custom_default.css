@@ -698,3 +698,21 @@ body {
     /*border: 1px solid #dddddd;*/
 }
 
+/*arc-gauge*/
+.arc-gauge-1{
+    position: relative;  
+}
+.arc-gauge-1 .arc-gauge-text {
+  font-size: 25px;
+    font-weight: 100;
+    position: absolute;
+    text-align: center;
+    top: 58px;
+    width: 100%;
+}
+.arc-gauge-1 .arc-gauge-text .small{
+   color: #666;
+    font-size: 16px;
+    font-weight: 200;
+}
+

@@ -16,7 +16,7 @@
       <link href="accordion.css" media="screen" rel="stylesheet" type="text/css">
 	<!--  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> -->
 	  <script src="jquery-1.5.1.min.js"></script>
-	 <script src="accordion.js"></script> 
+	  <script src="query-d3-arc-guage.js"></script>
 	  <script type="text/javascript" src="d3.v2.min.js"></script>
       <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
    </head>
@@ -88,13 +88,20 @@
 	     	</div>
 	     </div>
 	     <div style="width: 100%;text-align: center;margin-bottom: 20px;">CAQH ID: 12345 </div>
-	     <div style="height:240px;text-align: center;">
+	   <!--  <div style="height:240px;text-align: center;">
 	     	<div id="power-gauge"></div>
 	     <div align="center"><b>33%</b></div>
-	     <div align="center"><b>Profile Complete</b></div>
+	     <div align="center"><b>Profile Complete</b></div>  -->
 	    <!-- <div align="center"> Detail </div> -->
 	     	
-	     </div>
+	    <!-- </div>  -->
+	    <div class="arc-gauge-1" data-height="180" data-value="0">
+	     <div class="arc-gauge-text">
+          <span class="value">0</span>%
+          <p class="small">Complete</p>
+         </div>	    	
+	    </div>
+	    
 	     </div>  
 	     
 	     <div id="main_block" style="padding: 0 2% 0;width: 80%;height: 460px;overflow: auto;float: left;border-left:1px solid #d9e5e8;">
@@ -392,7 +399,24 @@ $('#usersettingdrop').click(function(){
             $("#usercontactdropdata").slideUp("slow");
         }            
     });
-                 
+          $('.arc-gauge-1').arcGauge({colors: {
+      0:    '#ff3333', // 0%
+      0.25: '#ff9966', // 25%
+      0.5:  '#003366', // 50%
+      0.75: '#ffff66', // 75%
+      0.9:  '#33cc00'  // 90%
+   }, value: 0 });
+    setTimeout(function () {
+   var gauge = $('.arc-gauge-1')[0];
+   // get current value
+   var value = 21;   
+   // overflow check
+   if (value > 100) value = 1000;
+   // set the value
+   gauge.set(value);
+   $('.arc-gauge-text .value').text(value);
+}, 200);
+          
             </script>
 
    </body>
