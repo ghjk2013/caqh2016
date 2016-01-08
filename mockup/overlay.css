@@ -20,7 +20,6 @@
             right:10%;
             color:#404040;
             z-index:101;
-			font:12px Arial, Helvetica, sans-serif;
 			min-width: 800px;
 			/*text-align: left;
    
@@ -120,11 +119,11 @@ a.ip_close{background: url("images/trash.png") center center 14px 14px no-repeat
 .box .midbg h2{font-size:18px; font-weight:bold;color:#404040; padding:0 0 10px 0;}
 .box .midbg h2 img{float:right;display:block;margin-top:-8px;}
 .box .midbg p{line-height:18px; padding-bottom:15px;}
-.box .roundblockleft{float:right;height:26px; padding:0 0 0 14px; margin:10px 10px 10px 0;-moz-border-radius: 15px;border-radius: 15px;}
-.box .roundblockleft a{height:26px;padding:3px 18px 0 2px; line-height:26px; font:12px Verdana, Geneva, sans-serif;float:left; display:block;color:#fff;}
+.box .roundblockleft{float:right;height:26px; padding: 0 1px 34px 18px; margin:10px 10px 10px 0;-moz-border-radius: 15px;font-size: 15px;}
+.box .roundblockleft a{height:26px;padding:3px 18px 0 2px; line-height:26px; float:left; display:block;color:#fff;}
 
 .box .midbg .white_block .midblock .roundblockleft{float:right;height:26px; padding:0; margin-right:10px;-moz-border-radius: 10px;}
-.box .midbg .white_block .midblock .roundblockleft a{text-decoration:none;height:26px;padding:5px 18px 0 17px; line-height:26px; font:12px Verdana, Geneva, sans-serif;float:left; display:block;color:#fff;}
+.box .midbg .white_block .midblock .roundblockleft a{text-decoration:none;height:26px;padding:5px 18px 0 17px; line-height:26px; float:left; display:block;color:#fff;}
 /* Width for boxes */
 
 /* New classes */
@@ -226,12 +225,19 @@ a.dp-choose-date.dp-disabled {
 .box .midbg .white_block .midblock ul li{display:block; padding:5px 0 5px 10px; overflow:hidden; border-bottom:1px dotted #cfcbca;}
 .box .midbg .white_block .midblock ul li img{margin-left:5px;}
 .box .midbg .white_block .midblock .cosfields ul li span{width:135px; margin-right:10px; color:#0065bd; display:block; float:left;}
-.box .midbg .white_block .midblock ul li span{width:20%; margin-right:3px; color:#1a4975; display:block; float:left;}
+.box .midbg .white_block .midblock ul li span{width:20%; margin-right:3px; color:#1a4975; display:block; float:left;font-size: 14px;margin-top: 5px;}
 .box .midbg .white_block .midblock ul li div{width:121px; margin-left:130px; display:block;}
 .box .midbg .white_block .midblock a{color:#0065bd; text-decoration:underline; float:left; cursor:pointer;}
 .box .midbg .white_block .midblock a:hover{text-decoration:none;}
-.box .midbg .white_block .midblock ul li select{width:28%; font:12px Arial, Helvetica, sans-serif; }
-.box .midbg .white_block .midblock ul li input[type="text"],.box .midbg .white_block .midblock ul li input[type="password"]{width:28%; font:12px Arial, Helvetica, sans-serif; }
+.box .midbg .white_block .midblock ul li select{width:28%;  }
+.box .midbg .white_block .midblock ul li input[type="text"],.box .midbg .white_block .midblock ul li input[type="password"]{border: 1px solid #e0e2e3;
+    border-radius: 3px;
+    color: #818285;
+    float: left;
+    font-size: 15px;
+    margin: 0 0 2px;
+    padding: 7px 12px;
+    width: 100%;  }
 .box .midbg .white_block .midblock ul li strong{margin-right:10px;color:#0065bd; font-weight:normal;}
 .box .midbg .white_block .midblock #myarea ul{padding:0px 0 5px 0px;border:none;list-style-type:inherit;list-style-position:inside;}
 .box .midbg .white_block .midblock .singlecolumn li span{width:67%}
@@ -253,7 +259,7 @@ a.dp-choose-date.dp-disabled {
 .box .midbg .white_block .midblock .form_lft fieldset, .box .midbg .white_block .midblock .form_rgt fieldset{clear:both; padding:0 0 6px 0; border-bottom: 1px dotted #CFCBCA;}
 .box .midbg .white_block .midblock .form_lft label, .box .midbg .white_block .midblock .form_rgt label{clear:both; display:block; padding-bottom:7px; color:#0066cc;}
 .box .midbg .white_block .midblock .form_lft input[type="text"], .box .midbg .white_block .midblock .form_rgt input[type="text"]{background:url(images/suscriber_inputbg.gif) 0 0 no-repeat;width:175px; border:0; height:17px; padding:0 0 0 5px; font-size:12px; border-bottom:1px solid #efefef;border-right:1px solid #efefef;}
-.box .midbg .white_block .midblock .form_lft select, .box .midbg .white_block .midblock .form_rgt select{background:url(images/suscriber_inputbg.gif) 0 0 no-repeat;width:175px; border:0; height:20px; padding:0 0 0 5px; font:12px Arial, Helvetica, sans-serif; border-bottom:1px solid #efefef; border-right:1px solid #efefef;}
+.box .midbg .white_block .midblock .form_lft select, .box .midbg .white_block .midblock .form_rgt select{background:url(images/suscriber_inputbg.gif) 0 0 no-repeat;width:175px; border:0; height:20px; padding:0 0 0 5px;  border-bottom:1px solid #efefef; border-right:1px solid #efefef;}
 
 .box .midbg .white_block .midblock ul.org_service_lft{width:330px; float:left;}
 .box .midbg .white_block .midblock ul.org_service_rgt{width:200px; float:left;}
@@ -276,13 +282,13 @@ a.dp-choose-date.dp-disabled {
 .box .midbg .white_block .midblock .form_lft2 fieldset, .box .midbg .white_block .midblock .form_rgt2 fieldset{clear:both; padding:0 0 10px 0;}
 .box .midbg .white_block .midblock .form_lft2 label, .box .midbg .white_block .midblock .form_rgt2 label{color:#0066cc; width:119px; float:left;}
 .box .midbg .white_block .midblock .form_lft2 input[type="text"], .box .midbg .white_block .midblock .form_rg2t input[type="text"]{background:url(images/suscriber_inputbg.gif) 0 0 no-repeat;width:125px; border:0; height:20px; padding:0 0 0 5px; font-size:12px; border-bottom:1px solid #efefef;border-right:1px solid #efefef; float:left;}
-.box .midbg .white_block .midblock .form_lft2 select, .box .midbg .white_block .midblock .form_rgt2 select{background:url(images/suscriber_inputbg.gif) 0 0 no-repeat;width:125px; border:0; height:17px; padding:0 0 0 5px; font:12px Arial, Helvetica, sans-serif; border-bottom:1px solid #efefef; border-right:1px solid #efefef;}
+.box .midbg .white_block .midblock .form_lft2 select, .box .midbg .white_block .midblock .form_rgt2 select{background:url(images/suscriber_inputbg.gif) 0 0 no-repeat;width:125px; border:0; height:17px; padding:0 0 0 5px;   border-bottom:1px solid #efefef; border-right:1px solid #efefef;}
 
 .box .midbg .white_block .midblock .mailbox{clear:both;}
 .box .midbg .white_block .midblock .mailbox fieldset{clear:both; padding:0 0 10px 0;}
 .box .midbg .white_block .midblock .mailbox label{color:#0066cc; width:119px; float:left;}
 .box .midbg .white_block .midblock .mailbox input[type="text"]{background:url(images/suscriber_inputbg.gif) 0 0 no-repeat;width:125px; border:0; height:17px; padding:0 0 0 5px; font-size:12px; border-bottom:1px solid #efefef;border-right:1px solid #efefef; float:left; margin-right:45px;}
-.box .midbg .white_block .midblock .mailbox select{background:url(images/suscriber_inputbg.gif) 0 0 no-repeat;width:205px; border:0; height:20px; padding:0 0 0 5px; font:12px Arial, Helvetica, sans-serif; border-bottom:1px solid #efefef; border-right:1px solid #efefef;}
+.box .midbg .white_block .midblock .mailbox select{background:url(images/suscriber_inputbg.gif) 0 0 no-repeat;width:205px; border:0; height:20px; padding:0 0 0 5px;  border-bottom:1px solid #efefef; border-right:1px solid #efefef;}
 
 
 .box .midbg .white_block .midblock .addnewicon{float:right; padding:0 0 0 25px;}
@@ -354,7 +360,7 @@ a.dp-choose-date.dp-disabled {
 .box .midbg .white_block .midblock-2 ul li div{width:121px; margin-left:130px; display:block;}
 .box .midbg .white_block .midblock-2 a{color:#0065bd; text-decoration:underline;}
 .box .midbg .white_block .midblock-2 a:hover{text-decoration:none;}
-.box .midbg .white_block .midblock-2 ul li select{width:150px; font:12px Arial, Helvetica, sans-serif; color:#333333;}
+.box .midbg .white_block .midblock-2 ul li select{width:150px;  color:#333333;}
 .box .midbg .white_block .midblock-2 ul li strong{margin-right:10px;color:#0065bd; font-weight:normal;}
 
 .box .midbg .white_block .midblock-2 .left-2{width:270px; float:left; margin-right:20px; padding:10px 0;}
