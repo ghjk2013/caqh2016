@@ -166,13 +166,7 @@ body {
 	margin: 0 0 0 8px;
 }
 .container ul.topnav > li > a.active {
-	color: #ffffff;
-	background: url(images/topnav_arrow_hover1.png) 0 0 repeat-x;
-	float: left;
-	padding: 0px 30px 0 35px;
-	line-height: 45px;
-	height: 40px;
-	margin: 0 0 0;
+	background-color: #8ADFD8;
 }
 .container ul.topnav > li a.active span {
 	background: url(images/topnav_arrow_sprite.png) 0 0 no-repeat;

@@ -22,6 +22,7 @@
 	  <script src="query-d3-arc-guage.js"></script>
 	  <script type="text/javascript" src="d3.v2.min.js"></script>
 	  <script type="text/javascript" src="horizon-swiper.min.js"></script>
+	  <script type="text/javascript" src="customscrollbar.js"></script>
       <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
    </head>
    <body style="min-width:1100px;" class="">
@@ -40,7 +41,7 @@
                  	<div class="userdropdata" id="usersettingdropdata">
                                 <span class="profile"  onclick="#">Profile</span>
                                 
-                                <span class="changepwd" onclick="#" >Chnage Password</span>
+                                <span class="changepwd" onclick="#" >Change Password</span>
                                                                 
                                 <span class="lastlogin">12-02-2015 8:08 PM</span>                                
                </div>
@@ -69,7 +70,7 @@
            <div class="nav">
            <ul class="topnav">    
 			<li><a href="#" >HOME</a>	</li>
-			<li><a href="#" >MY PROFILE</a>	</li>
+			<li><a class="active" href="#" >MY PROFILE</a>	</li>
 			<li><a href="#" >MY DOCUMENT</a>	</li>
 			
 			<div class="attest">
@@ -83,7 +84,7 @@
 	     	<p style="margin-left: 2px"><span class="fa fa-exclamation-circle" style="color: #FFBF1A;"></span> You have made chnages to your profile since your last attestation. You must attest for Participating Organizations to see your updated data.</p>
 	     </div> -->
 	     
-	     <div style="float:left;width:20%;height:380px;">
+	     <div style="float:left;width:19%;height:380px;">
 	     <div style="height:135px;">
 	     	<div style="width: 100%;height:120px;text-align: center;margin: 25px 0;"> 
 	     		<div>	
@@ -108,7 +109,11 @@
 	    
 	     </div>  
 	     
-	     <div id="main_block" style="padding: 0 2% 0;width: 80%;height: 460px;overflow: auto;float: left;border-left:1px solid #d9e5e8;">
+	     <div id="main_block" style="padding: 0 2% 0;width: 79%;height: 460px;float: left;border-left:1px solid #d9e5e8;">
+	     	<div style="z-index: 100;padding-top: 2px;position: fixed;padding-left: 10px;display: none;height: 30px;font-family: open_sans_regular;text-align: center;font-size: 16px;background-color: #f0f1f0;width: 73%;margin-top: -5px;" id="update_res">
+	     		<p id="update_res_text"></p>
+	     		<span id="update_res_boxclose" style="margin-right:9px;top: -19px; cursor: pointer;float: right;position: relative;" title="Close" class="fa fa-times fa-1x"></span>
+	     	</div>
 	     	<div style="padding:10px 0 10px 15px">
 		     	<h1>John De, MD</h1>
 		     	<h2><font color="green">Allergy & Immunology</font> Washington, DC</h2>
@@ -367,8 +372,24 @@
       
                   <script type="text/javascript">
                console.log("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
-               
-               
+               var mainblockhight;
+       $(document).ready(function (){
+           mainblockhight = $('#main_block').outerHeight();
+    	   mainblockwidth = $('#main_block').outerWidth()+2;
+    		   $('#main_block').slimScroll({
+							        height: mainblockhight,
+    								// alwaysVisible: true,
+    								width: mainblockwidth,
+    								distance: '0px',
+    								railVisible: true,
+    								railColor: '#747474',
+    								railBorderRadius: 0,
+    								borderRadius: 0,
+    								size: '8px',
+    								disableFadeOut : true,
+    					 });
+    			$('#main_block').mouseover();
+		     });
   var hswiper = $('.horizon-swiper').horizonSwiper({
     showItems: 1,
     dots: true,
@@ -398,6 +419,10 @@
 
         j.preventDefault();
         $(window).trigger('resize');
+
+       setTimeout(function(){
+        $('#main_block').mouseover();
+       },1000);
     });
     // $('.accordion > li > ul').hide();
 
@@ -458,6 +483,10 @@ $('.fa-pencil-square-o').click(function(){
                         $('#login_resetpwd_overlay').fadeOut('fast');
                       
                     });
+                    $("#update_res_text").html("Error in updating your Profile.");
+                    $("#update_res").css("color", "red");
+                    $("#update_res").css("display", "block");
+                    
                 });
                 $('.reset_pwd_submit').click(function(){
                 	
@@ -465,15 +494,31 @@ $('.fa-pencil-square-o').click(function(){
                         $('#login_resetpwd_overlay').fadeOut('fast');
                       
                     });
+                    $("#update_res_text").html("Your Profile updated successfully.");
+                    $("#update_res").css("color", "green");
+                    $("#update_res").css("display", "block");
+                    setTimeout(function(){
+                  $("#update_res").css("display", "none");
+                    },5000);
                 });
 $('.fa-trash').click(function(){
 	
 	if (confirm('Are you sure to delete')) { 
  // do things if OK
+             $("#update_res_text").html("Your Profile updated successfully.");
+                   // $("#update_res_text").css("color", "green");
+                   // $("#update_res_text").css("font-size", "16px");
+                    $("#update_res").css("color", "green");
+                    $("#update_res").css("display", "block");
+                    setTimeout(function(){
+                  $("#update_res").css("display", "none");
+                    },5000);
 }
 	
     });
-
+$('#update_res_boxclose').click(function() {
+	$("#update_res").css("display", "none");
+});
           
             </script>
 
