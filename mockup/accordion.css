@@ -32,7 +32,7 @@ h1 {
   padding: 10px 25px 30px;
   /*color: #000;*/
 }
-.accordion a {
+.accordion > li > a {
   width: 100%;
   display: block;
   cursor: pointer;
@@ -47,7 +47,7 @@ h1 {
   padding: 10px 0 10px 15px;
   user-select: none;
 }
-.accordion a:after {
+.accordion > li > a:after {
   width: 8px;
   height: 8px;
   border-right: 1px solid #4a6e78;

@@ -92,7 +92,8 @@
 	     		</div> 
 	     	</div>
 	     </div>
-	     <div style="width: 100%;text-align: center;margin-bottom: 50px;">CAQH ID: 12345 </div>
+	     <div style="font-family: open_sans_regular;width: 100%;text-align: center;margin-bottom: 10px;font-size: 14px">CAQH ID: 12345 </div>
+	     <div style="width: 100%;text-align: center;margin-bottom: 50px;"><span style="font-family: open_sans_regular"> Last Login Date : </span> 12/25/2015 </div>
 	   <!--  <div style="height:240px;text-align: center;">
 	     	<div id="power-gauge"></div>
 	     <div align="center"><b>33%</b></div>
@@ -102,6 +103,7 @@
 	    <!-- </div>  -->
 	    <div class="arc-gauge-1" data-height="160" data-value="0">
 	     <div class="arc-gauge-text">
+	      <p>Profile</p>
           <span class="value">0</span>%
           <p class="small">Complete</p>
          </div>	    	
@@ -109,39 +111,53 @@
 	    
 	     </div>  
 	     
-	     <div id="main_block" style="padding: 0 2% 0;width: 79%;height: 460px;float: left;border-left:1px solid #d9e5e8;">
-	     	<div style="z-index: 100;padding-top: 2px;position: fixed;padding-left: 10px;display: none;height: 30px;font-family: open_sans_regular;text-align: center;font-size: 16px;background-color: #f0f1f0;width: 73%;margin-top: -5px;" id="update_res">
+	     <div id="main_block" style="padding: 0 2% 0;width: 79%;height: 80%;float: left;border-left:1px solid #d9e5e8;">
+	     	<div style="z-index: 100;padding-top: 2px;position: fixed;padding-left: 10px;display: none;height: 30px;font-family: open_sans_regular;text-align: center;font-size: 16px;color: #f0f1f0;width: 76%;margin-left:-20px; margin-top: -5px;" id="update_res">
 	     		<p id="update_res_text"></p>
 	     		<span id="update_res_boxclose" style="margin-right:9px;top: -19px; cursor: pointer;float: right;position: relative;" title="Close" class="fa fa-times fa-1x"></span>
 	     	</div>
-	     	<div style="padding:10px 0 10px 15px">
-		     	<h1>John De, MD</h1>
-		     	<h2><font color="green">Allergy & Immunology</font> Washington, DC</h2>
-		    </div>
+	     	<div style="height: 24%;line-height: 2">
+		     	<div style="padding:10px 0 10px 15px;float: left">
+			     	<h1>John De, MD</h1>
+			     	<h2><font color="green">Allergy & Immunology</font> Washington, DC</h2>
+			    </div>
+			    <div style="float: right;padding:10px 0 10px 15px;font-size: 14px;text-align: right;">
+			    	<div><span style="font-family: open_sans_regular"> Status:</span> Inital Application Complete </div>
+			    	<div><span style="font-family: open_sans_regular"> Last Attested Date : </span> 12/25/2015 </div>
+					<div><span style="font-family: open_sans_regular">Days Remaining to Re-attest: </span> 120</div>
+			    </div>
+			</div>
 
 <ul class="accordion">
 	<li>
-		<div>
-			<span style="font-family: open_sans_regular">Profile Status:</span> Inital Application Complete &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-family: open_sans_regular"> Last Attested Date (MM/DD/YYYY) : </span> 12/25/2015 <br /><br />
-			<span style="font-family: open_sans_regular">Days Remaining to Re-attest: </span> 120
+		<div style="font-weight: 600;padding-bottom: 0px;">Professional Information</div>
+		<div style="height: 62px;">
+			<div style="width: 33% ;float: left"><span style="font-family: open_sans_regular">Provider Type:</span> MD &nbsp;&nbsp;&nbsp;<span style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span></div>
+			<div style="width: 33%; float: right; text-align: right;padding-right: 25px;"><span style="font-family: open_sans_regular">Practice Setting:</span> Inpatient Only &nbsp;&nbsp;&nbsp;<span style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span></div>
+			<div style="width: 33%; float: right; "><span style="font-family: open_sans_regular">Practice State:</span> VA, MD, DC &nbsp;&nbsp;&nbsp;<span style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span></div>
 		</div>
+		
 	</li>
 	<li>
-		<a>Professional Information<span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span></a>
+		<a>Personal Information<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span></a>
 		<ul>
-		<span style="font-family: open_sans_regular">Provider Type:</span> MD <span style="float: right;margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span><span style="float: right;margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span><br />
-		<span style="font-family: open_sans_regular">Practice Setting:</span> Inpatient Only <br />
-		<span style="font-family: open_sans_regular">Practice State:</span> VA, MD, DC
+			<div>
+				<span style="font-family: open_sans_regular">Name:</span> John M Doe <span style="float: right;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span><span style="float: right;margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
+				<br />
+				<span style="font-family: open_sans_regular">Address:</span> 23 Main St. Washington DC, DC-12345
+				<br />
+				<span style="font-family: open_sans_regular">Home:</span> 23 Main St. Washington DC, DC-12345
+				<br />
+				<span style="font-family: open_sans_regular">Date of Birth:</span> 01/01/1990
+				<br />
+				<span style="font-family: open_sans_regular">Gender:</span> Male
+			</div>
 		</ul>
 	</li>
 	<li>   <!-- <span class="fa fa-check-circle fa-lg" style="padding-right: 3px;color: green;position: relative;left: 10px;"></span> -->
-		<a>Personal Information<span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span></a>
+		<a>Practice Locations<span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span></a>
 		<ul>
-		<!-- <span style="font-family: open_sans_regular">Name:</span> John M Doe <span style="float: right;margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span><br />
-		<span style="font-family: open_sans_regular">Address:</span> 23 Main St. Washington DC, DC-12345 <br />
-		<span style="font-family: open_sans_regular">Home:</span> 23 Main St. Washington DC, DC-12345 <br />
-		<span style="font-family: open_sans_regular">Date of Birth:</span> 01/01/1990 <br />
-		<span style="font-family: open_sans_regular">Gender:</span> Male -->
+			<div style="width: 100%;padding: 0px;text-align: center;margin-top: -17px;"><a href="#" style="">Add Practice Locations</a></div>
 		<div class="horizon-swiper">
 			<div class="horizon-item">
 				<span style="font-family: open_sans_regular">Name:</span> John M Doe <span style="float: right;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span><span style="float: right;margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
@@ -289,6 +305,7 @@
 		</div>
 		</ul>
 	</li>
+	
 	<li>
 		<a>Languages Spoken<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span></a>
 		<ul>
@@ -403,7 +420,7 @@
 // accordion
 
     $('.accordion > li:eq(0) a').addClass('active').next().slideDown();
-	$('.accordion a').click(function(j) {
+	$('.accordion > li > a').click(function(j) {
         var dropDown = $(this).closest('li').find('ul');
 
         $(this).closest('.accordion').find('ul').not(dropDown).slideUp();
@@ -484,7 +501,7 @@ $('.fa-pencil-square-o').click(function(){
                       
                     });
                     $("#update_res_text").html("Error in updating your Profile.");
-                    $("#update_res").css("color", "red");
+                    $("#update_res").css("background-color", "red");
                     $("#update_res").css("display", "block");
                     
                 });
@@ -495,7 +512,7 @@ $('.fa-pencil-square-o').click(function(){
                       
                     });
                     $("#update_res_text").html("Your Profile updated successfully.");
-                    $("#update_res").css("color", "green");
+                    $("#update_res").css("background-color", "green");
                     $("#update_res").css("display", "block");
                     setTimeout(function(){
                   $("#update_res").css("display", "none");
@@ -506,9 +523,9 @@ $('.fa-trash').click(function(){
 	if (confirm('Are you sure to delete')) { 
  // do things if OK
              $("#update_res_text").html("Your Profile updated successfully.");
-                   // $("#update_res_text").css("color", "green");
+                   // $("#update_res_text").css("background-color", "green");
                    // $("#update_res_text").css("font-size", "16px");
-                    $("#update_res").css("color", "green");
+                    $("#update_res").css("background-color", "green");
                     $("#update_res").css("display", "block");
                     setTimeout(function(){
                   $("#update_res").css("display", "none");
