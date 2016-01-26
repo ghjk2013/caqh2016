@@ -78,7 +78,10 @@
 		   </ul>		
 	      </div>
 	     </div>
-	     
+	     	<div style="z-index: 100;padding-top: 2px;position: fixed;padding-left: 10px;display: none;height: 30px;font-family: open_sans_regular;text-align: center;font-size: 16px;color: #f0f1f0;width: 94%;box-shadow: 0 3px 4px rgba(0, 0, 0, 0.13);" id="update_res">
+	     		<p id="update_res_text"></p>
+	     		<span id="update_res_boxclose" style="margin-right:9px;top: -19px; cursor: pointer;float: right;position: relative;" title="Close" class="fa fa-times fa-1x"></span>
+	     	</div>
 	     <!-- <div style="width: 100%;height: 50px;background: #FAEEF6">
 	     	<br />
 	     	<p style="margin-left: 2px"><span class="fa fa-exclamation-circle" style="color: #FFBF1A;"></span> You have made chnages to your profile since your last attestation. You must attest for Participating Organizations to see your updated data.</p>
@@ -112,10 +115,7 @@
 	     </div>  
 	     
 	     <div id="main_block" style="padding: 0 2% 0;width: 79%;height: 80%;float: left;border-left:1px solid #d9e5e8;">
-	     	<div style="z-index: 100;padding-top: 2px;position: fixed;padding-left: 10px;display: none;height: 30px;font-family: open_sans_regular;text-align: center;font-size: 16px;color: #f0f1f0;width: 76%;margin-left:-20px; margin-top: -5px;" id="update_res">
-	     		<p id="update_res_text"></p>
-	     		<span id="update_res_boxclose" style="margin-right:9px;top: -19px; cursor: pointer;float: right;position: relative;" title="Close" class="fa fa-times fa-1x"></span>
-	     	</div>
+
 	     	<div style="height: 24%;line-height: 2">
 		     	<div style="padding:10px 0 10px 15px;float: left">
 			     	<h1>John De, MD</h1>
@@ -337,7 +337,7 @@
 <div class="overlay" id="login_resetpwd_overlay" style="display:none;"></div>
 <div class="box org_newuser" id="login_resetpwd_box">
 				<div class="midbg selected_color"  style="background-color: #ffffff;width:700px;position:absolute;left:200px">
-					<span id="login_resetpwd_boxclose" style="float: right;margin-right: 5px;margin-top: -45px;cursor: pointer;" title="Close" class="fa fa-times fa-3x"></span>
+					<span id="login_resetpwd_boxclose" style="float: right;margin-right: 5px;margin-top: -45px;cursor: pointer;color: #fff" title="Close" class="fa fa-times fa-3x"></span>
 
 					<form>
 						<!-- <div class="roundblockleft theme_color reset_pwd_submit top_control"><a href="#null"><%= t :login_index_reset_go%></a></div> -->
@@ -449,14 +449,11 @@
 						</div>
 						<!--Button block start-->
 						<div class="modal-footer" id="customfooter">
-
+                           <div id="progress_indicator_content" class="progress-indicator"></div>
 							<button class="btn btn-large btn-link-gray back-link" id="overprev" type="button">
 								Back
 							</button>
-							<div id="progress-indicator-resetpwd_content" class="progress-indicator">●○○</div>
-							<div id="progress-indicator-resetpwd_content1" class="progress-indicator" style="display: none">○●○</div>
-							<div id="progress-indicator-resetpwd_content2" class="progress-indicator" style="display: none">○○●</div>
-							<button class="btn btn-large btn-link skip-link" id="overskip" type="button" style="display: inline-block;">
+						    <button class="btn btn-large btn-link skip-link" id="overskip" type="button" style="display: inline-block;">
 								Skip
 							</button>
 							<button class="btn btn-large btn-primary next" id="overnext" type="button">
@@ -494,68 +491,60 @@
                	previdswipper =$('.custom_swiper_item:visible').prev().attr("class");
                	$('#progress-indicator-' + currentid).css("display", "block");
                if (nextswipper == "custom_swiper_item"){
-               		//$('#overnext').css("display", "block");
                		$('#overnext').show();
-               		//$('#overskip').css("display", "block");
                		$('#overskip').show();
-               		//$('#reset_pwd_submit').css("display", "none");
                		$('#reset_pwd_submit').hide();
                	}else
                	{
-               		//$('#overnext').css("display", "none");
                		$('#overnext').hide();
-               		//$('#overskip').css("display", "none");
                		$('#overskip').hide();
-               		//$('#reset_pwd_submit').css("display", "block");
                		$('#reset_pwd_submit').show();
                	}
                	if (previdswipper == "custom_swiper_item"){
-               		//$('#overprev').css("display", "block");
                		$('#overprev').show();
                	}else
                	{
-               		//$('#overprev').css("display", "none");
                		$('#overprev').hide();
                	}
-    			//}
+    			swiperdivs = $('.custom_swiper_item')
+    			progress_str = "";
+    			for (i=0; i<swiperdivs.length && swiperdivs.length > 1; i++){
+    				if (swiperdivs[i].id == currentid)
+    				progress_str += '●';
+    				else
+    				progress_str += '○';
+    			}
+    			$('#progress_indicator_content').html(progress_str);
               }
                $("#overnext").click( function (){
                	hideid = $('.custom_swiper_item:visible').attr("id");
                	showid =$('.custom_swiper_item:visible').next().attr("id");
-               //	$("#" +hideid).animate({width :'toggle' });
-               	//$("#" +hideid).css("display", "none");
                	$("#" + hideid + ' .overlaybody').animate({'margin-left' :'-50%', 'margin-right' :'50%' }, 500, function() {
                		$("#" +hideid).hide();
 				    $("#" + hideid + ' .overlaybody').css("margin-left", "0").css("margin-right", "0");
 				    $("#" + showid).fadeIn('slow');
-				    // $("#" + showid).show();
 				    updateoverlayfooter();
 				  });
-               	// $("#" +hideid).hide();
-               	// //$("#" +hideid).animate({width :'toggle' });
-               	// //$("#" + showid).css("display", "block");
-               	// $("#" + showid).show();
-               	// updateoverlayfooter();	
                });
                $("#overprev").click( function (){
                	hideid = $('.custom_swiper_item:visible').attr("id");
                	showid =$('.custom_swiper_item:visible').prev().attr("id");
-               	//$("#" +hideid).animate({'left' : '700px'});
-               	//$("#" +hideid).css("display", "none");
+               	$("#" + hideid + ' .overlaybody').animate({'margin-left' :'+50%', 'margin-right' :'-50%' }, 500, function() {
                	$("#" +hideid).hide();
-                //$("#" +hideid).animate({'right' : '700px'});
-               	//$("#" + showid).css("display", "block");
-               	$("#" + showid).show();
-               	updateoverlayfooter(); 	
+               	$("#" + hideid + ' .overlaybody').css("margin-left", "0").css("margin-right", "0");
+               	$("#" + showid).fadeIn('slow');
+               	updateoverlayfooter(); 
+               	});
                });
                $("#overskip").click( function (){
                	hideid = $('.custom_swiper_item:visible').attr("id");
                	showid =$('.custom_swiper_item:visible').next().attr("id");
-               	//$("#" +hideid).css("display", "none");
-               	$("#" +hideid).hide();
-               	//$("#" + showid).css("display", "block");
-               	$("#" + showid).show();
-               	updateoverlayfooter(); 	
+               	$("#" + hideid + ' .overlaybody').animate({'margin-left' :'-50%', 'margin-right' :'50%' }, 500, function() {
+               		$("#" +hideid).hide();
+				    $("#" + hideid + ' .overlaybody').css("margin-left", "0").css("margin-right", "0");
+				    $("#" + showid).fadeIn('slow');
+				    updateoverlayfooter();
+				  });
                });
 
                var mainblockhight;
@@ -610,8 +599,7 @@
         $('#main_block').mouseover();
        },1000);
     });
-    // $('.accordion > li > ul').hide();
-
+    
 $('#usersettingdrop').click(function(){
         $('#usersettingdropdata').toggle("slow");
     });
@@ -651,15 +639,11 @@ $('#usersettingdrop').click(function(){
 $('.fa-pencil-square-o').click(function(){
 	 $('#login_resetpwd_overlay').fadeIn('fast',function(){
 	 	
-	// $('#resetpwd_content').css( "display", "block" ) ;
-    // $('.reset_pwd_submit').css( "display", "inline" ) ;
-     $('#login_resetpwd_box').animate({'top':'90px'},0);
+	 $('#login_resetpwd_box').animate({'top':'90px'},0);
      
 });
 //making overlay content
-//$('.custom_swiper_item').css("display", "none");
 $('.custom_swiper_item').hide();
-//$('#resetpwd_content').css( "display", "block" ) ;
 $('#resetpwd_content').show() ;
     		updateoverlayfooter();
 });
@@ -676,7 +660,7 @@ $('#resetpwd_content').show() ;
                       
                     });
                     $("#update_res_text").html("Error in updating your Profile.");
-                    $("#update_res").css("background-color", "red");
+                    $("#update_res").css("background-color", "#e23a24");
                     $("#update_res").css("display", "block");
                     
                 });
@@ -687,7 +671,7 @@ $('#resetpwd_content').show() ;
                       
                     });
                     $("#update_res_text").html("Your Profile updated successfully.");
-                    $("#update_res").css("background-color", "green");
+                    $("#update_res").css("background-color", "#1e9e5e");
                     $("#update_res").css("display", "block");
                     setTimeout(function(){
                   $("#update_res").css("display", "none");
@@ -698,9 +682,9 @@ $('.fa-trash').click(function(){
 	if (confirm('Are you sure to delete')) { 
  // do things if OK
              $("#update_res_text").html("Your Profile updated successfully.");
-                   // $("#update_res_text").css("background-color", "green");
+                   // $("#update_res_text").css("background-color", "#1e9e5e");
                    // $("#update_res_text").css("font-size", "16px");
-                    $("#update_res").css("background-color", "green");
+                    $("#update_res").css("background-color", "#1e9e5e");
                     $("#update_res").css("display", "block");
                     setTimeout(function(){
                   $("#update_res").css("display", "none");

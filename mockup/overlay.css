@@ -67,7 +67,7 @@ a.boxhelp{float:right;width:28px;height:28px;background:transparent url(images/o
 a.boxclose_n{width:28px;height:28px;background:transparent url(images/overlay_sprite.png) repeat top left;cursor:pointer;margin-top:-10px;margin-right:-10px;position:absolute;right:28px;}
 
 
-.overlaybody{padding: 10px;}
+.overlaybody{padding: 10px;overflow-y: auto;height: 275px;}
 .box .midbg{repeat-y right top;  -moz-border-radius: 6px; border: 1px solid rgba(0, 0, 0, 0.3); border-radius: 6px; border-style: solid; }
 .box .midbg h3{font-size:18px; font-weight:bold;  padding:0 0 10px 15px}
 .box .midbg h3 span{padding:0 20px; }
