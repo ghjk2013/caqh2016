@@ -68,7 +68,7 @@ h1 {
   padding: 10px;
 }
 
-a.active:after {
+.accordion > li > a.active:after {
   transform: rotate(45deg);
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
