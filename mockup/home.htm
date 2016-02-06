@@ -197,7 +197,7 @@
 							<a scroll=2.5 >Professional IDs<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span></a>
 							<ul style="margin-top: 5px">
 								<div class="horizon-swiper">
-									<div class="horizon-item">
+									<div class="horizon-item" id="identification">
 
 										
 										
@@ -208,6 +208,7 @@
 										<div style="padding-left: 0;font-weight: bold">
 											Identification
 										</div>
+										<div class="identification" id="identification1">
 										<span style="float: left; width: 100%;padding-left: 3%;"> 
 											<span style="float: left;font-family: open_sans_regular">Unique Physician Identification No (UPIN): xxxxxxxx</span>
 											<span style=" float: right;">
@@ -216,18 +217,20 @@
 											<br />
 											<span style="font-family: open_sans_regular">National Provider Identification No (NPI):</span> xxxxxxxxx
 										</span>
+									 </div>
 									</div>
-									<div class="horizon-item">
+									<div class="horizon-item" id="licence">
 										<div style="width: 100%;padding: 0px;text-align: center; ">
 											<a href="#" style="">Add Licence</a>
 										</div>
 										<div style="padding-left: 0;font-weight: bold">
 											Professional Licence
 										</div>
+										<div id="licence1" class="licence">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span style="font-family: open_sans_regular">Licence State:</span> xxxxxxx
+											<span style="font-family: open_sans_regular">Licence State:</span> xxxxxxx1
 											<br />
-											<span style="font-family: open_sans_regular">Licence No:</span> xxxxxxxxxxx
+											<span style="font-family: open_sans_regular">Licence No:</span> xxxxxxxxxxx1
 											
 											<br />
 											<span style="font-family: open_sans_regular">Practice in This State:</span> Yes </span>
@@ -241,6 +244,65 @@
 											<br />
 											<span style="font-family: open_sans_regular">Licence Staus:</span> Active
 										</span>
+										</div>
+										<div id="licence2" class="licence" style="display: none">
+										<span style="float: left; width: 48%;padding-left: 3%;"> 
+											<span style="font-family: open_sans_regular">Licence State2:</span> xxxxxxx2
+											<br />
+											<span style="font-family: open_sans_regular">Licence No2:</span> xxxxxxxxxxx2
+											
+											<br />
+											<span style="font-family: open_sans_regular">Practice in This State2:</span> Yes </span>
+										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
+										<span style="float: right; width: 46%"> <span style="float: left;font-family: open_sans_regular;">Licence Type2: xxxxxx</span>
+											<span style=" float: right;">
+												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
+											</span>
+											<br />
+											<span style="font-family: open_sans_regular;">Expiration Date2:</span> 02/02/2020 
+											<br />
+											<span style="font-family: open_sans_regular">Licence Staus2:</span> Active
+										</span>
+										</div>
+										<div id="licence3" class="licence" style="display: none">
+										<span style="float: left; width: 48%;padding-left: 3%;"> 
+											<span style="font-family: open_sans_regular">Licence State3:</span> xxxxxxx3
+											<br />
+											<span style="font-family: open_sans_regular">Licence No3:</span> xxxxxxxxxxx3
+											
+											<br />
+											<span style="font-family: open_sans_regular">Practice in This State3:</span> Yes </span>
+										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
+										<span style="float: right; width: 46%"> <span style="float: left;font-family: open_sans_regular;">Licence Type3: xxxxxx</span>
+											<span style=" float: right;">
+												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
+											</span>
+											<br />
+											<span style="font-family: open_sans_regular;">Expiration Date3:</span> 02/02/2020 
+											<br />
+											<span style="font-family: open_sans_regular">Licence Staus3:</span> Active
+										</span>
+										</div>
+										<div id="licence4" class="licence" style="display: none">
+										<span style="float: left; width: 48%;padding-left: 3%;"> 
+											<span style="font-family: open_sans_regular">Licence State3:</span> xxxxxxx4
+											<br />
+											<span style="font-family: open_sans_regular">Licence No3:</span> xxxxxxxxxxx4
+											
+											<br />
+											<span style="font-family: open_sans_regular">Practice in This State3:</span> Yes </span>
+										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
+										<span style="float: right; width: 46%"> <span style="float: left;font-family: open_sans_regular;">Licence Type3: xxxxxx</span>
+											<span style=" float: right;">
+												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
+											</span>
+											<br />
+											<span style="font-family: open_sans_regular;">Expiration Date3:</span> 02/02/2020 
+											<br />
+											<span style="font-family: open_sans_regular">Licence Staus3:</span> Active
+										</span>
+										</div>
+										<div style="float: right;margin-right: 10px;" id="view_page_link">Viewing <span id="view_current">1</span> of <span id="view_total">3</span> <span id="view_prev" style="cursor: pointer;font-weight: 600;"><<</span> <span id="view_list"> <font style="color: blue;font-weight: 600;">1</font> 2 3 </span> <span id="view_next" style="cursor: pointer;font-weight: 600;">>></span></div>
 									</div>
 									<div class="horizon-item">
 										<div style="width: 100%;padding: 0px;text-align: center; ">
@@ -367,6 +429,7 @@
 											<br />
 										</span>
 									</div>
+									
 								</div>
 							</ul>
 						</li>
@@ -704,6 +767,90 @@
 
 		<script type="text/javascript">
 			console.log("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
+			function updateviewpage(index){
+				var view_page_length = 1;
+				if(document.getElementsByClassName("horizon-dot active").length > 0) 
+				{
+					var current_swiper_index = document.getElementsByClassName("horizon-dot active")[0].getAttribute("data-horizon-target");
+					currentid_acrd_swipper = $(".horizon-item:visible")[current_swiper_index].id;
+					if (currentid_acrd_swipper == undefined || currentid_acrd_swipper == '') 
+					{
+						// do some thing
+						view_page_length = 1;
+						$("#view_page_link").css("display", "none");
+						return false
+					} 
+					else
+					{
+						idandclass = "#" + currentid_acrd_swipper + " ." + currentid_acrd_swipper;
+						if ($(idandclass) != undefined && $(idandclass).length >0) {
+							view_page_length = $(idandclass).length
+							$(idandclass).css("display", "none");
+							$($(idandclass)[index]).fadeIn('slow');
+						}
+					}
+				}
+				//update view link
+				if (view_page_length > 1){
+				$("#view_current").html(index + 1);
+				$("#view_total").html(view_page_length);
+				view_list_str = ""
+				for (i=0; i<view_page_length; i++){
+					if(i==index)
+					view_list_str+= ' <font style\="color: blue;font-weight: 600;">'+(i+1).toString() + '</font>';
+					else
+					view_list_str+= " " + (i+1).toString();
+				}
+				$("#view_page_link").css("display", "inline");
+				$("#view_list").html(view_list_str);
+				
+				if ($("#view_current").text() == $("#view_total").text()){
+				$("#view_next").css("cursor", "");
+				$("#view_next").css("font-weight", "400");
+				} else{
+					$("#view_next").css("cursor", "pointer");
+				   $("#view_next").css("font-weight", "600");
+				}
+				if ($("#view_current").text() == '1'){
+				$("#view_prev").css("cursor", "");
+				$("#view_prev").css("font-weight", "400");
+				}else {
+				$("#view_prev").css("cursor", "pointer");
+				$("#view_prev").css("font-weight", "600");
+				}
+				}
+				else{
+					$("#view_page_link").css("display", "none");
+				}
+			}
+			$("#view_next").click(function(){
+				if ($("#view_current").text() == $("#view_total").text())
+				return false;
+				current_page = $("#view_current").text();
+				updateviewpage(parseInt(current_page));
+				if ($("#view_current").text() == $("#view_total").text()){
+				$("#view_next").css("cursor", "");
+				$("#view_next").css("font-weight", "400");
+				}
+				if ($("#view_current").text() != '1'){
+				$("#view_prev").css("cursor", "pointer");
+				$("#view_prev").css("font-weight", "600");
+				}
+			});
+			$("#view_prev").click(function(){
+				if ($("#view_current").text() == '1')
+				return false;
+				current_page = $("#view_current").text();
+				updateviewpage(parseInt(current_page)-2);
+				if ($("#view_current").text() == '1'){
+				$("#view_prev").css("cursor", "");
+				$("#view_prev").css("font-weight", "400");
+				}
+				if ($("#view_current").text() != $("#view_total").text()){
+				$("#view_next").css("cursor", "pointer");
+				$("#view_next").css("font-weight", "600");
+				}
+			});
 			function updateoverlayfooter() {
 				currentid = $('.custom_swiper_item:visible').attr("id");
 				nextswipper = $('.custom_swiper_item:visible').next().attr("class");
@@ -796,12 +943,24 @@
 				});
 				$('#main_block').mouseover();
 			});
+			var currentswiperid = "";
 			var hswiper = $('.horizon-swiper').horizonSwiper({
 				showItems : 1,
 				dots : true,
 				numberedDots : true,
 				animationSpeed : 500,
-				mouseDrag : false
+				mouseDrag : false,
+				onSlideEnd: function onSlideEnd(){
+					/*aaaa = $(".horizon-dot:visible");
+					for( i=0; i < aaaa.length ; i++) {
+						console.log(aaaa[i]);
+						console.log(aaaa[i].className);
+						console.log(aaaa[i].getAttribute("data-horizon-target"));
+					} */
+					var x = document.getElementsByClassName("horizon-dot active")[0].getAttribute("data-horizon-target");
+					updateviewpage(parseInt(x));
+					
+				}
 			});
 
 			$('.homeuser_bg .nav').css("display", "block");
@@ -842,24 +1001,25 @@
 				
 					$('#main_block').mouseover();
 				}, 500);
+				updateviewpage(0);
 			});
 
 			$('#usersettingdrop').click(function() {
-				$('#usersettingdropdata').toggle("slow");
+				$('#usersettingdropdata').toggle("fast");
 			});
 			$(document).on("click", function(event) {
 				var $trigger = $("#usersettingdrop");
 				if ($trigger !== event.target && !$trigger.has(event.target).length) {
-					$("#usersettingdropdata").slideUp("slow");
+					$("#usersettingdropdata").hide();
 				}
 			});
 			$('#usercontactdrop').click(function() {
-				$('#usercontactdropdata').toggle("slow");
+				$('#usercontactdropdata').toggle("fast");
 			});
 			$(document).on("click", function(event) {
 				var $trigger = $("#usercontactdrop");
 				if ($trigger !== event.target && !$trigger.has(event.target).length) {
-					$("#usercontactdropdata").slideUp("slow");
+					$("#usercontactdropdata").hide();
 				}
 			});
 			$('.arc-gauge-1').arcGauge({
