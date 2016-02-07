@@ -226,7 +226,7 @@
 										<div style="padding-left: 0;font-weight: bold">
 											Professional Licence
 										</div>
-										<div id="licence1" class="licence">
+										<div id="licence1" class="licence" style=" width: 100%;display: inherit">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
 											<span style="font-family: open_sans_regular">Licence State:</span> xxxxxxx1
 											<br />
@@ -245,7 +245,7 @@
 											<span style="font-family: open_sans_regular">Licence Staus:</span> Active
 										</span>
 										</div>
-										<div id="licence2" class="licence" style="display: none">
+										<div id="licence2" class="licence" style="display: none; width: 100%;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
 											<span style="font-family: open_sans_regular">Licence State2:</span> xxxxxxx2
 											<br />
@@ -264,7 +264,7 @@
 											<span style="font-family: open_sans_regular">Licence Staus2:</span> Active
 										</span>
 										</div>
-										<div id="licence3" class="licence" style="display: none">
+										<div id="licence3" class="licence" style="display: none; width: 100%;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
 											<span style="font-family: open_sans_regular">Licence State3:</span> xxxxxxx3
 											<br />
@@ -283,7 +283,7 @@
 											<span style="font-family: open_sans_regular">Licence Staus3:</span> Active
 										</span>
 										</div>
-										<div id="licence4" class="licence" style="display: none">
+										<div id="licence4" class="licence" style="display: none; width: 100%;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
 											<span style="font-family: open_sans_regular">Licence State3:</span> xxxxxxx4
 											<br />
@@ -302,15 +302,16 @@
 											<span style="font-family: open_sans_regular">Licence Staus3:</span> Active
 										</span>
 										</div>
-										<div style="float: right;margin-right: 10px;" id="view_page_link">Viewing <span id="view_current">1</span> of <span id="view_total">3</span> <span id="view_prev" style="cursor: pointer;font-weight: 600;"><<</span> <span id="view_list"> <font style="color: blue;font-weight: 600;">1</font> 2 3 </span> <span id="view_next" style="cursor: pointer;font-weight: 600;">>></span></div>
+										<div style="margin-top:-10px; float: right;margin-right: 10px;padding: 0px;" id="licence_view_page_link">Viewing <span id="licence_view_current">1</span> of <span id="licence_view_total"></span> <span id="licence_view_prev" style="font-weight: 400;" onclick="updateviewpage('prev');"><<</span> <span id="licence_view_list"> </span> <span id="licence_view_next" style="cursor: pointer;font-weight: 600;" onclick="updateviewpage('next');">>></span></div>
 									</div>
-									<div class="horizon-item">
+									<div class="horizon-item" id="dearesidtration">
 										<div style="width: 100%;padding: 0px;text-align: center; ">
 											<a href="#" style="">Add DEA</a>
 										</div>
 										<div style="padding-left: 0;font-weight: bold">
 											DEA Ragistration
 										</div>
+										<div id="dearesidtration1" class="dearesidtration" style="display: inherit; width: 100%;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
 											<span style="font-family: open_sans_regular">Drug Enforcement Administration No (DEA):</span> xxxxxxx
 											<br />
@@ -325,7 +326,24 @@
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 										</span>
-											
+										</div>
+										<div id="dearesidtration2" class="dearesidtration" style="display: none;width: 100%; ">
+										<span style="float: left; width: 48%;padding-left: 3%;"> 
+											<span style="font-family: open_sans_regular">Drug Enforcement Administration No (DEA)2:</span> xxxxxxx
+											<br />
+											<span style="font-family: open_sans_regular">DEA State2:</span> xxxxxxxxxxx
+											<br />
+											<span style="font-family: open_sans_regular">Issue Date2:</span> 02/02/2015
+										</span>
+										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
+										<span style="float: right; width: 46%"> 
+											<span style="float: left;font-family: open_sans_regular;">Expiration Date2: 02/02/2020</span>
+											<span style=" float: right;">
+												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
+											</span>
+										</span>
+										</div>
+										<div style="margin-top:-10px;padding: 0px;float: right;margin-right: 10px;" id="dearesidtration_view_page_link">Viewing <span id="dearesidtration_view_current">1</span> of <span id="dearesidtration_view_total"></span> <span id="dearesidtration_view_prev" style="font-weight: 400;" onclick="updateviewpage('prev');"><<</span> <span id="dearesidtration_view_list"> </span> <span id="dearesidtration_view_next" style="cursor: pointer;font-weight: 600;" onclick="updateviewpage('next');">>></span></div>	
 									</div>
 									<div class="horizon-item">
 										<div style="width: 100%;padding: 0px;text-align: center; ">
@@ -767,11 +785,39 @@
 
 		<script type="text/javascript">
 			console.log("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
-			function updateviewpage(index){
+		function buildviewpage(){
+				var hitemArray = $(".horizon-item:visible");
+					for (j=0; j< hitemArray.length; j++){
+						currentid_acrd_swipper = hitemArray[j].id;
+					if (currentid_acrd_swipper == undefined || currentid_acrd_swipper == '') 
+					{
+						// do some thing
+					} 
+					else
+					{
+						idandclass = "#" + currentid_acrd_swipper + " ." + currentid_acrd_swipper;
+						if ($(idandclass) != undefined && $(idandclass).length >1) {
+							view_page_length = $(idandclass).length
+				         $("#" +currentid_acrd_swipper + "_view_total").html(view_page_length);
+				         view_list_str = ""
+				for (i=0; i<view_page_length; i++){
+					if(0==i)
+					view_list_str+= ' <font style\="color: blue;font-weight: 600;">'+(i+1).toString() + '</font>';
+					else
+					view_list_str+= " " + (i+1).toString();
+				}
+				$("#" +currentid_acrd_swipper + "_view_list").html(view_list_str);
+						}
+					}
+				}
+
+		}
+
+			function updateviewpage(type){
 				var view_page_length = 1;
 				if(document.getElementsByClassName("horizon-dot active").length > 0) 
 				{
-					var current_swiper_index = document.getElementsByClassName("horizon-dot active")[0].getAttribute("data-horizon-target");
+			 	var current_swiper_index = document.getElementsByClassName("horizon-dot active")[0].getAttribute("data-horizon-target");
 					currentid_acrd_swipper = $(".horizon-item:visible")[current_swiper_index].id;
 					if (currentid_acrd_swipper == undefined || currentid_acrd_swipper == '') 
 					{
@@ -783,15 +829,50 @@
 					else
 					{
 						idandclass = "#" + currentid_acrd_swipper + " ." + currentid_acrd_swipper;
+						current_page = $("#" + currentid_acrd_swipper + "_view_current").text();
+						index = 0;
+						if(type == 'next') {
+						 if ($("#" + currentid_acrd_swipper + "_view_current").text() == $("#" + currentid_acrd_swipper + "_view_total").text())
+				         return false;
+				         index = parseInt(current_page)
+			          }else{
+			         	if ($("#" + currentid_acrd_swipper + "_view_current").text() == '1')
+				return false;
+				index = parseInt(current_page)-2;
+				}
+
+			   }
+						$("#" + currentid_acrd_swipper + "_view_current").html(index+1)
 						if ($(idandclass) != undefined && $(idandclass).length >0) {
 							view_page_length = $(idandclass).length
 							$(idandclass).css("display", "none");
-							$($(idandclass)[index]).fadeIn('slow');
+							$($(idandclass)[index]).fadeIn('slow').css('display','inherit');
 						}
-					}
+						if ($("#" + currentid_acrd_swipper + "_view_current").text() == $("#" + currentid_acrd_swipper + "_view_total").text()){
+				         $("#" + currentid_acrd_swipper + "_view_next").css("cursor", "");
+				         $("#" + currentid_acrd_swipper + "_view_next").css("font-weight", "400");
+				        }else{
+				        	$("#" + currentid_acrd_swipper + "_view_next").css("cursor", "pointer");
+				         $("#" + currentid_acrd_swipper + "_view_next").css("font-weight", "600");
+				        }
+				        if ($("#" + currentid_acrd_swipper + "_view_current").text() == '1'){
+				       $("#" + currentid_acrd_swipper + "_view_prev").css("cursor", "");
+				       $("#" + currentid_acrd_swipper + "_view_prev").css("font-weight", "400");
+				       }else{
+				       	$("#" + currentid_acrd_swipper + "_view_prev").css("cursor", "pointer");
+				       $("#" + currentid_acrd_swipper + "_view_prev").css("font-weight", "600");
+				       }
+					view_list_str = ""
+				for (l=0; l<view_page_length; l++){
+					if(l==index)
+					view_list_str+= ' <font style\="color: blue;font-weight: 600;">'+(l+1).toString() + '</font>';
+					else
+					view_list_str+= " " + (l+1).toString();
+				}
+				 $("#" + currentid_acrd_swipper + "_view_list").html(view_list_str);
 				}
 				//update view link
-				if (view_page_length > 1){
+			/*	if (view_page_length > 1){
 				$("#view_current").html(index + 1);
 				$("#view_total").html(view_page_length);
 				view_list_str = ""
@@ -821,9 +902,9 @@
 				}
 				else{
 					$("#view_page_link").css("display", "none");
-				}
+				} */
 			}
-			$("#view_next").click(function(){
+		/*	$("#view_next").click(function(){
 				if ($("#view_current").text() == $("#view_total").text())
 				return false;
 				current_page = $("#view_current").text();
@@ -850,7 +931,7 @@
 				$("#view_next").css("cursor", "pointer");
 				$("#view_next").css("font-weight", "600");
 				}
-			});
+			}); */
 			function updateoverlayfooter() {
 				currentid = $('.custom_swiper_item:visible').attr("id");
 				nextswipper = $('.custom_swiper_item:visible').next().attr("class");
@@ -957,8 +1038,8 @@
 						console.log(aaaa[i].className);
 						console.log(aaaa[i].getAttribute("data-horizon-target"));
 					} */
-					var x = document.getElementsByClassName("horizon-dot active")[0].getAttribute("data-horizon-target");
-					updateviewpage(parseInt(x));
+				/*	var x = document.getElementsByClassName("horizon-dot active")[0].getAttribute("data-horizon-target");
+					updateviewpage(parseInt(x));  */
 					
 				}
 			});
@@ -1001,7 +1082,7 @@
 				
 					$('#main_block').mouseover();
 				}, 500);
-				updateviewpage(0);
+				buildviewpage();
 			});
 
 			$('#usersettingdrop').click(function() {
