@@ -155,7 +155,7 @@ body {
 	margin: 0 0 0 8px;
 }
 .container ul.topnav > li > a:hover {	
-	background-color: #8ADFD8;
+	background-color: #5a9ace;
 	
 }
 .container ul.topnav > li > a:hover span {
@@ -166,7 +166,7 @@ body {
 	margin: 0 0 0 8px;
 }
 .container ul.topnav > li > a.active {
-	background-color: #8ADFD8;
+	background-color: #5a9ace;
 }
 .container ul.topnav > li a.active span {
 	background: url(images/topnav_arrow_sprite.png) 0 0 no-repeat;
@@ -508,7 +508,7 @@ body {
 	height: 100%;
 	margin: 0 3%;
 }
-.nav{background:#29699d center top no-repeat;height:45px;background-position: 0 0;}
+.nav{background:linear-gradient(#29699d, #fff);height:45px;background-position: 0 0;}
 .attest {
     background-color: #ffffff;
     border-radius: 20px;
