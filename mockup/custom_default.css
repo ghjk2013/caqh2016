@@ -180,27 +180,30 @@ body {
 	display: block;
 }
 .container ul.topnav > li ul {
-	background: url("images/dropdown.png") 0 bottom repeat-x;
 	z-index: 3;
-	background-color: #1e2b2d;
+	background-color: #4b8bbf;
 	position: absolute;
-	top: 39px;
+	top: 45px;
 	left: 0;
-	padding: 0px 0 0 20px;
+	/*padding: 0px 0 0 20px;*/
 	display: none;
-	width: 216px;
+	width: 190px;
 }
 .container ul.topnav > li ul li {
+	border: 1px solid #fff;
+    display: flex;
+    padding: 10px;
 }
 .container ul.topnav > li ul li a {
-	background: url("images/bullet.png") 0 12px no-repeat;
-	padding: 3px 0 3px 10px !important;
-	line-height: 18px !important;
-	width: 100%;
+	/*background: url("images/bullet.png") 0 12px no-repeat;
+	padding: 3px 0 3px 10px !important;*/
+	line-height: 20px;
+	/*width: 100%;*/
 }
 .container ul.topnav > li ul li a:hover {/*background:none;*/
-	float: left;
-	padding: 3px 0 3px 10px !important;
+	/*float: left;
+	padding: 3px 0 3px 10px !important;*/
+	font-weight: 100;
 }
 /* Top Main Navigation Ends  */
 

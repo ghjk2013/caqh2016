@@ -21,11 +21,13 @@
 		<script type="text/javascript" src="d3.v2.min.js"></script>
 		<script type="text/javascript" src="horizon-swiper.min.js"></script>
 		<script type="text/javascript" src="customscrollbar.js"></script>
+		<script type="text/javascript" src="angular.min.1.4.8.js"></script>
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
 	</head>
 	<body style="min-width:1100px;" class="">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Home User</title>
+		<div ng-app="" ng-init="name='John M Doe';email='john_koshy@hotmail.com';address='23 Main St. Washington DC, DC-12345';dateofbirth='04 Jan 1980';ssn='xxx-xx-1111';phone='(123) - 450 - 7890'">
 		<div class="homeuser_bg" style="background:url('') no-repeat scroll left 65px #ffffff; background-size:100% 85%;">
 			<div class="container ">
 				<div class="headerblock">
@@ -83,6 +85,24 @@
 							</li>
 							<li>
 								<a class="active" href="#" >MY PROFILE</a>
+							 <ul>
+							  <li>
+								<a class="active" href="#" onclick="clickid('personal_information')" >Personal Information</a>
+							  </li>
+							  <li>
+								<a class="" href="#" onclick="clickid('professional_id')" >Professional IDs</a>
+							  </li>
+							  <li>
+								<a class="active" href="#" onclick="clickid('speciality')" >Speciality</a>
+							  </li>
+							  <li>
+								<a class="active" href="#" onclick="clickid('certifications')" >Certifications</a>
+							  </li>
+							  <li>
+								<a class="active" href="#" onclick="clickid('practice_locations')" >Practice Locations</a>
+							  </li>
+							 </ul>
+							 
 							</li>
 							<li>
 								<a href="#" >MY DOCUMENT</a>
@@ -177,24 +197,24 @@
 
 						</li>
 						<li>
-							<a scroll=0>Personal Information<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span></a>
+							<a scroll=0 id="personal_information">Personal Information<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span></a>
 							<ul style="height: 130px;">
-								<span style="float: left; width: 48%"> <span style="font-family: open_sans_regular">Name:</span> John M Doe
+								<span style="float: left; width: 48%"> <span style="font-family: open_sans_regular">Name:</span> {{name}}
 									<br />
-									<span style="font-family: open_sans_regular">Email:</span> john_koshy@hotmail.com
+									<span style="font-family: open_sans_regular">Email:</span> {{email}}
 									<br />
-									<span style="font-family: open_sans_regular">Address:</span> 23 Main St. Washington DC, DC-12345 </span>
+									<span style="font-family: open_sans_regular">Address:</span> {{address}} </span>
 								<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 58%; margin-top: 2%;"></span>
-								<span style="float: right; width: 46%"> <span style="font-family: open_sans_regular;"> Date of Birth: </span> 04 Jan 1980<span style="float: right;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span><span style="float: right;margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
+								<span style="float: right; width: 46%"> <span style="font-family: open_sans_regular;"> Date of Birth: </span> {{dateofbirth}}<span style="float: right;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 									<br />
-									<span style="font-family: open_sans_regular">SSN:</span> xxx-xx-1111
+									<span style="font-family: open_sans_regular">SSN:</span> {{ssn}}
 									<br />
-									<span style="font-family: open_sans_regular">Phone:</span> (123) - 450 - 7890 </span>
+									<span style="font-family: open_sans_regular">Phone:</span> {{phone}} </span>
 							</ul>
 						</li>
 
 						<li>
-							<a scroll=2.5 >Professional IDs<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span></a>
+							<a scroll=2.5 id="professional_id" >Professional IDs<span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span></a>
 							<ul style="margin-top: 5px">
 								<div class="horizon-swiper">
 									<div class="horizon-item" id="identification">
@@ -452,7 +472,7 @@
 							</ul>
 						</li>
 						<li>
-							<a scroll=5>Speciality<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span></a>
+							<a scroll=5 id="speciality">Speciality<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span></a>
 							<ul style="height: 150px;">
 								<span style="float: left; width: 48%"> <span style="font-family: open_sans_regular">Primary Speciality:</span> xxxxxxx <span style="float: right;cursor: pointer;margin-right: 4%" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 									<br />
@@ -473,7 +493,7 @@
 							</ul>
 						</li>
 						<li>
-							<a scroll=3 >Certifications<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span></a>
+							<a scroll=3 id="certifications">Certifications<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span></a>
 							<ul>
 								<div class="horizon-swiper">
 									<div class="horizon-item">
@@ -535,7 +555,7 @@
 							</ul>
 						</li>
 						<li>
-							<a scroll=7 >Practice Locations<span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span></a>
+							<a scroll=7 id="practice_locations">Practice Locations<span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span></a>
 							<ul>
 								<div style="width: 100%;padding: 0px;text-align: center;margin-top: -30px;">
 									<a href="#" style="">Add Practice Locations</a>
@@ -660,51 +680,43 @@
 										<ul>
 
 											<li>
-												<span> Name1</span>
-												<input type="text" name="name1" value="Mickey1" style="width: 35%">
+												<span> Name</span>
+												<input type="text" ng-model="name" style="width: 35%">
 											</li>
 											<li>
-												<span> Name2</span>
-												<input type="text" name="name2" value="Mickey2" style="width: 35%">
+												<span> Email</span>
+												<input type="text" ng-model="email" style="width: 35%">
 											</li>
 
 											<li>
-												<span> Address1</span>
-												<input type="text" name="address1" value="Bangalore1" style="width: 35%">
+												<span> Address</span>
+												<input type="text" ng-model="address" value="Bangalore1" style="width: 35%">
 											</li>
-											<li>
-												<span> Address2</span>
-												<input type="text" name="address2" value="Bangalore2" style="width: 35%">
-											</li>
-
+											
 										</ul>
 									</div>
 								</div>
 								<div id="resetpwd_content1" class="custom_swiper_item"  style="display:none">
 									<div class="overlayheader">
-										Share a little about Friends. 2
+										Share a little more about yourself to help break the ice. 2
 									</div>
 									<div class="overlaybody">
 										<ul>
 
 											<li>
-												<span> Name11</span>
-												<input type="text" name="name1" value="Mickey1v" style="width: 35%">
+												<span> Date of Birth</span>
+												<input type="text" ng-model="dateofbirth" style="width: 35%">
 											</li>
 											<li>
-												<span> Name22</span>
-												<input type="text" name="name2" value="Mickey2v" style="width: 35%">
+												<span> SSN</span>
+												<input type="text" ng-model="ssn" style="width: 35%">
 											</li>
 
 											<li>
-												<span> Address11</span>
-												<input type="text" name="address1" value="Bangalore1v" style="width: 35%">
+												<span> Phone</span>
+												<input type="text" ng-model="phone" style="width: 35%">
 											</li>
-											<li>
-												<span> Address22</span>
-												<input type="text" name="address2" value="Bangalore2v" style="width: 35%">
-
-											</li>
+											
 
 										</ul>
 									</div>
@@ -782,7 +794,7 @@
 			</div>
 
 		</div>
-
+</div>
 		<script type="text/javascript">
 			console.log("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
 		function buildviewpage(){
@@ -1021,7 +1033,7 @@
 					railColor : '#747474',
 					railBorderRadius : 0,
 					borderRadius : 0,
-					size : '8px',
+					size : '10px',
 					disableFadeOut : true,
 				});
 				$('#main_block').mouseover();
@@ -1119,6 +1131,8 @@
 				var gauge = $('.arc-gauge-1')[0];
 				// get current value
 				var value = 21;
+				// update value temp to reflect visibility
+				value = Math.round(100*(Math.random()));
 				// overflow check
 				if (value > 100)
 					value = 100;
@@ -1194,6 +1208,10 @@
 			$('#update_res_boxclose').click(function() {
 				$("#update_res").css("display", "none");
 			});
+			
+		function clickid(id){
+			$('#'+id).click();
+		}
 
 		</script>
 
