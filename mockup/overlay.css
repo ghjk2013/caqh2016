@@ -8,7 +8,7 @@
             bottom:0px;
             left:0px;
             right:0px;
-            z-index:100;
+            z-index:109;
             background-color:#000;
             opacity:0.8;
             filter: alpha(opacity=69)
@@ -19,7 +19,7 @@
             left:10%;
             right:10%;
  
-            z-index:101;
+            z-index:110;
 			min-width: 800px;
 			/*text-align: left;
    
@@ -773,7 +773,7 @@ background:#FFA500;
 }
 #customfooter .btn-link, #customfooter .btn-link-gray {
     border: 1px solid transparent;
-    color: #1a7d4f;
+    color: #5a9ace;
     font-weight: 500;
     padding: 4px 12px;
     vertical-align: middle;
@@ -926,7 +926,7 @@ background:#FFA500;
 }
 
 #customfooter .btn.btn-primary{
-    background: #1e9e5e none repeat scroll 0 0;
+    background: #5a9ace none repeat scroll 0 0;
     color: #fff;
 }
 .modal-footer .btn + .btn {
@@ -939,5 +939,6 @@ button.btn.btn-large, input.btn.btn-large[type="submit"] {
     position: relative;
     z-index: 2;
 }
+
 
 

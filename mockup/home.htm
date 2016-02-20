@@ -114,7 +114,7 @@
 						</ul>
 					</div>
 				</div>
-				<div style="z-index: 100;padding-top: 2px;position: fixed;padding-left: 10px;display: none;height: 30px;font-family: open_sans_regular;text-align: center;font-size: 16px;color: #f0f1f0;width: 94%;box-shadow: 0 3px 4px rgba(0, 0, 0, 0.13);" id="update_res">
+				<div style="z-index: 100;padding-top: 2px;background-color: #eee;position: fixed;padding-left: 10px;display: none;height: 30px;font-family: open_sans_regular;text-align: center;font-size: 16px;color: #f0f1f0;width: 98%;box-shadow: 0 3px 4px rgba(0, 0, 0, 0.13);" id="update_res">
 					<p id="update_res_text"></p>
 					<span id="update_res_boxclose" style="margin-right:9px;top: -19px; cursor: pointer;float: right;position: relative;" title="Close" class="fa fa-times fa-1x"></span>
 				</div>
@@ -161,7 +161,7 @@
 				<div id="main_block" style="padding: 0 2% 0;width: 79%;height: 80%;float: left;border-left:1px solid #d9e5e8;">
 
 					<div style="height: 24%;line-height: 2">
-						<div style="padding:10px 0 10px 15px;float: left">
+						<div style="padding:10px 0 10px 15px;float: left;color: #496973;">
 							<h1>John De, MD</h1>
 							<h2><font color="green">Allergy & Immunology</font> Washington, DC</h2>
 						</div>
@@ -180,7 +180,7 @@
 
 					<ul class="accordion">
 						<li>
-							<div style="font-weight: 600;padding-bottom: 0px;">
+							<div style="font-weight: 600;padding-bottom: 0px;color: #496973;">
 								Professional Information
 							</div>
 							<div style="height: 62px;">
@@ -197,7 +197,7 @@
 
 						</li>
 						<li>
-							<a scroll=0 id="personal_information">Personal Information<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span></a>
+							<a scroll=0 id="personal_information">Personal Information<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span><span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span></a>
 							<ul style="height: 130px;">
 								<span style="float: left; width: 48%"> <span style="font-family: open_sans_regular">Name:</span> {{name}}
 									<br />
@@ -214,7 +214,7 @@
 						</li>
 
 						<li>
-							<a scroll=2.5 id="professional_id" >Professional IDs<span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span></a>
+							<a scroll=2.5 id="professional_id" >Professional IDs<span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span><span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span></a>
 							<ul style="margin-top: 5px">
 								<div class="horizon-swiper">
 									<div class="horizon-item" id="identification">
@@ -246,7 +246,7 @@
 										<div style="padding-left: 0;font-weight: bold">
 											Professional Licence
 										</div>
-										<div id="licence1" class="licence" style=" width: 100%;display: inherit">
+										<div id="licence1" class="licence" style=" width: 100%;display: inherit;border-top: 1px dotted;border-bottom: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
 											<span style="font-family: open_sans_regular">Licence State:</span> xxxxxxx1
 											<br />
@@ -265,7 +265,7 @@
 											<span style="font-family: open_sans_regular">Licence Staus:</span> Active
 										</span>
 										</div>
-										<div id="licence2" class="licence" style="display: none; width: 100%;">
+										<div id="licence2" class="licence" style="display: none; width: 100%;border-top: 1px dotted;border-bottom: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
 											<span style="font-family: open_sans_regular">Licence State2:</span> xxxxxxx2
 											<br />
@@ -284,7 +284,7 @@
 											<span style="font-family: open_sans_regular">Licence Staus2:</span> Active
 										</span>
 										</div>
-										<div id="licence3" class="licence" style="display: none; width: 100%;">
+										<div id="licence3" class="licence" style="display: none; width: 100%;border-top: 1px dotted;border-bottom: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
 											<span style="font-family: open_sans_regular">Licence State3:</span> xxxxxxx3
 											<br />
@@ -303,7 +303,7 @@
 											<span style="font-family: open_sans_regular">Licence Staus3:</span> Active
 										</span>
 										</div>
-										<div id="licence4" class="licence" style="display: none; width: 100%;">
+										<div id="licence4" class="licence" style="display: none; width: 100%;border-top: 1px dotted;border-bottom: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
 											<span style="font-family: open_sans_regular">Licence State3:</span> xxxxxxx4
 											<br />
@@ -322,7 +322,7 @@
 											<span style="font-family: open_sans_regular">Licence Staus3:</span> Active
 										</span>
 										</div>
-										<div style="margin-top:-10px; float: right;margin-right: 10px;padding: 0px;" id="licence_view_page_link">Viewing <span id="licence_view_current">1</span> of <span id="licence_view_total"></span> <span id="licence_view_prev" style="font-weight: 400;" onclick="updateviewpage('prev');"><<</span> <span id="licence_view_list"> </span> <span id="licence_view_next" style="cursor: pointer;font-weight: 600;" onclick="updateviewpage('next');">>></span></div>
+										<div style="float: right;margin-right: 10px;padding: 0px;" id="licence_view_page_link"><span id="licence_view_prev" class="pagi_prev" title="Previous" onclick="updateviewpage('prev');"></span>Viewing <span id="licence_view_current">1</span> of <span id="licence_view_total"></span> <span id="licence_view_list"> </span> <span id="licence_view_next" class="pagi_next" style="cursor: pointer;" onclick="updateviewpage('next');"></span></div>
 									</div>
 									<div class="horizon-item" id="dearesidtration">
 										<div style="width: 100%;padding: 0px;text-align: center; ">
@@ -331,7 +331,7 @@
 										<div style="padding-left: 0;font-weight: bold">
 											DEA Ragistration
 										</div>
-										<div id="dearesidtration1" class="dearesidtration" style="display: inherit; width: 100%;">
+										<div id="dearesidtration1" class="dearesidtration" style="display: inherit; width: 100%;border-top: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
 											<span style="font-family: open_sans_regular">Drug Enforcement Administration No (DEA):</span> xxxxxxx
 											<br />
@@ -347,7 +347,7 @@
 											</span>
 										</span>
 										</div>
-										<div id="dearesidtration2" class="dearesidtration" style="display: none;width: 100%; ">
+										<div id="dearesidtration2" class="dearesidtration" style="display: none;width: 100%;border-top: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
 											<span style="font-family: open_sans_regular">Drug Enforcement Administration No (DEA)2:</span> xxxxxxx
 											<br />
@@ -363,7 +363,7 @@
 											</span>
 										</span>
 										</div>
-										<div style="margin-top:-10px;padding: 0px;float: right;margin-right: 10px;" id="dearesidtration_view_page_link">Viewing <span id="dearesidtration_view_current">1</span> of <span id="dearesidtration_view_total"></span> <span id="dearesidtration_view_prev" style="font-weight: 400;" onclick="updateviewpage('prev');"><<</span> <span id="dearesidtration_view_list"> </span> <span id="dearesidtration_view_next" style="cursor: pointer;font-weight: 600;" onclick="updateviewpage('next');">>></span></div>	
+										<div style="padding: 0px;float: right;margin-right: 10px;" id="dearesidtration_view_page_link"><span id="dearesidtration_view_prev" class="pagi_prev" title="Previous" onclick="updateviewpage('prev');"></span> Viewing <span id="dearesidtration_view_current">1</span> of <span id="dearesidtration_view_total"></span> <span id="dearesidtration_view_next" style="cursor: pointer;" class="pagi_next" title="Next" onclick="updateviewpage('next');"></span></div>	
 									</div>
 									<div class="horizon-item">
 										<div style="width: 100%;padding: 0px;text-align: center; ">
@@ -472,7 +472,7 @@
 							</ul>
 						</li>
 						<li>
-							<a scroll=5 id="speciality">Speciality<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span></a>
+							<a scroll=5 id="speciality">Speciality<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span><span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span></a>
 							<ul style="height: 150px;">
 								<span style="float: left; width: 48%"> <span style="font-family: open_sans_regular">Primary Speciality:</span> xxxxxxx <span style="float: right;cursor: pointer;margin-right: 4%" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 									<br />
@@ -493,7 +493,7 @@
 							</ul>
 						</li>
 						<li>
-							<a scroll=3 id="certifications">Certifications<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span></a>
+							<a scroll=3 id="certifications">Certifications<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span><span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span></a>
 							<ul>
 								<div class="horizon-swiper">
 									<div class="horizon-item">
@@ -555,7 +555,7 @@
 							</ul>
 						</li>
 						<li>
-							<a scroll=7 id="practice_locations">Practice Locations<span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span></a>
+							<a scroll=7 id="practice_locations">Practice Locations<span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span><span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span></a>
 							<ul>
 								<div style="width: 100%;padding: 0px;text-align: center;margin-top: -30px;">
 									<a href="#" style="">Add Practice Locations</a>
@@ -769,9 +769,9 @@
 							<button class="btn btn-large btn-link-gray back-link" id="overprev" type="button">
 								Back
 							</button>
-							<button class="btn btn-large btn-link skip-link" id="overskip" type="button" style="display: inline-block;">
+						<!--	<button class="btn btn-large btn-link skip-link" id="overskip" type="button" style="display: inline-block;">
 								Skip
-							</button>
+						    </button> -->
 							<button class="btn btn-large btn-primary next" id="overnext" type="button">
 								Continue
 							</button>
@@ -811,14 +811,14 @@
 						if ($(idandclass) != undefined && $(idandclass).length >1) {
 							view_page_length = $(idandclass).length
 				         $("#" +currentid_acrd_swipper + "_view_total").html(view_page_length);
-				         view_list_str = ""
+				/*         view_list_str = ""
 				for (i=0; i<view_page_length; i++){
 					if(0==i)
 					view_list_str+= ' <font style\="color: blue;font-weight: 600;">'+(i+1).toString() + '</font>';
 					else
 					view_list_str+= " " + (i+1).toString();
 				}
-				$("#" +currentid_acrd_swipper + "_view_list").html(view_list_str);
+				$("#" +currentid_acrd_swipper + "_view_list").html(view_list_str); */
 						}
 					}
 				}
@@ -874,14 +874,14 @@
 				       	$("#" + currentid_acrd_swipper + "_view_prev").css("cursor", "pointer");
 				       $("#" + currentid_acrd_swipper + "_view_prev").css("font-weight", "600");
 				       }
-					view_list_str = ""
+			/*		view_list_str = ""
 				for (l=0; l<view_page_length; l++){
 					if(l==index)
 					view_list_str+= ' <font style\="color: blue;font-weight: 600;">'+(l+1).toString() + '</font>';
 					else
 					view_list_str+= " " + (l+1).toString();
 				}
-				 $("#" + currentid_acrd_swipper + "_view_list").html(view_list_str);
+				 $("#" + currentid_acrd_swipper + "_view_list").html(view_list_str); */
 				}
 				//update view link
 			/*	if (view_page_length > 1){
@@ -1020,6 +1020,16 @@
 
 			var mainblockhight;
 			$(document).ready(function() {
+				// making change effect start
+				acrarray = $('.accordion > li > a');
+				for (n=0; n < acrarray.length; n++){
+					id = acrarray[n].id;
+					if(Math.round(100*(Math.random())) < 50)
+					$("#"+id).find("span")[0].style.display ="none";
+					else
+					$("#"+id).find("span")[1].style.display ="none";
+				}
+				// making change effect end
 				mainblockhight = $('#main_block').outerHeight();
 				mainblockwidth = $('#main_block').outerWidth() + 2;
 				$('#main_block').slimScroll({
@@ -1171,7 +1181,7 @@
 
 				});
 				$("#update_res_text").html("Error in updating your Profile.");
-				$("#update_res").css("background-color", "#e23a24");
+				$("#update_res").css("color", "#e23a24");
 				$("#update_res").css("display", "block");
 
 			});
@@ -1184,7 +1194,7 @@
 
 				});
 				$("#update_res_text").html("Your Profile updated successfully.");
-				$("#update_res").css("background-color", "#1e9e5e");
+				$("#update_res").css("color", "#1e9e5e");
 				$("#update_res").css("display", "block");
 				setTimeout(function() {
 					$("#update_res").css("display", "none");
@@ -1197,7 +1207,7 @@
 					$("#update_res_text").html("Your Profile updated successfully.");
 					// $("#update_res_text").css("background-color", "#1e9e5e");
 					// $("#update_res_text").css("font-size", "16px");
-					$("#update_res").css("background-color", "#1e9e5e");
+					$("#update_res").css("color", "#1e9e5e");
 					$("#update_res").css("display", "block");
 					setTimeout(function() {
 						$("#update_res").css("display", "none");
