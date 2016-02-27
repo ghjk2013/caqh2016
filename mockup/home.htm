@@ -201,13 +201,13 @@
 							</div>
 							<div style="height: 62px;">
 								<div style="width: 33% ;float: left">
-									<span style="font-family: open_sans_regular">Provider Type:</span> <a href="#" id="provide_type" data-type="select" data-url="" data-title="Provide Type">MD</a> &nbsp;&nbsp;&nbsp;<span id="provide_type_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+									<span style="font-family: open_sans_regular">Provider Type:</span> <a href="#" id="provide_type" data-type="select" data-url="" data-value="1" data-title="Provide Type">MD</a> &nbsp;&nbsp;&nbsp;<span id="provide_type_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 								</div>
 								<div style="width: 33%; float: right; text-align: right;padding-right: 25px;">
-									<span style="font-family: open_sans_regular">Practice Setting:</span> <a href="#" id="practice_setting" data-type="select" data-url="" data-title="Practice Setting"></a> &nbsp;&nbsp;&nbsp;<span id="practice_setting_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+									<span style="font-family: open_sans_regular">Practice Setting:</span> <a href="#" id="practice_setting" data-type="select" data-url="" data-value="2" data-title="Practice Setting">InpatientOnly</a> &nbsp;&nbsp;&nbsp;<span id="practice_setting_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 								</div>
 								<div style="width: 33%; float: right; ">
-									<span style="font-family: open_sans_regular">Practice State:</span> <a href="#" id="practice_state" data-type="select2" data-url="" data-value="ru" data-title="Select Practice States">Russia</a> &nbsp;&nbsp;&nbsp;<span id="practice_state_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+									<span style="font-family: open_sans_regular">Practice State:</span> <a href="#" id="practice_state" data-type="select2" data-url="" data-value="VA" data-title="Select Practice States">VA</a> &nbsp;&nbsp;&nbsp;<span id="practice_state_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 								</div>
 							</div>
 
@@ -1273,9 +1273,9 @@
            ]});
 	    $('#practice_setting').editable({toggle:'manual',
 	        source: [
-              {id: 1, text: 'Inpatient'},
-              {id: 2, text: 'InpatientOnly'},
-              {id: 3, text: 'InpatientNot'}
+              {value: 1, text: 'Inpatient'},
+              {value: 2, text: 'InpatientOnly'},
+              {value: 3, text: 'InpatientNot'}
            ]
 	    });
 	    $('#practice_state').editable({toggle:'manual',
