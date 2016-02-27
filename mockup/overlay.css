@@ -222,10 +222,10 @@ a.dp-choose-date.dp-disabled {
 .box .midbg .white_block .midblock_treeview{background:#fff; padding:0 20px 15px 20px;/*overflow-y:auto; height:435px;*/}
 .box .midbg .white_block .midblock h2{font-size:18px;  padding:0 0 10px 0;}
 .box .midbg .white_block .midblock ul li .hasChildren{ display:list-item;padding:5px 0 5px 10px; overflow:hidden; border-bottom:1px dotted #cfcbca;}
-.box .midbg .white_block .midblock ul li{display:block; padding:5px 0 5px 10px; overflow:hidden;}
+.box .midbg .white_block .midblock ul li{display:block; padding: 3% 0 1% 1%; overflow:hidden;}
 .box .midbg .white_block .midblock ul li img{margin-left:5px;}
 .box .midbg .white_block .midblock .cosfields ul li span{width:135px; margin-right:10px; display:block; float:left;}
-.box .midbg .white_block .midblock ul li span{width:35%;text-align: right; padding-right: 4%; margin-right:3px;  display:block; float:left;font-size: 14px;margin-top: 5px;}
+.box .midbg .white_block .midblock ul li span{width:35%;text-align: left; padding-right: 4%; margin-right:3px;  display:block; float:left;font-size: 14px;margin-top: 5px;}
 .box .midbg .white_block .midblock ul li div{width:121px; margin-left:130px; display:block;}
 .box .midbg .white_block .midblock a{ text-decoration:underline; float:left; cursor:pointer;}
 .box .midbg .white_block .midblock a:hover{text-decoration:none;}
@@ -505,7 +505,7 @@ border-right: none;
 .box .midbg .white_block .midblock .left {
     float: left;
     margin-bottom: 10px;
-    padding: 10px 20px 10px 0;
+    padding: 10px 10px 10px 0;
     width:47%;
 }
 
@@ -745,33 +745,33 @@ background:#FFA500;
     width: 100%;
     z-index: 1;
 }
-.modal-footer .btn {
+.modal-footer .obtn {
     border: medium none;
     text-shadow: none;
     text-transform: none;
 }
-#customfooter .btn-link, #customfooter .btn-link-gray {
+#customfooter .obtn-link, #customfooter .obtn-link-gray {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
 }
 #customfooter .back-link {
     float: left;
 }
-.btn.btn-link-gray {
+.obtn.obtn-link-gray {
     color: #1e9e5e;
     font-weight: 500;
     padding: 5px 0;
 }
 
-.modal-footer .btn {
+.modal-footer .obtn {
     position: relative;
     z-index: 2;
 }
 
-.btn-large {
+.obtn-large {
     font-size: 15px;
     padding: 7px 14px;
 }
-#customfooter .btn-link, #customfooter .btn-link-gray {
+#customfooter .obtn-link, #customfooter .obtn-link-gray {
     border: 1px solid transparent;
     color: #5a9ace;
     font-weight: 500;
@@ -780,16 +780,16 @@ background:#FFA500;
 }
 
 
-.btn, .hide-text {
+.obtn, .hide-text {
     text-shadow: none;
 }
-.btn-large {
+.obtn-large {
     border-radius: 2px;
     font-size: 18px;
     padding: 11px 19px;
 }
 
-.btn {
+.obtn {
     -moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
@@ -812,21 +812,21 @@ background:#FFA500;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
     vertical-align: middle;
 }
-.btn, .btn-group {
+.obtn, .obtn-group {
     display: inline-block;
 }
-.btn, .pagination-centered {
+.obtn, .pagination-centered {
     text-align: center;
 }
-#customfooter .btn-primary {
+#customfooter .obtn-primary {
     background: #1e9e5e none repeat scroll 0 0;
 }
-.modal-footer .btn {
+.modal-footer .obtn {
     border: medium none;
     text-shadow: none;
     text-transform: none;
 }
-#customfooter .btn-link, #customfooter .btn-link-gray {
+#customfooter .obtn-link, #customfooter .obtn-link-gray {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
 }
 #customfooter .skip-link {
@@ -834,35 +834,35 @@ background:#FFA500;
     margin-right: 10px;
 }
 
-.page-base .btn.btn-link, #customfooter .btn.btn-link:active, #customfooter .btn.btn-link:hover, .page-base .btn.btn-link:focus {
+.page-base .obtn.obtn-link, #customfooter .obtn.obtn-link:active, #customfooter .obtn.obtn-link:hover, .page-base .obtn.obtn-link:focus {
     color: #1e9e5e;
     font-weight: 400;
     text-decoration: underline;
 }
 
 
-.modal-footer .btn + .btn {
+.modal-footer .obtn + .obtn {
     margin-bottom: 0;
     margin-left: 5px;
 }
 
-.modal-footer .btn {
+.modal-footer .obtn {
     position: relative;
     z-index: 2;
 }
 
-.btn-large {
+.obtn-large {
     font-size: 15px;
     padding: 7px 14px;
 }
-.btn-link, .btn-link-gray {
+.obtn-link, .obtn-link-gray {
     border: 1px solid transparent;
     color: #1a7d4f;
     font-weight: 500;
     padding: 4px 12px;
     vertical-align: middle;
 }
-.btn {
+.obtn {
     background-color: #e1f3ea;
     background-image: linear-gradient(to bottom, #e1f3ea, #e1f3ea);
     background-repeat: repeat-x;
@@ -873,29 +873,29 @@ background:#FFA500;
     font-weight: 500;
 }
 
-.btn, .hide-text {
+.obtn, .hide-text {
     text-shadow: none;
 }
-.btn-link {
+.obtn-link {
     border-color: transparent;
     border-radius: 0;
     color: #326bb1;
     cursor: pointer;
 }
-.btn-link, .btn-link:active, .btn-link[disabled] {
+.obtn-link, .obtn-link:active, .obtn-link[disabled] {
     background-color: transparent;
     background-image: none;
     box-shadow: none;
 }
-.btn-group > .btn, .btn-link {
+.obtn-group > .obtn, .obtn-link {
 }
-.btn-large {
+.obtn-large {
     border-radius: 2px;
     font-size: 18px;
     padding: 11px 19px;
 }
 
-.btn {
+.obtn {
     -moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
@@ -918,24 +918,24 @@ background:#FFA500;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
     vertical-align: middle;
 }
-.btn, .btn-group {
+.obtn, .obtn-group {
     display: inline-block;
 }
-.btn, .pagination-centered {
+.obtn, .pagination-centered {
     text-align: center;
 }
 
-#customfooter .btn.btn-primary{
+#customfooter .obtn.obtn-primary{
     background: #5a9ace none repeat scroll 0 0;
     color: #fff;
 }
-.modal-footer .btn + .btn {
+.modal-footer .obtn + .obtn {
     margin-bottom: 0;
     margin-left: 5px;
 }
-button.btn.btn-large, input.btn.btn-large[type="submit"] {
+button.obtn.obtn-large, input.obtn.obtn-large[type="submit"] {
 }
-.modal-footer .btn {
+.modal-footer .obtn {
     position: relative;
     z-index: 2;
 }
