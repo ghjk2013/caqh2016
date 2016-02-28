@@ -4667,7 +4667,7 @@ $(function(){
             this.$form = $('<div>');
             this.renderForm();             
           
-            var $label = $('<label>').text(this.options.title || this.$element.data( "title") || this.$element.data( "originalTitle")),
+            var $label = $('<h3 class="popover-title">').text(this.options.title || this.$element.data( "title") || this.$element.data( "originalTitle")),
                 $content = $('<div>').append($label).append(this.$form);           
           
             this.call('update', $content);

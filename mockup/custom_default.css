@@ -511,11 +511,11 @@ body {
 	height: 100%;
 	margin: 0 1%;
 }
-.nav{background:linear-gradient(#29699d, #fff);height:45px;background-position: 0 0;}
+.nav{background:#29699d;height:45px;background-position: 0 0;}
 .attest {
     background-color: #ffffff;
     border-radius: 20px;
-    color: white;
+    color: black;
     cursor: pointer;
     float: right;
     /*font-family: Segoe UI;*/
@@ -529,7 +529,8 @@ body {
     font-weight: 600;
 }
 .attest:hover {
-    background-color: #8ADFD8;
+    background-color: #5a9ace;
+    color: #fff;
 	border-radius: 20px;
 }
 #power-gauge g.arc {
