@@ -230,9 +230,9 @@ a.dp-choose-date.dp-disabled {
 .box .midbg .white_block .midblock a{ text-decoration:underline; float:left; cursor:pointer;}
 .box .midbg .white_block .midblock a:hover{text-decoration:none;}
 .box .midbg .white_block .midblock ul li select{width:28%;  }
-.box .midbg .white_block .midblock ul li input[type="text"],.box .midbg .white_block .midblock ul li input[type="password"]{border: 1px solid #e0e2e3;
+.box .midbg .white_block .midblock ul li input[type="text"],.box .midbg .white_block .midblock ul li select,.box .midbg .white_block .midblock ul li input[type="password"]{border: 1px solid #e0e2e3;
     border-radius: 3px;
-    color: #818285;
+    color: #545558;
     float: left;
     font-size: 15px;
     margin: 0 0 2px;
@@ -939,6 +939,8 @@ button.obtn.obtn-large, input.obtn.obtn-large[type="submit"] {
     position: relative;
     z-index: 2;
 }
-
+.styled-select {
+	background: #fcfcfc none repeat scroll 0 0;
+   }
 
 

@@ -74,3 +74,15 @@
     margin: 0;
     padding: 8px 14px;
 }
+
+
+.tip-yellowsimple input[type="text"],.tip-yellowsimple select,.tip-yellowsimple input[type="password"] {
+	border: 1px solid #e0e2e3;
+    border-radius: 3px;
+    color: #545558;
+    float: left;
+    font-size: 15px;
+    margin: 0 0 2px;
+    padding: 3px 12px;
+    width: 100%;  
+}
