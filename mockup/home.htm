@@ -727,7 +727,7 @@
 											<li>
 												<span style="width: 18%"></span>
 												<span>Same as Mailing Address</span>
-												<input type="checkbox" ng-model="same_as_m" style="width: 35%">
+												<input type="checkbox" ng-model="same_as_m" style="width: 10%;float: left;margin-top: 8px;margin-left: -10px;">
 											</li>
 											<li>
 												<span style="width: 17%">Permanent Addr.</span>
@@ -790,7 +790,8 @@
 											</li>
 											<li>
 												<span style="width: 17%">Language<font color="red"> *</font></span>
-												<input type="text" ng-model="language" placeholder="Language" style="width: 24%;margin-left: 1%; margin-right: 1%;">
+											<!--	<input type="text" ng-model="language" placeholder="Language" style="width: 24%;margin-left: 1%; margin-right: 1%;">  -->
+											<a href="#" id="language" data-type="select2" data-pk=null data-url="" data-title="Enter Languages" data-showbuttons="false" data-emptytext="Click to add Language"></a>
 											</li>
 										
 										
@@ -1290,6 +1291,18 @@
         select2: {
            multiple: true
         }	
+           });
+         $('#language').editable({
+	        value: 'English',
+	        source: [
+              {value: 'English', text: 'English'}, 
+              {value: 'French', text: 'French'},
+              {value: 'Canadian', text: 'Canadian'},
+              {value: 'Spanish', text: 'Spanish'}
+           ],
+        select2: {
+           multiple: true
+        }
            });
 	});
     $('#provide_type_edit_inline').click(function(e) {

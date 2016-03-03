@@ -230,7 +230,7 @@ a.dp-choose-date.dp-disabled {
 .box .midbg .white_block .midblock a{ text-decoration:underline; float:left; cursor:pointer;}
 .box .midbg .white_block .midblock a:hover{text-decoration:none;}
 .box .midbg .white_block .midblock ul li select{width:28%;  }
-.box .midbg .white_block .midblock ul li input[type="text"],.box .midbg .white_block .midblock ul li select,.box .midbg .white_block .midblock ul li input[type="password"]{border: 1px solid #e0e2e3;
+.box .midbg .white_block .midblock ul li input[type="text"], .box .midbg .white_block .midblock ul li select,.box .midbg .white_block .midblock ul li input[type="password"]{border: 1px solid #e0e2e3;
     border-radius: 3px;
     color: #545558;
     float: left;
@@ -238,6 +238,17 @@ a.dp-choose-date.dp-disabled {
     margin: 0 0 2px;
     padding: 7px 12px;
     width: 100%;  }
+.box .midbg .white_block .midblock ul li input[type="checkbox"]{
+	display: inline;!important
+	border: 1px solid #e0e2e3;
+    border-radius: 3px;
+    color: #545558;
+    float: left;!important
+    font-size: 15px;
+    margin: 0 0 2px;
+    padding: 7px 12px;
+    width: 100%;
+    }
 .box .midbg .white_block .midblock ul li strong{margin-right:10px; font-weight:normal;}
 .box .midbg .white_block .midblock #myarea ul{padding:0px 0 5px 0px;border:none;list-style-type:inherit;list-style-position:inside;}
 .box .midbg .white_block .midblock .singlecolumn li span{width:67%}
@@ -753,7 +764,7 @@ background:#FFA500;
 #customfooter .obtn-link, #customfooter .obtn-link-gray {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
 }
-#customfooter .back-link {
+#customfooter .oback-link {
     float: left;
 }
 .obtn.obtn-link-gray {
