@@ -15,6 +15,7 @@
 		<link href="horizon-swiper.min.css" media="screen" rel="stylesheet" type="text/css">
 		<link href="horizon-theme.min.css" media="screen" rel="stylesheet" type="text/css">
 		<link href="overlay.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="overlay_new.css" media="screen" rel="stylesheet" type="text/css"> 
 	<!--	<link href="xeditable.css" media="screen" rel="stylesheet" type="text/css">  -->
 	<!--    <link href="bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />  
 		<link href="bootstrap-editable.css" rel="stylesheet" type="text/css">
@@ -677,14 +678,13 @@
 
 			</div>
 			<!-- The overlay For Reset Password -->
-			<div class="overlay" id="login_resetpwd_overlay" style="display:none;"></div>
+			<!-- <div class="overlay" id="login_resetpwd_overlay" style="display:none;"></div>
 			<div class="box org_newuser" id="login_resetpwd_box">
 				<div class="midbg selected_color"  style="background-color: #ffffff;width:700px;position:absolute;left:200px">
 					<span id="login_resetpwd_boxclose" style="float: right;margin-right: 5px;margin-top: -45px;cursor: pointer;color: #fff" title="Close" class="fa fa-times fa-3x"></span>
 
 					<form>
-						<!-- <div class="roundblockleft theme_color reset_pwd_submit top_control"><a href="#null"><%= t :login_index_reset_go%></a></div> -->
-
+						
 						<div class="white_block">
 							<div class="midblock" id="resetpwd_midblock">
 								<div id="resetpwd_res" style="color: green"></div>
@@ -707,9 +707,7 @@
 											<span style="width: 17%"></span>
 											<input type="text" ng-model="address_line2" value="Bangalore1" placeholder="2nd Address Line" style="width: 76%; margin: 0 1% 2%;">
 											<span style="width: 17%"></span>
-										<!--	<input type="select" ng-model="city" class="styled-select" value="Bangalore1" placeholder="City" style="width: 20%; margin: 0 1% 1%;"> -->
 											<select ng-model="city" ng-options="item for item in cityies" title="City" style="width: 20%; margin: 0 1% 1%;"></select>
-										<!--	<input type="text" ng-model="state" value="Bangalore1" placeholder="State" style="width: 20%;margin: 0 1% 1%;">-->
 										<select ng-model="state" ng-options="item for item in states" class="styled-select" title="State" style="width: 20%; margin: 0 1% 1%;"></select>
 											<input type="text" ng-model="zip_code" value="Bangalore1" placeholder="Zip" style="width: 20%;margin: 0 1% 1%;">
 										</li>
@@ -790,7 +788,6 @@
 											</li>
 											<li>
 												<span style="width: 17%">Language<font color="red"> *</font></span>
-											<!--	<input type="text" ng-model="language" placeholder="Language" style="width: 24%;margin-left: 1%; margin-right: 1%;">  -->
 											<a href="#" id="language" data-type="select2" data-pk=null data-url="" data-title="Enter Languages" data-showbuttons="false" data-emptytext="Click to add Language"></a>
 											</li>
 										
@@ -803,37 +800,172 @@
 								<div class="clear"></div>
 							</div>
 
-						</div>
+						</div> -->
 						<!--Button block start-->
-						<div class="modal-footer" id="customfooter">
+						<!-- <div class="modal-footer" id="customfooter">
 							<div id="progress_indicator_content" class="progress-indicator"></div>
-							<button class="obtn obtn-large obtn-link-gray oback-link" id="overprev" type="button">
+							<button class="obtn  obtn-link-gray oback-link" id="overprev" type="button">
 								Back
-							</button>
+							</button> -->
 						<!--	<button class="btn btn-large btn-link skip-link" id="overskip" type="button" style="display: inline-block;">
 								Skip
 						    </button> -->
-							<button class="obtn obtn-large obtn-primary next" id="overnext" type="button">
+							<!-- <button class="obtn obtn-primary next" id="overnext" type="button">
 								Continue
 							</button>
-							<button class="obtn obtn-large obtn-primary next" id="reset_pwd_submit" type="button">
+							<button class="obtn obtn-primary next" id="reset_pwd_submit" type="button">
 								Done
 							</button>
-						</div>
-						<!--
-						<div style="background-size: 700px;background: #e3e3e3;!important;width: 100%;">
-						<a href="#null" style="color: green;float: left;padding: 0 1px 15px 18px; margin:10px 10px 10px 0;"" id="overprev">Back</a>
-						<a href="#null" id="overnext" style="float: right;padding: 0 1px 15px 18px; margin:10px 10px 10px 0;background-color: green;color: #ffffff"">Countinue</a>
-						<a href="#null" id="reset_pwd_submit"  style="float: right;padding: 0 1px 14px 18px; margin:10px 10px 10px 0;background-color: green;color: #ffffff">Done</a>
-						<a href="#null" id="overskip"  style="float: right;padding: 0 1px 15px 18px; margin:10px 10px 10px 0;">Skip</a>
 						</div> -->
+						
 						<!--Button block end-->
+					<!-- </form>
+					<div class="clear"></div>
+				</div>
+
+			</div> -->
+            <!-- The overlay For Reset Password -->
+			<div class="overlay" id="login_resetpwd_overlay" style="display:none;"></div>
+			<div class="box org_newuser" id="login_resetpwd_box">
+				<div class="midbg selected_color"  style="background-color: #ffffff;width:840px;position:absolute;left:120px">
+					<span id="login_resetpwd_boxclose" style="float: right;margin-right: 5px;margin-top: -45px;cursor: pointer;color: #fff" title="Close" class="fa fa-times fa-3x"></span>
+
+					<form>
+						<!-- <div class="roundblockleft theme_color reset_pwd_submit top_control"><a href="#null"><%= t :login_index_reset_go%></a></div> -->
+						
+						<div class="white_block">
+							
+							<div class="midblock" id="resetpwd_midblock">
+								<div id="resetpwd_res" style="color: green"></div>
+								<div id="resetpwd_content" class="custom_swiper_item">
+									<div class="overlayheader">
+										Personal Information
+									</div>
+									<div class="menu_container">
+										<ul id="cos_edit_menu" class="menu">
+											<li>
+												<a href="#"  link="name" >Name / Address</a>
+											</li>
+											<li><a href="#" link='addr'>Permanent Addr</a></li>
+											<li>
+												<a href="#" link='basic'>Basic Detail</a>
+
+											</li>
+											<li><a href="#"  link='info'>Additional info.</a></li>
+										</ul>
+									</div>
+									<div class="" id="name">
+										<div class="overlaybody">
+											<ul>
+											<li style="padding-top: 0%;">
+												<span style="width: 100%;margin-left: 1%;padding-bottom: 2%;">Name<font color="red"> *</font></span>
+												<input type="text" ng-model="first_name" placeholder="First *" style="width: 25%;margin-left: 1%; margin-right: 1%;">
+												<input type="text" ng-model="middle_name" placeholder="Middle" style="width: 25%;margin-left: 1%; margin-right: 1%;">
+												<input type="text" ng-model="last_name" placeholder="Last *" style="width: 25%;margin-left: 1%; margin-right: 1%;">
+												<input type="text" ng-model="suffix" placeholder="Suffix" style="width: 15%;margin-left: 1%; margin-right: 1%;">
+											</li>
+											
+											<li>
+												<span style="width: 100%;margin-left: 1%;padding-bottom: 2%;">Mailing Address<font color="red"> *</font></span>
+												<input type="text" ng-model="address_line1" value="Bangalore1" placeholder="1st Address Line" style="width: 96%; margin: 0 1% 2%;">
+												<input type="text" ng-model="address_line2" value="Bangalore1" placeholder="2nd Address Line" style="width: 96%; margin: 0 1% 2%;">
+											<!--	<input type="select" ng-model="city" class="styled-select" value="Bangalore1" placeholder="City" style="width: 20%; margin: 0 1% 1%;"> -->
+												<select ng-model="city" ng-options="item for item in cityies" title="City" style="width: 25%; margin: 0 1% 1%;"></select>
+											<!--	<input type="text" ng-model="state" value="Bangalore1" placeholder="State" style="width: 20%;margin: 0 1% 1%;">-->
+											<select ng-model="state" ng-options="item for item in states" class="styled-select" title="State" style="width: 25%; margin: 0 1% 1%;"></select>
+												<input type="text" ng-model="zip_code" value="Bangalore1" placeholder="Zip" style="width: 25%;margin: 0 1% 1%;">
+											</li>
+											
+											</ul>	
+										</div>
+										<div class="overlayfooter">
+											<button type="button" class="obtn" style="float: right">Save</button>
+										</div>
+											
+			
+								
+
+						
+									</div>
+									<div class="" id="addr">
+										<div class="overlaybody">
+											<ul>
+												<li>
+													<span style="width: 100%;margin-left: 1%;padding-bottom: 2%;">Permanent Addr.( Is it same as Mailing Address <input type="checkbox" ng-model="same_as_m" style="width: 3%">)</span>
+													<input type="text" ng-model="address_line1" value="Bangalore1" placeholder="1st Address Line" style="width: 96%; margin: 0 1% 2%;">
+													<input type="text" ng-model="address_line2" value="Bangalore1" placeholder="2nd Address Line" style="width: 96%; margin: 0 1% 2%;">
+													<input type="text" ng-model="city" value="Bangalore1" placeholder="City" style="width: 25%; margin: 0 1% 1%;">
+													<input type="text" ng-model="state" value="Bangalore1" placeholder="State" style="width: 25%;margin: 0 1% 1%;">
+													<input type="text" ng-model="zip_code" value="Bangalore1" placeholder="Zip" style="width: 25%;margin: 0 1% 1%;">
+												</li>
+											</ul>
+										</div>
+										<div class="overlayfooter">
+											<button type="button" class="obtn" style="float: right">Save</button>
+										</div>
+									</div>
+									<div class="" id='basic'>
+										<div class="overlaybody">
+											<ul>
+											
+											<li>
+												<span style="width: 100%;margin-left: 1%;padding-bottom: 2%;">Birth<font color="red"> *</font></span>
+												<input type="text" ng-model="b_city" placeholder="City" style="width: 30%;margin: 0 1% 2%;">
+												<input type="text" ng-model="b_state" placeholder="State" style="width: 30%;margin: 0 1% 2%;">
+												<input type="text" ng-model="b_country" placeholder="Country" style="width: 30%;margin: 0 1% 2%;">
+												<input type="text" ng-model="b_month" placeholder="Month" style="width: 15%;margin: 0 1% 1%;">
+												<input type="text" ng-model="b_day" placeholder="Day" style="width: 15%;margin: 0 1% 1%;">
+												<input type="text" ng-model="b_year" placeholder="Year" style="width: 15%;margin: 0 1% 1%;">
+												<input type="text" ng-model="b_gender" placeholder="Gender" style="width: 15%;margin: 0 1% 1%;">
+												<input type="text" ng-model="b_race" placeholder="Race" style="width: 26%;margin: 0 1% 1%;">
+											</li>
+											<li>
+												<span style="width: 100%;margin-left: 1%;padding-bottom: 2%;padding-top: 1%">Contact<font color="red"> *</font></span>
+												<input type="text" ng-model="email" placeholder="Email *" style="width: 38%;margin-left: 1%; margin-right: 1%;">
+												<input type="text" ng-model="phone" placeholder="Phone *" style="width: 26%;margin-left: 1%; margin-right: 1%;">
+												<input type="text" ng-model="fax" placeholder="Fax" style="width: 26%;margin-left: 1%; margin-right: 1%;">
+											</li>
+											<li>
+												<span style="width: 100%;margin-left: 1%;padding-bottom: 2%;padding-top: 1%">Identity<font color="red"> *</font></span>
+												<input type="text" ng-model="sso" placeholder="Social securty Number" style="width: 30%;margin-left: 1%; margin-right: 1%;">
+												<input type="text" ng-model="fnin" placeholder="Foreign Nation ID Number" style="width: 30%;margin-left: 1%; margin-right: 1%;">
+												<input type="text" ng-model="fnin_c" placeholder="FNIN Issued By Country" style="width: 30%;margin-left: 1%; margin-right: 1%;">
+											</li>
+											</ul>
+										</div>
+										<div class="overlayfooter">
+											<button type="button" class="obtn" style="float: right">Save</button>
+										</div>
+									</div>
+									<div class="" id='info'>
+										<div class="overlaybody">
+											<ul>
+												<li>
+													<span style="width: 48%;margin-left: 1%;padding-bottom: 2%;">Citizenship<font color="red"> *</font></span>
+													<span style="width: 48%;margin-left: 1%;padding-bottom: 2%;">Language<font color="red"> *</font></span>
+													<input type="text" ng-model="c_country" placeholder="Country" style="width: 30%;margin-left: 1%; margin-right: 1%;">
+													<a href="#" id="language" data-type="select2" data-pk=null data-url="" style="margin-left: 19%; margin-right: 1%;" data-title="Enter Languages" data-showbuttons="false" data-emptytext="Click to add Language"></a>
+												</li>
+
+											</ul>
+										</div>
+										<div class="overlayfooter">
+											<button type="button" class="obtn" style="float: right">Save</button>
+										</div>
+									</div>
+									
+								</div>
+								
+							</div>
+
+						</div>
+						
 					</form>
 					<div class="clear"></div>
 				</div>
 
 			</div>
-
+			
 		</div>
 </div>
 		<script type="text/javascript">
@@ -1061,6 +1193,7 @@
 
 			var mainblockhight;
 			$(document).ready(function() {
+				build_accordion("cos_edit_menu","cos_edit_menu_div");
 				// making change effect start
 				acrarray = $('.accordion > li > a');
 				for (n=0; n < acrarray.length; n++){
@@ -1320,6 +1453,95 @@
           $('#practice_state').editable('toggle');
         
     });
+    
+    function build_accordion(id, area_to_occupy) {
+
+				$('#' + id + ' ul').hide();
+				$('ul.menu').prop("class", $('ul.menu').prop("class") + " theme_color");
+				$('ul.menu li a').prop("class", $('ul.menu li a').prop("class") + " theme_color");
+				$('ul.menu li').each(function() {
+
+					link = $(this).children('ul')
+					if ($(this).children('ul').length > 0 && $(this).children('a').first().html().indexOf('<font style="font-weight:bold;color:#000;float:right;margin-top:-35px;margin-right:5px;font-size:8px">v</font>') <= -1) {
+						$(this).children('a').first().html($(this).children('a').first().html() + '<font style="font-weight:bold;color:#000;float:right;margin-top:-35px;margin-right:5px;font-size:8px">v</font>')
+					}
+				})
+				// $('#'+id+' li a').mouseover(
+				// function() {
+				//
+				//
+				//
+				// var mySiblings = $(this).parent().siblings().find('ul');
+				// var openMe = $(this).next();
+				//
+				// if (openMe!=null&&openMe.is(':visible')) {
+				// // openMe.slideUp('slow');
+				//
+				// } else {
+				//
+				// mySiblings.slideUp('normal');
+				// openMe.slideDown('slow');
+				//
+				// }
+				//
+				// });
+
+				$('#' + id + ' li a').click(function() {
+
+					$(this).addClass("selected").addClass("selected_color");
+					$(this).parent().siblings().find('.selected').removeClass('selected').removeClass("selected_color").css("background-color", "");
+					var openMe = $(this).next();
+
+					var mySiblings = $(this).parent().siblings().find('ul');
+
+					mySiblings.slideUp('normal');
+					if (openMe.is(':visible')) {
+						// openMe.slideUp('slow');
+
+					} else {
+						mySiblings.slideUp('normal');
+						openMe.slideDown('slow');
+
+					}
+					link = $(this).attr('link');
+					link_class = $(this).attr('link_class');
+					if ((link != undefined && link != null && link != "") || (link_class != undefined && link_class != null && link_class != "")) {
+
+						obj_array = $('#' + id + ' li a')
+						for (var i = 0; i < obj_array.length; i++) {
+
+							if (obj_array[i].getAttribute("link") != undefined && obj_array[i].getAttribute("link") != null && obj_array[i].getAttribute("link") != "") {
+								$('#' + obj_array[i].getAttribute("link")).hide();
+							} else {
+
+								$('.' + obj_array[i].getAttribute("link_class")).hide();
+							}
+
+						}
+
+						// $('#' + area_to_occupy).show("slide", {
+						// direction : "left"
+						// }, 500);
+						if (link != undefined && link != null & link != "")
+							$('#' + link).show();
+						else
+							$('.' + link_class).show();
+
+					} else {
+						var childUL = $(this).parent().find('ul');
+						if (childUL != undefined) {
+							var childLIA = $(childUL).find('a').first();
+							if (childLIA != undefined && ((childLIA.attr("link") != undefined && childLIA.attr("link") != null && childLIA.attr("link") != "" && childLIA.attr("link") != "auto_attendant_details") || (childLIA.attr("link_class") != undefined && childLIA.attr("link_class") != null && childLIA.attr("link_class") != ""))) {
+								$(childLIA).click();
+							}
+						}
+					}
+
+				});
+
+				$("#" + id + " li a").first().click();
+
+			}
 		</script>
 
 	</body>

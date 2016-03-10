@@ -1,0 +1,103 @@
+.box .midbg .white_block .midblock ul.menu ul {
+  list-style-type:none;
+  margin: 0;
+  padding: 0;
+  width:98%; border:solid 1px #4372aa;padding-top:4px;
+  overflow-y: auto;
+}
+
+
+.box .midbg .white_block .midblock ul.menu li a.selected {
+  border-left:none;border-right:none;
+}
+.box .midbg .white_block .midblock ul.menu li {border:none;padding:0;
+margin:0;float:none;border-left:none;border-right:none;
+
+}
+
+.box .midbg .white_block .midblock ul.menu li a {
+
+  /*color: #fff;	*/
+   font-size: 14px;
+  text-decoration: none;
+  line-height:25px;
+  height:auto;
+  border-bottom :solid 1px #c4c4c4;
+  padding:7px 0 7px 9px;
+  margin:0;
+  display: block;
+  text-decoration: none;	
+  border-left:none;
+  border-right:none;
+  width:100%;
+  color: #000;
+	 
+ 
+}
+
+
+.box .midbg .white_block .midblock ul.menu li a.selected:hover {
+ background-color:#fff;
+ color: #000;
+ cursor:default;
+}
+.box .midbg .white_block .midblock ul.menu li a:hover {
+ background-color:#d1d1d1;
+ color: #fff;
+}
+.box .midbg .white_block .midblock ul.menu li ul
+{width:99%;
+}
+.box .midbg .white_block .midblock ul.menu li ul.pushfordrag
+{/*width:99%;*/
+}
+.box .midbg .white_block .midblock ul.menu li ul li a {
+  background: #eaf1f6;
+  color: #000;
+  margin-top:1px;
+  height:auto;
+  line-height: 20px;
+  border:none;
+  width:100%;
+}
+
+.box .midbg .white_block .midblock ul.menu li ul.pushfordrag li a {
+  /*background: #eaf1f6;
+  color: #000;
+  margin-top:1px;
+  height:auto;
+  line-height: 20px;
+  border:none;
+  width:100%;
+  margin-bottom:2px;  */
+ 
+}
+.box .midbg .white_block .midblock ul.menu li ul li a.selected {
+  background-color: #cadded;border-left:none;border-right:none;
+}
+.box .midbg .white_block .midblock ul.menu li ul.pushfordrag li a.selected {
+  /*background-color: #cadded;border-left:none;border-right:none;*/
+}
+.box .midbg .white_block .midblock ul.menu li ul li a:hover {
+  
+  /*background-color: #cadded;*/
+
+}
+.box .midbg .white_block .midblock ul.menu li ul.pushfordrag li a:hover {
+  /*box-shadow: 2px 2px 0px #eaf1f6;*/
+}
+.box .midbg .white_block .midblock .menu_div{
+	float:left;background-color:#fffff6;padding-left: 9px;padding-top: 10px;width: 80%;height:380px;border:solid 2px #4372aa;overflow-y:auto;
+	border-radius:10px;z-index:101;position:relative;
+}
+
+.box .midbg .white_block .midblock .menu{
+	height:362px;width:100%
+}
+.box .midbg .white_block .midblock .menu_container{
+width:20%;float:left;
+}
+
+.theme_color {background-color: #eeeeee } /* dontcheck */
+.selected_color {background-color: #fff } /* dontcheck */
+.selected_border {border-color: #1A4975 } /* dontcheck */
