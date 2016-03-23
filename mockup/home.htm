@@ -16,6 +16,12 @@
 		<link href="horizon-theme.min.css" media="screen" rel="stylesheet" type="text/css">
 		<link href="overlay.css" media="screen" rel="stylesheet" type="text/css">
 		<link href="overlay_new.css" media="screen" rel="stylesheet" type="text/css"> 
+		    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    
+    
+    <link rel='stylesheet prefetch' href='https://cdn.gitcdn.xyz/cdn/angular/bower-material/v1.0.4/angular-material.css'>
+    
+
 	<!--	<link href="xeditable.css" media="screen" rel="stylesheet" type="text/css">  -->
 	<!--    <link href="bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />  
 		<link href="bootstrap-editable.css" rel="stylesheet" type="text/css">
@@ -30,7 +36,16 @@
 		<script type="text/javascript" src="d3.v2.min.js"></script>
 		<script type="text/javascript" src="horizon-swiper.min.js"></script>
 		<script type="text/javascript" src="customscrollbar.js"></script>
-		<script type="text/javascript" src="angular.min.1.4.8.js"></script>
+		    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js'></script>
+<script src='http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js'></script>
+<script src='https://cdn.gitcdn.xyz/cdn/angular/bower-material/v1.0.4/angular-material.js'></script>
+
+        <script src="js/index.js"></script>
+
 	<!--	<script type="text/javascript" src="xeditable.js"></script> 
 		<script src="myApp.js"></script> -->
 	<!--	<script src="bootstrap.min.js"></script>
@@ -44,7 +59,8 @@
 	<body style="min-width:1100px;" class="">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Home User</title>
-		<div ng-app="" ng-init="first_name='John';last_name='M Doe';email='john_koshy@hotmail.com';address_line1='23 Main St. Washington DC, DC-12345';dateofbirth='04 Jan 1980';fax='xxx-xx-1111';m_daytime_phone='(123) - 450 - 7890';city='Select a City';cityies=['Select a City','city1','city2','city3'];state='Select a State';states=['Select a State','state1','state2','state3']">
+
+		<div ng-app="MyApp" ng-controller="DemoCtrl">
 		<div class="homeuser_bg" style="background:url('') no-repeat scroll left 65px #ffffff; background-size:100% 85%;">
 			<div class="container ">
 				<div class="headerblock">
@@ -856,27 +872,71 @@
 									</div>
 									<div class="" id="name">
 										<div class="overlaybody">
-											<ul>
-											<li style="padding-top: 0%;">
-												<span style="width: 100%;margin-left: 1%;padding-bottom: 2%;">Name<font color="red"> *</font></span>
-												<input type="text" ng-model="first_name" placeholder="First *" style="width: 25%;margin-left: 1%; margin-right: 1%;">
-												<input type="text" ng-model="middle_name" placeholder="Middle" style="width: 25%;margin-left: 1%; margin-right: 1%;">
-												<input type="text" ng-model="last_name" placeholder="Last *" style="width: 25%;margin-left: 1%; margin-right: 1%;">
-												<input type="text" ng-model="suffix" placeholder="Suffix" style="width: 15%;margin-left: 1%; margin-right: 1%;">
-											</li>
-											
-											<li>
-												<span style="width: 100%;margin-left: 1%;padding-bottom: 2%;">Mailing Address<font color="red"> *</font></span>
-												<input type="text" ng-model="address_line1" value="Bangalore1" placeholder="1st Address Line" style="width: 96%; margin: 0 1% 2%;">
-												<input type="text" ng-model="address_line2" value="Bangalore1" placeholder="2nd Address Line" style="width: 96%; margin: 0 1% 2%;">
+												<div layout="row">
+													
+													<md-input-container flex>
+											            <label>First Name</label>
+											            <input type="text" ng-model="projectForm.first_name" title="First Name" required="" style=" margin-right: 3%;">
+											            <!-- <div ng-messages="projectForm.first_name.$error">
+											            	<div ng-message="required">This is required.</div>
+											          	</div> -->
+											        </md-input-container>
+											        <div hide-sm="" hide-xs="" flex="2" class="hide-sm hide-xs flex-2"></div>
+											        <md-input-container flex>
+											            <label>Middle Name</label>
+											            <input type="text" ng-model="middle_name" title="Middle Name" style=" margin-right:3%;">
+											        </md-input-container>
+											        <div hide-sm="" hide-xs="" flex="2" class="hide-sm hide-xs flex-2"></div>
+											        <md-input-container flex>
+											            <label>Last Name *</label>
+											            <input type="text" ng-model="last_name" title="Last Name" style=" margin-right: 3%;">
+											        </md-input-container>
+											        <div hide-sm="" hide-xs="" flex="2" class="hide-sm hide-xs flex-2"></div>
+											        <md-input-container flex>
+											            <label>Suffix</label>
+											            <input type="text" ng-model="suffix"  title="Suffix"  style=" margin-right: 3%;">
+											        </md-input-container>
+
+												</div>
+												
+												<md-input-container class="md-block flex-gt-sm md-input-has-value" md-is-error="false" flex-gt-xs="">
+										            <label>Mailing Address</label>
+										            <input type="text" ng-model="address_line1" value="Bangalore1" title="1st Address Line" required="" aria-required="false">
+										        </md-input-container>
+										        <md-input-container class="md-block" md-no-float="">
+										            <input type="text" ng-model="address_line2" value="Bangalore1" title="2nd Address Line" placeholder="Mailing Address 1" >
+										        </md-input-container>
+												<div layout-gt-sm="row">
+										          <md-input-container class="md-block" flex-gt-sm="">
+										            <label>City</label>
+										            <input ng-model="user.city">
+										          </md-input-container>
+										
+										          <md-input-container class="md-block" flex-gt-sm="">
+										            <label>State</label>
+										            <md-select ng-model="user.state">
+										              <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+										                {{state.abbrev}}
+										              </md-option>
+										            </md-select>
+										          </md-input-container>
+										
+										          <md-input-container class="md-block" flex-gt-sm="">
+										            <label>Postal Code</label>
+										            <input name="postalCode" ng-model="user.postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+										           
+										          </md-input-container>
+										        </div>
+												
+												
 											<!--	<input type="select" ng-model="city" class="styled-select" value="Bangalore1" placeholder="City" style="width: 20%; margin: 0 1% 1%;"> -->
-												<select ng-model="city" ng-options="item for item in cityies" title="City" style="width: 25%; margin: 0 1% 1%;"></select>
+												<!-- <select ng-model="city" ng-options="item for item in cityies"  title="City" style="width: 25%; margin: 0 1% 1%;"></select> -->
 											<!--	<input type="text" ng-model="state" value="Bangalore1" placeholder="State" style="width: 20%;margin: 0 1% 1%;">-->
-											<select ng-model="state" ng-options="item for item in states" class="styled-select" title="State" style="width: 25%; margin: 0 1% 1%;"></select>
-												<input type="text" ng-model="zip_code" value="Bangalore1" placeholder="Zip" style="width: 25%;margin: 0 1% 1%;">
-											</li>
-											
-											</ul>	
+											<!-- <select ng-model="state" ng-options="key as value for (key , value) in states" class="styled-select" title="State" style="width: 25%; margin: 0 1% 1%;">
+												<option value=""> Select State </option>
+											</select>
+												<input type="text" ng-model="zip_code" value="Bangalore1"  title="Zip" placeholder="Zip" style="width: 25%;margin: 0 1% 1%;">
+												 -->
 										</div>
 										<div class="overlayfooter">
 											<button type="button" class="obtn" style="float: right">Save</button>
@@ -892,11 +952,15 @@
 											<ul>
 												<li>
 													<span style="width: 100%;margin-left: 1%;padding-bottom: 2%;">Permanent Addr.( Is it same as Mailing Address <input type="checkbox" ng-model="same_as_m" style="width: 3%">)</span>
-													<input type="text" ng-model="address_line1" value="Bangalore1" placeholder="1st Address Line" style="width: 96%; margin: 0 1% 2%;">
-													<input type="text" ng-model="address_line2" value="Bangalore1" placeholder="2nd Address Line" style="width: 96%; margin: 0 1% 2%;">
-													<input type="text" ng-model="city" value="Bangalore1" placeholder="City" style="width: 25%; margin: 0 1% 1%;">
-													<input type="text" ng-model="state" value="Bangalore1" placeholder="State" style="width: 25%;margin: 0 1% 1%;">
-													<input type="text" ng-model="zip_code" value="Bangalore1" placeholder="Zip" style="width: 25%;margin: 0 1% 1%;">
+													<input type="text" ng-model="a_address_line1" value="Bangalore1" title="1st Address Line" placeholder="1st Address Line" style="width: 96%; margin: 0 1% 2%;">
+													<input type="text" ng-model="a_address_line2" value="Bangalore1" title="2nd Address Line" placeholder="2nd Address Line" style="width: 96%; margin: 0 1% 2%;">
+													<select ng-model="a_city" ng-options="item for item in cityies" title="City" style="width: 25%; margin: 0 1% 1%;">
+														<option value=""> Select City </option>
+													</select>
+													<select ng-model="a_state" ng-options="key as value for (key , value) in states" class="styled-select" title="State" style="width: 25%; margin: 0 1% 1%;">
+														<option value=""> Select State </option>
+													</select>
+													<input type="text" ng-model="a_zip_code" value="Bangalore1" placeholder="Zip" title="Zip" style="width: 25%;margin: 0 1% 1%;">
 												</li>
 											</ul>
 										</div>
@@ -910,26 +974,30 @@
 											
 											<li>
 												<span style="width: 100%;margin-left: 1%;padding-bottom: 2%;">Birth<font color="red"> *</font></span>
-												<input type="text" ng-model="b_city" placeholder="City" style="width: 30%;margin: 0 1% 2%;">
-												<input type="text" ng-model="b_state" placeholder="State" style="width: 30%;margin: 0 1% 2%;">
-												<input type="text" ng-model="b_country" placeholder="Country" style="width: 30%;margin: 0 1% 2%;">
-												<input type="text" ng-model="b_month" placeholder="Month" style="width: 15%;margin: 0 1% 1%;">
-												<input type="text" ng-model="b_day" placeholder="Day" style="width: 15%;margin: 0 1% 1%;">
-												<input type="text" ng-model="b_year" placeholder="Year" style="width: 15%;margin: 0 1% 1%;">
-												<input type="text" ng-model="b_gender" placeholder="Gender" style="width: 15%;margin: 0 1% 1%;">
-												<input type="text" ng-model="b_race" placeholder="Race" style="width: 26%;margin: 0 1% 1%;">
+												<select ng-model="b_city" ng-options="item for item in cityies" title="City" style="width: 25%; margin: 0 1% 1%;">
+													<option value=""> Select City </option>
+												</select>
+												<select ng-model="b_state" ng-options="key as value for (key , value) in states" class="styled-select" title="State" style="width: 25%; margin: 0 1% 1%;">
+													<option value=""> Select State </option>
+												</select>
+												<input type="text" ng-model="b_country" placeholder="Country" title="Birth Country" style="width: 30%;margin: 0 1% 2%;">
+												<input type="text" ng-model="b_month" placeholder="Month" title="Birth Month" style="width: 15%;margin: 0 1% 1%;">
+												<input type="text" ng-model="b_day" placeholder="Day" title="Birth Day" style="width: 15%;margin: 0 1% 1%;">
+												<input type="text" ng-model="b_year" placeholder="Year" title="Birth Year" style="width: 15%;margin: 0 1% 1%;">
+												<input type="text" ng-model="b_gender" placeholder="Gender" title="Birth Gender" style="width: 15%;margin: 0 1% 1%;">
+												<input type="text" ng-model="b_race" placeholder="Race" title="Birth Race" style="width: 26%;margin: 0 1% 1%;">
 											</li>
 											<li>
 												<span style="width: 100%;margin-left: 1%;padding-bottom: 2%;padding-top: 1%">Contact<font color="red"> *</font></span>
-												<input type="text" ng-model="email" placeholder="Email *" style="width: 38%;margin-left: 1%; margin-right: 1%;">
-												<input type="text" ng-model="phone" placeholder="Phone *" style="width: 26%;margin-left: 1%; margin-right: 1%;">
-												<input type="text" ng-model="fax" placeholder="Fax" style="width: 26%;margin-left: 1%; margin-right: 1%;">
+												<input type="text" ng-model="email" placeholder="Email *" title="Email" style="width: 38%;margin-left: 1%; margin-right: 1%;">
+												<input type="text" ng-model="phone" placeholder="Phone *" title="Phone" style="width: 26%;margin-left: 1%; margin-right: 1%;">
+												<input type="text" ng-model="fax" placeholder="Fax" title="Fax" style="width: 26%;margin-left: 1%; margin-right: 1%;">
 											</li>
 											<li>
 												<span style="width: 100%;margin-left: 1%;padding-bottom: 2%;padding-top: 1%">Identity<font color="red"> *</font></span>
-												<input type="text" ng-model="sso" placeholder="Social securty Number" style="width: 30%;margin-left: 1%; margin-right: 1%;">
-												<input type="text" ng-model="fnin" placeholder="Foreign Nation ID Number" style="width: 30%;margin-left: 1%; margin-right: 1%;">
-												<input type="text" ng-model="fnin_c" placeholder="FNIN Issued By Country" style="width: 30%;margin-left: 1%; margin-right: 1%;">
+												<input type="text" ng-model="sso" placeholder="Social securty Number" title="Social securty Number" style="width: 30%;margin-left: 1%; margin-right: 1%;">
+												<input type="text" ng-model="fnin" placeholder="Foreign Nation ID Number" title="Foreign Nation ID Number" style="width: 30%;margin-left: 1%; margin-right: 1%;">
+												<input type="text" ng-model="fnin_c" placeholder="FNIN Issued By Country" title="FNIN Issued By Country" style="width: 30%;margin-left: 1%; margin-right: 1%;">
 											</li>
 											</ul>
 										</div>
@@ -943,8 +1011,8 @@
 												<li>
 													<span style="width: 48%;margin-left: 1%;padding-bottom: 2%;">Citizenship<font color="red"> *</font></span>
 													<span style="width: 48%;margin-left: 1%;padding-bottom: 2%;">Language<font color="red"> *</font></span>
-													<input type="text" ng-model="c_country" placeholder="Country" style="width: 30%;margin-left: 1%; margin-right: 1%;">
-													<a href="#" id="language" data-type="select2" data-pk=null data-url="" style="margin-left: 19%; margin-right: 1%;" data-title="Enter Languages" data-showbuttons="false" data-emptytext="Click to add Language"></a>
+													<input type="text" ng-model="c_country" placeholder="Country" title="Country" style="width: 30%;margin-left: 1%; margin-right: 1%;">
+													<a href="#" id="language" title="Language" data-type="select2" data-pk=null data-url="" style="margin-left: 19%; margin-right: 1%;" data-title="Enter Languages" data-showbuttons="false" data-emptytext="Click to add Language"></a>
 												</li>
 
 											</ul>
@@ -1542,7 +1610,11 @@
 				$("#" + id + " li a").first().click();
 
 			}
+			
+
+		
 		</script>
+
 
 	</body>
 </html>

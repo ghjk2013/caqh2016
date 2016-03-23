@@ -78,6 +78,7 @@ img {
 input[type=text]:focus, input[type=password]:focus {
 	border: 2px solid #ff000;
 }
+
 a:active, a:focus {
 	outline: none;
 }
@@ -514,7 +515,7 @@ body {
 .nav{background:#29699d;height:45px;background-position: 0 0;}
 .attest {
     background-color: #ffffff;
-    border-radius: 20px;
+    border-radius: 1px;
     color: black;
     cursor: pointer;
     float: right;
@@ -531,8 +532,17 @@ body {
 .attest:hover {
     background-color: #5a9ace;
     color: #fff;
-	border-radius: 20px;
+	
 }
+
+.attest:hover a {
+    color: #fff;
+}
+
+.attest a {
+    color: #000;
+}
+
 #power-gauge g.arc {
 		fill: steelblue;
 	}
@@ -737,3 +747,22 @@ body {
     display: inline-table;
 }
 
+.flex-2 {
+    box-sizing: border-box;
+    flex: 1 1 2%;
+    max-height: 100%;
+    max-width: 2%;
+}
+md-input-container
+{
+	font-size: 14px;
+}
+
+md-input-container.md-input-has-placeholder
+{
+	 margin-top: 0px !important;
+}
+md-input-container
+{
+	margin: 15px 10px 0 !important
+}
