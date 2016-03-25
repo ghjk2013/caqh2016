@@ -16,10 +16,7 @@
 		<link href="horizon-theme.min.css" media="screen" rel="stylesheet" type="text/css">
 		<link href="overlay.css" media="screen" rel="stylesheet" type="text/css">
 		<link href="overlay_new.css" media="screen" rel="stylesheet" type="text/css"> 
-		    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
-    
-    
-    <link rel='stylesheet prefetch' href='https://cdn.gitcdn.xyz/cdn/angular/bower-material/v1.0.4/angular-material.css'>
+    <link rel='stylesheet prefetch' href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.0.6-master-ba130f2/angular-material.css'>
     
 
 	<!--	<link href="xeditable.css" media="screen" rel="stylesheet" type="text/css">  -->
@@ -36,13 +33,13 @@
 		<script type="text/javascript" src="d3.v2.min.js"></script>
 		<script type="text/javascript" src="horizon-swiper.min.js"></script>
 		<script type="text/javascript" src="customscrollbar.js"></script>
-		    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js'></script>
-<script src='http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js'></script>
-<script src='https://cdn.gitcdn.xyz/cdn/angular/bower-material/v1.0.4/angular-material.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js'></script>
+<script src='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.0.6-master-ba130f2/angular-material.js'></script>
 
         <script src="js/index.js"></script>
 
@@ -860,14 +857,14 @@
 									<div class="menu_container">
 										<ul id="cos_edit_menu" class="menu">
 											<li>
-												<a href="#"  link="name" >Name / Address</a>
+												<a href="#"  link="name" >Name & Address</a>
 											</li>
-											<li><a href="#" link='addr'>Permanent Addr</a></li>
+											<li><a href="#" link='addr'>Identifiers</a></li>
 											<li>
-												<a href="#" link='basic'>Basic Detail</a>
+												<a href="#" link='basic'>Demographics</a>
 
 											</li>
-											<li><a href="#"  link='info'>Additional info.</a></li>
+											<li><a href="#"  link='info'>Languages</a></li>
 										</ul>
 									</div>
 									<div class="" id="name">
@@ -876,7 +873,7 @@
 													
 													<md-input-container flex>
 											            <label>First Name</label>
-											            <input type="text" ng-model="projectForm.first_name" title="First Name" required="" style=" margin-right: 3%;">
+											            <input type="text" ng-model="first_name" title="First Name" required="" style=" margin-right: 3%;">
 											            <!-- <div ng-messages="projectForm.first_name.$error">
 											            	<div ng-message="required">This is required.</div>
 											          	</div> -->
@@ -915,8 +912,8 @@
 										          <md-input-container class="md-block" flex-gt-sm="">
 										            <label>State</label>
 										            <md-select ng-model="user.state">
-										              <md-option ng-repeat="state in states" value="{{state.abbrev}}">
-										                {{state.abbrev}}
+										              <md-option ng-repeat="state in states" value="{{state}}">
+										                {{state}}
 										              </md-option>
 										            </md-select>
 										          </md-input-container>
@@ -949,20 +946,37 @@
 									</div>
 									<div class="" id="addr">
 										<div class="overlaybody">
-											<ul>
-												<li>
-													<span style="width: 100%;margin-left: 1%;padding-bottom: 2%;">Permanent Addr.( Is it same as Mailing Address <input type="checkbox" ng-model="same_as_m" style="width: 3%">)</span>
-													<input type="text" ng-model="a_address_line1" value="Bangalore1" title="1st Address Line" placeholder="1st Address Line" style="width: 96%; margin: 0 1% 2%;">
-													<input type="text" ng-model="a_address_line2" value="Bangalore1" title="2nd Address Line" placeholder="2nd Address Line" style="width: 96%; margin: 0 1% 2%;">
-													<select ng-model="a_city" ng-options="item for item in cityies" title="City" style="width: 25%; margin: 0 1% 1%;">
-														<option value=""> Select City </option>
-													</select>
-													<select ng-model="a_state" ng-options="key as value for (key , value) in states" class="styled-select" title="State" style="width: 25%; margin: 0 1% 1%;">
-														<option value=""> Select State </option>
-													</select>
-													<input type="text" ng-model="a_zip_code" value="Bangalore1" placeholder="Zip" title="Zip" style="width: 25%;margin: 0 1% 1%;">
-												</li>
-											</ul>
+											<div layout="row">
+												<md-input-container flex>
+										            <label>Social securty Number</label>
+										            <input type="text" ng-model="ssn" title="Social securty Number" required="" style=" margin-right: 3%;">
+										        </md-input-container>
+										        
+										    </div>
+										    <div layout="row">
+												<md-input-container flex>
+										            <label>National Provider Identification Number</label>
+										            <input type="text" ng-model="npin" title="National Provider Identification Number" style=" margin-right:3%;">
+										        </md-input-container>
+										        <div hide-sm="" hide-xs="" flex="2" class="hide-sm hide-xs flex-2"></div>
+										        <md-input-container flex>
+										            <label>Unique Physician Identification Number</label>
+										            <input type="text" ng-model="upin" title="Unique Physician Identification Number" style=" margin-right:3%;">
+										        </md-input-container>
+										    </div>
+										    <div layout="row">
+												<md-input-container flex>
+										            <label>Foreign Nation ID Number</label>
+										            <input type="text" ng-model="fnin" title="Foreign Nation ID Number" required="" style=" margin-right: 3%;">
+										        </md-input-container>
+										        <div hide-sm="" hide-xs="" flex="2" class="hide-sm hide-xs flex-2"></div>
+										        <md-input-container flex>
+										            <label>FNIN Issued By Country</label>
+										            <input type="text" ng-model="fnin_country" title="Foreign Nation ID Number Issued By Country" style=" margin-right:3%;">
+										        </md-input-container>
+										    </div>
+										    
+										    
 										</div>
 										<div class="overlayfooter">
 											<button type="button" class="obtn" style="float: right">Save</button>
@@ -970,36 +984,59 @@
 									</div>
 									<div class="" id='basic'>
 										<div class="overlaybody">
-											<ul>
+											<div layout="row">
+												<md-input-container style="width:47%" >
+										            <label>Gender</label>
+										            <md-select ng-model="b_gender">
+										              <md-option ng-repeat="b_gender in genders" value="{{b_gender}}">
+										                {{b_gender}}
+										              </md-option>
+										            </md-select>
+										        </md-input-container>
+										        <div layout="column" flex >
+												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Date of Birth</label>
+												    <md-datepicker name="b_date" ng-model="b_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												</div>
+												
+										    </div>
+										   	<div layout-gt-sm="row">
+												<md-input-container class="md-block" flex-gt-sm="">
+													<label>Birth City</label>
+													<input ng-model="b_city">
+												</md-input-container>
+
+												<md-input-container class="md-block" flex-gt-sm="">
+													<label>Birth State</label>
+													<md-select ng-model="b_state">
+														<md-option ng-repeat="state in states" value="{{state}}">
+															{{state}}
+														</md-option>
+													</md-select>
+												</md-input-container>
+											</div>
+											<div layout-gt-sm="row">
+												<md-input-container class="md-block" flex-gt-sm="">
+													<label>Birth Country</label>
+													<md-select ng-model="b_country">
+														<md-option ng-repeat="country in countrys" value="{{country}}">
+															{{country}}
+														</md-option>
+													</md-select>
+												</md-input-container>
+
+												<md-input-container class="md-block" flex-gt-sm="">
+													<label>Postal Code</label>
+													<input name="postalCode" ng-model="user.postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+
+												</md-input-container>
+											</div>
+											<md-input-container style="width:47%" >
+									            <label>Race / Ethnics</label>
+									            <input type="text" ng-model="b_race" title="Race / Ethnics" >
+									        </md-input-container>
+
+										    
 											
-											<li>
-												<span style="width: 100%;margin-left: 1%;padding-bottom: 2%;">Birth<font color="red"> *</font></span>
-												<select ng-model="b_city" ng-options="item for item in cityies" title="City" style="width: 25%; margin: 0 1% 1%;">
-													<option value=""> Select City </option>
-												</select>
-												<select ng-model="b_state" ng-options="key as value for (key , value) in states" class="styled-select" title="State" style="width: 25%; margin: 0 1% 1%;">
-													<option value=""> Select State </option>
-												</select>
-												<input type="text" ng-model="b_country" placeholder="Country" title="Birth Country" style="width: 30%;margin: 0 1% 2%;">
-												<input type="text" ng-model="b_month" placeholder="Month" title="Birth Month" style="width: 15%;margin: 0 1% 1%;">
-												<input type="text" ng-model="b_day" placeholder="Day" title="Birth Day" style="width: 15%;margin: 0 1% 1%;">
-												<input type="text" ng-model="b_year" placeholder="Year" title="Birth Year" style="width: 15%;margin: 0 1% 1%;">
-												<input type="text" ng-model="b_gender" placeholder="Gender" title="Birth Gender" style="width: 15%;margin: 0 1% 1%;">
-												<input type="text" ng-model="b_race" placeholder="Race" title="Birth Race" style="width: 26%;margin: 0 1% 1%;">
-											</li>
-											<li>
-												<span style="width: 100%;margin-left: 1%;padding-bottom: 2%;padding-top: 1%">Contact<font color="red"> *</font></span>
-												<input type="text" ng-model="email" placeholder="Email *" title="Email" style="width: 38%;margin-left: 1%; margin-right: 1%;">
-												<input type="text" ng-model="phone" placeholder="Phone *" title="Phone" style="width: 26%;margin-left: 1%; margin-right: 1%;">
-												<input type="text" ng-model="fax" placeholder="Fax" title="Fax" style="width: 26%;margin-left: 1%; margin-right: 1%;">
-											</li>
-											<li>
-												<span style="width: 100%;margin-left: 1%;padding-bottom: 2%;padding-top: 1%">Identity<font color="red"> *</font></span>
-												<input type="text" ng-model="sso" placeholder="Social securty Number" title="Social securty Number" style="width: 30%;margin-left: 1%; margin-right: 1%;">
-												<input type="text" ng-model="fnin" placeholder="Foreign Nation ID Number" title="Foreign Nation ID Number" style="width: 30%;margin-left: 1%; margin-right: 1%;">
-												<input type="text" ng-model="fnin_c" placeholder="FNIN Issued By Country" title="FNIN Issued By Country" style="width: 30%;margin-left: 1%; margin-right: 1%;">
-											</li>
-											</ul>
 										</div>
 										<div class="overlayfooter">
 											<button type="button" class="obtn" style="float: right">Save</button>
@@ -1007,15 +1044,15 @@
 									</div>
 									<div class="" id='info'>
 										<div class="overlaybody">
-											<ul>
-												<li>
-													<span style="width: 48%;margin-left: 1%;padding-bottom: 2%;">Citizenship<font color="red"> *</font></span>
-													<span style="width: 48%;margin-left: 1%;padding-bottom: 2%;">Language<font color="red"> *</font></span>
-													<input type="text" ng-model="c_country" placeholder="Country" title="Country" style="width: 30%;margin-left: 1%; margin-right: 1%;">
-													<a href="#" id="language" title="Language" data-type="select2" data-pk=null data-url="" style="margin-left: 19%; margin-right: 1%;" data-title="Enter Languages" data-showbuttons="false" data-emptytext="Click to add Language"></a>
-												</li>
-
-											</ul>
+											
+											<div layout="column" flex >
+											    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Language</label>
+											    <a href="#" id="language" title="Language" data-type="select2" data-pk=null data-url="" style="margin-left: 12px;margin-top: 10px;padding-bottom: 4px;text-decoration: none;width: 47%;" data-title="Enter Languages" data-showbuttons="false" ></a>
+											</div>
+											<!-- <span style="width: 48%;margin-left: 1%;padding-bottom: 2%;">Language<font color="red"> *</font></span>
+										    </br>
+											<a href="#" id="language" title="Language" data-type="select2" data-pk=null data-url="" style="margin-left: 19%; margin-right: 1%;" data-title="Enter Languages" data-showbuttons="false" data-emptytext="Click to add Language"></a> -->
+											
 										</div>
 										<div class="overlayfooter">
 											<button type="button" class="obtn" style="float: right">Save</button>
@@ -1359,6 +1396,11 @@
 				if ($trigger !== event.target && !$trigger.has(event.target).length) {
 					$("#usersettingdropdata").hide();
 				}
+			});
+			$(document).on("click", function(event) {
+				$("._md-select-menu-container._md-active").hide();
+				$("._md-select-menu-container._md-active").attr('aria-hidden', 'true');
+				
 			});
 			$('#usercontactdrop').click(function() {
 				$('#usercontactdropdata').toggle("fast");
