@@ -762,7 +762,7 @@ md-input-container
 
 md-input-container.md-input-has-placeholder
 {
-	 margin-top: 0px !important;
+	 /*margin-top: 0px !important; // removed as effecting Personal Information 1st page */
 }
 md-input-container
 {
