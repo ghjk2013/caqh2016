@@ -417,7 +417,7 @@
 										<span style="float: right; width: 46%"> 
 											<span style="float: left;font-family: open_sans_regular;">Expiration Date: 02/02/2020</span>
 											<span style=" float: right;">
-												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
+												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="cds_reg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 										</span>
 											
@@ -448,7 +448,7 @@
 										<span style="float: left; width: 100%;padding-left: 3%;"> 
 											<span style="float: left;font-family: open_sans_regular">Medicaid No: xxxxxxx</span>
 											<span style=" float: right;">
-												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
+												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="medicaid"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 											<br />
 											<span style="font-family: open_sans_regular">Medicaid State:</span> xxxxxxxxxxx
@@ -1119,7 +1119,7 @@
 										        </md-input-container>
 										        <md-input-container class="md-block" flex-gt-sm="">
 												 <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="data.cb5" class="md-primary">
-										            Do You Currentaly Practice in this State?
+										            Do You Currently Practice in this State?
 										         </md-checkbox>
 												</md-input-container>
 										        
@@ -1187,7 +1187,7 @@
 				</div>
 
 			</div>
-						<div class="overlay" id="dea_reg_overlay" style="display:none;"></div>
+			<div class="overlay" id="dea_reg_overlay" style="display:none;"></div>
 			<div class="box org_newuser" id="dea_reg_box">
 				<div class="midbg selected_color"  style="background-color: #ffffff;width:840px;position:absolute;left:120px">
 					<span id="dea_reg_boxclose" style="float: right;margin-right: 5px;margin-top: -45px;cursor: pointer;color: #fff" title="Close" class="fa fa-times fa-3x" onclick="overlayclose(this.id);"></span>
@@ -1255,6 +1255,75 @@
 				</div>
 
 			</div>
+			<div class="overlay" id="cds_reg_overlay" style="display:none;"></div>
+			<div class="box org_newuser" id="cds_reg_box">
+				<div class="midbg selected_color"  style="background-color: #ffffff;width:840px;position:absolute;left:120px">
+					<span id="cds_reg_boxclose" style="float: right;margin-right: 5px;margin-top: -45px;cursor: pointer;color: #fff" title="Close" class="fa fa-times fa-3x" onclick="overlayclose(this.id);"></span>
+
+					<form>
+						<!-- <div class="roundblockleft theme_color reset_pwd_submit top_control"><a href="#null"><%= t :login_index_reset_go%></a></div> -->
+						
+						<div class="white_block">
+							
+							<div class="midblock" id="cds_reg_midblock">
+								<div id="cds_reg_res" style="color: green"></div>
+								<div id="cds_reg_content" class="custom_swiper_item">
+									<div class="overlayheader">
+										CDS Registration
+									</div>
+									<div class="menu_container">
+										<ul id="cds_reg_menu" class="menu">
+											<li><a href="#"  link='cdsregistration'>CDS Registration</a></li>
+										</ul>
+									</div>
+																		
+									<div class="" id='cdsregistration'>
+										<div class="overlaybody">
+											<div layout="row">
+											  <md-input-container style="width:47%" >
+									            <label>CDS Number</label>
+									            <input type="text" ng-model="pro_cds_no" title="CDS Number" >
+									           </md-input-container>
+												<md-input-container style="width:47%" >
+										            <label>CDS State</label>
+										            <md-select ng-model="pro_cds_state">
+										              <md-option ng-repeat="state in pro_cds_states" value="{{pro_cds_state}}" required="">
+										                {{pro_cds_state}}
+										              </md-option>
+										            </md-select>
+										        </md-input-container>
+										    	
+										    </div>
+										   	<div layout-gt-sm="row">
+												<div layout="column" flex >
+												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">CDS Issue Date</label>
+												    <md-datepicker name="pro_cds_issue_date" ng-model="pro_cds_issue_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												</div>
+
+												<div layout="column" flex >
+												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">CDS Expiration Date</label>
+												    <md-datepicker name="pro_cds_expire_date" ng-model="pro_cds_expire_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												</div>
+											</div>
+										    
+											
+										</div>
+										<div class="overlayfooter">
+											<button type="button" class="obtn" style="float: right">Save</button>
+										</div>
+									</div>
+									</div>
+								
+							</div>
+
+						</div>
+						
+					</form>
+					<div class="clear"></div>
+				</div>
+
+			</div>
+
 			<div class="overlay" id="medi_care_overlay" style="display:none;"></div>
 			<div class="box org_newuser" id="medi_care_box">
 				<div class="midbg selected_color"  style="background-color: #ffffff;width:840px;position:absolute;left:120px">
@@ -1280,13 +1349,13 @@
 										<div class="overlaybody">
 										<div layout="row">
 											 <md-input-container flex >
-									            <label>Are you a participating Medicare promotion?</label>
+									            <label>Are you a participating Medicare provider?</label>
 									            <md-select ng-model="pro_dea_state">
 									              <!-- <md-option ng-repeat="state in pro_dea_states" value="{{pro_dea_state}}" required="">
 									                {{pro_dea_state}}
 									              </md-option> -->
-									              <md-option value="true">True</md-option>
-									              <md-option value="false">False</md-option>
+									              <md-option value="true">Yes</md-option>
+									              <md-option value="false">No</md-option>
 									            </md-select>
 									        </md-input-container>
 										  </div>  
@@ -1324,7 +1393,76 @@
 				</div>
 
 			</div>
-			
+			<div class="overlay" id="medicaid_overlay" style="display:none;"></div>
+			<div class="box org_newuser" id="medicaid_box">
+				<div class="midbg selected_color"  style="background-color: #ffffff;width:840px;position:absolute;left:120px">
+					<span id="medicaid_boxclose" style="float: right;margin-right: 5px;margin-top: -45px;cursor: pointer;color: #fff" title="Close" class="fa fa-times fa-3x" onclick="overlayclose(this.id);"></span>
+
+					<form>
+												
+						<div class="white_block">
+							
+							<div class="midblock" id="medicaid_midblock">
+								<div id="medicaid_res" style="color: green"></div>
+								<div id="medicaid_content" class="custom_swiper_item">
+									<div class="overlayheader">
+										Medicaid
+									</div>
+									<div class="menu_container">
+										<ul id="medicaid_menu" class="menu">
+											<li><a href="#"  link='medicaid'>Medicaid</a></li>
+										</ul>
+									</div>
+																		
+							<div class="" id='medicaid'>
+										<div class="overlaybody">
+										<div layout="row">
+											 <md-input-container flex >
+									            <label>Are you a participating Medicaid provider?</label>
+									            <md-select ng-model="pro_dea_state">
+									              <!-- <md-option ng-repeat="state in pro_dea_states" value="{{pro_dea_state}}" required="">
+									                {{pro_dea_state}}
+									              </md-option> -->
+									              <md-option value="true">Yes</md-option>
+									              <md-option value="false">No</md-option>
+									            </md-select>
+									        </md-input-container>
+										  </div>  
+										    
+										   <div layout="row">
+											  <md-input-container style="width:47%" >
+									            <label>Medicaid Number</label>
+									            <input type="text" ng-model="pro_medicaid_no" title="Medicaid Number" >
+									           </md-input-container>
+												<md-input-container style="width:47%" >
+										            <label>Medicaid State</label>
+										            <md-select ng-model="pro_medicaid_state">
+										              <md-option ng-repeat="state in pro_medicaid_states" value="{{pro_medicaid_state}}" required="">
+										                {{pro_medicaid_state}}
+										              </md-option>
+										            </md-select>
+										        </md-input-container>
+										    	
+										    </div> 
+											
+										</div>
+										<div class="overlayfooter">
+											<button type="button" class="obtn" style="float: right">Save</button>
+										</div>
+									</div>
+									
+								</div>
+								
+							</div>
+
+						</div>
+						
+					</form>
+					<div class="clear"></div>
+				</div>
+
+			</div>
+
 			<!-- specility start  -->
 			
 			<div class="overlay" id="spe_cility_overlay" style="display:none;"></div>
@@ -1361,7 +1499,7 @@
 										            </md-select>
 										        </md-input-container >
 										        <md-input-container flex >
-										            <label>Sub Speciality</label>
+										            <label>Subspecialty</label>
 										            <md-select ng-model="sub_speciality">
 										              <md-option ng-repeat="sub_speciality in sub_specialities" value="{{sub_speciality}}">
 										                {{sub_speciality}}
@@ -1371,7 +1509,7 @@
 										    </div>
 										   	<div layout="row">
 												<md-input-container flex>
-										            <label>Board Certification</label>
+										            <label>Specialty Board</label>
 										            <md-select ng-model="board_cert">
 										              <md-option ng-repeat="board_cert_name in board_cert_names" value="{{board_cert_name}}">
 										                {{board_cert_name}}
@@ -1446,7 +1584,7 @@
 										        </md-input-container>
 										        <md-input-container class="md-block" flex-gt-sm="">
 												 <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="data.cb5" class="md-primary">
-										            Do You Currentaly Practice Here?
+										            Do You Currently Practice Here?
 										         </md-checkbox>
 												</md-input-container>
 										        
@@ -1553,8 +1691,8 @@
 										    									    
 										    <div layout="row">
 												<md-input-container flex>
-										            <label>Name As It Appears On N-G</label>
-										            <input type="text" ng-model="nameasng" title="Name As It Appears On N-G" style=" margin-right: 3%;">
+										            <label>Name as it appears on W-2</label>
+										            <input type="text" ng-model="nameasng" title="Name as it appears on W-2" style=" margin-right: 3%;">
 										        </md-input-container>
 										        
 										    </div>
