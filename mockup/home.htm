@@ -53,6 +53,7 @@
 		<script src="select2.js"></script>
 		<script src="jquery.poshytip.js"></script>
 		<script src="jquery-editable-poshytip.js"></script>
+		<script src="https://maps.google.com/maps/api/js?sensor=false"></script>
 		
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
 	</head>
@@ -910,21 +911,17 @@
 												<div layout-gt-sm="row">
 													<md-input-container class="md-block" flex-gt-sm="">
 										            <label>Postal Code</label>
-										            <input name="postalCode" ng-model="personalInfoData.postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+										            <input name="postalCode" ng-model="personalInfoData.postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5" onkeyup="fillbyzip(this.value);">
 										           
 										          </md-input-container>
 										          <md-input-container class="md-block" flex-gt-sm="">
 										            <label>City</label>
-										            <input ng-model="personalInfoData.city">
+										            <input name="p_city" disabled ng-model="personalInfoData.city" placeholder="Select Postal Code to Auto fill" >
 										          </md-input-container>
 										
 										          <md-input-container class="md-block" flex-gt-sm="">
 										            <label>State</label>
-										            <md-select ng-model="personalInfoData.state">
-										              <md-option ng-repeat="state in states" value="{{state}}">
-										                {{state}}
-										              </md-option>
-										            </md-select>
+										            <input name="p_state" disabled ng-model="personalInfoData.state" placeholder="Select Postal Code to Auto fill">
 										          </md-input-container>
 										
 										          
@@ -2249,6 +2246,51 @@ function overlayclose(id){
 	}, 0, function() {
 		$('#' + id + '_overlay').fadeOut('fast');
 	});
+}
+function fillbyzip(zipcode) {
+  //var el = $(this);
+console.log("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZz");
+console.log(zipcode);
+  if (zipcode.length == 5) {
+   
+    // Make Ajax call, etc
+    var geocoder = new google.maps.Geocoder();
+	//var $this = $(this);
+    //if ($this.val().length == 5) {
+        geocoder.geocode({ 'address': zipcode }, function (result, status) {
+            var state = "N/A";
+            var city = "N/A";
+            console.log(result);
+            //start loop to get state from zip
+            if(result.length > 0) {
+            for (var component in result[0]['address_components']) {
+                for (var i in result[0]['address_components'][component]['types']) {
+                    if (result[0]['address_components'][component]['types'][i] == "administrative_area_level_1") {
+                        state = result[0]['address_components'][component]['short_name'];
+                        // do stuff with the state here!
+                        console.log(state);
+                        document.getElementsByName("p_state")[0].value = state;
+                        // get city name
+                        city = result[0]['address_components'][1]['long_name'];
+                        // Insert city name into some input box
+                        console.log(city);
+                        document.getElementsByName("p_city")[0].value = city;
+                        country = result[0]['address_components'][2]['long_name'];
+                        
+                        console.log(country);
+                    }
+                }
+            }
+           }
+        });
+ 
+  }
+  else
+  {
+  	document.getElementsByName("p_state")[0].value = "";
+  	document.getElementsByName("p_city")[0].value = "";
+  }
+
 }
 		
 		</script>
