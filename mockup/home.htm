@@ -233,13 +233,13 @@
 						<li ng-controller="PersonalInfo">
 							<a scroll=0 id="personal_information">Personal Information<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span><span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span></a>
 							<ul style="height: 130px;">
-								<span style="float: left; width: 48%"> <span style="font-family: open_sans_regular">Name:</span> {{personalInfoData.first_name}} {{personalInfoData.middle_name}} {{personalInfoData.last_name}}
+								<span style="float: left; width: 48%"> <span style="font-family: open_sans_regular">Name:</span> {{personalInfoData.first_name}} {{personalInfoData.middle_name}} {{personalInfoData.last_name}} {{personalInfoData.suffix}}
 									<br />
 									<span style="font-family: open_sans_regular">Email:</span> {{personalInfoData.email}}
 									<br />
-									<span style="font-family: open_sans_regular">Address:</span> {{personalInfoData.address_line1}} </span>
+									<span style="font-family: open_sans_regular">Address:</span> {{personalInfoData.address_line1}}, {{personalInfoData.address_line2}} </span>
 								<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 58%; margin-top: 2%;"></span>
-								<span style="float: right; width: 46%"> <span style="font-family: open_sans_regular;"> Date of Birth: </span> {{personalInfoData.dateofbirth}}<span id="personal_info" style="float: right;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+								<span style="float: right; width: 46%"> <span style="font-family: open_sans_regular;"> Date of Birth: </span> {{personalInfoData.b_date.toISOString().slice(0, 10)}}<span id="personal_info" style="float: right;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 									<br />
 									<span style="font-family: open_sans_regular">Fax:</span> {{personalInfoData.fax}}
 									<br />
@@ -273,7 +273,7 @@
 										</span>
 									 </div>
 									</div>
-									<div class="horizon-item" id="licence" title="Licence">
+									<div class="horizon-item" id="licence" title="Licence" ng-controller="Licence">
 										<div style="width: 100%;padding: 0px;text-align: center; ">
 											<a href="#" style="">Add Licence</a>
 										</div>
@@ -282,21 +282,21 @@
 										</div>
 										<div id="licence1" class="licence" style=" width: 100%;display: inherit;border-top: 1px dotted;border-bottom: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span style="font-family: open_sans_regular">Licence State:</span> xxxxxxx1
+											<span style="font-family: open_sans_regular">Licence State:</span> {{licenceData.state}}
 											<br />
-											<span style="font-family: open_sans_regular">Licence No:</span> xxxxxxxxxxx1
+											<span style="font-family: open_sans_regular">Licence No:</span> {{licenceData.pro_licence_no}}
 											
 											<br />
 											<span style="font-family: open_sans_regular">Practice in This State:</span> Yes </span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-										<span style="float: right; width: 46%"> <span style="float: left;font-family: open_sans_regular;">Licence Type: xxxxxx</span>
+										<span style="float: right; width: 46%"> <span style="float: left;font-family: open_sans_regular;">Licence Type: {{licenceData.licencetype}}</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 											<br />
-											<span style="font-family: open_sans_regular;">Expiration Date:</span> 02/02/2020 
+											<span style="font-family: open_sans_regular;">Expiration Date:</span> {{licenceData.pro_licence_expire_date}} 
 											<br />
-											<span style="font-family: open_sans_regular">Licence Staus:</span> Active
+											<span style="font-family: open_sans_regular">Licence Staus:</span> {{licenceData.licencestatus}}
 										</span>
 										</div>
 										<div id="licence2" class="licence" style="display: none; width: 100%;border-top: 1px dotted;border-bottom: 1px dotted;">
@@ -365,17 +365,17 @@
 										<div style="padding-left: 0;font-weight: bold">
 											DEA Ragistration
 										</div>
-										<div id="dearesidtration1" class="dearesidtration" style="display: inherit; width: 100%;border-top: 1px dotted;">
+										<div ng-controller="DEA" id="dearesidtration1" class="dearesidtration" style="display: inherit; width: 100%;border-top: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span style="font-family: open_sans_regular">Drug Enforcement Administration No (DEA):</span> xxxxxxx
+											<span style="font-family: open_sans_regular">Drug Enforcement Administration No (DEA):</span> {{dEAData.pro_dea_no}}
 											<br />
-											<span style="font-family: open_sans_regular">DEA State:</span> xxxxxxxxxxx
+											<span style="font-family: open_sans_regular">DEA State:</span> {{dEAData.pro_dea_state}}
 											<br />
-											<span style="font-family: open_sans_regular">Issue Date:</span> 02/02/2015
+											<span style="font-family: open_sans_regular">Issue Date:</span> {{dEAData.pro_dea_issue_date}}
 										</span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 										<span style="float: right; width: 46%"> 
-											<span style="float: left;font-family: open_sans_regular;">Expiration Date: 02/02/2020</span>
+											<span style="float: left;font-family: open_sans_regular;">Expiration Date: {{dEAData.pro_dea_expire_date}}</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="dea_reg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
@@ -399,7 +399,7 @@
 										</div>
 										<div style="padding: 0px;float: right;margin-right: 10px;" id="dearesidtration_view_page_link"><span id="dearesidtration_view_prev" class="pagi_prev" title="Previous" onclick="updateviewpage('prev');"></span> Viewing <span id="dearesidtration_view_current">1</span> of <span id="dearesidtration_view_total"></span> <span id="dearesidtration_view_next" style="cursor: pointer;" class="pagi_next" title="Next" onclick="updateviewpage('next');"></span></div>	
 									</div>
-									<div class="horizon-item" title="Controlled Dangerous Substances (CDS) Registration">
+									<div ng-controller="CDS" class="horizon-item" title="Controlled Dangerous Substances (CDS) Registration">
 										<div style="width: 100%;padding: 0px;text-align: center; ">
 											<a href="#" style="">Add CDS</a>
 										</div>
@@ -407,15 +407,15 @@
 											Controlled Dangerous Substances (CDS) Registration
 										</div>
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span style="font-family: open_sans_regular">CDS No:</span> xxxxxxx
+											<span style="font-family: open_sans_regular">CDS No:</span> {{cDSData.pro_cds_no}}
 											<br />
-											<span style="font-family: open_sans_regular">CDS State:</span> xxxxxxxxxxx
+											<span style="font-family: open_sans_regular">CDS State:</span> {{cDSData.pro_cds_state}}
 											<br />
-											<span style="font-family: open_sans_regular">Issue Date:</span> 02/02/2015
+											<span style="font-family: open_sans_regular">Issue Date:</span> {{cDSData.pro_cds_issue_date}}
 										</span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 										<span style="float: right; width: 46%"> 
-											<span style="float: left;font-family: open_sans_regular;">Expiration Date: 02/02/2020</span>
+											<span style="float: left;font-family: open_sans_regular;">Expiration Date: {{cDSData.pro_cds_expire_date}}</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="cds_reg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
@@ -911,17 +911,17 @@
 												<div layout-gt-sm="row">
 													<md-input-container class="md-block" flex-gt-sm="">
 										            <label>Postal Code</label>
-										            <input name="postalCode" ng-model="personalInfoData.postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5" onkeyup="fillbyzip(this.value);">
+										            <input id="postalCode" ng-model="personalInfoData.postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5" onkeyup="fillbyzip(this.value,'p_city','p_state','');">
 										           
 										          </md-input-container>
 										          <md-input-container class="md-block" flex-gt-sm="">
 										            <label>City</label>
-										            <input name="p_city" disabled ng-model="personalInfoData.city" placeholder="Select Postal Code to Auto fill" >
+										            <input id="p_city" disabled ng-model="personalInfoData.city" placeholder="Select Postal Code to Auto fill" >
 										          </md-input-container>
 										
 										          <md-input-container class="md-block" flex-gt-sm="">
 										            <label>State</label>
-										            <input name="p_state" disabled ng-model="personalInfoData.state" placeholder="Select Postal Code to Auto fill">
+										            <input id="p_state" disabled ng-model="personalInfoData.state" placeholder="Select Postal Code to Auto fill">
 										          </md-input-container>
 										
 										          
@@ -951,30 +951,30 @@
 											<div layout="row">
 												<md-input-container flex>
 										            <label>Social securty Number</label>
-										            <input type="text" ng-model="ssn" title="Social securty Number" required="" style=" margin-right: 3%;">
+										            <input type="text" ng-model="personalInfoData.ssn" title="Social securty Number" required="" style=" margin-right: 3%;">
 										        </md-input-container>
 										        
 										    </div>
 										    <div layout="row">
 												<md-input-container flex>
 										            <label>National Provider Identification Number</label>
-										            <input type="text" ng-model="npin" title="National Provider Identification Number" style=" margin-right:3%;">
+										            <input type="text" ng-model="personalInfoData.npin" title="National Provider Identification Number" style=" margin-right:3%;">
 										        </md-input-container>
 										        <div hide-sm="" hide-xs="" flex="2" class="hide-sm hide-xs flex-2"></div>
 										        <md-input-container flex>
 										            <label>Unique Physician Identification Number</label>
-										            <input type="text" ng-model="upin" title="Unique Physician Identification Number" style=" margin-right:3%;">
+										            <input type="text" ng-model="personalInfoData.upin" title="Unique Physician Identification Number" style=" margin-right:3%;">
 										        </md-input-container>
 										    </div>
 										    <div layout="row">
 												<md-input-container flex>
 										            <label>Foreign Nation ID Number</label>
-										            <input type="text" ng-model="fnin" title="Foreign Nation ID Number" required="" style=" margin-right: 3%;">
+										            <input type="text" ng-model="personalInfoData.fnin" title="Foreign Nation ID Number" required="" style=" margin-right: 3%;">
 										        </md-input-container>
 										        <div hide-sm="" hide-xs="" flex="2" class="hide-sm hide-xs flex-2"></div>
 										        <md-input-container flex>
 										            <label>FNIN Issued By Country</label>
-										            <input type="text" ng-model="fnin_country" title="Foreign Nation ID Number Issued By Country" style=" margin-right:3%;">
+										            <input type="text" ng-model="personalInfoData.fnin_country" title="Foreign Nation ID Number Issued By Country" style=" margin-right:3%;">
 										        </md-input-container>
 										    </div>
 										    
@@ -989,52 +989,44 @@
 											<div layout="row">
 												<md-input-container style="width:47%" >
 										            <label>Gender</label>
-										            <md-select ng-model="b_gender">
-										              <md-option ng-repeat="b_gender in genders" value="{{b_gender}}">
+										            <md-select ng-model="personalInfoData.b_gender">
+										              <md-option ng-repeat="b_gender in personalInfoData.genders" value="{{b_gender}}">
 										                {{b_gender}}
 										              </md-option>
 										            </md-select>
 										        </md-input-container>
 										        <div layout="column" flex >
 												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Date of Birth</label>
-												    <md-datepicker name="b_date" ng-model="b_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												    <md-datepicker name="b_date" ng-model="personalInfoData.b_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
 												</div>
 												
 										    </div>
 										   	<div layout-gt-sm="row">
 												<md-input-container class="md-block" flex-gt-sm="">
-													<label>Birth City</label>
-													<input ng-model="b_city">
-												</md-input-container>
-
-												<md-input-container class="md-block" flex-gt-sm="">
-													<label>Birth State</label>
-													<md-select ng-model="b_state">
-														<md-option ng-repeat="state in states" value="{{state}}">
-															{{state}}
-														</md-option>
-													</md-select>
-												</md-input-container>
+										            <label>Birth City</label>
+										            <input id="b_city"  ng-model="personalInfoData.bcity"  >
+										          </md-input-container>
+										
+										          <md-input-container class="md-block" flex-gt-sm="">
+										            <label>Birth State</label>
+										            <input id="b_state"  ng-model="personalInfoData.bstate" >
+										          </md-input-container>
 											</div>
 											<div layout-gt-sm="row">
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>Birth Country</label>
-													<md-select ng-model="b_country">
-														<md-option ng-repeat="country in countrys" value="{{country}}">
-															{{country}}
-														</md-option>
-													</md-select>
+													<input id="b_country"  ng-model="personalInfoData.bstate" >
 												</md-input-container>
 
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>Postal Code</label>
-													<input name="postalCode" ng-model="user.postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+													<input name="postalCode" ng-model="personalInfoData.b_postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5" onkeyup="fillbyzip(this.value,'b_city','b_state','b_country');">
 
 												</md-input-container>
 											</div>
 											<md-input-container style="width:47%" >
 									            <label>Race / Ethnics</label>
-									            <input type="text" ng-model="b_race" title="Race / Ethnics" >
+									            <input type="text" ng-model="personalInfoData.b_race" title="Race / Ethnics" >
 									        </md-input-container>
 
 										    
@@ -1085,7 +1077,7 @@
 
 						<!-- Professional id start  -->
 			<div class="overlay" id="pro_licence_overlay" style="display:none;"></div>
-			<div class="box org_newuser" id="pro_licence_box">
+			<div class="box org_newuser" id="pro_licence_box" ng-controller="Licence">
 				<div class="midbg selected_color"  style="background-color: #ffffff;width:840px;position:absolute;left:120px">
 					<span id="pro_licence_boxclose" style="float: right;margin-right: 5px;margin-top: -45px;cursor: pointer;color: #fff" title="Close" class="fa fa-times fa-3x" onclick="overlayclose(this.id);"></span>
 
@@ -1111,14 +1103,14 @@
 											<div layout="row">
 										        <md-input-container flex >
 										            <label>Licence State</label>
-										            <md-select ng-model="pro_licence_state" >
-										              <md-option ng-repeat="state in pro_licence_states" value="{{pro_licence_state}}">
-										                {{pro_licence_state}}
+										            <md-select ng-model="licenceData.pro_licence_state" >
+										              <md-option ng-repeat="pro_licence_states in licenceData.pro_licence_states" value="{{licenceData.pro_licence_state}}">
+										                {{licenceData.pro_licence_state}}
 										              </md-option>
 										            </md-select>
 										        </md-input-container>
 										        <md-input-container class="md-block" flex-gt-sm="">
-												 <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="data.cb5" class="md-primary">
+												 <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="licenceData.same_state" class="md-primary">
 										            Do You Currently Practice in this State?
 										         </md-checkbox>
 												</md-input-container>
@@ -1128,13 +1120,13 @@
 										    <div layout-gt-sm="row">
 										    	<md-input-container style="width:47%" >
 										            <label>Licence Number</label>
-										            <input type="text" ng-model="pro_licence_no" title="Licence Number" >
+										            <input type="text" ng-model="licenceData.pro_licence_no" title="Licence Number" >
 										        </md-input-container>
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>Licence Type</label>
-													<md-select ng-model="pro_licence_type">
-														<md-option ng-repeat="type in licencetypes" value="{{licencetype}}">
-															{{licencetype}}
+													<md-select ng-model="licenceData.pro_licence_type">
+														<md-option ng-repeat="type in licenceData.licencetypes" value="{{licenceData.licencetype}}">
+															{{licenceData.licencetype}}
 														</md-option>
 													</md-select>
 												</md-input-container>
@@ -1143,17 +1135,17 @@
 											<div layout-gt-sm="row">
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>Licence Status</label>
-													<md-select ng-model="pro_licence_status">
-														<md-option ng-repeat="type in licencestatus" value="{{licencestatus}}">
-															{{licencestatus}}
+													<md-select ng-model="licenceData.pro_licence_status">
+														<md-option ng-repeat="type in licenceData.licencestatustypes" value="{{licenceData.licencestatus}}">
+															{{licenceData.licencestatus}}
 														</md-option>
 													</md-select>
 												</md-input-container>
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>Licence Categoery</label>
-													<md-select ng-model="pro_licence_categoery">
-														<md-option ng-repeat="categoery in licencecategoery" value="{{licencecategoery}}">
-															{{licencecategoery}}
+													<md-select ng-model="licenceData.pro_licence_categoery">
+														<md-option ng-repeat="categoery in licenceData.licencecategoeries" value="{{licenceData.licencecategoery}}">
+															{{licenceData.licencecategoery}}
 														</md-option>
 													</md-select>
 												</md-input-container>
@@ -1161,12 +1153,12 @@
 										    <div layout-gt-sm="row">
 												<div layout="column" flex >
 												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Licence Issue Date</label>
-												    <md-datepicker name="pro_licence_issue_date" ng-model="pro_licence_issue_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												    <md-datepicker name="pro_licence_issue_date" ng-model="licenceData.pro_licence_issue_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
 												</div>
 
 												<div layout="column" flex >
 												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Licence Expiration Date</label>
-												    <md-datepicker name="pro_licence_expire_date" ng-model="pro_licence_expire_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												    <md-datepicker name="pro_licence_expire_date" ng-model="licenceData.pro_licence_expire_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
 												</div>
 											</div>
 											
@@ -1188,7 +1180,7 @@
 
 			</div>
 			<div class="overlay" id="dea_reg_overlay" style="display:none;"></div>
-			<div class="box org_newuser" id="dea_reg_box">
+			<div class="box org_newuser" id="dea_reg_box"  ng-controller="DEA">
 				<div class="midbg selected_color"  style="background-color: #ffffff;width:840px;position:absolute;left:120px">
 					<span id="dea_reg_boxclose" style="float: right;margin-right: 5px;margin-top: -45px;cursor: pointer;color: #fff" title="Close" class="fa fa-times fa-3x" onclick="overlayclose(this.id);"></span>
 
@@ -1214,12 +1206,12 @@
 											<div layout="row">
 											  <md-input-container style="width:47%" >
 									            <label>DEA Number</label>
-									            <input type="text" ng-model="pro_dea_no" title="DEA Number" >
+									            <input type="text" ng-model="dEAData.pro_dea_no" title="DEA Number" >
 									           </md-input-container>
 												<md-input-container style="width:47%" >
 										            <label>DEA State</label>
-										            <md-select ng-model="pro_dea_state">
-										              <md-option ng-repeat="state in pro_dea_states" value="{{pro_dea_state}}" required="">
+										            <md-select ng-model="dEAData.pro_dea_state">
+										              <md-option ng-repeat="state in dEAData.pro_dea_states" value="{{dEAData.pro_dea_state}}" required="">
 										                {{pro_dea_state}}
 										              </md-option>
 										            </md-select>
@@ -1229,12 +1221,12 @@
 										   	<div layout-gt-sm="row">
 												<div layout="column" flex >
 												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">DEA Issue Date</label>
-												    <md-datepicker name="pro_dea_issue_date" ng-model="pro_dea_issue_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												    <md-datepicker name="pro_dea_issue_date" ng-model="dEAData.pro_dea_issue_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
 												</div>
 
 												<div layout="column" flex >
 												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">DEA Expiration Date</label>
-												    <md-datepicker name="pro_dea_expire_date" ng-model="pro_dea_expire_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												    <md-datepicker name="pro_dea_expire_date" ng-model="dEAData.pro_dea_expire_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
 												</div>
 											</div>
 										    
@@ -1256,7 +1248,7 @@
 
 			</div>
 			<div class="overlay" id="cds_reg_overlay" style="display:none;"></div>
-			<div class="box org_newuser" id="cds_reg_box">
+			<div ng-controller="CDS" class="box org_newuser" id="cds_reg_box">
 				<div class="midbg selected_color"  style="background-color: #ffffff;width:840px;position:absolute;left:120px">
 					<span id="cds_reg_boxclose" style="float: right;margin-right: 5px;margin-top: -45px;cursor: pointer;color: #fff" title="Close" class="fa fa-times fa-3x" onclick="overlayclose(this.id);"></span>
 
@@ -1282,13 +1274,13 @@
 											<div layout="row">
 											  <md-input-container style="width:47%" >
 									            <label>CDS Number</label>
-									            <input type="text" ng-model="pro_cds_no" title="CDS Number" >
+									            <input type="text" ng-model="cDSData.pro_cds_no" title="CDS Number" >
 									           </md-input-container>
 												<md-input-container style="width:47%" >
 										            <label>CDS State</label>
-										            <md-select ng-model="pro_cds_state">
-										              <md-option ng-repeat="state in pro_cds_states" value="{{pro_cds_state}}" required="">
-										                {{pro_cds_state}}
+										            <md-select ng-model="cDSData.pro_cds_state">
+										              <md-option ng-repeat="state in cDSData.pro_cds_states" value="{{cDSData.pro_cds_state}}" required="">
+										                {{cDSData.pro_cds_state}}
 										              </md-option>
 										            </md-select>
 										        </md-input-container>
@@ -1297,12 +1289,12 @@
 										   	<div layout-gt-sm="row">
 												<div layout="column" flex >
 												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">CDS Issue Date</label>
-												    <md-datepicker name="pro_cds_issue_date" ng-model="pro_cds_issue_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												    <md-datepicker name="pro_cds_issue_date" ng-model="cDSData.pro_cds_issue_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
 												</div>
 
 												<div layout="column" flex >
 												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">CDS Expiration Date</label>
-												    <md-datepicker name="pro_cds_expire_date" ng-model="pro_cds_expire_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												    <md-datepicker name="pro_cds_expire_date" ng-model="cDSData.pro_cds_expire_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
 												</div>
 											</div>
 										    
@@ -1604,21 +1596,17 @@
 												<div layout-gt-sm="row">
 												  <md-input-container class="md-block" flex-gt-sm="">
 										            <label>Postal Code</label>
-										            <input name="postalCode" ng-model="user.postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+										            <input name="postalCode" ng-model="user.postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5"  onkeyup="fillbyzip(this.value,'pl_city','pl_state','');">
 										           
 										          </md-input-container>
 										          <md-input-container class="md-block" flex-gt-sm="">
 										            <label>City</label>
-										            <input ng-model="user.city">
+										            <input id="pl_city" disabled ng-model="personalInfoData.city" placeholder="Select Postal Code to Auto fill" >
 										          </md-input-container>
 										
 										          <md-input-container class="md-block" flex-gt-sm="">
 										            <label>State</label>
-										            <md-select ng-model="user.state">
-										              <md-option ng-repeat="state in states" value="{{state}}">
-										                {{state}}
-										              </md-option>
-										            </md-select>
+										            <input id="pl_state" disabled ng-model="personalInfoData.state" placeholder="Select Postal Code to Auto fill">
 										          </md-input-container>
 										
 										          
@@ -2385,10 +2373,8 @@ function overlayclose(id){
 		$('#' + id + '_overlay').fadeOut('fast');
 	});
 }
-function fillbyzip(zipcode) {
-  //var el = $(this);
-console.log("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZz");
-console.log(zipcode);
+function fillbyzip(zipcode,city_id,state_id,country_id) {
+ console.log(zipcode);
   if (zipcode.length == 5) {
    
     // Make Ajax call, etc
@@ -2407,15 +2393,17 @@ console.log(zipcode);
                         state = result[0]['address_components'][component]['short_name'];
                         // do stuff with the state here!
                         console.log(state);
-                        document.getElementsByName("p_state")[0].value = state;
+                        document.getElementById(state_id).value = state;
                         // get city name
                         city = result[0]['address_components'][1]['long_name'];
                         // Insert city name into some input box
                         console.log(city);
-                        document.getElementsByName("p_city")[0].value = city;
+                        document.getElementById(city_id).value = city;
+                        if(country_id !=""){
                         country = result[0]['address_components'][2]['long_name'];
-                        
                         console.log(country);
+                        document.getElementById(country_id).value = country;
+                        }
                     }
                 }
             }
@@ -2425,8 +2413,10 @@ console.log(zipcode);
   }
   else
   {
-  	document.getElementsByName("p_state")[0].value = "";
-  	document.getElementsByName("p_city")[0].value = "";
+  	document.getElementById(state_id).value = "";
+  	document.getElementById(city_id).value = "";
+  	if(country_id !="")
+     document.getElementById(country_id).value = "";
   }
 
 }
