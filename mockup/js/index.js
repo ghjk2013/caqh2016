@@ -23,19 +23,23 @@ var myApp = angular.module('MyApp',['ngMaterial']);
 		middle_name : '',
 		last_name : 'M Doe',
 		suffix : '',
+		postalCode : '20001',
 		email : 'john_koshy@hotmail.com',
 		address_line1 : '23 Main St. Washington DC',
 		address_line2 : 'DC-12345',
 		fax : 'xxx-xx-1111',
 		b_date : new Date('04 Jan 1980'),
 		m_daytime_phone : '(123) - 450 - 7890',
+		p_city : 'Washington',
+		p_state : 'DC',
 		city : '',
-		cityies : ['city1', 'city2', 'city3'],
+		cityies : ['city1', 'city2' , 'city3'],
 		state : '',
 		states : ['state1', 'state2', 'state3'],
 		b_gender : '',
 		genders : ['Male', 'Female'],
 		countrys : ['country1', 'country2', 'country3'],
+		b_races : ['Ethnicity1', 'Ethnicity2', 'Ethnicity3'],
 		ssn : '',
 		npin : '',
 		upin : '',
@@ -65,7 +69,7 @@ var myApp = angular.module('MyApp',['ngMaterial']);
 		licencetype : 'Type2',
 		licencetypes: ['Type1', 'Type2', 'Type3'],
 		licencecategoery : 'CType2',
-		licencecategoeries: ['CType1', 'CType2', 'CType3']
+		licencecategories: ['CType1', 'CType2', 'CType3']
 		
 	}; 
 

@@ -195,9 +195,9 @@
 				<div id="main_block" style="padding: 0 2% 0;width: 79%;height: 80%;float: left;border-left:1px solid #d9e5e8;">
 
 					<div style="height: 24%;line-height: 2">
-						<div style="padding:10px 0 10px 15px;float: left;color: #496973;">
-							<h1>John De, MD</h1>
-							<h2><font color="green">Allergy & Immunology</font> Washington, DC</h2>
+						<div style="padding:10px 0 10px 15px;float: left;color: #496973;" ng-controller="PersonalInfo">
+							<h1 >{{personalInfoData.first_name}} {{personalInfoData.middle_name}} {{personalInfoData.last_name}} {{personalInfoData.suffix}}</h1>
+							<h2><font color="green">Allergy & Immunology</font>  {{personalInfoData.p_city}}, {{personalInfoData.p_state}}</h2>
 						</div>
 						<div style="float: right;padding:10px 0 10px 15px;font-size: 14px;text-align: right;">
 							<div>
@@ -914,12 +914,12 @@
 										          </md-input-container>
 										          <md-input-container class="md-block" flex-gt-sm="">
 										            <label>City</label>
-										            <input id="p_city" disabled ng-model="personalInfoData.city" placeholder="Select Postal Code to Auto fill" >
+										            <input id="p_city"  ng-model="personalInfoData.p_city" placeholder="Select Postal Code to Auto fill" >
 										          </md-input-container>
 										
 										          <md-input-container class="md-block" flex-gt-sm="">
 										            <label>State</label>
-										            <input id="p_state" disabled ng-model="personalInfoData.state" placeholder="Select Postal Code to Auto fill">
+										            <input id="p_state" disabled ng-model="personalInfoData.p_state" placeholder="Select Postal Code to Auto fill">
 										          </md-input-container>
 										
 										          
@@ -972,7 +972,12 @@
 										        <div hide-sm="" hide-xs="" flex="2" class="hide-sm hide-xs flex-2"></div>
 										        <md-input-container flex>
 										            <label>FNIN Issued By Country</label>
-										            <input type="text" ng-model="personalInfoData.fnin_country" title="Foreign Nation ID Number Issued By Country" style=" margin-right:3%;">
+										            <md-select ng-model="personalInfoData.fnin_country" title="Foreign Nation ID Number Issued By Country">
+										              <md-option ng-repeat="country in personalInfoData.countrys" value="{{country}}" required="">
+										                {{country}}
+										              </md-option>
+										            </md-select>
+										            
 										        </md-input-container>
 										    </div>
 										    
@@ -1007,13 +1012,21 @@
 										
 										          <md-input-container class="md-block" flex-gt-sm="">
 										            <label>Birth State</label>
-										            <input id="b_state"  ng-model="personalInfoData.bstate" >
+										            <md-select ng-model="personalInfoData.b_state">
+										              <md-option ng-repeat="state in personalInfoData.states" value="{{state}}" required="">
+										                {{state}}
+										              </md-option>
+										            </md-select>
 										          </md-input-container>
 											</div>
 											<div layout-gt-sm="row">
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>Birth Country</label>
-													<input id="b_country"  ng-model="personalInfoData.bstate" >
+													<md-select ng-model="personalInfoData.b_country">
+										              <md-option ng-repeat="country in personalInfoData.countrys" value="{{country}}" required="">
+										                {{country}}
+										              </md-option>
+										            </md-select>
 												</md-input-container>
 
 												<md-input-container class="md-block" flex-gt-sm="">
@@ -1024,7 +1037,11 @@
 											</div>
 											<md-input-container style="width:47%" >
 									            <label>Race / Ethnics</label>
-									            <input type="text" ng-model="personalInfoData.b_race" title="Race / Ethnics" >
+									             <md-select ng-model="personalInfoData.b_race" title="Race / Ethnicity" >
+										              <md-option ng-repeat="b_race in personalInfoData.b_races" value="{{b_race}}" required="">
+										                {{b_race}}
+										              </md-option>
+										            </md-select>
 									        </md-input-container>
 
 										    
@@ -1140,10 +1157,10 @@
 													</md-select>
 												</md-input-container>
 												<md-input-container class="md-block" flex-gt-sm="">
-													<label>Licence Categoery</label>
+													<label>Licence Category</label>
 													<md-select ng-model="licenceData.pro_licence_categoery">
-														<md-option ng-repeat="categoery in licenceData.licencecategoeries" value="{{categoery}}">
-															{{categoery}}
+														<md-option ng-repeat="category in licenceData.licencecategoeries" value="{{category}}">
+															{{category}}
 														</md-option>
 													</md-select>
 												</md-input-container>
