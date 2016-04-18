@@ -262,16 +262,14 @@
 										<div style="padding-left: 0;font-weight: bold">
 											Identification
 										</div>
-										<div class="identification" id="identification1">
+										<div ng-controller="Identification" class="identification" id="identification1">
 										<span style="float: left; width: 100%;padding-left: 3%;"> 
-											<span style="float: left;font-family: open_sans_regular">Unique Physician Identification No (UPIN): xxxxxxxx</span>
-											<span style=" float: right;">
-												<span style="float: right;margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_id"></span>
-											</span>
+										<!--	<span style="float: left;font-family: open_sans_regular">Unique Physician Identification No (UPIN): xxxxxxxx</span>  -->
+											<span style="font-family: open_sans_regular">Unique Physician Identification No (UPIN):</span> <a href="#" id="proid_upin" data-type="text" data-url="" data-value="" data-title="Enter UPIN">{{identificationData.upin || 'Empty'}}</a> &nbsp;&nbsp;&nbsp;<span id="upin_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 											<br />
-											<span style="font-family: open_sans_regular">National Provider Identification No (NPI):</span> xxxxxxxxx
+											<span style="font-family: open_sans_regular">National Provider Identification No (NPI):</span> <a href="#" id="proid_npi" data-type="text" data-url="" data-value="" data-title="Enter NPI">{{identificationData.upin || 'Empty'}}</a> &nbsp;&nbsp;&nbsp;<span id="npi_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 										</span>
-									 </div>
+									  </div>
 									</div>
 									<div class="horizon-item" id="licence" title="Licence" ng-controller="Licence">
 										<div style="width: 100%;padding: 0px;text-align: center; ">
@@ -1104,8 +1102,8 @@
 										        <md-input-container flex >
 										            <label>Licence State</label>
 										            <md-select ng-model="licenceData.pro_licence_state" >
-										              <md-option ng-repeat="pro_licence_states in licenceData.pro_licence_states" value="{{licenceData.pro_licence_state}}">
-										                {{licenceData.pro_licence_state}}
+										              <md-option ng-repeat="pro_licence_state in licenceData.pro_licence_states" value="{{pro_licence_state}}">
+										                {{pro_licence_state}}
 										              </md-option>
 										            </md-select>
 										        </md-input-container>
@@ -1125,8 +1123,8 @@
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>Licence Type</label>
 													<md-select ng-model="licenceData.pro_licence_type">
-														<md-option ng-repeat="type in licenceData.licencetypes" value="{{licenceData.licencetype}}">
-															{{licenceData.licencetype}}
+														<md-option ng-repeat="type in licenceData.licencetypes" value="{{type}}">
+															{{type}}
 														</md-option>
 													</md-select>
 												</md-input-container>
@@ -1136,16 +1134,16 @@
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>Licence Status</label>
 													<md-select ng-model="licenceData.pro_licence_status">
-														<md-option ng-repeat="type in licenceData.licencestatustypes" value="{{licenceData.licencestatus}}">
-															{{licenceData.licencestatus}}
+														<md-option ng-repeat="pro_licence_status in licenceData.licencestatustypes" value="{{pro_licence_status}}">
+															{{pro_licence_status}}
 														</md-option>
 													</md-select>
 												</md-input-container>
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>Licence Categoery</label>
 													<md-select ng-model="licenceData.pro_licence_categoery">
-														<md-option ng-repeat="categoery in licenceData.licencecategoeries" value="{{licenceData.licencecategoery}}">
-															{{licenceData.licencecategoery}}
+														<md-option ng-repeat="categoery in licenceData.licencecategoeries" value="{{categoery}}">
+															{{categoery}}
 														</md-option>
 													</md-select>
 												</md-input-container>
@@ -1211,8 +1209,8 @@
 												<md-input-container style="width:47%" >
 										            <label>DEA State</label>
 										            <md-select ng-model="dEAData.pro_dea_state">
-										              <md-option ng-repeat="state in dEAData.pro_dea_states" value="{{dEAData.pro_dea_state}}" required="">
-										                {{pro_dea_state}}
+										              <md-option ng-repeat="state in dEAData.pro_dea_states" value="{{state}}" required="">
+										                {{state}}
 										              </md-option>
 										            </md-select>
 										        </md-input-container>
@@ -1279,8 +1277,8 @@
 												<md-input-container style="width:47%" >
 										            <label>CDS State</label>
 										            <md-select ng-model="cDSData.pro_cds_state">
-										              <md-option ng-repeat="state in cDSData.pro_cds_states" value="{{cDSData.pro_cds_state}}" required="">
-										                {{cDSData.pro_cds_state}}
+										              <md-option ng-repeat="state in cDSData.pro_cds_states" value="{{state}}" required="">
+										                {{state}}
 										              </md-option>
 										            </md-select>
 										        </md-input-container>
@@ -1360,8 +1358,8 @@
 												<md-input-container style="width:47%" >
 										            <label>Medicare State</label>
 										            <md-select ng-model="pro_medicare_state">
-										              <md-option ng-repeat="state in pro_medicare_states" value="{{pro_medicare_state}}" required="">
-										                {{pro_medicare_state}}
+										              <md-option ng-repeat="state in pro_medicare_states" value="{{state}}" required="">
+										                {{state}}
 										              </md-option>
 										            </md-select>
 										        </md-input-container>
@@ -1429,8 +1427,8 @@
 												<md-input-container style="width:47%" >
 										            <label>Medicaid State</label>
 										            <md-select ng-model="pro_medicaid_state">
-										              <md-option ng-repeat="state in pro_medicaid_states" value="{{pro_medicaid_state}}" required="">
-										                {{pro_medicaid_state}}
+										              <md-option ng-repeat="state in pro_medicaid_states" value="{{state}}" required="">
+										                {{state}}
 										              </md-option>
 										            </md-select>
 										        </md-input-container>
@@ -2273,6 +2271,14 @@
 		 e.stopPropagation();
           $('#practice_state').editable('toggle');
         
+    });
+    $('#upin_edit_inline').click(function(e) {
+		 e.stopPropagation();
+          $('#proid_upin').editable('toggle');
+    });
+    $('#npi_edit_inline').click(function(e) {
+		 e.stopPropagation();
+          $('#proid_npi').editable('toggle');
     });
     
     function build_accordion(id, area_to_occupy) {

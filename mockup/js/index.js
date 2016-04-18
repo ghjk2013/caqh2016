@@ -26,7 +26,6 @@ var myApp = angular.module('MyApp',['ngMaterial']);
 		email : 'john_koshy@hotmail.com',
 		address_line1 : '23 Main St. Washington DC',
 		address_line2 : 'DC-12345',
-		dateofbirth : '04 Jan 1980',
 		fax : 'xxx-xx-1111',
 		b_date : new Date('04 Jan 1980'),
 		m_daytime_phone : '(123) - 450 - 7890',
@@ -62,7 +61,7 @@ var myApp = angular.module('MyApp',['ngMaterial']);
 		pro_same_state : '',		
 		licencestatus : 'Active',
 		licencestatustypes : ['Active', 'Blocked', 'Suspended'],
-		pro_licence_expire_date : '04 Jan 2070',
+		pro_licence_expire_date : new Date('04 Jan 2070'),
 		licencetype : 'Type2',
 		licencetypes: ['Type1', 'Type2', 'Type3'],
 		licencecategoery : 'CType2',
@@ -84,8 +83,8 @@ var myApp = angular.module('MyApp',['ngMaterial']);
 		pro_dea_state : 'state2',
 		pro_dea_states : ['state1', 'state2', 'state3'],
 		pro_dea_no : 'xxxxxxxxxxx1',
-		pro_dea_issue_date: '02 Feb 2015',
-		pro_dea_expire_date : '02 Feb 2020'
+		pro_dea_issue_date: new Date('02 Feb 2015'),
+		pro_dea_expire_date : new Date('02 Feb 2020')
 				
 	}; 
 
@@ -102,8 +101,8 @@ var myApp = angular.module('MyApp',['ngMaterial']);
 		pro_cds_state : 'state2',
 		pro_cds_states : ['state1', 'state2', 'state3'],
 		pro_cds_no : 'xxxxxxxxxxx',
-		pro_cds_issue_date: '02 Feb 2014',
-		pro_cds_expire_date : '02 Feb 2024'
+		pro_cds_issue_date: new Date('02 Feb 2014'),
+		pro_cds_expire_date : new Date('02 Feb 2024')
 				
 	}; 
 
@@ -112,6 +111,20 @@ var myApp = angular.module('MyApp',['ngMaterial']);
   
   myApp.controller('CDS', function($scope, CDSData) {
       $scope.cDSData = CDSData;
+      
+  });
+  
+  myApp.factory('IdentificationData', function () {
+  var identificationData = {
+		upin : '',
+    	npi : ''
+	}; 
+
+    return identificationData;
+  });
+  
+  myApp.controller('Identification', function($scope, IdentificationData) {
+      $scope.identificationData = IdentificationData;
       
   });
 
