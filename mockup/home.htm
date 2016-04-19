@@ -25,6 +25,7 @@
 		<link href="bootstrap-editable.css" rel="stylesheet" type="text/css">
 		<link href="select2-bootstrap.css" rel="stylesheet" type="text/css">
 		-->
+		<script src='js/states-json.js'></script>
 		<script src='jquery-2.2.3.min.js'></script>
 		<script src='jquery-ui.min.js'></script>
 		<link href="jquery-editable.css" media="screen" rel="stylesheet" type="text/css">
@@ -222,7 +223,7 @@
 									<span style="font-family: open_sans_regular">Provider Type:</span> <a href="#" id="provide_type" data-type="select" data-url="" data-value="1" data-title="Provide Type">MD</a> &nbsp;&nbsp;&nbsp;<span id="provide_type_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 								</div>
 								<div style="width: 33%; float: right; text-align: right;padding-right: 25px;">
-									<span style="font-family: open_sans_regular">Practice Setting:</span> <a href="#" id="practice_setting" data-type="select" data-url="" data-value="2" data-title="Practice Setting">InpatientOnly</a> &nbsp;&nbsp;&nbsp;<span id="practice_setting_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+									<span style="font-family: open_sans_regular">Practice Setting:</span> <a href="#" id="practice_setting" data-type="select" data-url="" data-value="2" data-title="Practice Setting">Inpatient-Only</a> &nbsp;&nbsp;&nbsp;<span id="practice_setting_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 								</div>
 								<div style="width: 33%; float: right; ">
 									<span style="font-family: open_sans_regular">Practice State:</span> <a href="#" id="practice_state" data-type="select2" data-pk=null data-url="" data-value="VA" data-title="Select Practice States">VA</a> &nbsp;&nbsp;&nbsp;<span id="practice_state_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
@@ -2245,18 +2246,13 @@
            ]});
 	    $('#practice_setting').editable({toggle:'manual',
 	        source: [
-              {value: 1, text: 'Inpatient'},
-              {value: 2, text: 'InpatientOnly'},
-              {value: 3, text: 'InpatientNot'}
+              {value: 1, text: 'Inpatient/Outpatient'},
+              {value: 2, text: 'Inpatient-Only'}
            ]
 	    });
 	    $('#practice_state').editable({toggle:'manual',
 	        value: 3,
-	        source: [
-              {value: 'VA', text: 'VA'}, 
-              {value: 'MD', text: 'MD'},
-              {value: 'DC', text: 'DC'}
-           ],
+	        source: new GlobalStates().states(),
         select2: {
            multiple: true
         }	
