@@ -149,7 +149,7 @@
 						</ul>
 					</div>
 				</div>
-				<div style="z-index: 100;padding-top: 2px;background-color: #eee;position: fixed;padding-left: 10px;display: none;height: 30px;font-family: open_sans_regular;text-align: center;font-size: 16px;color: #f0f1f0;width: 98%;box-shadow: 0 3px 4px rgba(0, 0, 0, 0.13);" id="update_res">
+				<div style="z-index: 100;padding-top: 2px;background-color: #eee;position: fixed;padding-left: 10px;display: none;height: 30px;text-align: center;font-size: 16px;color: #f0f1f0;width: 98%;box-shadow: 0 3px 4px rgba(0, 0, 0, 0.13);" id="update_res">
 					<p id="update_res_text"></p>
 					<span id="update_res_boxclose" style="margin-right:9px;top: -19px; cursor: pointer;float: right;position: relative;" title="Close" class="fa fa-times fa-1x"></span>
 				</div>
@@ -166,11 +166,11 @@
 							</div>
 						</div>
 					</div>
-					<div style="font-family: open_sans_regular;width: 100%;text-align: center;margin-bottom: 10px;font-size: 14px">
-						CAQH ID: 12345
+					<div style="width: 100%;text-align: center;margin-bottom: 10px;font-size: 14px">
+						<span class="testheading">CAQH ID: </span>12345
 					</div>
 					<div style="width: 100%;text-align: center;margin-bottom: 50px;">
-						<span style="font-family: open_sans_regular"> Last Login Date : </span> 12/25/2015
+						<span class="testheading" style="font-size: 12px"> Last Login Date : </span> 12/25/2015
 					</div>
 					<!--  <div style="height:240px;text-align: center;">
 					<div id="power-gauge"></div>
@@ -202,13 +202,13 @@
 						</div>
 						<div style="float: right;padding:10px 0 10px 15px;font-size: 14px;text-align: right;">
 							<div>
-								<span style="font-family: open_sans_regular"> Status:</span> Inital Application Complete
+								<span class="testheading"> Status:</span> Inital Application Complete
 							</div>
 							<div>
-								<span style="font-family: open_sans_regular"> Last Attested Date : </span> 12/25/2015
+								<span class="testheading"> Last Attested Date : </span> 12/25/2015
 							</div>
 							<div>
-								<span style="font-family: open_sans_regular">Days Remaining to Re-attest: </span> 120
+								<span class="testheading">Days Remaining to Re-attest: </span> 120
 							</div>
 						</div>
 					</div>
@@ -220,13 +220,13 @@
 							</div>
 							<div style="height: 62px;">
 								<div style="width: 33% ;float: left">
-									<span style="font-family: open_sans_regular">Provider Type:</span> <a href="#" id="provide_type" data-type="select" data-url="" data-value="1" data-title="Provide Type">MD</a> &nbsp;&nbsp;&nbsp;<span id="provide_type_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+									<span class="testheading">Provider Type:</span> <a href="#" id="provide_type" data-type="select" data-url="" data-value="1" data-title="Provide Type">MD</a> &nbsp;&nbsp;&nbsp;<span id="provide_type_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 								</div>
 								<div style="width: 33%; float: right; text-align: right;padding-right: 25px;">
-									<span style="font-family: open_sans_regular">Practice Setting:</span> <a href="#" id="practice_setting" data-type="select" data-url="" data-value="2" data-title="Practice Setting">Inpatient-Only</a> &nbsp;&nbsp;&nbsp;<span id="practice_setting_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+									<span class="testheading">Practice Setting:</span> <a href="#" id="practice_setting" data-type="select" data-url="" data-value="2" data-title="Practice Setting">Inpatient-Only</a> &nbsp;&nbsp;&nbsp;<span id="practice_setting_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 								</div>
 								<div style="width: 33%; float: right; ">
-									<span style="font-family: open_sans_regular">Practice State:</span> <a href="#" id="practice_state" data-type="select2" data-pk=null data-url="" data-value="VA" data-title="Select Practice States">VA</a> &nbsp;&nbsp;&nbsp;<span id="practice_state_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+									<span class="testheading">Practice State:</span> <a href="#" id="practice_state" data-type="select2" data-pk=null data-url="" data-value="VA" data-title="Select Practice States">VA</a> &nbsp;&nbsp;&nbsp;<span id="practice_state_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 								</div>
 							</div>
 
@@ -234,17 +234,17 @@
 						<li ng-controller="PersonalInfo">
 							<a scroll=0 id="personal_information">Personal Information<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span><span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span></a>
 							<ul style="height: 130px;">
-								<span style="float: left; width: 48%"> <span style="font-family: open_sans_regular">Name:</span> {{personalInfoData.first_name}} {{personalInfoData.middle_name}} {{personalInfoData.last_name}} {{personalInfoData.suffix}}
+								<span style="float: left; width: 48%"> <span class="testheading">Name:</span> {{personalInfoData.first_name}} {{personalInfoData.middle_name}} {{personalInfoData.last_name}} {{personalInfoData.suffix}}
 									<br />
-									<span style="font-family: open_sans_regular">Email:</span> {{personalInfoData.email}}
+									<span class="testheading">Email:</span> {{personalInfoData.email}}
 									<br />
-									<span style="font-family: open_sans_regular">Address:</span> {{personalInfoData.address_line1}}, {{personalInfoData.address_line2}} </span>
+									<span class="testheading">Address:</span> {{personalInfoData.address_line1}}, {{personalInfoData.address_line2}} </span>
 								<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 58%; margin-top: 2%;"></span>
-								<span style="float: right; width: 46%"> <span style="font-family: open_sans_regular;"> Date of Birth: </span> {{personalInfoData.b_date.toISOString().slice(0, 10)}}<span id="personal_info" style="float: right;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+								<span style="float: right; width: 46%"> <span class="testheading"> Date of Birth: </span> {{personalInfoData.b_date.toISOString().slice(0, 10)}}<span id="personal_info" style="float: right;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 									<br />
-									<span style="font-family: open_sans_regular">Fax:</span> {{personalInfoData.fax}}
+									<span class="testheading">Fax:</span> {{personalInfoData.fax}}
 									<br />
-									<span style="font-family: open_sans_regular">Phone:</span> {{personalInfoData.m_daytime_phone}} </span>
+									<span class="testheading">Phone:</span> {{personalInfoData.m_daytime_phone}} </span>
 							</ul>
 						</li>
 
@@ -265,10 +265,10 @@
 										</div>
 										<div ng-controller="Identification" class="identification" id="identification1">
 										<span style="float: left; width: 100%;padding-left: 3%;"> 
-										<!--	<span style="float: left;font-family: open_sans_regular">Unique Physician Identification No (UPIN): xxxxxxxx</span>  -->
-											<span style="font-family: open_sans_regular">Unique Physician Identification No (UPIN):</span> <a href="#" id="proid_upin" data-type="text" data-url="" data-value="" data-title="Enter UPIN">{{identificationData.upin || 'Empty'}}</a> &nbsp;&nbsp;&nbsp;<span id="upin_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+										<!--	<span style="float: left" class="testheading">Unique Physician Identification No (UPIN): xxxxxxxx</span>  -->
+											<span class="testheading">Unique Physician Identification No (UPIN):</span> <a href="#" id="proid_upin" data-type="text" data-url="" data-value="" data-title="Enter UPIN">{{identificationData.upin || 'Empty'}}</a> &nbsp;&nbsp;&nbsp;<span id="upin_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 											<br />
-											<span style="font-family: open_sans_regular">National Provider Identification No (NPI):</span> <a href="#" id="proid_npi" data-type="text" data-url="" data-value="" data-title="Enter NPI">{{identificationData.upin || 'Empty'}}</a> &nbsp;&nbsp;&nbsp;<span id="npi_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+											<span class="testheading">National Provider Identification No (NPI):</span> <a href="#" id="proid_npi" data-type="text" data-url="" data-value="" data-title="Enter NPI">{{identificationData.upin || 'Empty'}}</a> &nbsp;&nbsp;&nbsp;<span id="npi_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 										</span>
 									  </div>
 									</div>
@@ -281,78 +281,78 @@
 										</div>
 										<div id="licence1" class="licence" style=" width: 100%;display: inherit;border-top: 1px dotted;border-bottom: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span style="font-family: open_sans_regular">Licence State:</span> {{licenceData.state}}
+											<span class="testheading">Licence State:</span> {{licenceData.state}}
 											<br />
-											<span style="font-family: open_sans_regular">Licence No:</span> {{licenceData.pro_licence_no}}
+											<span class="testheading">Licence No:</span> {{licenceData.pro_licence_no}}
 											
 											<br />
-											<span style="font-family: open_sans_regular">Practice in This State:</span> Yes </span>
+											<span class="testheading">Practice in This State:</span> Yes </span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-										<span style="float: right; width: 46%"> <span style="float: left;font-family: open_sans_regular;">Licence Type: {{licenceData.licencetype}}</span>
+										<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type: </span>{{licenceData.licencetype}}
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 											<br />
-											<span style="font-family: open_sans_regular;">Expiration Date:</span> {{licenceData.pro_licence_expire_date}} 
+											<span class="testheading">Expiration Date:</span> {{licenceData.pro_licence_expire_date}} 
 											<br />
-											<span style="font-family: open_sans_regular">Licence Staus:</span> {{licenceData.licencestatus}}
+											<span class="testheading">Licence Staus:</span> {{licenceData.licencestatus}}
 										</span>
 										</div>
 										<div id="licence2" class="licence" style="display: none; width: 100%;border-top: 1px dotted;border-bottom: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span style="font-family: open_sans_regular">Licence State2:</span> xxxxxxx2
+											<span class="testheading">Licence State2:</span> xxxxxxx2
 											<br />
-											<span style="font-family: open_sans_regular">Licence No2:</span> xxxxxxxxxxx2
+											<span class="testheading">Licence No2:</span> xxxxxxxxxxx2
 											
 											<br />
-											<span style="font-family: open_sans_regular">Practice in This State2:</span> Yes </span>
+											<span class="testheading">Practice in This State2:</span> Yes </span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-										<span style="float: right; width: 46%"> <span style="float: left;font-family: open_sans_regular;">Licence Type2: xxxxxx</span>
+										<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type2: </span>xxxxxx
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 											<br />
-											<span style="font-family: open_sans_regular;">Expiration Date2:</span> 02/02/2020 
+											<span class="testheading">Expiration Date2:</span> 02/02/2020 
 											<br />
-											<span style="font-family: open_sans_regular">Licence Staus2:</span> Active
+											<span class="testheading">Licence Staus2:</span> Active
 										</span>
 										</div>
 										<div id="licence3" class="licence" style="display: none; width: 100%;border-top: 1px dotted;border-bottom: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span style="font-family: open_sans_regular">Licence State3:</span> xxxxxxx3
+											<span class="testheading">Licence State3:</span> xxxxxxx3
 											<br />
-											<span style="font-family: open_sans_regular">Licence No3:</span> xxxxxxxxxxx3
+											<span class="testheading">Licence No3:</span> xxxxxxxxxxx3
 											
 											<br />
-											<span style="font-family: open_sans_regular">Practice in This State3:</span> Yes </span>
+											<span class="testheading">Practice in This State3:</span> Yes </span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-										<span style="float: right; width: 46%"> <span style="float: left;font-family: open_sans_regular;">Licence Type3: xxxxxx</span>
+										<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type3: </span>xxxxxx
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 											<br />
-											<span style="font-family: open_sans_regular;">Expiration Date3:</span> 02/02/2020 
+											<span class="testheading">Expiration Date3:</span> 02/02/2020 
 											<br />
-											<span style="font-family: open_sans_regular">Licence Staus3:</span> Active
+											<span class="testheading">Licence Staus3:</span> Active
 										</span>
 										</div>
 										<div id="licence4" class="licence" style="display: none; width: 100%;border-top: 1px dotted;border-bottom: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span style="font-family: open_sans_regular">Licence State3:</span> xxxxxxx4
+											<span class="testheading">Licence State3:</span> xxxxxxx4
 											<br />
-											<span style="font-family: open_sans_regular">Licence No3:</span> xxxxxxxxxxx4
+											<span class="testheading">Licence No3:</span> xxxxxxxxxxx4
 											
 											<br />
-											<span style="font-family: open_sans_regular">Practice in This State3:</span> Yes </span>
+											<span class="testheading">Practice in This State3:</span> Yes </span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-										<span style="float: right; width: 46%"> <span style="float: left;font-family: open_sans_regular;">Licence Type3: xxxxxx</span>
+										<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type3: </span>xxxxxx
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 											<br />
-											<span style="font-family: open_sans_regular;">Expiration Date3:</span> 02/02/2020 
+											<span class="testheading">Expiration Date3:</span> 02/02/2020 
 											<br />
-											<span style="font-family: open_sans_regular">Licence Staus3:</span> Active
+											<span class="testheading">Licence Staus3:</span> Active
 										</span>
 										</div>
 										<div style="float: right;margin-right: 10px;padding: 0px;" id="licence_view_page_link"><span id="licence_view_prev" class="pagi_prev" title="Previous" onclick="updateviewpage('prev');"></span>Viewing <span id="licence_view_current">1</span> of <span id="licence_view_total"></span> <span id="licence_view_list"> </span> <span id="licence_view_next" class="pagi_next" style="cursor: pointer;" onclick="updateviewpage('next');"></span></div>
@@ -366,15 +366,15 @@
 										</div>
 										<div ng-controller="DEA" id="dearesidtration1" class="dearesidtration" style="display: inherit; width: 100%;border-top: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span style="font-family: open_sans_regular">Drug Enforcement Administration No (DEA):</span> {{dEAData.pro_dea_no}}
+											<span class="testheading">Drug Enforcement Administration No (DEA):</span> {{dEAData.pro_dea_no}}
 											<br />
-											<span style="font-family: open_sans_regular">DEA State:</span> {{dEAData.pro_dea_state}}
+											<span class="testheading">DEA State:</span> {{dEAData.pro_dea_state}}
 											<br />
-											<span style="font-family: open_sans_regular">Issue Date:</span> {{dEAData.pro_dea_issue_date}}
+											<span class="testheading">Issue Date:</span> {{dEAData.pro_dea_issue_date}}
 										</span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 										<span style="float: right; width: 46%"> 
-											<span style="float: left;font-family: open_sans_regular;">Expiration Date: {{dEAData.pro_dea_expire_date}}</span>
+											<span style="float: left;" class="testheading">Expiration Date: </span>{{dEAData.pro_dea_expire_date}}
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="dea_reg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
@@ -382,15 +382,15 @@
 										</div>
 										<div id="dearesidtration2" class="dearesidtration" style="display: none;width: 100%;border-top: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span style="font-family: open_sans_regular">Drug Enforcement Administration No (DEA)2:</span> xxxxxxx
+											<span class="testheading">Drug Enforcement Administration No (DEA)2:</span> xxxxxxx
 											<br />
-											<span style="font-family: open_sans_regular">DEA State2:</span> xxxxxxxxxxx
+											<span class="testheading">DEA State2:</span> xxxxxxxxxxx
 											<br />
-											<span style="font-family: open_sans_regular">Issue Date2:</span> 02/02/2015
+											<span class="testheading">Issue Date2:</span> 02/02/2015
 										</span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 										<span style="float: right; width: 46%"> 
-											<span style="float: left;font-family: open_sans_regular;">Expiration Date2: 02/02/2020</span>
+											<span style="float: left;" class="testheading">Expiration Date2: </span>02/02/2020
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="dea_reg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
@@ -406,15 +406,15 @@
 											Controlled Dangerous Substances (CDS) Registration
 										</div>
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span style="font-family: open_sans_regular">CDS No:</span> {{cDSData.pro_cds_no}}
+											<span class="testheading">CDS No:</span> {{cDSData.pro_cds_no}}
 											<br />
-											<span style="font-family: open_sans_regular">CDS State:</span> {{cDSData.pro_cds_state}}
+											<span class="testheading">CDS State:</span> {{cDSData.pro_cds_state}}
 											<br />
-											<span style="font-family: open_sans_regular">Issue Date:</span> {{cDSData.pro_cds_issue_date}}
+											<span class="testheading">Issue Date:</span> {{cDSData.pro_cds_issue_date}}
 										</span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 										<span style="float: right; width: 46%"> 
-											<span style="float: left;font-family: open_sans_regular;">Expiration Date: {{cDSData.pro_cds_expire_date}}</span>
+											<span style="float: left;" class="testheading">Expiration Date: </span>{{cDSData.pro_cds_expire_date}}
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="cds_reg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
@@ -429,12 +429,12 @@
 											Medicare
 										</div>
 										<span style="float: left; width: 100%;padding-left: 3%;"> 
-											<span style="float: left;font-family: open_sans_regular">Medicare No: xxxxxxx</span>
+											<span style="float: left" class="testheading">Medicare No: </span>xxxxxxx
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="medi_care"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 											<br />
-											<span style="font-family: open_sans_regular">Medicare State:</span> xxxxxxxxxxx
+											<span class="testheading">Medicare State:</span> xxxxxxxxxxx
 										</span>
 									</div>
 									<div class="horizon-item" title="Medicaid">
@@ -445,12 +445,12 @@
 											Medicaid
 										</div>
 										<span style="float: left; width: 100%;padding-left: 3%;"> 
-											<span style="float: left;font-family: open_sans_regular">Medicaid No: xxxxxxx</span>
+											<span style="float: left" class="testheading">Medicaid No: </span>xxxxxxx
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="medicaid"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 											<br />
-											<span style="font-family: open_sans_regular">Medicaid State:</span> xxxxxxxxxxx
+											<span class="testheading">Medicaid State:</span> xxxxxxxxxxx
 										</span>
 									</div>
 									<!-- <div class="horizon-item">
@@ -461,12 +461,12 @@
 											ECFMG
 										</div>
 										<span style="float: left; width: 100%;padding-left: 3%;"> 
-											<span style="float: left;font-family: open_sans_regular">ECFMG No: xxxxxxx</span>
+											<span style="float: left" class="testheading">ECFMG No: xxxxxxx</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 											<br />
-											<span style="font-family: open_sans_regular">Issue Date:</span> 02/02/2015
+											<span class="testheading">Issue Date:</span> 02/02/2015
 										</span>
 									</div>
 									<div class="horizon-item">
@@ -477,12 +477,12 @@
 											USMLE
 										</div>
 										<span style="float: left; width: 100%;padding-left: 3%;"> 
-											<span style="float: left;font-family: open_sans_regular">USMLE No: xxxxxxx</span>
+											<span style="float: left" class="testheading">USMLE No: xxxxxxx</span>
 											<span style=" float: right;">
 												<span style="float: right;margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 											</span>
 											<br />
-											<span style="font-family: open_sans_regular">Expiration Date:</span> 02/02/2015
+											<span class="testheading">Expiration Date:</span> 02/02/2015
 										</span>
 									</div>
 									<div class="horizon-item">
@@ -493,7 +493,7 @@
 											Worker Compensation Number
 										</div>
 										<span style="float: left; width: 100%;padding-left: 3%;"> 
-											<span style="float: left;font-family: open_sans_regular">Worker Compensation Number: xxxxxxx</span>
+											<span style="float: left" class="testheading">Worker Compensation Number: xxxxxxx</span>
 											<span style=" float: right;">
 												<span style="float: right;margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 											</span>
@@ -507,22 +507,22 @@
 						<li>
 							<a scroll=5 id="speciality">Speciality<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span><span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span></a>
 							<ul style="height: 150px;">
-								<span style="float: left; width: 48%"> <span style="font-family: open_sans_regular">Primary Speciality:</span> xxxxxxx <span style="float: right;cursor: pointer;margin-right: 4%" title="Update" class="fa fa-pencil-square-o fa-lg" id="spe_cility"></span>
+								<span style="float: left; width: 48%"> <span class="testheading">Primary Speciality:</span> xxxxxxx <span style="float: right;cursor: pointer;margin-right: 4%" title="Update" class="fa fa-pencil-square-o fa-lg" id="spe_cility"></span>
 									<br />
-									<span style="font-family: open_sans_regular">Board Certified ?:</span> Yes
+									<span class="testheading">Board Certified ?:</span> Yes
 									<br />
-									<span style="font-family: open_sans_regular">Board Name:</span> xxxxx 
+									<span class="testheading">Board Name:</span> xxxxx 
 									<br />
-									<span style="font-family: open_sans_regular">Inital Cert Date:</span>  02/02/2015 </span> 
+									<span class="testheading">Inital Cert Date:</span>  02/02/2015 </span> 
 								<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 58%; margin-top: 2%;"></span>
 								<span style="float: right; width: 46%"> 
-									<span style="font-family: open_sans_regular;"> Secondary Speciality: </span> xxxxxxx<span style="float: right;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"  id="spe_cility"></span><span style="float: right;margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
+									<span class="testheading"> Secondary Speciality: </span> xxxxxxx<span style="float: right;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"  id="spe_cility"></span><span style="float: right;margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 									<br />
-									<span style="font-family: open_sans_regular">Board Certified ?:</span> Yes
+									<span class="testheading">Board Certified ?:</span> Yes
 									<br />
-									<span style="font-family: open_sans_regular">Board Name:</span> xxxxx 
+									<span class="testheading">Board Name:</span> xxxxx 
 									<br />
-									<span style="font-family: open_sans_regular">Inital Cert Date:</span>  02/02/2015 </span>
+									<span class="testheading">Inital Cert Date:</span>  02/02/2015 </span>
 							</ul>
 						</li>
 						<!-- <li>
@@ -537,22 +537,22 @@
 											CPR
 										</div>
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span style="font-family: open_sans_regular">Board Certified ?:</span> Yes
+											<span class="testheading">Board Certified ?:</span> Yes
 											<br />
-											<span style="font-family: open_sans_regular">CPR State:</span> xxxxxxxx
+											<span class="testheading">CPR State:</span> xxxxxxxx
 											<br />
-											<span style="font-family: open_sans_regular">Certified No:</span> xxxxxxxxxxx
+											<span class="testheading">Certified No:</span> xxxxxxxxxxx
 											<br />
-											<span style="font-family: open_sans_regular">Certified Date:</span> 02/02/2015
+											<span class="testheading">Certified Date:</span> 02/02/2015
 										</span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 										<span style="float: right; width: 46%"> 
-											<span style="float: left;font-family: open_sans_regular;">Certified Type: xxxxxx</span>
+											<span style="float: left;" class="testheading">Certified Type: xxxxxx</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 											<br />
-											<span style="font-family: open_sans_regular">Expiration Date:</span> 02/02/2015
+											<span class="testheading">Expiration Date:</span> 02/02/2015
 										</span>
 											
 									</div>
@@ -564,22 +564,22 @@
 											Basic Life Support
 										</div>
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span style="font-family: open_sans_regular">BLS Certified ?:</span> Yes
+											<span class="testheading">BLS Certified ?:</span> Yes
 											<br />
-											<span style="font-family: open_sans_regular">BLS State:</span> xxxxxxx
+											<span class="testheading">BLS State:</span> xxxxxxx
 											<br />
-											<span style="font-family: open_sans_regular">Certified No:</span> xxxxxxxxxxx
+											<span class="testheading">Certified No:</span> xxxxxxxxxxx
 											<br />
-											<span style="font-family: open_sans_regular">Certified Date:</span> 02/02/2015
+											<span class="testheading">Certified Date:</span> 02/02/2015
 										</span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 										<span style="float: right; width: 46%"> 
-											<span style="float: left;font-family: open_sans_regular;">Certified Type: xxxxxx</span>
+											<span style="float: left;" class="testheading">Certified Type: xxxxxx</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 											<br />
-											<span style="font-family: open_sans_regular">Expiration Date:</span> 02/02/2015
+											<span class="testheading">Expiration Date:</span> 02/02/2015
 										</span>
 											
 									</div>
@@ -601,24 +601,24 @@
 										<div style="padding-left: 0;font-weight: bold">
 										</div>
 										<span style="float: left; width: 48%;padding-left: 0;"> 
-											<span style="font-family: open_sans_regular">Name:</span> John M Doe
+											<span class="testheading">Name:</span> John M Doe
 											<br />
-											<span style="font-family: open_sans_regular">Address:</span> 23 Main St. Washington DC, DC-12345
+											<span class="testheading">Address:</span> 23 Main St. Washington DC, DC-12345
 											<br />
-											<span style="font-family: open_sans_regular">Email:</span> xxxxxxx@gmail.com
+											<span class="testheading">Email:</span> xxxxxxx@gmail.com
 										</span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 										<span style="float: right; width: 46%"> 
-											<span style="float: left;font-family: open_sans_regular;">Practice NDI: xxxxx</span>
+											<span style="float: left;" class="testheading">Practice NDI: xxxxx</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="practice_location"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 											<br />
-											<span style="font-family: open_sans_regular">Primary TaxID No:</span> 0000000
+											<span class="testheading">Primary TaxID No:</span> 0000000
 											<br />
-											<span style="font-family: open_sans_regular">Phone:</span> xxxxxx
+											<span class="testheading">Phone:</span> xxxxxx
 											<br />
-											<span style="font-family: open_sans_regular">Fax:</span> xxxxxx
+											<span class="testheading">Fax:</span> xxxxxx
 										</span>
 											
 									</div>
@@ -629,24 +629,24 @@
 										<div style="padding-left: 0;font-weight: bold">
 										</div>
 										<span style="float: left; width: 48%;padding-left: 0;"> 
-											<span style="font-family: open_sans_regular">Name:</span> John M Doe
+											<span class="testheading">Name:</span> John M Doe
 											<br />
-											<span style="font-family: open_sans_regular">Address:</span> 23 Main St. Washington DC, DC-12345
+											<span class="testheading">Address:</span> 23 Main St. Washington DC, DC-12345
 											<br />
-											<span style="font-family: open_sans_regular">Email:</span> xxxxxxx@gmail.com
+											<span class="testheading">Email:</span> xxxxxxx@gmail.com
 										</span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 										<span style="float: right; width: 46%"> 
-											<span style="float: left;font-family: open_sans_regular;">Practice NDI: xxxxx</span>
+											<span style="float: left;" class="testheading">Practice NDI: xxxxx</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="practice_location"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 											<br />
-											<span style="font-family: open_sans_regular">Primary TaxID No:</span> 0000000
+											<span class="testheading">Primary TaxID No:</span> 0000000
 											<br />
-											<span style="font-family: open_sans_regular">Phone:</span> xxxxxx
+											<span class="testheading">Phone:</span> xxxxxx
 											<br />
-											<span style="font-family: open_sans_regular">Fax:</span> xxxxxx
+											<span class="testheading">Fax:</span> xxxxxx
 										</span>
 											
 									</div>
@@ -657,24 +657,24 @@
 										<div style="padding-left: 0;font-weight: bold">
 										</div>
 										<span style="float: left; width: 48%;padding-left: 0;"> 
-											<span style="font-family: open_sans_regular">Name:</span> John M Doe
+											<span class="testheading">Name:</span> John M Doe
 											<br />
-											<span style="font-family: open_sans_regular">Address:</span> 23 Main St. Washington DC, DC-12345
+											<span class="testheading">Address:</span> 23 Main St. Washington DC, DC-12345
 											<br />
-											<span style="font-family: open_sans_regular">Email:</span> xxxxxxx@gmail.com
+											<span class="testheading">Email:</span> xxxxxxx@gmail.com
 										</span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 										<span style="float: right; width: 46%"> 
-											<span style="float: left;font-family: open_sans_regular;">Practice NDI: xxxxx</span>
+											<span style="float: left;" class="testheading">Practice NDI: xxxxx</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="practice_location"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 											<br />
-											<span style="font-family: open_sans_regular">Primary TaxID No:</span> 0000000
+											<span class="testheading">Primary TaxID No:</span> 0000000
 											<br />
-											<span style="font-family: open_sans_regular">Phone:</span> xxxxxx
+											<span class="testheading">Phone:</span> xxxxxx
 											<br />
-											<span style="font-family: open_sans_regular">Fax:</span> xxxxxx
+											<span class="testheading">Fax:</span> xxxxxx
 										</span>
 											
 									</div>
