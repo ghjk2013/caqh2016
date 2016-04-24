@@ -910,7 +910,7 @@
 												<div layout-gt-sm="row">
 													<md-input-container class="md-block" flex-gt-sm="">
 										            <label>Postal Code</label>
-										            <input id="postalCode" ng-model="personalInfoData.postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5" onkeyup="fillbyzip(this.value,'p_city','p_state','');">
+										            <input id="postalCode" ng-model="personalInfoData.postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5" ng-change='fillbyzipfn(personalInfoData.postalCode)' >
 										           
 										          </md-input-container>
 										          <md-input-container class="md-block" flex-gt-sm="">
@@ -1065,10 +1065,12 @@
 										      </md-chip-template>
 										    </md-chips>
 											 -->
-											<div layout="column" flex >
+											 <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Language</label>
+    <md-chips ng-model="personalInfoData.langs" readonly="false" md-enable-chip-edit="true"></md-chips>
+									<!--		<div layout="column" flex >
 											    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Language</label>
 											    <a href="#" id="language" title="Language" data-type="select2" data-pk=null data-url="" style="margin-left: 12px;margin-top: 10px;padding-bottom: 4px;text-decoration: none;width: 47%;" data-title="Enter Languages" data-showbuttons="false" data-emptytext="Click to add Language" ></a>
-											</div>
+									</div>  -->
 											<!-- <span style="width: 48%;margin-left: 1%;padding-bottom: 2%;">Language<font color="red"> *</font></span>
 										    </br>
 											<a href="#" id="language" title="Language" data-type="select2" data-pk=null data-url="" style="margin-left: 19%; margin-right: 1%;" data-title="Enter Languages" data-showbuttons="false" data-emptytext="Click to add Language"></a> -->
@@ -1560,7 +1562,7 @@
 			
 			<!-- practice loaction start  -->
 			<div class="overlay" id="practice_location_overlay" style="display:none;"></div>
-			<div class="box org_newuser" id="practice_location_box">
+			<div class="box org_newuser" id="practice_location_box" ng-controller="Practicelocation">
 				<div class="midbg selected_color"  style="background-color: #ffffff;width:840px;position:absolute;left:120px">
 					<span id="practice_location_boxclose" style="float: right;margin-right: 5px;margin-top: -45px;cursor: pointer;color: #fff" title="Close" class="fa fa-times fa-3x" onclick="overlayclose(this.id);"></span>
 
@@ -1709,55 +1711,98 @@
 									</div>
 									<div class="" id='officetime'>
 										<div class="overlaybody">
-											 <div id="time-range" style="display: flex; width: 100%; ">
+											<div>
+											<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
+												 <md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time1" style="margin: 0;" ng-change='updatesliderfn("time-range1",practicelocationData.time1)'>
+										          </md-checkbox>
+												</md-input-container>
+											 <div id="time-range1" class="time-range" style="display: flex; width: 90%;float: right; margin-top: -20px;" >
+											 	
 											    <div  style="display: flex; width:10% ;opacity: 0.80;" >Mon:</div>  
 											    <div class="sliders_step1" style="display: flex; width:70%">
 											        <div class="slider-range"></div>
 											    </div>
 											    <div style="display: flex;width: 10%;opacity: 0.80;"><span  >9:00 AM</span> - <span  >5:00 PM</span></div>
 											 </div>
-											 <div id="time-range" style="display: flex; width: 100%; ">
+											 </div>
+											 <div>
+											<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
+												 <md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time2" style="margin: 0;" ng-change='updatesliderfn("time-range2",practicelocationData.time2)'>
+										          </md-checkbox>
+												</md-input-container>
+											 <div id="time-range2" class="time-range" style="display: flex; width: 90%;float: right; margin-top: -20px;">
 											    <div  style="display: flex; width:10% ;opacity: 0.80;" >Tue:</div>  
 											    <div class="sliders_step1" style="display: flex; width:70%">
 											        <div class="slider-range"></div>
 											    </div>
 											    <div style="display: flex;width: 10%;opacity: 0.80;"><span   >9:00 AM</span> - <span  >5:00 PM</span></div>
 											 </div>
-											 <div id="time-range" style="display: flex; width: 100%; ">
+											</div>
+											 <div>
+											<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
+												 <md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time3" style="margin: 0;" ng-change='updatesliderfn("time-range3",practicelocationData.time3)'>
+										          </md-checkbox>
+												</md-input-container>
+											 <div id="time-range3" class="time-range" style="display: flex; width: 90%;float: right; margin-top: -20px; ">
 											    <div style="display: flex; width:10% ;opacity: 0.80;" >Wed:</div>  
 											    <div class="sliders_step1" style="display: flex; width:70%">
 											        <div class="slider-range"></div>
 											    </div>
 											    <div style="display: flex;width: 10% ;opacity: 0.80;"><span   >9:00 AM</span> - <span  >5:00 PM</span></div>
 											 </div>
-											 <div id="time-range" style="display: flex; width: 100%; ">
+											 </div>
+											 <div>
+											<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
+												 <md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time4" style="margin: 0;" ng-change='updatesliderfn("time-range4",practicelocationData.time4)'>
+										          </md-checkbox>
+												</md-input-container>
+											 <div id="time-range4" class="time-range" style="display: flex; width: 90%;float: right; margin-top: -20px; ">
 											    <div  style="display: flex; width:10% ;opacity: 0.80;" >Thu:</div>  
 											    <div class="sliders_step1" style="display: flex; width:70%">
 											        <div class="slider-range"></div>
 											    </div>
 											    <div style="display: flex;width: 10%;opacity: 0.80;"><span   >9:00 AM</span> - <span  >5:00 PM</span></div>
 											 </div>
-											 <div id="time-range" style="display: flex; width: 100%; ">
+											 </div>
+											 <div>
+											<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
+												 <md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time5" style="margin: 0;" ng-change='updatesliderfn("time-range5",practicelocationData.time5)'>
+										          </md-checkbox>
+											</md-input-container>
+											 <div id="time-range5" class="time-range" style="display: flex; width: 90%;float: right; margin-top: -20px; ">
 											    <div  style="display: flex; width:10% ;opacity: 0.80;" >Fri:</div>  
 											    <div class="sliders_step1" style="display: flex; width:70%">
 											        <div class="slider-range"></div>
 											    </div>
 											    <div style="display: flex;width: 10%;opacity: 0.80;"><span   >9:00 AM</span> - <span  >5:00 PM</span></div>
 											 </div>
-											 <div id="time-range" style="display: flex; width: 100%; ">
+											 </div>
+											 <div>
+											<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
+												 <md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time6" style="margin: 0;" ng-change='updatesliderfn("time-range6",practicelocationData.time6)'>
+										          </md-checkbox>
+												</md-input-container>
+											 <div id="time-range6" class="time-range" style="display: flex; width: 90%;float: right; margin-top: -20px; ">
 											    <div  style="display: flex; width:10% ;opacity: 0.80;" >Sat:</div>  
 											    <div class="sliders_step1" style="display: flex; width:70%">
 											        <div class="slider-range"></div>
 											    </div>
 											    <div style="display: flex;width: 10%;opacity: 0.80;"><span   >9:00 AM</span> - <span  >5:00 PM</span></div>
 											 </div>
-											 <div id="time-range" style="display: flex; width: 100%; ">
-											    <div  style="display: flex; width:10% ;opacity: 0.55;" >Sun:</div>  
+											 </div>
+											 <div>
+											<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
+												 <md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time7" style="margin: 0;" ng-change='updatesliderfn("time-range7",practicelocationData.time7)'>
+										          </md-checkbox>
+												</md-input-container>
+											 <div id="time-range7" class="time-range" style="display: flex; width: 90%;float: right; margin-top: -20px; ">
+											    <div  style="display: flex; width:10% ;opacity: 0.80;" >Sun:</div>  
 											    <div class="sliders_step1" style="display: flex; width:70%">
 											        <div class="slider-range"></div>
 											    </div>
-											    <div style="display: flex;width: 10%;opacity: 0.55;"><span   >9:00 AM</span> - <span  >5:00 PM</span></div>
+											    <div style="display: flex;width: 10%;opacity: 0.80;"><span   >9:00 AM</span> - <span  >5:00 PM</span></div>
 											 </div>
+											</div>
 										</div>
 										<div class="overlayfooter">
 											<button type="button" class="obtn" style="float: right">Save</button>

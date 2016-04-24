@@ -45,6 +45,7 @@ var myApp = angular.module('MyApp',['ngMaterial']);
 		upin : '',
 		fnin : '',
 		fnin_country : '',
+		langs:['English', 'Spanish','French']
 		
 	}; 
 
@@ -53,6 +54,48 @@ var myApp = angular.module('MyApp',['ngMaterial']);
   
   myApp.controller('PersonalInfo', function($scope, PersonalInfoData) {
       $scope.personalInfoData = PersonalInfoData;
+      $scope.fillbyzipfn = function(zipcode) {
+      	if (zipcode != undefined && zipcode.length == 5) {
+   
+    // Make Ajax call, etc
+    var geocoder = new google.maps.Geocoder();
+	//var $this = $(this);
+    //if ($this.val().length == 5) {
+        geocoder.geocode({ 'address': zipcode }, function (result, status) {
+            var state = "N/A";
+            var city = "N/A";
+            console.log(result);
+            //start loop to get state from zip
+            if(result.length > 0) {
+            for (var component in result[0]['address_components']) {
+                for (var i in result[0]['address_components'][component]['types']) {
+                    if (result[0]['address_components'][component]['types'][i] == "administrative_area_level_1") {
+                        state = result[0]['address_components'][component]['short_name'];
+                        // do stuff with the state here!
+                        console.log(state);
+                       // document.getElementById("p_state").value = state;
+                        // get city name
+                        city = result[0]['address_components'][1]['long_name'];
+                        // Insert city name into some input box
+                        console.log(city);
+                        //document.getElementById("p_city").value = city;
+                        $scope.personalInfoData.p_city =  city;
+                        $scope.personalInfoData.p_state =  state;
+      					$scope.$apply();
+                       
+                    }
+                }
+            }
+           }
+        });
+ 
+  }
+  
+  
+  
+
+       
+    }
       
   });
   
@@ -129,6 +172,37 @@ var myApp = angular.module('MyApp',['ngMaterial']);
   
   myApp.controller('Identification', function($scope, IdentificationData) {
       $scope.identificationData = IdentificationData;
+      
+  });
+  
+  myApp.factory('PracticelocationData', function () {
+  var practicelocationData = {
+		time1 : true,
+    	time2 : true,
+    	time3 : true,
+    	time4 : true,
+    	time5 : true,
+    	time6 : true,
+    	time7 : true
+	}; 
+
+    return practicelocationData;
+  });
+  
+  myApp.controller('Practicelocation', function($scope, PracticelocationData) {
+      $scope.practicelocationData = PracticelocationData;
+       $scope.updatesliderfn =  function(slider_id,time_checked){
+
+	if(time_checked == false){
+	
+	$("#" + slider_id+ " *").css("pointer-events", "none");
+	$("#" + slider_id+ " *").css("opacity", "0.4");
+	}
+	else{
+		$("#" + slider_id+ " *").css("pointer-events", "auto");
+		$("#" + slider_id+ " *").css("opacity", "1");
+	}
+}
       
   });
 
