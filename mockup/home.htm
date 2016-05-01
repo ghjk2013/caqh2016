@@ -49,6 +49,8 @@
         <script src="js/licencestatus-json.js"></script>
         <script src="js/licencetype-json.js"></script>
         <script src="js/provider-type-json.js"></script>
+        <script src="js/race-ethnicity-json.js"></script>
+        
 
 	<!--	<script type="text/javascript" src="xeditable.js"></script> 
 		<script src="myApp.js"></script> -->
@@ -1007,8 +1009,8 @@
 											<md-input-container style="width:47%" >
 									            <label>Race / Ethnics</label>
 									             <md-select ng-model="personalInfoData.b_race" title="Race / Ethnicity" >
-										              <md-option ng-repeat="b_race in personalInfoData.b_races" value="{{b_race}}" required="">
-										                {{b_race}}
+										              <md-option ng-repeat="b_race in personalInfoData.b_races" value="{{b_race.value}}" required="">
+										                {{b_race.text}}
 										              </md-option>
 										            </md-select>
 									        </md-input-container>
