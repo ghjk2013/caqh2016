@@ -284,105 +284,65 @@
 										</div>
 										<div id="licence1" class="licence" style=" width: 100%;display: inherit;border-top: 1px dotted;border-bottom: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span class="testheading">Licence State:</span> {{licenceData.pro_licence_state}}
+											<span class="testheading">Licence State:</span> {{licenceData[0].pro_licence_state}}
 											<br />
-											<span class="testheading">Licence No:</span> {{licenceData.pro_licence_no}}
+											<span class="testheading">Licence No:</span> {{licenceData[0].pro_licence_no}}
 											
 											<br />
 											<span class="testheading">Practice in This State:</span> Yes </span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 										<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type: </span>
-										<span style="float: left;">{{licenceData.pro_licence_type}}</span>
+										<span style="float: left;">{{licenceData[0].pro_licence_type}}</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 											<br />
-											<span class="testheading">Expiration Date:</span> {{licenceData.pro_licence_expire_date}} 
+											<span class="testheading">Expiration Date:</span> {{licenceData[0].pro_licence_expire_date}} 
 											<br />
-											<span class="testheading">Licence Staus:</span> {{licenceData.pro_licence_status}}
+											<span class="testheading">Licence Staus:</span> {{licenceData[0].pro_licence_status}}
 										</span>
 										</div>
 										<div id="licence2" class="licence" style="display: none; width: 100%;border-top: 1px dotted;border-bottom: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span class="testheading">Licence State2:</span> xxxxxxx2
+											<span class="testheading">Licence State2:</span> {{licenceData[1].pro_licence_state}}
 											<br />
-											<span class="testheading">Licence No2:</span> xxxxxxxxxxx2
+											<span class="testheading">Licence No2:</span> {{licenceData[1].pro_licence_no}}
 											
 											<br />
 											<span class="testheading">Practice in This State2:</span> Yes </span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 										<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type2: </span>
-										<span style="float: left;">xxxxxx</span>
+										<span style="float: left;">{{licenceData[1].pro_licence_type}}</span>
 											<span style=" float: right;">
-												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
+												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence1"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 											<br />
-											<span class="testheading">Expiration Date2:</span> 02/02/2020 
+											<span class="testheading">Expiration Date2:</span> {{licenceData[1].pro_licence_expire_date}}  
 											<br />
-											<span class="testheading">Licence Staus2:</span> Active
-										</span>
-										</div>
-										<div id="licence3" class="licence" style="display: none; width: 100%;border-top: 1px dotted;border-bottom: 1px dotted;">
-										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span class="testheading">Licence State3:</span> xxxxxxx3
-											<br />
-											<span class="testheading">Licence No3:</span> xxxxxxxxxxx3
-											
-											<br />
-											<span class="testheading">Practice in This State3:</span> Yes </span>
-										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-										<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type3: </span>
-										<span style="float: left;">xxxxxx</span>
-											<span style=" float: right;">
-												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
-											</span>
-											<br />
-											<span class="testheading">Expiration Date3:</span> 02/02/2020 
-											<br />
-											<span class="testheading">Licence Staus3:</span> Active
-										</span>
-										</div>
-										<div id="licence4" class="licence" style="display: none; width: 100%;border-top: 1px dotted;border-bottom: 1px dotted;">
-										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span class="testheading">Licence State3:</span> xxxxxxx4
-											<br />
-											<span class="testheading">Licence No3:</span> xxxxxxxxxxx4
-											
-											<br />
-											<span class="testheading">Practice in This State3:</span> Yes </span>
-										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-										<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type3: </span>
-										<span style="float: left;">xxxxxx</span>
-											<span style=" float: right;">
-												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
-											</span>
-											<br />
-											<span class="testheading">Expiration Date3:</span> 02/02/2020 
-											<br />
-											<span class="testheading">Licence Staus3:</span> Active
+											<span class="testheading">Licence Staus2:</span> {{licenceData[1].pro_licence_status}}
 										</span>
 										</div>
 										<div style="float: right;margin-right: 10px;padding: 0px;" id="licence_view_page_link"><span id="licence_view_prev" class="pagi_prev" title="Previous" onclick="updateviewpage('prev');"></span>Viewing <span id="licence_view_current">1</span> of <span id="licence_view_total"></span> <span id="licence_view_list"> </span> <span id="licence_view_next" class="pagi_next" style="cursor: pointer;" onclick="updateviewpage('next');"></span></div>
 									</div>
-									<div class="horizon-item" id="dearesidtration" title="DEA Registration">
+									<div class="horizon-item" id="dearesidtration" title="DEA Registration" ng-controller="DEA">
 										<div style="width: 100%;padding: 0px;text-align: center; ">
 											<a href="#" style="">Add DEA</a>
 										</div>
 										<div style="padding-left: 0;font-weight: bold">
 											DEA Registration
 										</div>
-										<div ng-controller="DEA" id="dearesidtration1" class="dearesidtration" style="display: inherit; width: 100%;border-top: 1px dotted;">
+										<div  id="dearesidtration1" class="dearesidtration" style="display: inherit; width: 100%;border-top: 1px dotted;border-bottom: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span class="testheading">Drug Enforcement Administration No (DEA):</span> {{dEAData.pro_dea_no}}
+											<span class="testheading">Drug Enforcement Administration No (DEA):</span> {{dEAData[0].pro_dea_no}}
 											<br />
-											<span class="testheading">DEA State:</span> {{dEAData.pro_dea_state}}
+											<span class="testheading">Issue Date:</span> {{dEAData[0].pro_dea_issue_date}}
 											<br />
-											<span class="testheading">Issue Date:</span> {{dEAData.pro_dea_issue_date}}
+											<span class="testheading">Expiration Date:</span> {{dEAData[0].pro_dea_expire_date}}
 										</span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 										<span style="float: right; width: 46%"> 
-											<span style="float: left;" class="testheading">Expiration Date: </span>
-											<span style="float: left;">{{dEAData.pro_dea_expire_date}}</span>
+											<span style="float: left;" class="testheading">DEA State: </span>
+											<span style="float: left;">{{dEAData[0].pro_dea_state}}</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="dea_reg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
@@ -390,17 +350,17 @@
 										</div>
 										<div id="dearesidtration2" class="dearesidtration" style="display: none;width: 100%;border-top: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span class="testheading">Drug Enforcement Administration No (DEA)2:</span> xxxxxxx
+											<span class="testheading">Drug Enforcement Administration No (DEA)2:</span> {{dEAData[1].pro_dea_no}}
 											<br />
-											<span class="testheading">DEA State2:</span> xxxxxxxxxxx
+											<span class="testheading">Issue Date2:</span> {{dEAData[1].pro_dea_issue_date}}
 											<br />
-											<span class="testheading">Issue Date2:</span> 02/02/2015
+											<span class="testheading">Expiration Date2:</span> {{dEAData[1].pro_dea_expire_date}}
 										</span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 										<span style="float: right; width: 46%"> 
-											<span style="float: left;" class="testheading">Expiration Date2: </span><span style="float: left;">02/02/2020</span>
+											<span style="float: left;" class="testheading">DEA State2: </span><span style="float: left;">{{dEAData[1].pro_dea_state}}</span>
 											<span style=" float: right;">
-												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="dea_reg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
+												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="dea_reg1"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 										</span>
 										</div>
@@ -416,13 +376,13 @@
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
 											<span class="testheading">CDS No:</span> {{cDSData.pro_cds_no}}
 											<br />
-											<span class="testheading">CDS State:</span> {{cDSData.pro_cds_state}}
-											<br />
 											<span class="testheading">Issue Date:</span> {{cDSData.pro_cds_issue_date}}
+											<br />
+											<span class="testheading">Expiration Date:</span> {{cDSData.pro_cds_expire_date}}
 										</span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 										<span style="float: right; width: 46%"> 
-											<span style="float: left;" class="testheading">Expiration Date: </span><span style="float: left;">{{cDSData.pro_cds_expire_date}}</span>
+											<span style="float: left;" class="testheading"> CDS State:</span><span style="float: left;">{{cDSData.pro_cds_state}}</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="cds_reg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
@@ -515,7 +475,7 @@
 						<li>
 							<a scroll=5 id="speciality">Speciality<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span><span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span></a>
 							<ul style="height: 150px;">
-								<span style="float: left; width: 48%" ng-controller="Speciality"> <span class="testheading">Primary Speciality:</span> {{specialityData[0].speciality}} <span style="float: right;cursor: pointer;margin-right: 4%" title="Update" class="fa fa-pencil-square-o fa-lg" id="spe_cility"></span>
+								<span style="float: left; width: 48%" ng-controller="Speciality"> <span class="testheading">Primary Speciality:</span> {{specialityData[0].speciality}} <span style="float: right;cursor: pointer; margin-right: 4%" title="Update" class="fa fa-pencil-square-o fa-lg" id="spe_cility"></span>
 									<br />
 									<span class="testheading">Board Certified ?:</span> Yes
 									<br />
@@ -1129,14 +1089,14 @@
 											<div layout="row">
 										        <md-input-container flex >
 										            <label>Licence State</label>
-										            <md-select ng-model="licenceData.pro_licence_state" >
-										              <md-option ng-repeat="pro_licence_state in licenceData.pro_licence_states">
+										            <md-select ng-model="licenceData[0].pro_licence_state" >
+										              <md-option ng-repeat="pro_licence_state in licenceData[0].pro_licence_states">
 										                {{pro_licence_state.text}}
 										              </md-option>
 										            </md-select>
 										        </md-input-container>
 										        <md-input-container class="md-block" flex-gt-sm="">
-												 <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="licenceData.same_state" class="md-primary">
+												 <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="licenceData[0].same_state" class="md-primary">
 										            Do You Currently Practice in this State?
 										         </md-checkbox>
 												</md-input-container>
@@ -1146,12 +1106,12 @@
 										    <div layout-gt-sm="row">
 										    	<md-input-container style="width:47%" >
 										            <label>Licence Number</label>
-										            <input type="text" ng-model="licenceData.pro_licence_no" title="Licence Number" >
+										            <input type="text" ng-model="licenceData[0].pro_licence_no" title="Licence Number" >
 										        </md-input-container>
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>Licence Type</label>
-													<md-select ng-model="licenceData.pro_licence_type">
-														<md-option ng-repeat="pro_licence_type in licenceData.licencetypes" >
+													<md-select ng-model="licenceData[0].pro_licence_type">
+														<md-option ng-repeat="pro_licence_type in licenceData[0].licencetypes" >
 															{{pro_licence_type.text}}
 														</md-option>
 													</md-select>
@@ -1161,16 +1121,16 @@
 											<div layout-gt-sm="row">
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>Licence Status</label>
-													<md-select ng-model="licenceData.pro_licence_status">
-														<md-option ng-repeat="pro_licence_status in licenceData.licencestatustypes" >
+													<md-select ng-model="licenceData[0].pro_licence_status">
+														<md-option ng-repeat="pro_licence_status in licenceData[0].licencestatustypes" >
 															{{pro_licence_status.text}}
 														</md-option>
 													</md-select>
 												</md-input-container>
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>Licence Category</label>
-													<md-select ng-model="licenceData.pro_licence_categoery">
-														<md-option ng-repeat="category in licenceData.licencecategoeries" value="{{category}}">
+													<md-select ng-model="licenceData[0].pro_licence_categoery">
+														<md-option ng-repeat="category in licenceData[0].licencecategoeries" value="{{category}}">
 															{{category}}
 														</md-option>
 													</md-select>
@@ -1179,12 +1139,12 @@
 										    <div layout-gt-sm="row">
 												<div layout="column" flex >
 												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Licence Issue Date</label>
-												    <md-datepicker name="pro_licence_issue_date" ng-model="licenceData.pro_licence_issue_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												    <md-datepicker name="pro_licence_issue_date" ng-model="licenceData[0].pro_licence_issue_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
 												</div>
 
 												<div layout="column" flex >
 												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Licence Expiration Date</label>
-												    <md-datepicker name="pro_licence_expire_date" ng-model="licenceData.pro_licence_expire_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												    <md-datepicker name="pro_licence_expire_date" ng-model="licenceData[0].pro_licence_expire_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
 												</div>
 											</div>
 											
@@ -1205,6 +1165,111 @@
 				</div>
 
 			</div>
+						<!-- Professional id start  -->
+			<div class="overlay" id="pro_licence1_overlay" style="display:none;"></div>
+			<div class="box org_newuser" id="pro_licence1_box" ng-controller="Licence">
+				<div class="midbg selected_color"  style="background-color: #ffffff;width:840px;position:absolute;left:120px">
+					<span id="pro_licence1_boxclose" style="float: right;margin-right: 5px;margin-top: -45px;cursor: pointer;color: #fff" title="Close" class="fa fa-times fa-3x" onclick="overlayclose(this.id);"></span>
+
+					<form>
+						<!-- <div class="roundblockleft theme_color reset_pwd_submit top_control"><a href="#null"><%= t :login_index_reset_go%></a></div> -->
+						
+						<div class="white_block">
+							
+							<div class="midblock" id="practice_location_midblock">
+								<div id="pro_licence1_res" style="color: green"></div>
+								<div id="pro_licence1_content" class="custom_swiper_item">
+									<div class="overlayheader">
+										Professional Licence
+									</div>
+									<div class="menu_container">
+										<ul id="pro_licence1_menu" class="menu">
+											<li><a href="#"  link='prolicence'>Professional Licence</a></li>
+										</ul>
+									</div>
+																		
+							<div class="" id='prolicence'>
+										<div class="overlaybody">
+											<div layout="row">
+										        <md-input-container flex >
+										            <label>Licence State</label>
+										            <md-select ng-model="licenceData[1].pro_licence_state" >
+										              <md-option ng-repeat="pro_licence_state in licenceData[1].pro_licence_states">
+										                {{pro_licence_state.text}}
+										              </md-option>
+										            </md-select>
+										        </md-input-container>
+										        <md-input-container class="md-block" flex-gt-sm="">
+												 <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="licenceData[1].same_state" class="md-primary">
+										            Do You Currently Practice in this State?
+										         </md-checkbox>
+												</md-input-container>
+										        
+											</div>
+											
+										    <div layout-gt-sm="row">
+										    	<md-input-container style="width:47%" >
+										            <label>Licence Number</label>
+										            <input type="text" ng-model="licenceData[1].pro_licence_no" title="Licence Number" >
+										        </md-input-container>
+												<md-input-container class="md-block" flex-gt-sm="">
+													<label>Licence Type</label>
+													<md-select ng-model="licenceData[1].pro_licence_type">
+														<md-option ng-repeat="pro_licence_type in licenceData[1].licencetypes" >
+															{{pro_licence_type.text}}
+														</md-option>
+													</md-select>
+												</md-input-container>
+												
+											</div>
+											<div layout-gt-sm="row">
+												<md-input-container class="md-block" flex-gt-sm="">
+													<label>Licence Status</label>
+													<md-select ng-model="licenceData[1].pro_licence_status">
+														<md-option ng-repeat="pro_licence_status in licenceData[1].licencestatustypes" >
+															{{pro_licence_status.text}}
+														</md-option>
+													</md-select>
+												</md-input-container>
+												<md-input-container class="md-block" flex-gt-sm="">
+													<label>Licence Category</label>
+													<md-select ng-model="licenceData[1].pro_licence_categoery">
+														<md-option ng-repeat="category in licenceData[1].licencecategoeries" value="{{category}}">
+															{{category}}
+														</md-option>
+													</md-select>
+												</md-input-container>
+											</div>
+										    <div layout-gt-sm="row">
+												<div layout="column" flex >
+												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Licence Issue Date</label>
+												    <md-datepicker name="pro_licence_issue_date" ng-model="licenceData[1].pro_licence_issue_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												</div>
+
+												<div layout="column" flex >
+												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Licence Expiration Date</label>
+												    <md-datepicker name="pro_licence_expire_date" ng-model="licenceData[1].pro_licence_expire_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												</div>
+											</div>
+											
+										</div>
+										
+										<div class="overlayfooter">
+											<button type="button" class="obtn" style="float: right">Save</button>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+
+						</div>
+						
+					</form>
+					<div class="clear"></div>
+				</div>
+
+			</div>
+
 			<div class="overlay" id="dea_reg_overlay" style="display:none;"></div>
 			<div class="box org_newuser" id="dea_reg_box"  ng-controller="DEA">
 				<div class="midbg selected_color"  style="background-color: #ffffff;width:840px;position:absolute;left:120px">
@@ -1232,12 +1297,12 @@
 											<div layout="row">
 											  <md-input-container style="width:47%" >
 									            <label>DEA Number</label>
-									            <input type="text" ng-model="dEAData.pro_dea_no" title="DEA Number" >
+									            <input type="text" ng-model="dEAData[0].pro_dea_no" title="DEA Number" >
 									           </md-input-container>
 												<md-input-container style="width:47%" >
 										            <label>DEA State</label>
-										            <md-select ng-model="dEAData.pro_dea_state">
-										              <md-option ng-repeat="state in dEAData.pro_dea_states" value="{{state}}" required="">
+										            <md-select ng-model="dEAData[0].pro_dea_state">
+										              <md-option ng-repeat="state in dEAData[0].pro_dea_states" value="{{state}}" required="">
 										                {{state}}
 										              </md-option>
 										            </md-select>
@@ -1247,12 +1312,80 @@
 										   	<div layout-gt-sm="row">
 												<div layout="column" flex >
 												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">DEA Issue Date</label>
-												    <md-datepicker name="pro_dea_issue_date" ng-model="dEAData.pro_dea_issue_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												    <md-datepicker name="pro_dea_issue_date" ng-model="dEAData[0].pro_dea_issue_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
 												</div>
 
 												<div layout="column" flex >
 												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">DEA Expiration Date</label>
-												    <md-datepicker name="pro_dea_expire_date" ng-model="dEAData.pro_dea_expire_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												    <md-datepicker name="pro_dea_expire_date" ng-model="dEAData[0].pro_dea_expire_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												</div>
+											</div>
+										    
+											
+										</div>
+										<div class="overlayfooter">
+											<button type="button" class="obtn" style="float: right">Save</button>
+										</div>
+									</div>
+									</div>
+								
+							</div>
+
+						</div>
+						
+					</form>
+					<div class="clear"></div>
+				</div>
+
+			</div>
+			<div class="overlay" id="dea_reg1_overlay" style="display:none;"></div>
+			<div class="box org_newuser" id="dea_reg1_box"  ng-controller="DEA">
+				<div class="midbg selected_color"  style="background-color: #ffffff;width:840px;position:absolute;left:120px">
+					<span id="dea_reg1_boxclose" style="float: right;margin-right: 5px;margin-top: -45px;cursor: pointer;color: #fff" title="Close" class="fa fa-times fa-3x" onclick="overlayclose(this.id);"></span>
+
+					<form>
+						<!-- <div class="roundblockleft theme_color reset_pwd_submit top_control"><a href="#null"><%= t :login_index_reset_go%></a></div> -->
+						
+						<div class="white_block">
+							
+							<div class="midblock" id="dea_reg1_midblock">
+								<div id="dea_reg1_res" style="color: green"></div>
+								<div id="dea_reg1_content" class="custom_swiper_item">
+									<div class="overlayheader">
+										DEA Registration
+									</div>
+									<div class="menu_container">
+										<ul id="dea_reg1_menu" class="menu">
+											<li><a href="#"  link='dearegistration'>DEA Registration</a></li>
+										</ul>
+									</div>
+																		
+									<div class="" id='dearegistration'>
+										<div class="overlaybody">
+											<div layout="row">
+											  <md-input-container style="width:47%" >
+									            <label>DEA Number</label>
+									            <input type="text" ng-model="dEAData[1].pro_dea_no" title="DEA Number" >
+									           </md-input-container>
+												<md-input-container style="width:47%" >
+										            <label>DEA State</label>
+										            <md-select ng-model="dEAData[1].pro_dea_state">
+										              <md-option ng-repeat="state in dEAData[1].pro_dea_states" value="{{state}}" required="">
+										                {{state}}
+										              </md-option>
+										            </md-select>
+										        </md-input-container>
+										    	
+										    </div>
+										   	<div layout-gt-sm="row">
+												<div layout="column" flex >
+												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">DEA Issue Date</label>
+												    <md-datepicker name="pro_dea_issue_date" ng-model="dEAData[1].pro_dea_issue_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												</div>
+
+												<div layout="column" flex >
+												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">DEA Expiration Date</label>
+												    <md-datepicker name="pro_dea_expire_date" ng-model="dEAData[1].pro_dea_expire_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
 												</div>
 											</div>
 										    

@@ -113,8 +113,22 @@ var myApp = angular.module('MyApp',['ngMaterial']);
 		licencecategories: ['CType1', 'CType2', 'CType3']
 		
 	}; 
-
-    return licenceData;
+	var licenceData1 = {
+		pro_licence_state : 'Alabama',
+		pro_licence_states : new GlobalStates().state(),
+		pro_licence_no : 'xxxxxxxxxxx1',
+		pro_same_state : '',		
+		pro_licence_status : 'Active',
+		licencestatustypes : new GlobalLicenceStatus().status,
+		pro_licence_expire_date : new Date('04 Jan 2070'),
+		pro_licence_type : 'MD',
+		licencetypes: new GlobalLicenceType().types,
+		licencecategoery : 'CType2',
+		licencecategories: ['CType1', 'CType2', 'CType3']
+		
+	}; 
+	var licenceDataArray = [licenceData,licenceData1];
+    return licenceDataArray;
   });
   
   myApp.controller('Licence', function($scope, LicenceData) {
@@ -127,13 +141,21 @@ var myApp = angular.module('MyApp',['ngMaterial']);
 	var dEAData = {
 		pro_dea_state : 'state2',
 		pro_dea_states : ['state1', 'state2', 'state3'],
-		pro_dea_no : 'xxxxxxxxxxx1',
+		pro_dea_no : '6769870980',
 		pro_dea_issue_date: new Date('02 Feb 2015'),
 		pro_dea_expire_date : new Date('02 Feb 2020')
 				
 	}; 
-
-    return dEAData;
+	var dEAData1 = {
+		pro_dea_state : 'state2',
+		pro_dea_states : ['state1', 'state2', 'state3'],
+		pro_dea_no : '6769870980',
+		pro_dea_issue_date: new Date('02 Feb 2015'),
+		pro_dea_expire_date : new Date('02 Feb 2020')
+				
+	}; 
+	var dEADataArray = [dEAData, dEAData1];
+    return dEADataArray;
   });
   
   myApp.controller('DEA', function($scope, DEAData) {
