@@ -68,4 +68,12 @@ function GlobalStates() {
 		}
 		return n;
 	};
+	this.state = function() {
+		var n1 = [];
+		var s1 = 0;
+		for (var key in this.g_states){
+		  n1[s1++] = {value: key, text: this.g_states[key]};   
+		}
+		return n1;
+	};
 }

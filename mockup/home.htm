@@ -46,6 +46,9 @@
 <script src='angular-material/angular-material-v1.0.6.js'></script>
 
         <script src="js/index.js"></script>
+        <script src="js/licencestatus-json.js"></script>
+        <script src="js/licencetype-json.js"></script>
+        <script src="js/provider-type-json.js"></script>
 
 	<!--	<script type="text/javascript" src="xeditable.js"></script> 
 		<script src="myApp.js"></script> -->
@@ -196,9 +199,9 @@
 				<div id="main_block" style="padding: 0 2% 0;width: 79%;height: 80%;float: left;border-left:1px solid #d9e5e8;">
 
 					<div style="height: 24%;line-height: 2">
-						<div style="padding:10px 0 10px 15px;float: left;color: #496973;" ng-controller="PersonalInfo">
-							<h1 >{{personalInfoData.first_name}} {{personalInfoData.middle_name}} {{personalInfoData.last_name}} {{personalInfoData.suffix}}</h1>
-							<h2><font color="green">Allergy & Immunology</font>  {{personalInfoData.p_city}}, {{personalInfoData.p_state}}</h2>
+						<div style="padding:10px 0 10px 15px;float: left;color: #496973;">
+							<h1 ng-controller="PersonalInfo">{{personalInfoData.first_name}} {{personalInfoData.middle_name}} {{personalInfoData.last_name}} {{personalInfoData.suffix}}</h1>
+							<h2><font ng-controller="Speciality" color="green">{{specialityData[0].speciality}}</font> <font ng-controller="PersonalInfo"> {{personalInfoData.p_city}}, {{personalInfoData.p_state}}</h2>
 						</div>
 						<div style="float: right;padding:10px 0 10px 15px;font-size: 14px;text-align: right;">
 							<div>
@@ -220,7 +223,7 @@
 							</div>
 							<div style="height: 62px;">
 								<div style="width: 33% ;float: left">
-									<span class="testheading">Provider Type:</span> <a href="#" id="provide_type" data-type="select" data-url="" data-value="1" data-title="Provide Type">MD</a> &nbsp;&nbsp;&nbsp;<span id="provide_type_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+									<span class="testheading">Provider Type:</span> <a href="#" id="provide_type" data-type="select" data-url="" data-value="5" data-title="Provide Type">DC</a> &nbsp;&nbsp;&nbsp;<span id="provide_type_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 								</div>
 								<div style="width: 33%; float: right; text-align: right;padding-right: 25px;">
 									<span class="testheading">Practice Setting:</span> <a href="#" id="practice_setting" data-type="select" data-url="" data-value="2" data-title="Practice Setting">Inpatient-Only</a> &nbsp;&nbsp;&nbsp;<span id="practice_setting_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
@@ -242,9 +245,9 @@
 								<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 58%; margin-top: 2%;"></span>
 								<span style="float: right; width: 46%"> <span class="testheading"> Date of Birth: </span> {{personalInfoData.b_date.toISOString().slice(0, 10)}}<span id="personal_info" style="float: right;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 									<br />
-									<span class="testheading">Fax:</span> {{personalInfoData.fax}}
+									<span class="testheading">Social Securty Number:</span> xxxx-xx-{{personalInfoData.ssn.substr(personalInfoData.ssn.length - 4)}}
 									<br />
-									<span class="testheading">Phone:</span> {{personalInfoData.m_daytime_phone}} </span>
+									<span class="testheading">National Provider Identification Number:</span> {{personalInfoData.npin}} </span>
 							</ul>
 						</li>
 
@@ -266,9 +269,9 @@
 										<div ng-controller="Identification" class="identification" id="identification1">
 										<span style="float: left; width: 100%;padding-left: 3%;"> 
 										<!--	<span style="float: left" class="testheading">Unique Physician Identification No (UPIN): xxxxxxxx</span>  -->
-											<span class="testheading">Unique Physician Identification No (UPIN):</span> <a href="#" id="proid_upin" data-type="text" data-url="" data-value="" data-title="Enter UPIN">{{identificationData.upin || 'Empty'}}</a> &nbsp;&nbsp;&nbsp;<span id="upin_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+											<span class="testheading">Unique Physician Identification No (UPIN) :&nbsp;&nbsp;</span> <a href="#" id="proid_upin" data-type="text" data-url="" data-value="" data-title="Enter UPIN">{{identificationData.upin || 'Empty'}}</a> &nbsp;&nbsp;&nbsp;<span id="upin_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 											<br />
-											<span class="testheading">National Provider Identification No (NPI):</span> <a href="#" id="proid_npi" data-type="text" data-url="" data-value="" data-title="Enter NPI">{{identificationData.upin || 'Empty'}}</a> &nbsp;&nbsp;&nbsp;<span id="npi_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+											<span class="testheading">National Provider Identification No (NPI) :&nbsp;&nbsp;</span> <a href="#" id="proid_npi" data-type="text" data-url="" data-value="" data-title="Enter NPI">{{identificationData.upin || 'Empty'}}</a> &nbsp;&nbsp;&nbsp;<span id="npi_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 										</span>
 									  </div>
 									</div>
@@ -281,21 +284,22 @@
 										</div>
 										<div id="licence1" class="licence" style=" width: 100%;display: inherit;border-top: 1px dotted;border-bottom: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
-											<span class="testheading">Licence State:</span> {{licenceData.state}}
+											<span class="testheading">Licence State:</span> {{licenceData.pro_licence_state}}
 											<br />
 											<span class="testheading">Licence No:</span> {{licenceData.pro_licence_no}}
 											
 											<br />
 											<span class="testheading">Practice in This State:</span> Yes </span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-										<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type: </span>{{licenceData.licencetype}}
+										<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type: </span>
+										<span style="float: left;">{{licenceData.pro_licence_type}}</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 											<br />
 											<span class="testheading">Expiration Date:</span> {{licenceData.pro_licence_expire_date}} 
 											<br />
-											<span class="testheading">Licence Staus:</span> {{licenceData.licencestatus}}
+											<span class="testheading">Licence Staus:</span> {{licenceData.pro_licence_status}}
 										</span>
 										</div>
 										<div id="licence2" class="licence" style="display: none; width: 100%;border-top: 1px dotted;border-bottom: 1px dotted;">
@@ -307,7 +311,8 @@
 											<br />
 											<span class="testheading">Practice in This State2:</span> Yes </span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-										<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type2: </span>xxxxxx
+										<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type2: </span>
+										<span style="float: left;">xxxxxx</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
@@ -326,7 +331,8 @@
 											<br />
 											<span class="testheading">Practice in This State3:</span> Yes </span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-										<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type3: </span>xxxxxx
+										<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type3: </span>
+										<span style="float: left;">xxxxxx</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
@@ -345,7 +351,8 @@
 											<br />
 											<span class="testheading">Practice in This State3:</span> Yes </span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-										<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type3: </span>xxxxxx
+										<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type3: </span>
+										<span style="float: left;">xxxxxx</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
@@ -357,12 +364,12 @@
 										</div>
 										<div style="float: right;margin-right: 10px;padding: 0px;" id="licence_view_page_link"><span id="licence_view_prev" class="pagi_prev" title="Previous" onclick="updateviewpage('prev');"></span>Viewing <span id="licence_view_current">1</span> of <span id="licence_view_total"></span> <span id="licence_view_list"> </span> <span id="licence_view_next" class="pagi_next" style="cursor: pointer;" onclick="updateviewpage('next');"></span></div>
 									</div>
-									<div class="horizon-item" id="dearesidtration" title="DEA Ragistration">
+									<div class="horizon-item" id="dearesidtration" title="DEA Registration">
 										<div style="width: 100%;padding: 0px;text-align: center; ">
 											<a href="#" style="">Add DEA</a>
 										</div>
 										<div style="padding-left: 0;font-weight: bold">
-											DEA Ragistration
+											DEA Registration
 										</div>
 										<div ng-controller="DEA" id="dearesidtration1" class="dearesidtration" style="display: inherit; width: 100%;border-top: 1px dotted;">
 										<span style="float: left; width: 48%;padding-left: 3%;"> 
@@ -374,7 +381,8 @@
 										</span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 										<span style="float: right; width: 46%"> 
-											<span style="float: left;" class="testheading">Expiration Date: </span>{{dEAData.pro_dea_expire_date}}
+											<span style="float: left;" class="testheading">Expiration Date: </span>
+											<span style="float: left;">{{dEAData.pro_dea_expire_date}}</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="dea_reg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
@@ -390,7 +398,7 @@
 										</span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 										<span style="float: right; width: 46%"> 
-											<span style="float: left;" class="testheading">Expiration Date2: </span>02/02/2020
+											<span style="float: left;" class="testheading">Expiration Date2: </span><span style="float: left;">02/02/2020</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="dea_reg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
@@ -414,14 +422,14 @@
 										</span>
 										<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 										<span style="float: right; width: 46%"> 
-											<span style="float: left;" class="testheading">Expiration Date: </span>{{cDSData.pro_cds_expire_date}}
+											<span style="float: left;" class="testheading">Expiration Date: </span><span style="float: left;">{{cDSData.pro_cds_expire_date}}</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="cds_reg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 										</span>
 											
 									</div>
-									<div class="horizon-item" title="Medicare">
+									<div class="horizon-item" title="Medicare" ng-controller="Medicare">
 										<div style="width: 100%;padding: 0px;text-align: center; ">
 											<a href="#" style="">Add Medicare</a>
 										</div>
@@ -429,15 +437,15 @@
 											Medicare
 										</div>
 										<span style="float: left; width: 100%;padding-left: 3%;"> 
-											<span style="float: left" class="testheading">Medicare No: </span>xxxxxxx
+											<span style="float: left" class="testheading">Medicare No: </span><span style="float: left;">{{medicareData.medicare_no}}</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="medi_care"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 											<br />
-											<span class="testheading">Medicare State:</span> xxxxxxxxxxx
+											<span class="testheading">Medicare State:</span> {{medicareData.medicare_state}}
 										</span>
 									</div>
-									<div class="horizon-item" title="Medicaid">
+									<div class="horizon-item" title="Medicaid" ng-controller="Medicaid">
 										<div style="width: 100%;padding: 0px;text-align: center; ">
 											<a href="#" style="">Add Medicaid</a>
 										</div>
@@ -445,12 +453,12 @@
 											Medicaid
 										</div>
 										<span style="float: left; width: 100%;padding-left: 3%;"> 
-											<span style="float: left" class="testheading">Medicaid No: </span>xxxxxxx
+											<span style="float: left" class="testheading">Medicaid No: </span><span style="float: left;">{{medicaidData.medicaid_no}}</span>
 											<span style=" float: right;">
 												 <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="medicaid"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 											</span>
 											<br />
-											<span class="testheading">Medicaid State:</span> xxxxxxxxxxx
+											<span class="testheading">Medicaid State:</span> {{medicaidData.medicaid_state}}
 										</span>
 									</div>
 									<!-- <div class="horizon-item">
@@ -507,22 +515,22 @@
 						<li>
 							<a scroll=5 id="speciality">Speciality<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span><span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span></a>
 							<ul style="height: 150px;">
-								<span style="float: left; width: 48%"> <span class="testheading">Primary Speciality:</span> xxxxxxx <span style="float: right;cursor: pointer;margin-right: 4%" title="Update" class="fa fa-pencil-square-o fa-lg" id="spe_cility"></span>
+								<span style="float: left; width: 48%" ng-controller="Speciality"> <span class="testheading">Primary Speciality:</span> {{specialityData[0].speciality}} <span style="float: right;cursor: pointer;margin-right: 4%" title="Update" class="fa fa-pencil-square-o fa-lg" id="spe_cility"></span>
 									<br />
 									<span class="testheading">Board Certified ?:</span> Yes
 									<br />
-									<span class="testheading">Board Name:</span> xxxxx 
+									<span class="testheading">Board Name:</span> {{specialityData[0].board_cert_name}} 
 									<br />
-									<span class="testheading">Inital Cert Date:</span>  02/02/2015 </span> 
+									<span class="testheading">Inital Cert Date:</span>  {{specialityData[0].cert_issue_date}} </span> 
 								<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 58%; margin-top: 2%;"></span>
-								<span style="float: right; width: 46%"> 
-									<span class="testheading"> Secondary Speciality: </span> xxxxxxx<span style="float: right;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"  id="spe_cility"></span><span style="float: right;margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
+								<span style="float: right; width: 46%" ng-controller="Speciality"> 
+									<span class="testheading"> Secondary Speciality: </span> {{specialityData[1].speciality}}<span style="float: right;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"  id="spe_cility1"></span><span style="float: right;margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 									<br />
 									<span class="testheading">Board Certified ?:</span> Yes
 									<br />
-									<span class="testheading">Board Name:</span> xxxxx 
+									<span class="testheading">Board Name:</span> {{specialityData[1].board_cert_name}} 
 									<br />
-									<span class="testheading">Inital Cert Date:</span>  02/02/2015 </span>
+									<span class="testheading">Inital Cert Date:</span>  {{specialityData[1].cert_issue_date}} </span>
 							</ul>
 						</li>
 						<!-- <li>
@@ -949,7 +957,7 @@
 										<div class="overlaybody">
 											<div layout="row">
 												<md-input-container flex>
-										            <label>Social securty Number</label>
+										            <label>Social Securty Number</label>
 										            <input type="text" ng-model="personalInfoData.ssn" title="Social securty Number" required="" style=" margin-right: 3%;">
 										        </md-input-container>
 										        
@@ -1122,8 +1130,8 @@
 										        <md-input-container flex >
 										            <label>Licence State</label>
 										            <md-select ng-model="licenceData.pro_licence_state" >
-										              <md-option ng-repeat="pro_licence_state in licenceData.pro_licence_states" value="{{pro_licence_state}}">
-										                {{pro_licence_state}}
+										              <md-option ng-repeat="pro_licence_state in licenceData.pro_licence_states">
+										                {{pro_licence_state.text}}
 										              </md-option>
 										            </md-select>
 										        </md-input-container>
@@ -1143,8 +1151,8 @@
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>Licence Type</label>
 													<md-select ng-model="licenceData.pro_licence_type">
-														<md-option ng-repeat="type in licenceData.licencetypes" value="{{type}}">
-															{{type}}
+														<md-option ng-repeat="pro_licence_type in licenceData.licencetypes" >
+															{{pro_licence_type.text}}
 														</md-option>
 													</md-select>
 												</md-input-container>
@@ -1154,8 +1162,8 @@
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>Licence Status</label>
 													<md-select ng-model="licenceData.pro_licence_status">
-														<md-option ng-repeat="pro_licence_status in licenceData.licencestatustypes" value="{{pro_licence_status}}">
-															{{pro_licence_status}}
+														<md-option ng-repeat="pro_licence_status in licenceData.licencestatustypes" >
+															{{pro_licence_status.text}}
 														</md-option>
 													</md-select>
 												</md-input-container>
@@ -1335,7 +1343,7 @@
 			</div>
 
 			<div class="overlay" id="medi_care_overlay" style="display:none;"></div>
-			<div class="box org_newuser" id="medi_care_box">
+			<div class="box org_newuser" id="medi_care_box"  ng-controller="Medicare">
 				<div class="midbg selected_color"  style="background-color: #ffffff;width:840px;position:absolute;left:120px">
 					<span id="medi_care_boxclose" style="float: right;margin-right: 5px;margin-top: -45px;cursor: pointer;color: #fff" title="Close" class="fa fa-times fa-3x" onclick="overlayclose(this.id);"></span>
 
@@ -1360,7 +1368,7 @@
 										<div layout="row">
 											 <md-input-container flex >
 									            <label>Are you a participating Medicare provider?</label>
-									            <md-select ng-model="pro_dea_state">
+									            <md-select ng-model="pro_medicare_state">
 									              <!-- <md-option ng-repeat="state in pro_dea_states" value="{{pro_dea_state}}" required="">
 									                {{pro_dea_state}}
 									              </md-option> -->
@@ -1373,13 +1381,13 @@
 										   <div layout="row">
 											  <md-input-container style="width:47%" >
 									            <label>Medicare Number</label>
-									            <input type="text" ng-model="pro_medicare_no" title="Medicare Number" >
+									            <input type="text" ng-model="medicareData.medicare_no" title="Medicare Number" >
 									           </md-input-container>
 												<md-input-container style="width:47%" >
 										            <label>Medicare State</label>
-										            <md-select ng-model="pro_medicare_state">
-										              <md-option ng-repeat="state in pro_medicare_states" value="{{state}}" required="">
-										                {{state}}
+										            <md-select ng-model="medicareData.medicare_state">
+										              <md-option ng-repeat="medicare_state in medicareData.medicare_states" value="{{medicare_state}}" required="">
+										                {{medicare_state}}
 										              </md-option>
 										            </md-select>
 										        </md-input-container>
@@ -1404,7 +1412,7 @@
 
 			</div>
 			<div class="overlay" id="medicaid_overlay" style="display:none;"></div>
-			<div class="box org_newuser" id="medicaid_box">
+			<div class="box org_newuser" id="medicaid_box"  ng-controller="Medicaid">
 				<div class="midbg selected_color"  style="background-color: #ffffff;width:840px;position:absolute;left:120px">
 					<span id="medicaid_boxclose" style="float: right;margin-right: 5px;margin-top: -45px;cursor: pointer;color: #fff" title="Close" class="fa fa-times fa-3x" onclick="overlayclose(this.id);"></span>
 
@@ -1429,7 +1437,7 @@
 										<div layout="row">
 											 <md-input-container flex >
 									            <label>Are you a participating Medicaid provider?</label>
-									            <md-select ng-model="pro_dea_state">
+									            <md-select ng-model="pro_medicare_state">
 									              <!-- <md-option ng-repeat="state in pro_dea_states" value="{{pro_dea_state}}" required="">
 									                {{pro_dea_state}}
 									              </md-option> -->
@@ -1442,13 +1450,13 @@
 										   <div layout="row">
 											  <md-input-container style="width:47%" >
 									            <label>Medicaid Number</label>
-									            <input type="text" ng-model="pro_medicaid_no" title="Medicaid Number" >
+									            <input type="text" ng-model="medicaidData.medicaid_no" title="Medicaid Number" >
 									           </md-input-container>
 												<md-input-container style="width:47%" >
 										            <label>Medicaid State</label>
-										            <md-select ng-model="pro_medicaid_state">
-										              <md-option ng-repeat="state in pro_medicaid_states" value="{{state}}" required="">
-										                {{state}}
+										            <md-select ng-model="medicaidData.medicaid_state">
+										              <md-option ng-repeat="medicaid_state in medicaidData.medicaid_states" value="{{medicaid_state}}" required="">
+										                {{medicaid_state}}
 										              </md-option>
 										            </md-select>
 										        </md-input-container>
@@ -1476,7 +1484,7 @@
 			<!-- specility start  -->
 			
 			<div class="overlay" id="spe_cility_overlay" style="display:none;"></div>
-			<div class="box org_newuser" id="spe_cility_box">
+			<div class="box org_newuser" id="spe_cility_box" ng-controller="Speciality">
 				<div class="midbg selected_color"  style="background-color: #ffffff;width:840px;position:absolute;left:120px">
 					<span id="spe_cility_boxclose" style="float: right;margin-right: 5px;margin-top: -45px;cursor: pointer;color: #fff" title="Close" class="fa fa-times fa-3x" onclick="overlayclose(this.id);"></span>
 
@@ -1502,16 +1510,16 @@
 											<div layout="row">
 												<md-input-container flex >
 										            <label>Speciality</label>
-										            <md-select ng-model="speciality">
-										              <md-option ng-repeat="speciality in specialities" value="{{speciality}}">
+										            <md-select ng-model="specialityData[0].speciality">
+										              <md-option ng-repeat="speciality in specialityData[0].specialities" value="{{speciality}}">
 										                {{speciality}}
 										              </md-option>
 										            </md-select>
 										        </md-input-container >
 										        <md-input-container flex >
 										            <label>Subspecialty</label>
-										            <md-select ng-model="sub_speciality">
-										              <md-option ng-repeat="sub_speciality in sub_specialities" value="{{sub_speciality}}">
+										            <md-select ng-model="specialityData[0].sub_speciality">
+										              <md-option ng-repeat="sub_speciality in specialityData[0].sub_specialities" value="{{sub_speciality}}">
 										                {{sub_speciality}}
 										              </md-option>
 										            </md-select>
@@ -1520,8 +1528,8 @@
 										   	<div layout="row">
 												<md-input-container flex>
 										            <label>Specialty Board</label>
-										            <md-select ng-model="board_cert">
-										              <md-option ng-repeat="board_cert_name in board_cert_names" value="{{board_cert_name}}">
+										            <md-select ng-model="specialityData[0].board_cert_name">
+										              <md-option ng-repeat="board_cert_name in specialityData[0].board_cert_names" value="{{board_cert_name}}">
 										                {{board_cert_name}}
 										              </md-option>
 										            </md-select>
@@ -1531,12 +1539,96 @@
 										<div layout-gt-sm="row">
 												<div layout="column" flex >
 												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Certification Date</label>
-												    <md-datepicker name="cert_issue_date" ng-model="cert_issue_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												    <md-datepicker name="cert_issue_date" ng-model="specialityData.cert_issue_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
 												</div>
 
 												<div layout="column" flex >
 												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Expiration Date</label>
-												    <md-datepicker name="cert_expire_date" ng-model="cert_expire_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												    <md-datepicker name="cert_expire_date" ng-model="specialityData.cert_expire_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												</div>
+											</div>
+
+										    
+											
+										</div>
+										<div class="overlayfooter">
+											<button type="button" class="obtn" style="float: right">Save</button>
+										</div>
+									</div>
+									
+								</div>
+								
+							</div>
+
+						</div>
+						
+					</form>
+					<div class="clear"></div>
+				</div>
+
+			</div>
+			<div class="overlay" id="spe_cility1_overlay" style="display:none;"></div>
+			<div class="box org_newuser" id="spe_cility1_box" ng-controller="Speciality">
+				<div class="midbg selected_color"  style="background-color: #ffffff;width:840px;position:absolute;left:120px">
+					<span id="spe_cility1_boxclose" style="float: right;margin-right: 5px;margin-top: -45px;cursor: pointer;color: #fff" title="Close" class="fa fa-times fa-3x" onclick="overlayclose(this.id);"></span>
+
+					<form>
+						<!-- <div class="roundblockleft theme_color reset_pwd_submit top_control"><a href="#null"><%= t :login_index_reset_go%></a></div> -->
+						
+						<div class="white_block">
+							
+							<div class="midblock" id="spe_cility1_midblock">
+								<div id="spe_cility1_res" style="color: green"></div>
+								<div id="spe_cility1_content" class="custom_swiper_item">
+									<div class="overlayheader">
+										Secondary Specialities
+									</div>
+									<div class="menu_container">
+										<ul id="spe_cility1_menu" class="menu">
+											<li><a href="#"  link='specilities1'>Specialities</a></li>
+										</ul>
+									</div>
+																		
+							<div class="" id='specilities1'>
+										<div class="overlaybody">
+											<div layout="row">
+												<md-input-container flex >
+										            <label>Speciality</label>
+										            <md-select ng-model="specialityData[1].speciality">
+										              <md-option ng-repeat="speciality in specialityData[1].specialities" value="{{speciality}}">
+										                {{speciality}}
+										              </md-option>
+										            </md-select>
+										        </md-input-container >
+										        <md-input-container flex >
+										            <label>Subspecialty</label>
+										            <md-select ng-model="specialityData[1].sub_speciality">
+										              <md-option ng-repeat="sub_speciality in specialityData[1].sub_specialities" value="{{sub_speciality}}">
+										                {{sub_speciality}}
+										              </md-option>
+										            </md-select>
+										        </md-input-container>
+										    </div>
+										   	<div layout="row">
+												<md-input-container flex>
+										            <label>Specialty Board</label>
+										            <md-select ng-model="speciality1Data[1].board_cert">
+										              <md-option ng-repeat="board_cert_name in specialityData[1].board_cert_names" value="{{board_cert_name}}">
+										                {{board_cert_name}}
+										              </md-option>
+										            </md-select>
+										        </md-input-container>
+										        
+										    </div>
+										<div layout-gt-sm="row">
+												<div layout="column" flex >
+												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Certification Date</label>
+												    <md-datepicker name="cert_issue_date" ng-model="speciality1Data.cert_issue_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												</div>
+
+												<div layout="column" flex >
+												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Expiration Date</label>
+												    <md-datepicker name="cert_expire_date" ng-model="speciality1Data.cert_expire_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
 												</div>
 											</div>
 
@@ -1711,12 +1803,12 @@
 									</div>
 									<div class="" id='officetime'>
 										<div class="overlaybody">
-											<div>
+											<div style="display: flex">
 											<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
 												 <md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time1" style="margin: 0;" ng-change='updatesliderfn("time-range1",practicelocationData.time1)'>
 										          </md-checkbox>
 												</md-input-container>
-											 <div id="time-range1" class="time-range" style="display: flex; width: 90%;float: right; margin-top: -20px;" >
+											 <div id="time-range1" class="time-range" style="display: flex; width: 90%;float: right; margin: 18px 10px 0;" >
 											 	
 											    <div  style="display: flex; width:10% ;opacity: 0.80;" >Mon:</div>  
 											    <div class="sliders_step1" style="display: flex; width:70%">
@@ -1725,12 +1817,12 @@
 											    <div style="display: flex;width: 10%;opacity: 0.80;"><span  >9:00 AM</span> - <span  >5:00 PM</span></div>
 											 </div>
 											 </div>
-											 <div>
+											 <div style="display: flex">
 											<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
 												 <md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time2" style="margin: 0;" ng-change='updatesliderfn("time-range2",practicelocationData.time2)'>
 										          </md-checkbox>
 												</md-input-container>
-											 <div id="time-range2" class="time-range" style="display: flex; width: 90%;float: right; margin-top: -20px;">
+											 <div id="time-range2" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
 											    <div  style="display: flex; width:10% ;opacity: 0.80;" >Tue:</div>  
 											    <div class="sliders_step1" style="display: flex; width:70%">
 											        <div class="slider-range"></div>
@@ -1738,12 +1830,12 @@
 											    <div style="display: flex;width: 10%;opacity: 0.80;"><span   >9:00 AM</span> - <span  >5:00 PM</span></div>
 											 </div>
 											</div>
-											 <div>
+											 <div style="display: flex">
 											<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
 												 <md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time3" style="margin: 0;" ng-change='updatesliderfn("time-range3",practicelocationData.time3)'>
 										          </md-checkbox>
 												</md-input-container>
-											 <div id="time-range3" class="time-range" style="display: flex; width: 90%;float: right; margin-top: -20px; ">
+											 <div id="time-range3" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
 											    <div style="display: flex; width:10% ;opacity: 0.80;" >Wed:</div>  
 											    <div class="sliders_step1" style="display: flex; width:70%">
 											        <div class="slider-range"></div>
@@ -1751,12 +1843,12 @@
 											    <div style="display: flex;width: 10% ;opacity: 0.80;"><span   >9:00 AM</span> - <span  >5:00 PM</span></div>
 											 </div>
 											 </div>
-											 <div>
+											 <div style="display: flex">
 											<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
 												 <md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time4" style="margin: 0;" ng-change='updatesliderfn("time-range4",practicelocationData.time4)'>
 										          </md-checkbox>
 												</md-input-container>
-											 <div id="time-range4" class="time-range" style="display: flex; width: 90%;float: right; margin-top: -20px; ">
+											 <div id="time-range4" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
 											    <div  style="display: flex; width:10% ;opacity: 0.80;" >Thu:</div>  
 											    <div class="sliders_step1" style="display: flex; width:70%">
 											        <div class="slider-range"></div>
@@ -1764,12 +1856,12 @@
 											    <div style="display: flex;width: 10%;opacity: 0.80;"><span   >9:00 AM</span> - <span  >5:00 PM</span></div>
 											 </div>
 											 </div>
-											 <div>
+											 <div style="display: flex">
 											<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
 												 <md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time5" style="margin: 0;" ng-change='updatesliderfn("time-range5",practicelocationData.time5)'>
 										          </md-checkbox>
 											</md-input-container>
-											 <div id="time-range5" class="time-range" style="display: flex; width: 90%;float: right; margin-top: -20px; ">
+											 <div id="time-range5" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
 											    <div  style="display: flex; width:10% ;opacity: 0.80;" >Fri:</div>  
 											    <div class="sliders_step1" style="display: flex; width:70%">
 											        <div class="slider-range"></div>
@@ -1777,12 +1869,12 @@
 											    <div style="display: flex;width: 10%;opacity: 0.80;"><span   >9:00 AM</span> - <span  >5:00 PM</span></div>
 											 </div>
 											 </div>
-											 <div>
+											 <div style="display: flex">
 											<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
 												 <md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time6" style="margin: 0;" ng-change='updatesliderfn("time-range6",practicelocationData.time6)'>
 										          </md-checkbox>
 												</md-input-container>
-											 <div id="time-range6" class="time-range" style="display: flex; width: 90%;float: right; margin-top: -20px; ">
+											 <div id="time-range6" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
 											    <div  style="display: flex; width:10% ;opacity: 0.80;" >Sat:</div>  
 											    <div class="sliders_step1" style="display: flex; width:70%">
 											        <div class="slider-range"></div>
@@ -1790,12 +1882,12 @@
 											    <div style="display: flex;width: 10%;opacity: 0.80;"><span   >9:00 AM</span> - <span  >5:00 PM</span></div>
 											 </div>
 											 </div>
-											 <div>
+											 <div style="display: flex">
 											<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
 												 <md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time7" style="margin: 0;" ng-change='updatesliderfn("time-range7",practicelocationData.time7)'>
 										          </md-checkbox>
 												</md-input-container>
-											 <div id="time-range7" class="time-range" style="display: flex; width: 90%;float: right; margin-top: -20px; ">
+											 <div id="time-range7" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
 											    <div  style="display: flex; width:10% ;opacity: 0.80;" >Sun:</div>  
 											    <div class="sliders_step1" style="display: flex; width:70%">
 											        <div class="slider-range"></div>
@@ -2284,11 +2376,8 @@
 	$(document).ready(function() {
 	    $('#provide_type').editable({toggle:'manual',
 	            value: 1,    
-        source: [
-              {value: 1, text: 'MD'},
-              {value: 2, text: 'MBBS'},
-              {value: 3, text: 'MDMS'}
-           ]});
+        source: new GlobalProviderType().types(),
+        });
 	    $('#practice_setting').editable({toggle:'manual',
 	        source: [
               {value: 1, text: 'Inpatient/Outpatient'},

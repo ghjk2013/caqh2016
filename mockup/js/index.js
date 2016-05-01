@@ -27,9 +27,9 @@ var myApp = angular.module('MyApp',['ngMaterial']);
 		email : 'john_koshy@hotmail.com',
 		address_line1 : '23 Main St. Washington DC',
 		address_line2 : 'DC-12345',
-		fax : 'xxx-xx-1111',
+		ssn : '2432-29-5789',
 		b_date : new Date('04 Jan 1980'),
-		m_daytime_phone : '(123) - 450 - 7890',
+		npin : '(123) - 450 - 7890',
 		p_city : 'Washington',
 		p_state : 'DC',
 		city : '',
@@ -40,8 +40,6 @@ var myApp = angular.module('MyApp',['ngMaterial']);
 		genders : ['Male', 'Female'],
 		countrys : ['country1', 'country2', 'country3'],
 		b_races : ['Ethnicity1', 'Ethnicity2', 'Ethnicity3'],
-		ssn : '',
-		npin : '',
 		upin : '',
 		fnin : '',
 		fnin_country : '',
@@ -102,15 +100,15 @@ var myApp = angular.module('MyApp',['ngMaterial']);
   myApp.factory('LicenceData', function () {
   	
 	var licenceData = {
-		pro_licence_state : 'state2',
-		pro_licence_states : ['state1', 'state2', 'state3'],
+		pro_licence_state : 'Alabama',
+		pro_licence_states : new GlobalStates().state(),
 		pro_licence_no : 'xxxxxxxxxxx1',
 		pro_same_state : '',		
-		licencestatus : 'Active',
-		licencestatustypes : ['Active', 'Blocked', 'Suspended'],
+		pro_licence_status : 'Active',
+		licencestatustypes : new GlobalLicenceStatus().status,
 		pro_licence_expire_date : new Date('04 Jan 2070'),
-		licencetype : 'Type2',
-		licencetypes: ['Type1', 'Type2', 'Type3'],
+		pro_licence_type : 'MD',
+		licencetypes: new GlobalLicenceType().types,
 		licencecategoery : 'CType2',
 		licencecategories: ['CType1', 'CType2', 'CType3']
 		
@@ -203,6 +201,69 @@ var myApp = angular.module('MyApp',['ngMaterial']);
 		$("#" + slider_id+ " *").css("opacity", "1");
 	}
 }
+      
+  });
+  
+  myApp.factory('SpecialityData', function () {
+  var specialityData = {
+  	    speciality : 'Allergy & Immunology1111',
+    	sub_speciality : 'Allergy & Immunology0',
+		specialities : ['Allergy & Immunology1111','Allergy & Immunology', 'Allergy & Immunology1', 'Allergy & Immunology2'],
+    	sub_specialities : ['Allergy & Immunology0', 'Allergy & Immunology12', 'Allergy & Immunology13'],
+    	board_cert: true,
+    	board_cert_name: 'xxxxyyyzzz',
+    	board_cert_names: ['xxxxyyyzzz','dsadasdasda'],
+    	cert_issue_date: new Date('02 Feb 2014'),
+    	cert_expire_date: new Date('02 Feb 2024')
+	}; 
+  var specialityData1 = {
+  	    speciality : 'Allergy & Immunology11',
+    	sub_speciality : 'Allergy & Immunology0',
+		specialities : ['Allergy & Immunology11', 'Allergy & Immunology12', 'Allergy & Immunology13'],
+    	sub_specialities : ['Allergy & Immunology0', 'Allergy & Immunology12', 'Allergy & Immunology13'],
+    	board_cert: true,
+    	board_cert_name: 'xxxxyyyzzz',
+    	board_cert_names: ['xxxxyyyzzz','dsadasdasda'],
+    	cert_issue_date: new Date('02 Feb 2014'),
+    	cert_expire_date: new Date('02 Feb 2024')
+	}; 
+  var specialityDataArray = [specialityData,specialityData1];
+    return specialityDataArray;
+  });
+  
+  myApp.controller('Speciality', function($scope, SpecialityData) {
+      $scope.specialityData = SpecialityData;
+      
+  });
+  
+  
+  myApp.factory('MedicareData', function () {
+	var medicareData = {
+		medicare_state : 'state2',
+		medicare_states : ['state1', 'state2', 'state3'],
+		medicare_no : 'xxxxxxxxxxx'
+	}; 
+
+    return medicareData;
+  });
+  
+  myApp.controller('Medicare', function($scope, MedicareData) {
+      $scope.medicareData = MedicareData;
+      
+  });
+  
+  myApp.factory('MedicaidData', function () {
+	var medicaidData = {
+		medicaid_state : 'state2',
+		medicaid_states : ['state1', 'state2', 'state3'],
+		medicaid_no : 'xxxxxxxxxxxid'
+	}; 
+
+    return medicaidData;
+  });
+  
+  myApp.controller('Medicaid', function($scope, MedicaidData) {
+      $scope.medicaidData = MedicaidData;
       
   });
 
