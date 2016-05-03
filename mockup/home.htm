@@ -50,7 +50,7 @@
         <script src="js/licencetype-json.js"></script>
         <script src="js/provider-type-json.js"></script>
         <script src="js/race-ethnicity-json.js"></script>
-        
+        <script src="js/speciality-json.js"></script>
 
 	<!--	<script type="text/javascript" src="xeditable.js"></script> 
 		<script src="myApp.js"></script> -->
@@ -1645,31 +1645,26 @@
 											<div layout="row">
 												<md-input-container flex >
 										            <label>Speciality</label>
-										            <md-select ng-model="specialityData[0].speciality">
-										              <md-option ng-repeat="speciality in specialityData[0].specialities" value="{{speciality}}">
-										                {{speciality}}
+										            <md-select ng-model="specialityData[0].speciality" ng-change='filterspeciality(specialityData[0].speciality, 0 )'>
+										              <md-option ng-repeat="speciality in specialityData[0].specialities" >
+										                {{speciality.text}}
 										              </md-option>
 										            </md-select>
 										        </md-input-container >
 										        <md-input-container flex >
 										            <label>Subspecialty</label>
 										            <md-select ng-model="specialityData[0].sub_speciality">
-										              <md-option ng-repeat="sub_speciality in specialityData[0].sub_specialities" value="{{sub_speciality}}">
+										              <md-option ng-repeat="sub_speciality in specialityData[0].sub_specialities_filtered" >
 										                {{sub_speciality}}
 										              </md-option>
 										            </md-select>
 										        </md-input-container>
 										    </div>
 										   	<div layout="row">
-												<md-input-container flex>
+										   		<md-input-container flex>
 										            <label>Specialty Board</label>
-										            <md-select ng-model="specialityData[0].board_cert_name">
-										              <md-option ng-repeat="board_cert_name in specialityData[0].board_cert_names" value="{{board_cert_name}}">
-										                {{board_cert_name}}
-										              </md-option>
-										            </md-select>
-										        </md-input-container>
-										        
+										            <input type="text" ng-model="specialityData[0].board_cert_name" >
+									           </md-input-container>
 										    </div>
 										<div layout-gt-sm="row">
 												<div layout="column" flex >
@@ -1729,41 +1724,36 @@
 											<div layout="row">
 												<md-input-container flex >
 										            <label>Speciality</label>
-										            <md-select ng-model="specialityData[1].speciality">
-										              <md-option ng-repeat="speciality in specialityData[1].specialities" value="{{speciality}}">
-										                {{speciality}}
+										            <md-select ng-model="specialityData[1].speciality" ng-change='filterspeciality(specialityData[1].speciality, 1)'>
+										              <md-option ng-repeat="speciality in specialityData[1].specialities" >
+										                {{speciality.text}}
 										              </md-option>
 										            </md-select>
 										        </md-input-container >
 										        <md-input-container flex >
 										            <label>Subspecialty</label>
 										            <md-select ng-model="specialityData[1].sub_speciality">
-										              <md-option ng-repeat="sub_speciality in specialityData[1].sub_specialities" value="{{sub_speciality}}">
+										              <md-option ng-repeat="sub_speciality in specialityData[1].sub_specialities_filtered" >
 										                {{sub_speciality}}
 										              </md-option>
 										            </md-select>
 										        </md-input-container>
 										    </div>
 										   	<div layout="row">
-												<md-input-container flex>
+										   		<md-input-container flex>
 										            <label>Specialty Board</label>
-										            <md-select ng-model="speciality1Data[1].board_cert">
-										              <md-option ng-repeat="board_cert_name in specialityData[1].board_cert_names" value="{{board_cert_name}}">
-										                {{board_cert_name}}
-										              </md-option>
-										            </md-select>
-										        </md-input-container>
-										        
+										            <input type="text" ng-model="specialityData[1].board_cert_name" >
+									           </md-input-container>
 										    </div>
 										<div layout-gt-sm="row">
 												<div layout="column" flex >
 												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Certification Date</label>
-												    <md-datepicker name="cert_issue_date" ng-model="speciality1Data.cert_issue_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												    <md-datepicker name="cert_issue_date" ng-model="specialityData[1].cert_issue_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
 												</div>
 
 												<div layout="column" flex >
 												    <label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Expiration Date</label>
-												    <md-datepicker name="cert_expire_date" ng-model="speciality1Data.cert_expire_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												    <md-datepicker name="cert_expire_date" ng-model="specialityData[1].cert_expire_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
 												</div>
 											</div>
 

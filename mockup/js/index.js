@@ -229,33 +229,42 @@ var myApp = angular.module('MyApp',['ngMaterial']);
   
   myApp.factory('SpecialityData', function () {
   var specialityData = {
-  	    speciality : 'Allergy & Immunology1111',
-    	sub_speciality : 'Allergy & Immunology0',
-		specialities : ['Allergy & Immunology1111','Allergy & Immunology', 'Allergy & Immunology1', 'Allergy & Immunology2'],
-    	sub_specialities : ['Allergy & Immunology0', 'Allergy & Immunology12', 'Allergy & Immunology13'],
+  	    speciality : 'Allergy and Immunology',
+    	sub_speciality : 'No Subspecialties',
+		specialities : new GlobalSpeciality().speciality(),
+    	sub_specialities_filtered : ['First Select Speciality'],
+    	sub_specialities : new GlobalSpeciality().subspeciality,
     	board_cert: true,
-    	board_cert_name: 'xxxxyyyzzz',
+    	board_cert_name: 'American Board of Allergy and Immunology',
     	board_cert_names: ['xxxxyyyzzz','dsadasdasda'],
     	cert_issue_date: new Date('02 Feb 2014'),
     	cert_expire_date: new Date('02 Feb 2024')
 	}; 
   var specialityData1 = {
-  	    speciality : 'Allergy & Immunology11',
-    	sub_speciality : 'Allergy & Immunology0',
-		specialities : ['Allergy & Immunology11', 'Allergy & Immunology12', 'Allergy & Immunology13'],
-    	sub_specialities : ['Allergy & Immunology0', 'Allergy & Immunology12', 'Allergy & Immunology13'],
+  	    speciality : 'Allergy and Immunology',
+    	sub_speciality : 'No Subspecialties',
+		specialities : new GlobalSpeciality().speciality(),
+    	sub_specialities_filtered : ['First Select Speciality'],
+    	sub_specialities : new GlobalSpeciality().subspeciality,
     	board_cert: true,
-    	board_cert_name: 'xxxxyyyzzz',
+    	board_cert_name: 'American Board of Allergy and Immunology',
     	board_cert_names: ['xxxxyyyzzz','dsadasdasda'],
     	cert_issue_date: new Date('02 Feb 2014'),
     	cert_expire_date: new Date('02 Feb 2024')
 	}; 
   var specialityDataArray = [specialityData,specialityData1];
+    // console.log("HHHHH" + JSON.stringify(specialityDataArray[0].specialities));
     return specialityDataArray;
   });
   
-  myApp.controller('Speciality', function($scope, SpecialityData) {
+  myApp.controller('Speciality', function($scope, SpecialityData, $filter) {
       $scope.specialityData = SpecialityData;
+      $scope.filterspeciality = function(speciality_id, index) {
+      	// console.log("HHHHH" + speciality_id);
+      	// console.log("HHHHH" + JSON.stringify(new GlobalSpeciality().g_speciality[speciality_id].sub));
+      	$scope.specialityData[index].sub_specialities_filtered = new GlobalSpeciality().g_speciality[speciality_id].sub;
+        $scope.specialityData[index].board_cert_name = new GlobalSpeciality().g_speciality[speciality_id].board;
+      }  
       
   });
   
