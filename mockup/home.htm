@@ -200,10 +200,10 @@
 
 				<div id="main_block" style="padding: 0 2% 0;width: 79%;height: 80%;float: left;border-left:1px solid #d9e5e8;">
 
-					<div style="height: 24%;line-height: 2">
+					<div style="height: 26%;line-height: 2">
 						<div style="padding:10px 0 10px 15px;float: left;color: #496973;">
-							<h1 ng-controller="PersonalInfo">{{personalInfoData.first_name}} {{personalInfoData.middle_name}} {{personalInfoData.last_name}} {{personalInfoData.suffix}}</h1>
-							<h2><font ng-controller="Speciality" color="green">{{specialityData[0].speciality}}</font> <font ng-controller="PersonalInfo"> {{personalInfoData.p_city}}, {{personalInfoData.p_state}}</h2>
+							<h1 ng-controller="PersonalInfo" ng-cloak>{{personalInfoData.first_name}} {{personalInfoData.middle_name}} {{personalInfoData.last_name}} {{personalInfoData.suffix}}</h1>
+							<h2><font ng-controller="Speciality" color="green" ng-cloak>{{specialityData[0].speciality}}</font> <font ng-controller="PersonalInfo" ng-cloak> {{personalInfoData.p_city}}, {{personalInfoData.p_state}}</font></h2>
 						</div>
 						<div style="float: right;padding:10px 0 10px 15px;font-size: 14px;text-align: right;">
 							<div>
