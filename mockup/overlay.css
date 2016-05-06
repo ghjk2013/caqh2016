@@ -737,7 +737,7 @@ background:#FFA500;
 .overlayheader{
 	height: 50px;background: #eeeeee ;text-align: center;font-size: 16px;font-weight: bold;padding: 15px}
 .overlayfooter{
-	height: 50px;background: #ffffff ;text-align: center;font-size: 16px;font-weight: bold;padding: 10px 20px 10px 10px}
+	height: 50px;background: #eeeeee ;text-align: center;font-size: 16px;font-weight: bold;padding: 10px 20px 10px 10px}
 .modal-footer {
     background-color: #f5f5f5;
     border-radius: 0 0 15px 15px;
