@@ -103,6 +103,7 @@ body {
 	height: 100%;
 	min-width: 999px;
 	background-color: #fff;
+    overflow-y: scroll;
 	/*letter-spacing: 1px;*/
 }
 
@@ -745,9 +746,9 @@ body {
 }
 
 .testheading{
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
-    opacity: 0.8;
+    /*opacity: 0.8;*/
 }
 /*--------------Angular matarial----------*/
 .flex-2 {
@@ -802,4 +803,8 @@ md-datepicker.md-default-theme, md-datepicker
 {
 	background-color:initial ;
 }
+/*a.md-default-theme:not(.md-button), a:not(.md-button)
+{
+	color: #20404a !important;
+}*/
 /*--------------Angular matarial End----------*/
