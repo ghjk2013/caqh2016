@@ -259,7 +259,8 @@
 									<div class="horizon-item" id="identification" title="Identification" style="padding: 0px;">
 
 										<div class="heading">
-											Identification
+											<span style="display: inline-flex;width: 82%;padding: 7px;">Identification</span>
+											
 										</div>
 										<div ng-controller="Identification" class="identification" id="identification1">
 											<span style="float: left; width: 100%;padding-left: 3%;"> <!--	<span style="float: left" class="testheading">Unique Physician Identification No (UPIN): xxxxxxxx</span>  --> <span class="testheading">Unique Physician Identification No (UPIN) :&nbsp;&nbsp;</span> <a href="#" id="proid_upin" data-type="text" data-url="" data-value="" data-title="Enter UPIN">{{identificationData.upin || 'Empty'}}</a> &nbsp;&nbsp;&nbsp;<span id="upin_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
@@ -272,8 +273,11 @@
 									<div class="horizon-item" id="licence" title="Licence" ng-controller="Licence" style="padding: 0px;">
 
 										<div class="heading">
-											Professional Licence
-											<div class="fa fa-plus-square-o" style="bottom: -3px;font-size: 19px;position: relative;"></div>
+											<span style="display: inline-flex;width: 84%;">Professional Licence</span>
+											<span style=" padding-right: 20px;">
+												<div style="bottom: -3px; font-size: 19px; position: relative; padding-right: 2px;" class="fa fa-plus-square-o"></div>
+												<span style="font-weight: normal;" class="">Add Licence</span>
+											</span>
 										</div>
 										<div id="licence1" class="licence" style=" width: 100%;display: inherit;">
 											<span style="float: left; width: 48%;padding-left: 3%;"> <span class="testheading">Licence State:</span> {{licenceData[0].pro_licence_state}}
@@ -305,11 +309,14 @@
 											<span id="licence_view_prev" class="pagi_prev" title="Previous" onclick="updateviewpage('prev');"></span>Viewing <span id="licence_view_current">1</span> of <span id="licence_view_total"></span><span id="licence_view_list"> </span><span id="licence_view_next" class="pagi_next" style="cursor: pointer;" onclick="updateviewpage('next');"></span>
 										</div>
 									</div>
-									<div class="horizon-item" id="dearesidtration" title="DEA Registration" ng-controller="DEA" style="padding: 0px;height: 198px">
+									<div class="horizon-item" id="dearesidtration" title="DEA Registration" ng-controller="DEA" style="padding: 0px;height: 220px">
 
 										<div class="heading">
-											DEA Registration
-											<div class="fa fa-plus-square-o" style="bottom: -3px;font-size: 19px;position: relative;"></div>
+											<span style="display: inline-flex;width: 86%;">DEA Registration</span>
+											<span style=" padding-right: 20px;">
+												<div style="bottom: -3px; font-size: 19px; position: relative; padding-right: 2px;" class="fa fa-plus-square-o"></div>
+												<span style="font-weight: normal;" class="">Add DEA</span>
+											</span>
 										</div>
 										<div  id="dearesidtration1" class="dearesidtration" style="display: inherit; width: 100%;">
 											<span style="float: left; width: 48%;padding-left: 3%;"> <span class="testheading">Drug Enforcement Administration No (DEA):</span> {{dEAData[0].pro_dea_no}}
@@ -336,8 +343,11 @@
 									<div ng-controller="CDS" class="horizon-item" title="Controlled Dangerous Substances (CDS) Registration" style="padding: 0px;">
 
 										<div class="heading">
-											Controlled Dangerous Substances (CDS) Registration
-											<div class="fa fa-plus-square-o" style="bottom: -3px;font-size: 19px;position: relative;"></div>
+											<span style="display: inline-flex;width: 86%;">Controlled Dangerous Substances (CDS) Registration</span>
+											<span style=" padding-right: 20px;">
+												<div style="bottom: -3px; font-size: 19px; position: relative; padding-right: 2px;" class="fa fa-plus-square-o"></div>
+												<span style="font-weight: normal;" class="">Add CDS</span>
+											</span>
 										</div>
 										<div>
 											<span style="float: left; width: 48%;padding-left: 3%;"> <span class="testheading">CDS No:</span> {{cDSData.pro_cds_no}}
@@ -353,20 +363,33 @@
 									<div class="horizon-item" title="Medicare" ng-controller="Medicare" style="padding: 0px;">
 
 										<div class="heading">
-											Medicare
-											<div class="fa fa-plus-square-o" style="bottom: -3px;font-size: 19px;position: relative;"></div>
+											<span style="display: inline-flex;width: 83%;">Medicare</span>
+											<span style=" padding-right: 20px;">
+												<div style="bottom: -3px; font-size: 19px; position: relative; padding-right: 2px;" class="fa fa-plus-square-o"></div>
+												<span style="font-weight: normal;" class="">Add Medicare</span>
+											</span>
 										</div>
 										<div>
-											<span style="float: left; width: 100%;padding-left: 3%;"> <span style="float: left" class="testheading">Medicare No: </span><span style="float: left;">{{medicareData.medicare_no}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="medi_care"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span>
+											<span style="float: left; width: 100%;padding-left: 3%;"> 
+												<span style="float: left" class="testheading">Medicare No: </span>
+												<span style="float: left;">{{medicareData.medicare_no}}</span> 
+												<span style=" float: right;"> 
+													<span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="medi_care"></span>
+													<span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> 
+												</span>
 												<br />
-												<span class="testheading">Medicare State:</span> {{medicareData.medicare_state}} </span>
+												<span class="testheading">Medicare State:</span> {{medicareData.medicare_state}} 
+											</span>
 										</div>
 									</div>
 									<div class="horizon-item" title="Medicaid" ng-controller="Medicaid" style="padding: 0px;">
 
 										<div class="heading">
-											Medicaid
-											<div class="fa fa-plus-square-o" style="bottom: -3px;font-size: 19px;position: relative;"></div>
+											<span style="display: inline-flex;width: 83%;">Medicaid</span>
+											<span style=" padding-right: 20px;">
+												<div style="bottom: -3px; font-size: 19px; position: relative; padding-right: 2px;" class="fa fa-plus-square-o"></div>
+												<span style="font-weight: normal;" class="">Add Medicaid</span>
+											</span>
 										</div>
 										<div>
 											<span style="float: left; width: 100%;padding-left: 3%;"> <span style="float: left" class="testheading">Medicaid No: </span><span style="float: left;">{{medicaidData.medicaid_no}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="medicaid"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span>
@@ -497,13 +520,18 @@
 						</ul>
 						</li> -->
 						<li>
-							<a scroll=7 id="practice_locations">Practice Locations<div class="fa fa-plus-square-o " style="bottom: -3px;font-size: 19px;position: relative;padding-left: 5px;"></div><span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span><span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span></a>
+							<a scroll=7 id="practice_locations">Practice Locations<span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span><span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span></a>
 							<ul style="padding: 0">
 								<div class="horizon-swiper" ng-controller="Practicelocation">
 									<div class="horizon-item" title="1st Practice Locations" style="height: 200px">
 
 										<div class="heading">
-											Practice Locations
+											
+											<span style="display: inline-flex;width: 83%;">Practice Locations</span>
+											<span style=" padding-right: 20px;">
+												<div style="bottom: -3px; font-size: 19px; position: relative; padding-right: 2px;" class="fa fa-plus-square-o"></div>
+												<span style="font-weight: normal;" class="">Add Location</span>
+											</span>
 										</div>
 
 										<div>
