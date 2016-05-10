@@ -29,7 +29,7 @@ var myApp = angular.module('MyApp',['ngMaterial']);
 		address_line2 : 'DC-12345',
 		ssn : '2432-29-5789',
 		b_date : new Date('04 Jan 1980'),
-		npin : '(123) - 450 - 7890',
+		npin : '1234507890',
 		p_city : 'Washington',
 		p_state : 'DC',
 		city : '',
