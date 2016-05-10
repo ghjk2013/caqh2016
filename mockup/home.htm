@@ -236,7 +236,7 @@
 
 						</li>
 						<li ng-controller="PersonalInfo">
-							<a scroll=0 id="personal_information">Personal Information<span class="fa fa-exclamation1 fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span><span class="fa fa-check1 fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span></a>
+							<a scroll=0 id="personal_information">Personal Information<span class="fa fa-exclamation1 fa-lg" style=" "></span><span class="fa fa-check1 fa-lg" style=" "></span></a>
 							<ul style="height: 130px;">
 								<span style="float: left; width: 48%"> <span class="testheading">Name:</span> {{personalInfoData.first_name}} {{personalInfoData.middle_name}} {{personalInfoData.last_name}} {{personalInfoData.suffix}}
 									<br />
@@ -253,7 +253,7 @@
 						</li>
 
 						<li>
-							<a scroll=2.5 id="professional_id" >Professional IDs<span class="fa fa-check1 fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span><span class="fa fa-exclamation1 fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span></a>
+							<a scroll=2.5 id="professional_id" >Professional IDs<span class="fa fa-check1 fa-lg" style=" "></span><span class="fa fa-exclamation1 fa-lg" style=" "></span></a>
 							<ul style=" padding:0px">
 								<div class="horizon-swiper">
 									<div class="horizon-item" id="identification" title="Identification" style="padding: 0px;">
@@ -306,7 +306,7 @@
 												<span class="testheading">Licence Staus2:</span> {{licenceData[1].pro_licence_status}} </span>
 										</div>
 										<div style="float: right;margin-right: 5px;padding: 0px;" id="licence_view_page_link">
-											<span id="licence_view_prev" class="pagi_prev" title="Previous" onclick="updateviewpage('prev');"></span>Viewing <span id="licence_view_current">1</span> of <span id="licence_view_total"></span><span id="licence_view_list"> </span><span id="licence_view_next" class="pagi_next" style="cursor: pointer;" onclick="updateviewpage('next');"></span>
+											<span id="licence_view_prev" class="pagi_prev" title="Previous" onclick="updateviewpage('prev');"></span>Viewing <span id="licence_view_current">1</span> of <span id="licence_view_total"></span><span id="licence_view_list"> </span><span id="licence_view_next" class="pagi_next" style="cursor: pointer;" title="Next" onclick="updateviewpage('next');"></span>
 										</div>
 									</div>
 									<div class="horizon-item" id="dearesidtration" title="DEA Registration" ng-controller="DEA" style="padding: 0px;height: 220px">
@@ -442,7 +442,7 @@
 							</ul>
 						</li>
 						<li>
-							<a scroll=5 id="speciality">Speciality<span class="fa fa-exclamation1 fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span><span class="fa fa-check1 fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span></a>
+							<a scroll=5 id="speciality">Speciality<span class="fa fa-exclamation1 fa-lg" style=" "></span><span class="fa fa-check1 fa-lg" style=" "></span></a>
 							<ul style="height: 150px;">
 								<span style="float: left; width: 48%" ng-controller="Speciality"> <span class="testheading">Primary Speciality:</span> {{specialityData[0].speciality}} <span style="float: right;cursor: pointer; margin-right: 4%" title="Update" class="fa fa-pencil-square-o fa-lg" id="spe_cility"></span>
 									<br />
@@ -462,7 +462,7 @@
 							</ul>
 						</li>
 						<!-- <li>
-						<a scroll=3 id="certifications">Certifications<span class="fa fa-exclamation fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span><span class="fa fa-check fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span></a>
+						<a scroll=3 id="certifications">Certifications<span class="fa fa-exclamation fa-lg" style=" "></span><span class="fa fa-check fa-lg" style=" "></span></a>
 						<ul>
 						<div class="horizon-swiper">
 						<div class="horizon-item" title="CPR">
@@ -520,10 +520,10 @@
 						</ul>
 						</li> -->
 						<li>
-							<a scroll=7 id="practice_locations">Practice Locations<span class="fa fa-check1 fa-lg" style="padding-right: 3px;color: green;position: relative;right: 30px;top: 15px;float: right;font-size: 17px;"></span><span class="fa fa-exclamation1 fa-lg" style="padding-right: 3px;color: #d44242;position: relative;right: 37px;top: 15px;float: right;font-size: 17px;"></span></a>
+							<a scroll=7 id="practice_locations">Practice Locations<span class="fa fa-check1 fa-lg" style=" "></span><span class="fa fa-exclamation1 fa-lg" style=" "></span></a>
 							<ul style="padding: 0">
 								<div class="horizon-swiper" ng-controller="Practicelocation">
-									<div class="horizon-item" title="1st Practice Locations" style="height: 200px">
+									<div id="p_location" class="horizon-item" title="1st Practice Locations" style="height: 200px; padding: 0;">
 
 										<div class="heading">
 											
@@ -534,7 +534,7 @@
 											</span>
 										</div>
 
-										<div>
+										<div id="p_location1" class="p_location" style="display: inherit;width: 100%;">
 											<span style="float: left; width: 48%;padding-left: 0;"> <span class="testheading">Name:</span> {{practicelocationData[0].pl_name}}
 												<br />
 												<span class="testheading">Address:</span> {{practicelocationData[0].pl_address_line1}} {{practicelocationData[0].pl_city}} {{practicelocationData[0].pl_state}} - {{practicelocationData[0].pl_postalCode}}
@@ -550,18 +550,15 @@
 												<span class="testheading">Fax:</span> xxxxxx </span>
 
 										</div>
-										<div class="horizon-item" title="2nd Practice Locations">
-											<div style="width: 100%;padding: 0px;text-align: center; ">
-												<a href="#" style="">&nbsp;</a>
-											</div>
-											<div style="padding-left: 0;font-weight: bold"></div>
+										<div id="p_location2" class="p_location" style="display: none;width: 100%;" title="2nd Practice Locations">
+
 											<span style="float: left; width: 48%;padding-left: 0;"> <span class="testheading">Name:</span> {{practicelocationData[1].pl_name}}
 												<br />
 												<span class="testheading">Address:</span> {{practicelocationData[1].pl_address_line1}} {{practicelocationData[1].pl_city}} {{practicelocationData[1].pl_state}} - {{practicelocationData[1].pl_postalCode}}
 												<br />
 												<span class="testheading">Email:</span> {{practicelocationData[1].pl_email}} </span>
 											<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Practice NDI: {{practicelocationData[1].pl_ndi}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="practice_location1"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span>
+											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Practice NDI: {{practicelocationData[1].pl_ndi}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="practice_location1"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span> 
 												<br />
 												<span class="testheading">Primary TaxID No:</span> {{practicelocationData[1].pl_txid}}
 												<br />
@@ -570,7 +567,10 @@
 												<span class="testheading">Fax:</span> xxxxxx </span>
 
 										</div>
-
+										<div style="float: right;margin-right: 2px;padding: 0px;" id="p_location_view_page_link">
+											<span id="p_location_view_prev" class="pagi_prev" title="Previous" onclick="updateviewpagebyid('prev','p_location');"></span>Viewing <span id="p_location_view_current">1</span> of <span id="p_location_view_total"></span><span id="p_location_view_list"> </span><span id="p_location_view_next" class="pagi_next" style="cursor: pointer;" title="Next" onclick="updateviewpagebyid('next','p_location');"></span>
+										</div>
+							           <div><br /></div>
 									</div>
 							</ul>
 						</li>
@@ -2477,6 +2477,51 @@
 				 else{
 				 $("#view_page_link").css("display", "none");
 				 } */
+			}
+			function updateviewpagebyid(type,id) {
+				var view_page_length = 1;
+				 currentid_acrd_swipper = id;
+					if (currentid_acrd_swipper == undefined || currentid_acrd_swipper == '') {
+						// do some thing
+						view_page_length = 1;
+						$("#view_page_link").css("display", "none");
+						return false
+					} else {
+						idandclass = "#" + currentid_acrd_swipper + " ." + currentid_acrd_swipper;
+						current_page = $("#" + currentid_acrd_swipper + "_view_current").text();
+						index = 0;
+						if (type == 'next') {
+							if ($("#" + currentid_acrd_swipper + "_view_current").text() == $("#" + currentid_acrd_swipper + "_view_total").text())
+								return false;
+							index = parseInt(current_page)
+						} else {
+							if ($("#" + currentid_acrd_swipper + "_view_current").text() == '1')
+								return false;
+							index = parseInt(current_page) - 2;
+						}
+
+					}
+					$("#" + currentid_acrd_swipper + "_view_current").html(index + 1)
+					if ($(idandclass) != undefined && $(idandclass).length > 0) {
+						view_page_length = $(idandclass).length
+						$(idandclass).css("display", "none");
+						$($(idandclass)[index]).fadeIn('slow').css('display', 'inherit');
+					}
+					if ($("#" + currentid_acrd_swipper + "_view_current").text() == $("#" + currentid_acrd_swipper + "_view_total").text()) {
+						$("#" + currentid_acrd_swipper + "_view_next").css("cursor", "");
+						$("#" + currentid_acrd_swipper + "_view_next").css("font-weight", "400");
+					} else {
+						$("#" + currentid_acrd_swipper + "_view_next").css("cursor", "pointer");
+						$("#" + currentid_acrd_swipper + "_view_next").css("font-weight", "600");
+					}
+					if ($("#" + currentid_acrd_swipper + "_view_current").text() == '1') {
+						$("#" + currentid_acrd_swipper + "_view_prev").css("cursor", "");
+						$("#" + currentid_acrd_swipper + "_view_prev").css("font-weight", "400");
+					} else {
+						$("#" + currentid_acrd_swipper + "_view_prev").css("cursor", "pointer");
+						$("#" + currentid_acrd_swipper + "_view_prev").css("font-weight", "600");
+					}
+
 			}
 
 			/*	$("#view_next").click(function(){
