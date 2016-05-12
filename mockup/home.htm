@@ -236,7 +236,7 @@
 
 						</li>
 						<li ng-controller="PersonalInfo">
-							<a scroll=0 id="personal_information">Personal Information<span class="fa fa-exclamation1 fa-lg" style=" "></span><span class="fa fa-check1 fa-lg" style=" "></span></a>
+							<a scroll=0 id="personal_information">Personal Information<span class="fa fa-exclamation fa-lg exclamation" style=" "></span><span class="b_fa-exclamation" style="">Incomplete</span><span class="fa fa-check fa-lg check " > </span><span class="b_fa-check" style="">Complete</span></a>
 							<ul style="height: 130px;">
 								<span style="float: left; width: 48%"> <span class="testheading">Name:</span> {{personalInfoData.first_name}} {{personalInfoData.middle_name}} {{personalInfoData.last_name}} {{personalInfoData.suffix}}
 									<br />
@@ -253,7 +253,7 @@
 						</li>
 
 						<li>
-							<a scroll=2.5 id="professional_id" >Professional IDs<span class="fa fa-check1 fa-lg" style=" "></span><span class="fa fa-exclamation1 fa-lg" style=" "></span></a>
+							<a scroll=2.5 id="professional_id" >Professional IDs<span class="fa fa-exclamation fa-lg exclamation" style=" "></span><span class="b_fa-exclamation" style="">Incomplete</span><span class="fa fa-check fa-lg check " style=" "></span><span class="b_fa-check" style="">Complete</span></a>
 							<ul style=" padding:0px">
 								<div class="horizon-swiper">
 									<div class="horizon-item" id="identification" title="Identification" style="padding: 0px;">
@@ -442,7 +442,7 @@
 							</ul>
 						</li>
 						<li>
-							<a scroll=5 id="speciality">Speciality<span class="fa fa-exclamation1 fa-lg" style=" "></span><span class="fa fa-check1 fa-lg" style=" "></span></a>
+							<a scroll=5 id="speciality">Speciality<span class="fa fa-exclamation fa-lg exclamation" style=" "></span><span class="b_fa-exclamation" style="">Incomplete</span><span class="fa fa-check fa-lg check " style=" "></span><span class="b_fa-check" style="">Complete</span></a>
 							<ul style="height: 150px;">
 								<span style="float: left; width: 48%" ng-controller="Speciality"> <span class="testheading">Primary Speciality:</span> {{specialityData[0].speciality}} <span style="float: right;cursor: pointer; margin-right: 4%" title="Update" class="fa fa-pencil-square-o fa-lg" id="spe_cility"></span>
 									<br />
@@ -462,7 +462,7 @@
 							</ul>
 						</li>
 						<!-- <li>
-						<a scroll=3 id="certifications">Certifications<span class="fa fa-exclamation fa-lg" style=" "></span><span class="fa fa-check fa-lg" style=" "></span></a>
+						<a scroll=3 id="certifications">Certifications<span class="fa fa-exclamation fa-lg" style=" "></span><span class="fa fa-check fa-lg check " style=" "></span></a>
 						<ul>
 						<div class="horizon-swiper">
 						<div class="horizon-item" title="CPR">
@@ -520,7 +520,7 @@
 						</ul>
 						</li> -->
 						<li>
-							<a scroll=7 id="practice_locations">Practice Locations<span class="fa fa-check1 fa-lg" style=" "></span><span class="fa fa-exclamation1 fa-lg" style=" "></span></a>
+							<a scroll=7 id="practice_locations">Practice Locations<span class="fa fa-exclamation fa-lg exclamation" style=" "></span><span class="b_fa-exclamation" style="">Incomplete</span><span class="fa fa-check fa-lg check " style=" "></span><span class="b_fa-check" style="">Complete</span></a>
 							<ul style="padding: 0">
 								<div class="horizon-swiper" ng-controller="Practicelocation">
 									<div id="p_location" class="horizon-item" title="1st Practice Locations" style="height: 200px; padding: 0;">
@@ -1874,7 +1874,7 @@
 										<div class="overlaybody">
 											<div style="display: flex">
 												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
-													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time1" style="margin: 0;" ng-change='updatesliderfn("time-range1",practicelocationData.time1)'></md-checkbox>
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData[0].time1" style="margin: 0;" ng-change='updatesliderfn("time-range1",practicelocationData[0].time1)'></md-checkbox>
 												</md-input-container>
 												<div id="time-range1" class="time-range" style="display: flex; width: 90%;float: right; margin: 18px 10px 0;" >
 
@@ -1891,7 +1891,7 @@
 											</div>
 											<div style="display: flex">
 												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
-													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time2" style="margin: 0;" ng-change='updatesliderfn("time-range2",practicelocationData.time2)'></md-checkbox>
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData[0].time2" style="margin: 0;" ng-change='updatesliderfn("time-range2",practicelocationData[0].time2)'></md-checkbox>
 												</md-input-container>
 												<div id="time-range2" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
 													<div  style="display: flex; width:10% ;opacity: 0.80;" >
@@ -1907,7 +1907,7 @@
 											</div>
 											<div style="display: flex">
 												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
-													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time3" style="margin: 0;" ng-change='updatesliderfn("time-range3",practicelocationData.time3)'></md-checkbox>
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData[0].time3" style="margin: 0;" ng-change='updatesliderfn("time-range3",practicelocationData[0].time3)'></md-checkbox>
 												</md-input-container>
 												<div id="time-range3" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
 													<div style="display: flex; width:10% ;opacity: 0.80;" >
@@ -1923,7 +1923,7 @@
 											</div>
 											<div style="display: flex">
 												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
-													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time4" style="margin: 0;" ng-change='updatesliderfn("time-range4",practicelocationData.time4)'></md-checkbox>
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData[0].time4" style="margin: 0;" ng-change='updatesliderfn("time-range4",practicelocationData[0].time4)'></md-checkbox>
 												</md-input-container>
 												<div id="time-range4" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
 													<div  style="display: flex; width:10% ;opacity: 0.80;" >
@@ -1939,7 +1939,7 @@
 											</div>
 											<div style="display: flex">
 												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
-													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time5" style="margin: 0;" ng-change='updatesliderfn("time-range5",practicelocationData.time5)'></md-checkbox>
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData[0].time5" style="margin: 0;" ng-change='updatesliderfn("time-range5",practicelocationData[0].time5)'></md-checkbox>
 												</md-input-container>
 												<div id="time-range5" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
 													<div  style="display: flex; width:10% ;opacity: 0.80;" >
@@ -1955,7 +1955,7 @@
 											</div>
 											<div style="display: flex">
 												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
-													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time6" style="margin: 0;" ng-change='updatesliderfn("time-range6",practicelocationData.time6)'></md-checkbox>
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData[0].time6" style="margin: 0;" ng-change='updatesliderfn("time-range6",practicelocationData[0].time6)'></md-checkbox>
 												</md-input-container>
 												<div id="time-range6" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
 													<div  style="display: flex; width:10% ;opacity: 0.80;" >
@@ -1971,7 +1971,7 @@
 											</div>
 											<div style="display: flex">
 												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
-													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time7" style="margin: 0;" ng-change='updatesliderfn("time-range7",practicelocationData.time7)'></md-checkbox>
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData[0].time7" style="margin: 0;" ng-change='updatesliderfn("time-range7",practicelocationData[0].time7)'></md-checkbox>
 												</md-input-container>
 												<div id="time-range7" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
 													<div  style="display: flex; width:10% ;opacity: 0.80;" >
@@ -2192,9 +2192,9 @@
 										<div class="overlaybody">
 											<div style="display: flex">
 												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
-													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time1" style="margin: 0;" ng-change='updatesliderfn("time-range1",practicelocationData.time1)'></md-checkbox>
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData[1].time1" style="margin: 0;" ng-change='updatesliderfn("time-range11",practicelocationData[1].time1)'></md-checkbox>
 												</md-input-container>
-												<div id="time-range1" class="time-range" style="display: flex; width: 90%;float: right; margin: 18px 10px 0;" >
+												<div id="time-range11" class="time-range" style="display: flex; width: 90%;float: right; margin: 18px 10px 0;" >
 
 													<div  style="display: flex; width:10% ;opacity: 0.80;" >
 														Mon:
@@ -2209,9 +2209,9 @@
 											</div>
 											<div style="display: flex">
 												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
-													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time2" style="margin: 0;" ng-change='updatesliderfn("time-range2",practicelocationData.time2)'></md-checkbox>
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData[1].time2" style="margin: 0;" ng-change='updatesliderfn("time-range12",practicelocationData[1].time2)'></md-checkbox>
 												</md-input-container>
-												<div id="time-range2" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
+												<div id="time-range12" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
 													<div  style="display: flex; width:10% ;opacity: 0.80;" >
 														Tue:
 													</div>
@@ -2225,9 +2225,9 @@
 											</div>
 											<div style="display: flex">
 												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
-													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time3" style="margin: 0;" ng-change='updatesliderfn("time-range3",practicelocationData.time3)'></md-checkbox>
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData[1].time3" style="margin: 0;" ng-change='updatesliderfn("time-range13",practicelocationData[1].time3)'></md-checkbox>
 												</md-input-container>
-												<div id="time-range3" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
+												<div id="time-range13" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
 													<div style="display: flex; width:10% ;opacity: 0.80;" >
 														Wed:
 													</div>
@@ -2241,9 +2241,9 @@
 											</div>
 											<div style="display: flex">
 												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
-													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time4" style="margin: 0;" ng-change='updatesliderfn("time-range4",practicelocationData.time4)'></md-checkbox>
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData[1].time4" style="margin: 0;" ng-change='updatesliderfn("time-range14",practicelocationData[1].time4)'></md-checkbox>
 												</md-input-container>
-												<div id="time-range4" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
+												<div id="time-range14" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
 													<div  style="display: flex; width:10% ;opacity: 0.80;" >
 														Thu:
 													</div>
@@ -2257,9 +2257,9 @@
 											</div>
 											<div style="display: flex">
 												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
-													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time5" style="margin: 0;" ng-change='updatesliderfn("time-range5",practicelocationData.time5)'></md-checkbox>
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData[1].time5" style="margin: 0;" ng-change='updatesliderfn("time-range15",practicelocationData[1].time5)'></md-checkbox>
 												</md-input-container>
-												<div id="time-range5" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
+												<div id="time-range15" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
 													<div  style="display: flex; width:10% ;opacity: 0.80;" >
 														Fri:
 													</div>
@@ -2273,9 +2273,9 @@
 											</div>
 											<div style="display: flex">
 												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
-													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time6" style="margin: 0;" ng-change='updatesliderfn("time-range6",practicelocationData.time6)'></md-checkbox>
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData[1].time6" style="margin: 0;" ng-change='updatesliderfn("time-range16",practicelocationData[1].time6)'></md-checkbox>
 												</md-input-container>
-												<div id="time-range6" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
+												<div id="time-range16" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
 													<div  style="display: flex; width:10% ;opacity: 0.80;" >
 														Sat:
 													</div>
@@ -2289,9 +2289,9 @@
 											</div>
 											<div style="display: flex">
 												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
-													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData.time7" style="margin: 0;" ng-change='updatesliderfn("time-range7",practicelocationData.time7)'></md-checkbox>
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationData[1].time7" style="margin: 0;" ng-change='updatesliderfn("time-range17",practicelocationData[1].time7)'></md-checkbox>
 												</md-input-container>
-												<div id="time-range7" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
+												<div id="time-range17" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
 													<div  style="display: flex; width:10% ;opacity: 0.80;" >
 														Sun:
 													</div>
@@ -2638,9 +2638,15 @@
 				for ( n = 0; n < acrarray.length; n++) {
 					id = acrarray[n].id;
 					if (Math.round(100 * (Math.random())) < 50)
+					{
 						$("#"+id).find("span")[0].style.display = "none";
-					else
 						$("#"+id).find("span")[1].style.display = "none";
+					}
+					else
+					{
+						$("#"+id).find("span")[2].style.display = "none";
+						$("#"+id).find("span")[3].style.display = "none";
+					}
 				}
 				// making change effect end
 				// mainblockhight = $('#main_block').outerHeight();
@@ -2661,6 +2667,8 @@
 				// });
 				// $('#main_block').mouseover();
 			});
+			
+			
 			var currentswiperid = "";
 			var hswiper = $('.horizon-swiper').horizonSwiper({
 				showItems : 1,

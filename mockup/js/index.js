@@ -203,8 +203,8 @@ var myApp = angular.module('MyApp',['ngMaterial']);
     	time3 : true,
     	time4 : true,
     	time5 : true,
-    	time6 : true,
-    	time7 : true,
+    	time6 : false,
+    	time7 : false,
     	pl_type : 'Group Primary Care',
     	pl_types : new GlobalPracticeType().types,
     	pl_name : 'John M Doe',
@@ -236,8 +236,8 @@ var myApp = angular.module('MyApp',['ngMaterial']);
     	time3 : true,
     	time4 : true,
     	time5 : true,
-    	time6 : true,
-    	time7 : true,
+    	time6 : false,
+    	time7 : false,
     	pl_type : 'Group Primary Care',
     	pl_types : new GlobalPracticeType().types,
     	pl_name : 'John M Doe',
@@ -285,7 +285,10 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
 		$("#" + slider_id+ " *").css("opacity", "1");
 	}
 }
-      
+	  $scope.updatesliderfn("time-range6", false);
+	  $scope.updatesliderfn("time-range7", false);
+      $scope.updatesliderfn("time-range16", false);
+      $scope.updatesliderfn("time-range17",false );
   });
   
   myApp.factory('SpecialityData', function () {
