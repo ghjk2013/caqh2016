@@ -68,7 +68,6 @@
 }*//*Font end*/
 
 html {
-	overflow: auto;
 	height: 100%;
 }
 
@@ -82,7 +81,7 @@ table {
 }
 
 html {
-  overflow-y: auto;
+  /*overflow-y: auto;*/
   box-sizing: border-box;
 }
 
@@ -834,8 +833,17 @@ md-datepicker.md-default-theme, md-datepicker
 {
 	background-color:initial ;
 }
-/*a.md-default-theme:not(.md-button), a:not(.md-button)
-{
-	color: #20404a !important;
-}*/
+
 /*--------------Angular matarial End----------*/
+.sticky {
+     position: fixed !important;
+	 top: 0;
+	 width: 100% !important;
+	 left: 0;
+  }
+.sticky1 {
+     position: fixed !important;
+	 top: 0;
+	 left: 0;
+	 margin-left: 9px;
+  }

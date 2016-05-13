@@ -71,7 +71,7 @@
 			<div class="container ">
 				<div class="headerblock">
 
-					<div class="topblock" style="background-color: #fff">
+					<div class="topblock" style="background-color: #fafafa">
 						<div class="header_logo" style="background:url('logo2.png') no-repeat no-repeat left ;background-size: auto;height: 65px;width: 98%; margin-left: 10px"></div>
 						<div class="toprightblock" >
 							<div>
@@ -117,7 +117,7 @@
 						</div>
 					</div>
 
-					<div class="nav">
+					<div class="nav" style=" position: absolute; width: 100%;z-index: 99;display: none">
 						<ul class="topnav">
 							<li>
 								<a href="#" >HOME</a>
@@ -162,7 +162,7 @@
 				<p style="margin-left: 2px"><span class="fa fa-exclamation-circle" style="color: #FFBF1A;"></span> You have made chnages to your profile since your last attestation. You must attest for Participating Organizations to see your updated data.</p>
 				</div> -->
 
-				<div style="float:left;width:19%;height:380px;">
+				<div class="leftbar" style="float:left;width:19%;height:380px;margin-top: 45px; position: absolute; background-color: #FAFAFA;height: 82%;">
 					<div style="height:135px;">
 						<div style="width: 100%;height:120px;text-align: center;margin: 25px 0;">
 							<div>
@@ -197,7 +197,7 @@
 
 				</div>
 
-				<div id="main_block" style="padding: 0 2% 0;width: 79%;height: 80%;float: left;border-left:1px solid #d9e5e8;">
+				<div id="main_block" style="margin-top: 45px;margin-left: 19%;padding: 0 2% 0;width: 79%;height: 80%;float: left;border-left:1px solid #d9e5e8; background-color: #FFF">
 
 					<div style="height: 26%;line-height: 2">
 						<div style="padding:0 0 0 15px;float: left;color: #496973;">
@@ -2365,6 +2365,11 @@
 		</div>
 		</div>
 		<script type="text/javascript">
+			var elTop = 0;
+			$(window).scroll(function() {
+				$('.nav').toggleClass('sticky', $(window).scrollTop() > elTop);
+		        $('.leftbar').toggleClass('sticky1', $(window).scrollTop() > elTop);
+		    });
 			console.log("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
 			function buildviewpage() {
 				var hitemArray = $(".horizon-item:visible");
@@ -2628,6 +2633,8 @@
 
 			var mainblockhight;
 			$(document).ready(function() {
+				elTop = $('.nav').offset().top;
+				// alert(elTop);
 				/*	build_accordion("personal_info_menu","personal_info_menu_div");
 				build_accordion("practice_location_menu","practice_location_menu_div");
 				build_accordion("pro_licence_menu","pro_licence_menu_div");
@@ -2667,7 +2674,6 @@
 				// });
 				// $('#main_block').mouseover();
 			});
-			
 			
 			var currentswiperid = "";
 			var hswiper = $('.horizon-swiper').horizonSwiper({
@@ -2718,7 +2724,7 @@
 				$(window).trigger('resize');
 				
 				setTimeout(function() {
-					document.body.scrollTop = $(document).height();
+					$(window).scrollTop ($(window).height());
 				}, 500);
 				buildviewpage();
 			});
