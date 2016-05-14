@@ -223,20 +223,20 @@
 								Professional Information
 							</div>
 							<div style="height: 62px;">
-								<div style="width: 33% ;float: left">
-									<span class="testheading">Provider Type: </span><a href="#" id="provide_type" data-type="select" data-url="" data-value="5" data-title="Provide Type">DC</a> &nbsp;&nbsp;&nbsp;<span id="provide_type_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+								<div style="width: 29% ;float: left">
+									<span class="testheading">Provider Type: </span><a href="#" id="provide_type" data-type="select" data-url="" data-value="DC" data-title="Provide Type" style="color: green;pointer-events: none;">DC</a> &nbsp;&nbsp;&nbsp;<span id="provide_type_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 								</div>
-								<div style="width: 33%; float: right; text-align: right;padding-right: 25px;">
-									<span class="testheading">Practice Setting: </span><a href="#" id="practice_setting" data-type="select" data-url="" data-value="2" data-title="Practice Setting">Inpatient-Only</a> &nbsp;&nbsp;&nbsp;<span id="practice_setting_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+								<div style="width: 37%; float: right; text-align: right;padding-right: 25px;">
+									<span class="testheading">Practice Setting: </span><a href="#" id="practice_setting" data-type="select" data-url="" data-value="2" data-title="Practice Setting" style="color: green ;pointer-events: none;">Inpatient-Only</a> &nbsp;&nbsp;&nbsp;<span id="practice_setting_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 								</div>
 								<div style="width: 33%; float: right; ">
-									<span class="testheading">Practice State: </span><a href="#" id="practice_state" data-type="select2" data-pk=null data-url="" data-value="VA" data-title="Select Practice States">VA</a> &nbsp;&nbsp;&nbsp;<span id="practice_state_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+									<span class="testheading">Practice State: </span><a href="#" id="practice_state" data-type="select2" data-pk=null data-url="" data-value="VA" data-title="Select Practice States" style="color: green; pointer-events: none;">VA</a> &nbsp;&nbsp;&nbsp;<span id="practice_state_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 								</div>
 							</div>
 
 						</li>
 						<li ng-controller="PersonalInfo">
-							<a scroll=0 id="personal_information">Personal Information<span class="fa fa-exclamation fa-lg exclamation" style=" "></span><span class="b_fa-exclamation" style="">Incomplete</span><span class="fa fa-check fa-lg check " > </span><span class="b_fa-check" style="">Complete</span></a>
+							<a scroll=0 id="personal_information">Personal Information<span class="fa fa-exclamation fa-lg exclamation" style=" "></span><span class="b_fa-exclamation" style="font-weight: normal">Incomplete</span><span class="fa fa-check fa-lg check " > </span><span class="b_fa-check" style="font-weight: normal">Complete</span></a>
 							<ul style="height: 130px;">
 								<span style="float: left; width: 48%"> <span class="testheading">Name:</span> {{personalInfoData.first_name}} {{personalInfoData.middle_name}} {{personalInfoData.last_name}} {{personalInfoData.suffix}}
 									<br />
@@ -253,7 +253,7 @@
 						</li>
 
 						<li>
-							<a scroll=2.5 id="professional_id" >Professional IDs<span class="fa fa-exclamation fa-lg exclamation" style=" "></span><span class="b_fa-exclamation" style="">Incomplete</span><span class="fa fa-check fa-lg check " style=" "></span><span class="b_fa-check" style="">Complete</span></a>
+							<a scroll=2.5 id="professional_id" >Professional IDs<span class="fa fa-exclamation fa-lg exclamation" style=" "></span><span class="b_fa-exclamation" style="font-weight: normal">Incomplete</span><span class="fa fa-check fa-lg check " style=" "></span><span class="b_fa-check" style="font-weight: normal">Complete</span></a>
 							<ul style=" padding:0px">
 								<div class="horizon-swiper">
 									<div class="horizon-item" id="identification" title="Identification" style="padding: 0px;">
@@ -263,10 +263,10 @@
 											
 										</div>
 										<div ng-controller="Identification" class="identification" id="identification1">
-											<span style="float: left; width: 100%;padding-left: 3%;"> <!--	<span style="float: left" class="testheading">Unique Physician Identification No (UPIN): xxxxxxxx</span>  --> <span class="testheading">Unique Physician Identification No (UPIN) :&nbsp;&nbsp;</span> <a href="#" id="proid_upin" data-type="text" data-url="" data-value="" data-title="Enter UPIN">{{identificationData.upin || 'Empty'}}</a> &nbsp;&nbsp;&nbsp;<span id="upin_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+											<span style="float: left; width: 100%;padding-left: 3%;"> <!--	<span style="float: left" class="testheading">Unique Physician Identification No (UPIN): xxxxxxxx</span>  --> <span class="testheading">Unique Physician Identification No (UPIN) :&nbsp;&nbsp;</span> <a style=" color: #20404a;pointer-events: none;" href="#" id="proid_upin" data-type="text" data-url="" data-value="" data-title="Enter UPIN">{{identificationData.upin || 'Empty'}}</a> &nbsp;&nbsp;&nbsp;<span id="upin_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 												<br />
 												<div style="padding-left: 0">
-													<span style="padding-top: 20px" class="testheading">National Provider Identification No (NPI) :&nbsp;&nbsp;</span><a href="#" id="proid_npi" data-type="text" data-url="" data-value="" data-title="Enter NPI">{{identificationData.upin || 'Empty'}}</a> &nbsp;&nbsp;&nbsp;<span id="npi_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+													<span style="padding-top: 20px" class="testheading">National Provider Identification No (NPI) :&nbsp;&nbsp;</span><a style=" color: #20404a;pointer-events: none;" href="#" id="proid_npi" data-type="text" data-url="" data-value="" data-title="Enter NPI">{{identificationData.upin || 'Empty'}}</a> &nbsp;&nbsp;&nbsp;<span  id="npi_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 												</div> </span>
 										</div>
 									</div>
@@ -442,7 +442,7 @@
 							</ul>
 						</li>
 						<li>
-							<a scroll=5 id="speciality">Speciality<span class="fa fa-exclamation fa-lg exclamation" style=" "></span><span class="b_fa-exclamation" style="">Incomplete</span><span class="fa fa-check fa-lg check " style=" "></span><span class="b_fa-check" style="">Complete</span></a>
+							<a scroll=5 id="speciality">Speciality<span class="fa fa-exclamation fa-lg exclamation" style=" "></span><span class="b_fa-exclamation" style="font-weight: normal">Incomplete</span><span class="fa fa-check fa-lg check " style=" "></span><span class="b_fa-check" style="font-weight: normal">Complete</span></a>
 							<ul style="height: 150px;">
 								<span style="float: left; width: 48%" ng-controller="Speciality"> <span class="testheading">Primary Speciality:</span> {{specialityData[0].speciality}} <span style="float: right;cursor: pointer; margin-right: 4%" title="Update" class="fa fa-pencil-square-o fa-lg" id="spe_cility"></span>
 									<br />
@@ -520,7 +520,7 @@
 						</ul>
 						</li> -->
 						<li>
-							<a scroll=7 id="practice_locations">Practice Locations<span class="fa fa-exclamation fa-lg exclamation" style=" "></span><span class="b_fa-exclamation" style="">Incomplete</span><span class="fa fa-check fa-lg check " style=" "></span><span class="b_fa-check" style="">Complete</span></a>
+							<a scroll=7 id="practice_locations">Practice Locations<span class="fa fa-exclamation fa-lg exclamation" style=" "></span><span class="b_fa-exclamation" style="font-weight: normal">Incomplete</span><span class="fa fa-check fa-lg check " style=" "></span><span class="b_fa-check" style="font-weight: normal">Complete</span></a>
 							<ul style="padding: 0">
 								<div class="horizon-swiper" ng-controller="Practicelocation">
 									<div id="p_location" class="horizon-item" title="1st Practice Locations" style="height: 200px; padding: 0;">
@@ -2869,8 +2869,12 @@
 			$(document).ready(function() {
 				$('#provide_type').editable({
 					toggle : 'manual',
-					value : 1,
+					value : 'DC',
 					source : new GlobalProviderType().types(),
+				    display: function(value, sourceData) {
+                              if(value !="")
+                               $(this).html(value);
+		                       }
 				});
 				$('#practice_setting').editable({
 					toggle : 'manual',

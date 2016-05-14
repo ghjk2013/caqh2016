@@ -49,7 +49,7 @@ this.types = function() {
 		var s = -1;
 		for (var i = 0; i < this.p_types.length; i++) {
 		    this.p_types[i];
-		    n[s++] = {value: this.p_types[i].value, text: this.p_types[i].text};   
+		    n[s++] = {value: this.p_types[i].text, text: this.p_types[i].description};   
 		}
 		return n;
 	};
