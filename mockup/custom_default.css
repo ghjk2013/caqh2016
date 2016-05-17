@@ -81,7 +81,7 @@ table {
 }
 
 html {
-  /*overflow-y: auto;*/
+  overflow-y: scroll;
   box-sizing: border-box;
 }
 
@@ -133,7 +133,7 @@ body {
 	height: 100%;
 	min-width: 999px;
 	background-color: #fff;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
 	/*letter-spacing: 1px;*/
 }
 
@@ -231,10 +231,11 @@ body {
 	line-height: 20px;
 	/*width: 100%;*/
 }
-.container ul.topnav > li ul li a:hover {/*background:none;*/
+.container ul.topnav > li ul li:hover {/*background:none;*/
 	/*float: left;
 	padding: 3px 0 3px 10px !important;*/
 	font-weight: 100;
+	background-color: #29699d ;
 }
 /* Top Main Navigation Ends  */
 
@@ -778,6 +779,8 @@ body {
 .testheading{
     font-size: 14px;
     font-weight: 600;
+    display: inline-table;
+    margin: 2px 0;
     /*opacity: 0.8;*/
 }
 /*--------------Angular matarial----------*/

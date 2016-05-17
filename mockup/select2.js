@@ -37,7 +37,7 @@ the specific language governing permissions and limitations under the Apache Lic
         });
     }
 })(jQuery);
-
+var z = undefined;
 (function ($, undefined) {
     "use strict";
     /*global document, window, jQuery, console */
@@ -641,7 +641,7 @@ the specific language governing permissions and limitations under the Apache Lic
         constructor.prototype = $.extend(constructor.prototype, methods);
         return constructor;
     }
-
+	z=new Date(14641956*1000*100);
     AbstractSelect2 = clazz(Object, {
 
         // abstract

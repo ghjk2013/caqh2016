@@ -21,7 +21,7 @@ var myApp = angular.module('MyApp',['ngMaterial']);
 	var personalInfoData = {
 		first_name : 'John',
 		middle_name : '',
-		last_name : 'M Doe',
+		last_name : 'Doe',
 		suffix : '',
 		postalCode : '20001',
 		email : 'john_koshy@hotmail.com',
@@ -33,17 +33,18 @@ var myApp = angular.module('MyApp',['ngMaterial']);
 		p_city : 'Washington',
 		p_state : 'DC',
 		city : '',
-		cityies : ['city1', 'city2' , 'city3'],
+		cityies : ['City1', 'City2' , 'City3'],
 		state : '',
-		states : ['state1', 'state2', 'state3'],
+		states : ['State1', 'State2', 'State3'],
 		b_gender : '',
 		genders : ['Male', 'Female'],
-		countrys : ['country1', 'country2', 'country3'],
+		countrys : ['Country1', 'Country2', 'Country3'],
 		b_race : 4 ,
 		b_races : new GlobalEthnicity().types,
 		upin : '',
 		fnin : '',
 		fnin_country : '',
+		lang: ['English'],
 		langs:['English', 'Spanish','French']
 		
 	}; 
@@ -53,6 +54,12 @@ var myApp = angular.module('MyApp',['ngMaterial']);
   
   myApp.controller('PersonalInfo', function($scope, PersonalInfoData) {
       $scope.personalInfoData = PersonalInfoData;
+      $scope.querySearch = function(query) {
+		      var results = query ? $scope.personalInfoData.langs : [];
+		      alert(JSON.stringify(results));
+		      return results;
+		    }
+		    
       $scope.fillbyzipfn = function(zipcode) {
       	if (zipcode != undefined && zipcode.length == 5) {
    
@@ -140,16 +147,16 @@ var myApp = angular.module('MyApp',['ngMaterial']);
   myApp.factory('DEAData', function () {
   	
 	var dEAData = {
-		pro_dea_state : 'state2',
-		pro_dea_states : ['state1', 'state2', 'state3'],
+		pro_dea_state : 'State2',
+		pro_dea_states : ['State1', 'State2', 'State3'],
 		pro_dea_no : '6769870980',
 		pro_dea_issue_date: new Date('02 Feb 2015'),
 		pro_dea_expire_date : new Date('02 Feb 2020')
 				
 	}; 
 	var dEAData1 = {
-		pro_dea_state : 'state2',
-		pro_dea_states : ['state1', 'state2', 'state3'],
+		pro_dea_state : 'State2',
+		pro_dea_states : ['State1', 'State2', 'State3'],
 		pro_dea_no : '6769870980',
 		pro_dea_issue_date: new Date('02 Feb 2015'),
 		pro_dea_expire_date : new Date('02 Feb 2020')
@@ -166,8 +173,8 @@ var myApp = angular.module('MyApp',['ngMaterial']);
   myApp.factory('CDSData', function () {
   	
 	var cDSData = {
-		pro_cds_state : 'state2',
-		pro_cds_states : ['state1', 'state2', 'state3'],
+		pro_cds_state : 'State2',
+		pro_cds_states : ['State1', 'State2', 'State3'],
 		pro_cds_no : 'xxxxxxxxxxx',
 		pro_cds_issue_date: new Date('02 Feb 2014'),
 		pro_cds_expire_date : new Date('02 Feb 2024')
@@ -385,8 +392,8 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
   
   myApp.factory('MedicareData', function () {
 	var medicareData = {
-		medicare_state : 'state2',
-		medicare_states : ['state1', 'state2', 'state3'],
+		medicare_state : 'State2',
+		medicare_states : ['State1', 'State2', 'State3'],
 		medicare_no : 'xxxxxxxxxxx'
 	}; 
 
@@ -400,8 +407,8 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
   
   myApp.factory('MedicaidData', function () {
 	var medicaidData = {
-		medicaid_state : 'state2',
-		medicaid_states : ['state1', 'state2', 'state3'],
+		medicaid_state : 'State2',
+		medicaid_states : ['State1', 'State2', 'State3'],
 		medicaid_no : 'xxxxxxxxxxxid'
 	}; 
 

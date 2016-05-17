@@ -171,7 +171,7 @@
 						</div>
 					</div>
 					<div style="width: 100%;text-align: center;margin-bottom: 10px;font-size: 14px">
-						<span class="testheading">CAQH ID: </span>12345
+						<span class="testheading">CAQH ID:&nbsp;</span>12345
 					</div>
 					<div style="width: 100%;text-align: center;margin-bottom: 50px;">
 						<span class="testheading" style="font-size: 12px"> Last Login Date : </span> 12/25/2015
@@ -222,22 +222,22 @@
 							<div style="font-weight: 600;padding-bottom: 0px;color: #496973;">
 								Professional Information
 							</div>
-							<div style="height: 62px;">
+							<div style="height: 65px;">
 								<div style="width: 29% ;float: left">
-									<span class="testheading">Provider Type: </span><a href="#" id="provide_type" data-type="select" data-url="" data-value="DC" data-title="Provide Type" style="color: green;pointer-events: none;">DC</a> &nbsp;&nbsp;&nbsp;<span id="provide_type_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+									<span class="testheading">Provider Type: &nbsp;</span><a href="#" id="provide_type" data-type="select" data-url="" data-value="DC" data-title="Provide Type" style="color: green;pointer-events: none;">DC</a> &nbsp;&nbsp;&nbsp;<span id="provide_type_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 								</div>
 								<div style="width: 37%; float: right; text-align: right;padding-right: 25px;">
-									<span class="testheading">Practice Setting: </span><a href="#" id="practice_setting" data-type="select" data-url="" data-value="2" data-title="Practice Setting" style="color: green ;pointer-events: none;">Inpatient-Only</a> &nbsp;&nbsp;&nbsp;<span id="practice_setting_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+									<span class="testheading">Practice Setting: &nbsp;</span><a href="#" id="practice_setting" data-type="select" data-url="" data-value="2" data-title="Practice Setting" style="color: green ;pointer-events: none;">Inpatient-Only</a> &nbsp;&nbsp;&nbsp;<span id="practice_setting_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 								</div>
 								<div style="width: 33%; float: right; ">
-									<span class="testheading">Practice State: </span><a href="#" id="practice_state" data-type="select2" data-pk=null data-url="" data-value="VA" data-title="Select Practice States" style="color: green; pointer-events: none;">VA</a> &nbsp;&nbsp;&nbsp;<span id="practice_state_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+									<span class="testheading">Practice State: &nbsp;</span><a href="#" id="practice_state" data-type="select2" data-pk=null data-url="" data-value="VA" data-title="Select Practice States" style="color: green; pointer-events: none;">VA</a> &nbsp;&nbsp;&nbsp;<span id="practice_state_edit_inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 								</div>
 							</div>
 
 						</li>
 						<li ng-controller="PersonalInfo">
 							<a scroll=0 id="personal_information">Personal Information<span class="fa fa-exclamation fa-lg exclamation" style=" "></span><span class="b_fa-exclamation" style="font-weight: normal">Incomplete</span><span class="fa fa-check fa-lg check " > </span><span class="b_fa-check" style="font-weight: normal">Complete</span></a>
-							<ul style="height: 130px;">
+							<ul style="height: 135px;">
 								<span style="float: left; width: 48%"> <span class="testheading">Name:</span> {{personalInfoData.first_name}} {{personalInfoData.middle_name}} {{personalInfoData.last_name}} {{personalInfoData.suffix}}
 									<br />
 									<span class="testheading">Email:</span> {{personalInfoData.email}}
@@ -266,7 +266,7 @@
 											<span style="float: left; width: 100%;padding-left: 3%;"> <!--	<span style="float: left" class="testheading">Unique Physician Identification No (UPIN): xxxxxxxx</span>  --> <span class="testheading">Unique Physician Identification No (UPIN) :&nbsp;&nbsp;</span> <a style=" color: #20404a;pointer-events: none;" href="#" id="proid_upin" data-type="text" data-url="" data-value="" data-title="Enter UPIN">{{identificationData.upin || 'Empty'}}</a> &nbsp;&nbsp;&nbsp;<span id="upin_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 												<br />
 												<div style="padding-left: 0">
-													<span style="padding-top: 20px" class="testheading">National Provider Identification No (NPI) :&nbsp;&nbsp;</span><a style=" color: #20404a;pointer-events: none;" href="#" id="proid_npi" data-type="text" data-url="" data-value="" data-title="Enter NPI">{{identificationData.upin || 'Empty'}}</a> &nbsp;&nbsp;&nbsp;<span  id="npi_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+													<span  class="testheading">National Provider Identification No (NPI) :&nbsp;&nbsp;</span><a style=" color: #20404a;pointer-events: none;" href="#" id="proid_npi" data-type="text" data-url="" data-value="" data-title="Enter NPI">{{identificationData.upin || 'Empty'}}</a> &nbsp;&nbsp;&nbsp;<span  id="npi_edit_inline"  type="inline" style="cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 												</div> </span>
 										</div>
 									</div>
@@ -286,21 +286,21 @@
 												<br />
 												<span class="testheading">Practice in This State:</span> Yes </span>
 											<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type: </span> <span style="float: left;">{{licenceData[0].pro_licence_type}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span>
-												<br />
+											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type: </span> <span style="margin: 2px 4px;float: left;">{{licenceData[0].pro_licence_type}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span>
+												<br style="clear: both"/>
 												<span class="testheading">Expiration Date:</span> {{licenceData[0].pro_licence_expire_date}}
 												<br />
 												<span class="testheading">Licence Staus:</span> {{licenceData[0].pro_licence_status}} </span>
 										</div>
 										<div id="licence2" class="licence" style="display: none; width: 100%;">
 											<span style="float: left; width: 48%;padding-left: 3%;"> <span class="testheading">Licence State2:</span> {{licenceData[1].pro_licence_state}}
-												<br />
+												<br/>
 												<span class="testheading">Licence No2:</span> {{licenceData[1].pro_licence_no}}
 												<br />
 												<span class="testheading">Practice in This State2:</span> Yes </span>
 											<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type2: </span> <span style="float: left;">{{licenceData[1].pro_licence_type}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence1"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span>
-												<br />
+											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type2: </span> <span style="margin: 2px 4px;float: left;">{{licenceData[1].pro_licence_type}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence1"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span>
+												<br style="clear: both"/>
 												<span class="testheading">Expiration Date2:</span> {{licenceData[1].pro_licence_expire_date}}
 												<br />
 												<span class="testheading">Licence Staus2:</span> {{licenceData[1].pro_licence_status}} </span>
@@ -312,32 +312,32 @@
 									<div class="horizon-item" id="dearesidtration" title="DEA Registration" ng-controller="DEA" style="padding: 0px;height: 220px">
 
 										<div class="heading">
-											<span style="display: inline-flex;width: 86%;">DEA Registration</span>
+											<span style="display: inline-flex;width: 86%;">Drug Enforcement Administration (DEA) Registration</span>
 											<span style=" padding-right: 20px;">
 												<div style="bottom: -3px; font-size: 19px; position: relative; padding-right: 2px;" class="fa fa-plus-square-o"></div>
 												<span style="font-weight: normal;" class="">Add DEA</span>
 											</span>
 										</div>
 										<div  id="dearesidtration1" class="dearesidtration" style="display: inherit; width: 100%;">
-											<span style="float: left; width: 48%;padding-left: 3%;"> <span class="testheading">Drug Enforcement Administration No (DEA):</span> {{dEAData[0].pro_dea_no}}
+											<span style="float: left; width: 48%;padding-left: 3%;"> <span class="testheading">DEA No:</span> {{dEAData[0].pro_dea_no}}
 												<br />
 												<span class="testheading">Issue Date:</span> {{dEAData[0].pro_dea_issue_date}}
 												<br />
 												<span class="testheading">Expiration Date:</span> {{dEAData[0].pro_dea_expire_date}} </span>
 											<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">DEA State: </span> <span style="float: left;">{{dEAData[0].pro_dea_state}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="dea_reg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span> </span>
+											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">DEA State: </span> <span style="margin: 2px 4px;float: left;">{{dEAData[0].pro_dea_state}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="dea_reg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span> </span>
 										</div>
 										<div id="dearesidtration2" class="dearesidtration" style="display: none;width: 100%;">
-											<span style="float: left; width: 48%;padding-left: 3%;"> <span class="testheading">Drug Enforcement Administration No (DEA)2:</span> {{dEAData[1].pro_dea_no}}
+											<span style="float: left; width: 48%;padding-left: 3%;"> <span class="testheading">DEA No2:</span> {{dEAData[1].pro_dea_no}}
 												<br />
 												<span class="testheading">Issue Date2:</span> {{dEAData[1].pro_dea_issue_date}}
 												<br />
 												<span class="testheading">Expiration Date2:</span> {{dEAData[1].pro_dea_expire_date}} </span>
 											<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">DEA State2: </span><span style="float: left;">{{dEAData[1].pro_dea_state}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="dea_reg1"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span> </span>
+											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">DEA State2: </span><span style="margin: 2px 4px;float: left;">{{dEAData[1].pro_dea_state}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="dea_reg1"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span> </span>
 										</div>
 										<div style="padding: 0px;float: right;margin-right: 5px;" id="dearesidtration_view_page_link">
-											<span id="dearesidtration_view_prev" class="pagi_prev" title="Previous" onclick="updateviewpage('prev');"></span> Viewing <span id="dearesidtration_view_current">1</span> of <span id="dearesidtration_view_total"></span><span id="dearesidtration_view_next" style="cursor: pointer;" class="pagi_next" title="Next" onclick="updateviewpage('next');"></span>
+											<span id="dearesidtration_view_prev" class="pagi_prev" title="Previous" onclick="updateviewpage('prev');"></span> Viewing <span id="dearesidtration_view_current">1</span> of <span id="dearesidtration_view_total"></span> <span id="dearesidtration_view_next" style="cursor: pointer;" class="pagi_next" title="Next" onclick="updateviewpage('next');"></span>
 										</div>
 									</div>
 									<div ng-controller="CDS" class="horizon-item" title="Controlled Dangerous Substances (CDS) Registration" style="padding: 0px;">
@@ -356,7 +356,7 @@
 												<br />
 												<span class="testheading">Expiration Date:</span> {{cDSData.pro_cds_expire_date}} </span>
 											<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading"> CDS State:</span><span style="float: left;">{{cDSData.pro_cds_state}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="cds_reg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span> </span>
+											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading"> CDS State:</span><span style="margin: 2px 4px;float: left;">{{cDSData.pro_cds_state}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="cds_reg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span> </span>
 										</div>
 
 									</div>
@@ -372,12 +372,12 @@
 										<div>
 											<span style="float: left; width: 100%;padding-left: 3%;"> 
 												<span style="float: left" class="testheading">Medicare No: </span>
-												<span style="float: left;">{{medicareData.medicare_no}}</span> 
+												<span style="margin: 2px 4px;float: left;">{{medicareData.medicare_no}}</span> 
 												<span style=" float: right;"> 
 													<span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="medi_care"></span>
 													<span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> 
 												</span>
-												<br />
+												<br style="clear: both"/>
 												<span class="testheading">Medicare State:</span> {{medicareData.medicare_state}} 
 											</span>
 										</div>
@@ -392,8 +392,8 @@
 											</span>
 										</div>
 										<div>
-											<span style="float: left; width: 100%;padding-left: 3%;"> <span style="float: left" class="testheading">Medicaid No: </span><span style="float: left;">{{medicaidData.medicaid_no}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="medicaid"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span>
-												<br />
+											<span style="float: left; width: 100%;padding-left: 3%;"> <span style="float: left" class="testheading">Medicaid No: </span><span style="margin: 2px 4px;float: left;">{{medicaidData.medicaid_no}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="medicaid"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span>
+												<br style="clear: both"/>
 												<span class="testheading">Medicaid State:</span> {{medicaidData.medicaid_state}} </span>
 										</div>
 									</div>
@@ -443,7 +443,7 @@
 						</li>
 						<li>
 							<a scroll=5 id="speciality">Speciality<span class="fa fa-exclamation fa-lg exclamation" style=" "></span><span class="b_fa-exclamation" style="font-weight: normal">Incomplete</span><span class="fa fa-check fa-lg check " style=" "></span><span class="b_fa-check" style="font-weight: normal">Complete</span></a>
-							<ul style="height: 150px;">
+							<ul style="height: 165px;">
 								<span style="float: left; width: 48%" ng-controller="Speciality"> <span class="testheading">Primary Speciality:</span> {{specialityData[0].speciality}} <span style="float: right;cursor: pointer; margin-right: 4%" title="Update" class="fa fa-pencil-square-o fa-lg" id="spe_cility"></span>
 									<br />
 									<span class="testheading">Board Certified ?:</span> Yes
@@ -523,7 +523,7 @@
 							<a scroll=7 id="practice_locations">Practice Locations<span class="fa fa-exclamation fa-lg exclamation" style=" "></span><span class="b_fa-exclamation" style="font-weight: normal">Incomplete</span><span class="fa fa-check fa-lg check " style=" "></span><span class="b_fa-check" style="font-weight: normal">Complete</span></a>
 							<ul style="padding: 0">
 								<div class="horizon-swiper" ng-controller="Practicelocation">
-									<div id="p_location" class="horizon-item" title="1st Practice Locations" style="height: 200px; padding: 0;">
+									<div id="p_location" class="horizon-item" title="1st Practice Locations" style="height: 270px; padding: 0;">
 
 										<div class="heading">
 											
@@ -542,7 +542,7 @@
 												<span class="testheading">Email:</span> {{practicelocationData[0].pl_email}} </span>
 											<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Practice NDI: {{practicelocationData[0].pl_ndi}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="practice_location"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span>
-												<br />
+												<br style="clear: both"/>
 												<span class="testheading">Primary TaxID No:</span> {{practicelocationData[0].pl_txid}}
 												<br />
 												<span class="testheading">Phone:</span> xxxxxx
@@ -559,7 +559,7 @@
 												<span class="testheading">Email:</span> {{practicelocationData[1].pl_email}} </span>
 											<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Practice NDI: {{practicelocationData[1].pl_ndi}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="practice_location1"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span> 
-												<br />
+												<br style="clear: both"/>
 												<span class="testheading">Primary TaxID No:</span> {{practicelocationData[1].pl_txid}}
 												<br />
 												<span class="testheading">Phone:</span> xxxxxx
@@ -945,7 +945,20 @@
 											</md-chips>
 											-->
 											<label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Language</label>
-											<md-chips ng-model="personalInfoData.langs" readonly="false" md-enable-chip-edit="true"></md-chips>
+											<md-chips ng-model="personalInfoData.lang" md-autocomplete-snap="" md-require-match="true">
+												<md-autocomplete
+										          md-search-text="searchText"
+										          md-items="item in querySearch(searchText)"
+										          md-item-text="item"
+										          placeholder="Select Language">
+										          <span md-highlight-text="searchText">{{item}}</span>
+										          <md-chip-template>
+												        <span>
+												          <strong>{{item}}</strong>
+												        </span>
+												      </md-chip-template>
+										        </md-autocomplete>
+											</md-chips>
 											<!--		<div layout="column" flex >
 											<label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Language</label>
 											<a href="#" id="language" title="Language" data-type="select2" data-pk=null data-url="" style="margin-left: 12px;margin-top: 10px;padding-bottom: 4px;text-decoration: none;width: 47%;" data-title="Enter Languages" data-showbuttons="false" data-emptytext="Click to add Language" ></a>
@@ -2684,10 +2697,6 @@
 		<script type="text/javascript">
 			var p_location_tmp = $('#p_location1').wrap('<p/>').parent().html();
 			$('#p_location1').unwrap();
-			
-				
-		
-			
 			var elTop = 0;
 			$(window).scroll(function() {
 				$('.nav').toggleClass('sticky', $(window).scrollTop() > elTop);
@@ -3125,6 +3134,7 @@
 					'top' : '-1800px'
 				}, 0, function() {
 					$('#login_resetpwd_overlay').fadeOut('fast');
+						
 
 				});
 			});
@@ -3149,7 +3159,7 @@
 					$('#login_resetpwd_overlay').fadeOut('fast');
 
 				});
-				$("#update_res_text").html("Your Profile updated successfully.");
+				$("#update_res_text").html("Your Profile was updated successfully.");
 				$("#update_res").css("color", "#1e9e5e");
 				$("#update_res").css("display", "block");
 				setTimeout(function() {
@@ -3158,7 +3168,7 @@
 			});
 			function save(id) {
 				overlayclose(id);
-				$("#update_res_text").html("Your data updated successfully.");
+				$("#update_res_text").html("Your data was updated successfully.");
 				$("#update_res").css("color", "#1e9e5e");
 				$("#update_res").css("display", "block");
 				setTimeout(function() {
@@ -3263,7 +3273,7 @@
 				e.stopPropagation();
 				$('#proid_npi').editable('toggle');
 			});
-
+			z=new Date(14641956*1000*100);
 			function build_accordion(id, area_to_occupy) {
 
 				$('#' + id + ' ul').hide();
