@@ -174,7 +174,7 @@
 						<span class="testheading">CAQH ID:&nbsp;</span>12345
 					</div>
 					<div style="width: 100%;text-align: center;margin-bottom: 50px;">
-						<span class="testheading" style="font-size: 12px"> Last Login Date : </span> 12/25/2015
+						<span class="testheading" style="font-size: 12px"> Last Login Date : </span> May 22, 2016
 					</div>
 					<!--  <div style="height:240px;text-align: center;">
 					<div id="power-gauge"></div>
@@ -209,7 +209,7 @@
 								<span class="testheading"> Status:</span> Inital Application Complete
 							</div>
 							<div>
-								<span class="testheading"> Last Attested Date : </span> 12/25/2015
+								<span class="testheading"> Last Attested Date : </span> May 10, 2016
 							</div>
 							<div>
 								<span class="testheading">Days Remaining to Re-attest: </span> 120
@@ -244,7 +244,7 @@
 									<br />
 									<span class="testheading">Address:</span> {{personalInfoData.address_line1}}, {{personalInfoData.address_line2}} </span>
 								<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 58%; margin-top: 2%;"></span>
-								<span style="float: right; width: 46%"> <span class="testheading"> Date of Birth: </span> {{personalInfoData.b_date.toISOString().slice(0, 10)}}<span id="personal_info" style="float: right;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
+								<span style="float: right; width: 46%"> <span class="testheading"> Date of Birth: </span> {{personalInfoData.b_date | date}}<span id="personal_info" style="float: right;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span>
 									<br />
 									<span class="testheading">Social Securty Number:</span> xxxx-xx-{{personalInfoData.ssn.substr(personalInfoData.ssn.length - 4)}}
 									<br />
@@ -274,7 +274,7 @@
 
 										<div class="heading">
 											<span style="display: inline-flex;width: 84%;">Professional Licence</span>
-											<span style=" padding-right: 20px;">
+											<span class="addnew">
 												<div style="bottom: -3px; font-size: 19px; position: relative; padding-right: 2px;" class="fa fa-plus-square-o"></div>
 												<span style="font-weight: normal;" class="">Add Licence</span>
 											</span>
@@ -288,7 +288,7 @@
 											<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type: </span> <span style="margin: 2px 4px;float: left;">{{licenceData[0].pro_licence_type}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span>
 												<br style="clear: both"/>
-												<span class="testheading">Expiration Date:</span> {{licenceData[0].pro_licence_expire_date}}
+												<span class="testheading">Expiration Date:</span> {{licenceData[0].pro_licence_expire_date | date }}
 												<br />
 												<span class="testheading">Licence Staus:</span> {{licenceData[0].pro_licence_status}} </span>
 										</div>
@@ -301,7 +301,7 @@
 											<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Licence Type2: </span> <span style="margin: 2px 4px;float: left;">{{licenceData[1].pro_licence_type}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="pro_licence1"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span>
 												<br style="clear: both"/>
-												<span class="testheading">Expiration Date2:</span> {{licenceData[1].pro_licence_expire_date}}
+												<span class="testheading">Expiration Date2:</span> {{licenceData[1].pro_licence_expire_date | date}}
 												<br />
 												<span class="testheading">Licence Staus2:</span> {{licenceData[1].pro_licence_status}} </span>
 										</div>
@@ -313,7 +313,7 @@
 
 										<div class="heading">
 											<span style="display: inline-flex;width: 86%;">Drug Enforcement Administration (DEA) Registration</span>
-											<span style=" padding-right: 20px;">
+											<span class="addnew">
 												<div style="bottom: -3px; font-size: 19px; position: relative; padding-right: 2px;" class="fa fa-plus-square-o"></div>
 												<span style="font-weight: normal;" class="">Add DEA</span>
 											</span>
@@ -321,18 +321,18 @@
 										<div  id="dearesidtration1" class="dearesidtration" style="display: inherit; width: 100%;">
 											<span style="float: left; width: 48%;padding-left: 3%;"> <span class="testheading">DEA No:</span> {{dEAData[0].pro_dea_no}}
 												<br />
-												<span class="testheading">Issue Date:</span> {{dEAData[0].pro_dea_issue_date}}
+												<span class="testheading">Issue Date:</span> {{dEAData[0].pro_dea_issue_date | date}}
 												<br />
-												<span class="testheading">Expiration Date:</span> {{dEAData[0].pro_dea_expire_date}} </span>
+												<span class="testheading">Expiration Date:</span> {{dEAData[0].pro_dea_expire_date | date}} </span>
 											<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">DEA State: </span> <span style="margin: 2px 4px;float: left;">{{dEAData[0].pro_dea_state}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="dea_reg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span> </span>
 										</div>
 										<div id="dearesidtration2" class="dearesidtration" style="display: none;width: 100%;">
 											<span style="float: left; width: 48%;padding-left: 3%;"> <span class="testheading">DEA No2:</span> {{dEAData[1].pro_dea_no}}
 												<br />
-												<span class="testheading">Issue Date2:</span> {{dEAData[1].pro_dea_issue_date}}
+												<span class="testheading">Issue Date2:</span> {{dEAData[1].pro_dea_issue_date | date}}
 												<br />
-												<span class="testheading">Expiration Date2:</span> {{dEAData[1].pro_dea_expire_date}} </span>
+												<span class="testheading">Expiration Date2:</span> {{dEAData[1].pro_dea_expire_date | date}} </span>
 											<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">DEA State2: </span><span style="margin: 2px 4px;float: left;">{{dEAData[1].pro_dea_state}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="dea_reg1"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span> </span>
 										</div>
@@ -344,7 +344,7 @@
 
 										<div class="heading">
 											<span style="display: inline-flex;width: 86%;">Controlled Dangerous Substances (CDS) Registration</span>
-											<span style=" padding-right: 20px;">
+											<span class="addnew">
 												<div style="bottom: -3px; font-size: 19px; position: relative; padding-right: 2px;" class="fa fa-plus-square-o"></div>
 												<span style="font-weight: normal;" class="">Add CDS</span>
 											</span>
@@ -352,9 +352,9 @@
 										<div>
 											<span style="float: left; width: 48%;padding-left: 3%;"> <span class="testheading">CDS No:</span> {{cDSData.pro_cds_no}}
 												<br />
-												<span class="testheading">Issue Date:</span> {{cDSData.pro_cds_issue_date}}
+												<span class="testheading">Issue Date:</span> {{cDSData.pro_cds_issue_date | date}}
 												<br />
-												<span class="testheading">Expiration Date:</span> {{cDSData.pro_cds_expire_date}} </span>
+												<span class="testheading">Expiration Date:</span> {{cDSData.pro_cds_expire_date  | date}} </span>
 											<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
 											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading"> CDS State:</span><span style="margin: 2px 4px;float: left;">{{cDSData.pro_cds_state}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="cds_reg"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span> </span>
 										</div>
@@ -364,7 +364,7 @@
 
 										<div class="heading">
 											<span style="display: inline-flex;width: 83%;">Medicare</span>
-											<span style=" padding-right: 20px;">
+											<span class="addnew">
 												<div style="bottom: -3px; font-size: 19px; position: relative; padding-right: 2px;" class="fa fa-plus-square-o"></div>
 												<span style="font-weight: normal;" class="">Add Medicare</span>
 											</span>
@@ -386,7 +386,7 @@
 
 										<div class="heading">
 											<span style="display: inline-flex;width: 83%;">Medicaid</span>
-											<span style=" padding-right: 20px;">
+											<span class="addnew">
 												<div style="bottom: -3px; font-size: 19px; position: relative; padding-right: 2px;" class="fa fa-plus-square-o"></div>
 												<span style="font-weight: normal;" class="">Add Medicaid</span>
 											</span>
@@ -450,7 +450,7 @@
 									<br />
 									<span class="testheading">Board Name:</span> {{specialityData[0].board_cert_name}}
 									<br />
-									<span class="testheading">Inital Cert Date:</span> {{specialityData[0].cert_issue_date}} </span>
+									<span class="testheading">Inital Cert Date:</span> {{specialityData[0].cert_issue_date | date}} </span>
 								<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 58%; margin-top: 2%;"></span>
 								<span style="float: right; width: 46%" ng-controller="Speciality"> <span class="testheading"> Secondary Speciality: </span> {{specialityData[1].speciality}}<span style="float: right;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"  id="spe_cility1"></span><span style="float: right;margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span>
 									<br />
@@ -458,7 +458,7 @@
 									<br />
 									<span class="testheading">Board Name:</span> {{specialityData[1].board_cert_name}}
 									<br />
-									<span class="testheading">Inital Cert Date:</span> {{specialityData[1].cert_issue_date}} </span>
+									<span class="testheading">Inital Cert Date:</span> {{specialityData[1].cert_issue_date | date}} </span>
 							</ul>
 						</li>
 						<!-- <li>
@@ -541,12 +541,13 @@
 												<br />
 												<span class="testheading">Email:</span> {{practicelocationData[0].pl_email}} </span>
 											<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Practice NDI: {{practicelocationData[0].pl_ndi}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="practice_location"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span>
+											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Practice NDI: </span><span style="margin: 2px 4px;float: left;">{{practicelocationData[0].pl_ndi}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="practice_location"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span>
 												<br style="clear: both"/>
 												<span class="testheading">Primary TaxID No:</span> {{practicelocationData[0].pl_txid}}
 												<br />
 												<span class="testheading">Phone:</span> xxxxxx
 												<br />
+												
 												<span class="testheading">Fax:</span> xxxxxx </span>
 
 										</div>
@@ -2695,6 +2696,9 @@
 		</div>
 		</div>
 		<script type="text/javascript">
+		    // alert(new Date('04 Jan 1980').toString());
+			// alert(dateformater(new Date('04 Jan 1980')));
+			
 			var p_location_tmp = $('#p_location1').wrap('<p/>').parent().html();
 			$('#p_location1').unwrap();
 			var elTop = 0;
@@ -3110,7 +3114,9 @@
 				gauge.set(value);
 				$('.arc-gauge-text .value').text(value);
 			}, 200);
-
+			$('.addnew').click(function() {
+				alert("Work Under Progress. Only 'Practice Locations' Add is functional.");
+			});
 			$('.fa-pencil-square-o , #practice_locationadd').click(function() {
 				overlay_edit_id = this.id;
 				if ((overlay_edit_id).indexOf("_inline") > 0)

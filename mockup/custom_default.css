@@ -855,3 +855,7 @@ md-datepicker.md-default-theme, md-datepicker
      width: 98% !important;
      margin-top: -20px!important;
   }
+  .addnew{
+  	padding-right: 20px;
+  	cursor: pointer;
+  }
