@@ -44,8 +44,10 @@ var myApp = angular.module('MyApp',['ngMaterial']);
 		upin : '',
 		fnin : '',
 		fnin_country : '',
-		lang: ['English'],
-		langs:['English', 'Spanish','French']
+		langs : new GlobalLangs().g_langs,
+    	selectedLangs : [{"code": "en","name": "English"},{"code": "eo","name": "Esperanto"}]
+		
+		
 		
 	}; 
 
@@ -54,11 +56,15 @@ var myApp = angular.module('MyApp',['ngMaterial']);
   
   myApp.controller('PersonalInfo', function($scope, PersonalInfoData) {
       $scope.personalInfoData = PersonalInfoData;
-      $scope.querySearch = function(query) {
-		      var results = query ? $scope.personalInfoData.langs : [];
-		      alert(JSON.stringify(results));
-		      return results;
-		    }
+    $scope.selectedItem = null;
+    $scope.searchText = null;
+      $scope.querySearch =  function(query) {
+	      var results = query ? $scope.personalInfoData.langs.filter(function filterFn(lang) {
+	        return (lang.name.indexOf(query) === 0);
+	      } ) : [];
+	      return results;
+	    }
+     
 		    
       $scope.fillbyzipfn = function(zipcode) {
       	if (zipcode != undefined && zipcode.length == 5) {
@@ -418,6 +424,41 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
   myApp.controller('Medicaid', function($scope, MedicaidData) {
       $scope.medicaidData = MedicaidData;
       
+  });
+  
+    myApp.factory('EmployementData', function () {
+  	
+	var employementData = {
+		employement_name : 'Google Ltd.',
+		employement_change_reason : 'Dont know',
+		employement_start_date: new Date(),
+		employement_end_date : new Date()
+				
+	}; 
+	var employementData1 = {
+		employement_name : 'Facebook Ltd.',
+		employement_change_reason : 'Can not disclose.',
+		employement_start_date: new Date('03 Feb 2016'),
+		employement_end_date : new Date('03 Apr 2016')
+				
+	}; 
+	var employementDataArray = [employementData, employementData1];
+    return employementDataArray;
+  });
+  
+  myApp.controller('Employement', function($scope, EmployementData) {
+      $scope.employementData = EmployementData;
+      $scope.employementDatatmp = {
+			employement_name : '',
+			employement_change_reason : '',
+			employement_start_date: new Date(),
+			employement_end_date : new Date()
+		}; 
+	    $scope.add =  function(){
+	      	index = $scope.employementData.length;
+	      	$scope.employementData[index] = angular.copy($scope.employementDatatmp);
+	      	save('employee_boxclose');
+	    }
   });
 
 

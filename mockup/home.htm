@@ -51,6 +51,7 @@
 		<script src="js/race-ethnicity-json.js"></script>
 		<script src="js/speciality-json.js"></script>
 		<script src="js/practice-type-json.js"></script>
+		<script src="js/lang-json.js"></script>
 
 		<!--	<script type="text/javascript" src="xeditable.js"></script>
 		<script src="myApp.js"></script> -->
@@ -575,6 +576,40 @@
 									</div>
 							</ul>
 						</li>
+						<li>
+							<a scroll=5 id="employement">Employee History<span class="fa fa-exclamation fa-lg exclamation" style=" "></span><span class="b_fa-exclamation" style="font-weight: normal">Incomplete</span><span class="fa fa-check fa-lg check " style=" "></span><span class="b_fa-check" style="font-weight: normal">Complete</span></a>
+							<ul>
+							<div ng-controller="Employement">
+								<div class="heading">
+											
+											<span style="display: inline-flex;width: 84%;">Employee History</span>
+											<span style="cursor: pointer" id="employee">
+												<div style="bottom: -3px; font-size: 19px; position: relative; padding-right: 2px;" class="fa fa-plus-square-o"></div>
+												<span style="font-weight: normal;" class="" >Add Employee</span>
+											</span>
+							           </div>
+							         <table border="1px" cellpadding="1px" cellspacing="1px" style="width: 100%; text-align: center;">
+							         	<thead style="background-color: #eee;height: 35px;">
+							         		<th style="width: 25%;">Employer</th>
+							         		<th style="width: 14%;">Start Date</th>
+							         		<th style="width: 14%;">End Date</th>
+							         		<th style="width: 35%;">Reason for Departure/Gap</th>
+							         		<th style="width: 10%;">Edit</th>
+							         	</thead>
+							         	 <tbody md-body id="epmtable">
+									      <tr md-row md-select="dessert" md-select-id="name" md-auto-select ng-repeat="emp in employementData" style="height: 35px;">
+									        <td md-cell>{{emp.employement_name}}</td>
+									        <td md-cell>{{emp.employement_start_date | date}}</td>
+									        <td md-cell>{{emp.employement_end_date | date}}</td>
+									        <td md-cell>{{emp.employement_change_reason}}</td>
+									        <td md-cell><span style="margin-right: 20px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span><span style="cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span></td>
+									      </tr>
+							         		
+							         	</tbody>
+							         </table>
+								</div>
+							</ul>
+						</li>
 					</ul>
 
 				</div>
@@ -934,42 +969,15 @@
 									</div>
 									<div class="" id='info'>
 										<div class="overlaybody">
-											<!-- <md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap="" md-transform-chip="ctrl.transformChip($chip)" md-require-match="">
-											<md-autocomplete md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText" md-items="item in ctrl.querySearch(ctrl.searchText)" md-item-text="item.name" placeholder="Search for a vegetable">
-											<span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
-											</md-autocomplete>
-											<md-chip-template>
-											<span>
-											<strong>{{$chip.name}}</strong>
-											</span>
-											</md-chip-template>
-											</md-chips>
-											-->
-											<label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Language</label>
-											<md-chips ng-model="personalInfoData.lang" md-autocomplete-snap="" md-require-match="true">
-												<md-autocomplete
-										          md-search-text="searchText"
-										          md-items="item in querySearch(searchText)"
-										          md-item-text="item"
-										          placeholder="Select Language">
-										          <span md-highlight-text="searchText">{{item}}</span>
-										          <md-chip-template>
-												        <span>
-												          <strong>{{item}}</strong>
-												        </span>
-												      </md-chip-template>
-										        </md-autocomplete>
-											</md-chips>
-											<!--		<div layout="column" flex >
-											<label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Language</label>
-											<a href="#" id="language" title="Language" data-type="select2" data-pk=null data-url="" style="margin-left: 12px;margin-top: 10px;padding-bottom: 4px;text-decoration: none;width: 47%;" data-title="Enter Languages" data-showbuttons="false" data-emptytext="Click to add Language" ></a>
-											</div>  -->
-											<!-- <span style="width: 48%;margin-left: 1%;padding-bottom: 2%;">Language<font color="red"> *</font></span>
-											</br>
-											<a href="#" id="language" title="Language" data-type="select2" data-pk=null data-url="" style="margin-left: 19%; margin-right: 1%;" data-title="Enter Languages" data-showbuttons="false" data-emptytext="Click to add Language"></a> -->
-
+											<md-chips ng-model="personalInfoData.selectedLangs" md-autocomplete-snap=""  md-require-match="true">
+										      <md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in querySearch(searchText)" md-item-text="item.name" placeholder="Search for a Language">
+										        <span md-highlight-text="searchText">{{item.name}}</span>
+										      </md-autocomplete>
+										      <md-chip-template>
+										        <span>{{$chip.name}}</span>
+										      </md-chip-template>
+										    </md-chips>
 										</div>
-
 									</div>
 									<div class="overlayfooter">
 										<button type="button" class="obtn" style="float: right" onclick="save('personal_info_boxclose');">
@@ -2692,6 +2700,75 @@
 				</div>
 
 			</div>
+			
+			<!-- Employee start   -->
+			<div class="overlay" id="employee_overlay" style="display:none;"></div>
+			<div class="box org_newuser" id="employee_box"  ng-controller="Employement">
+				<div class="midbg selected_color"  style="background-color: #ffffff;width:840px;position:absolute;left:120px">
+					<span id="employee_boxclose" style="float: right;margin-right: 5px;margin-top: -45px;cursor: pointer;color: #fff" title="Close" class="fa fa-times fa-3x" onclick="overlayclose(this.id);"></span>
+
+					<form>
+
+						<div class="white_block">
+
+							<div class="midblock" id="employee_midblock">
+								<div id="employee_res" style="color: green"></div>
+								<div id="employee_content" class="custom_swiper_item">
+									<div class="overlayheader">
+										Employee History
+									</div>
+									<div class="menu_container">
+										<ul id="employee_menu" class="menu">
+											<li>
+												<a href="#"  link='employeehistory'>Employee History</a>
+											</li>
+										</ul>
+									</div>
+
+									<div class="" id='employeehistory'>
+										<div class="overlaybody">
+											<div layout="row">
+												<md-input-container flex >
+													<label>Employer Name</label>
+													<input type="text" ng-model="employementDatatmp.employement_name" title="Employment Name" >
+												</md-input-container>
+											</div>
+
+											<div layout="row">
+												<div layout="column" flex >
+													<label>Start Date</label>
+													<md-datepicker name="emp_start_date" ng-model="employementDatatmp.employement_start_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+													</div>
+												<div layout="column" flex >
+													<label>End Date</label>
+													<md-datepicker name="emp_end_date" ng-model="employementDatatmp.employement_end_date" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												</div>
+											</div>											
+											<div layout="row">
+												<md-input-container flex >
+													<label>Reason for Departure/GAP</label>
+													<input type="text" ng-model="employementDatatmp.employement_change_reason" title="Reason For Change" >
+												</md-input-container>
+											</div>
+                                           </div>
+										</div>
+										<div class="overlayfooter">
+											<button type="button" class="obtn" style="float: right" ng-click="add()">
+												Save
+											</button>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+					</form>
+					<div class="clear"></div>
+				</div>
+
+			</div>
 
 		</div>
 		</div>
@@ -3117,7 +3194,7 @@
 			$('.addnew').click(function() {
 				alert("Work Under Progress. Only 'Practice Locations' Add is functional.");
 			});
-			$('.fa-pencil-square-o , #practice_locationadd').click(function() {
+			$('.fa-pencil-square-o , #practice_locationadd, #employee').click(function() {
 				overlay_edit_id = this.id;
 				if ((overlay_edit_id).indexOf("_inline") > 0)
 					return;

@@ -59,7 +59,7 @@ function GlobalStates() {
 	    "WV": "West Virginia",
 	    "WI": "Wisconsin",
 	    "WY": "Wyoming"
-	}
+	};
 	this.states = function() {
 		var n = [];
 		var s = -1;

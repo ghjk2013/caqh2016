@@ -836,7 +836,9 @@ md-datepicker.md-default-theme, md-datepicker
 {
 	background-color:initial ;
 }
-
+.md-virtual-repeat-container.md-autocomplete-suggestions-container{
+	z-index: 111 !important;
+}
 /*--------------Angular matarial End----------*/
 .sticky {
      position: fixed !important;
