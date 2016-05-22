@@ -153,7 +153,7 @@
 						</ul>
 					</div>
 				</div>
-				<div style="z-index: 100;padding-top: 2px;background-color: #eee;position: fixed;padding-left: 10px;display: none;height: 30px;text-align: center;font-size: 16px;color: #f0f1f0;width: 98%;box-shadow: 0 3px 4px rgba(0, 0, 0, 0.13);" id="update_res">
+				<div style="z-index: 100;padding-top: 2px;background-color: #eee;position: fixed;padding-left: 10px;display: none;height: 30px;text-align: center;font-size: 16px;color: #f0f1f0;width: 100%;box-shadow: 0 3px 4px rgba(0, 0, 0, 0.13);position: absolute;margin-top: 45px" id="update_res">
 					<p id="update_res_text"></p>
 					<span id="update_res_boxclose" style="margin-right:9px;top: -19px; cursor: pointer;float: right;position: relative;" title="Close" class="fa fa-times fa-1x"></span>
 				</div>
@@ -528,7 +528,7 @@
 										<div class="heading">
 											
 											<span style="display: inline-flex;width: 83%;">Practice Locations</span>
-											<span style=" padding-right: 20px;">
+											<span style=" padding-right: 20px; cursor: pointer" id="practice_locationadd">
 												<div style="bottom: -3px; font-size: 19px; position: relative; padding-right: 2px;" class="fa fa-plus-square-o"></div>
 												<span style="font-weight: normal;" class="">Add Location</span>
 											</span>
@@ -2361,14 +2361,339 @@
 				</div>
 
 			</div>
+			<div class="overlay" id="practice_locationadd_overlay" style="display:none;"></div>
+			<div class="box org_newuser" id="practice_locationadd_box" ng-controller="Practicelocation">
+				<div class="midbg selected_color"  style="background-color: #ffffff;width:840px;position:absolute;left:120px">
+					<span id="practice_locationadd_boxclose" style="float: right;margin-right: 5px;margin-top: -45px;cursor: pointer;color: #fff" title="Close" class="fa fa-times fa-3x" onclick="overlayclose(this.id);"></span>
+
+					<form>
+						<!-- <div class="roundblockleft theme_color reset_pwd_submit top_control"><a href="#null"><%= t :login_index_reset_go%></a></div> -->
+
+						<div class="white_block">
+
+							<div class="midblock" id="practice_locationadd_midblock">
+								<div id="practice_locationadd_res" style="color: green"></div>
+								<div id="practice_locationadd_content" class="custom_swiper_item">
+									<div class="overlayheader">
+										Practice Location
+									</div>
+									<div class="menu_container">
+										<ul id="practice_locationadd_menu" class="menu">
+											<li>
+												<a href="#"  link="generalinfoadd" >General Information</a>
+											</li>
+											<li>
+												<a href="#" link='practiceidentifireadd'>Practice Identifiers</a>
+											</li>
+											<li>
+												<a href="#" link='officetimeadd'>Office Hours</a>
+											</li>
+											<li>
+												<a href="#"  link='autossibilityadd'>Accessibility</a>
+											</li>
+										</ul>
+									</div>
+									<div class="" id="generalinfoadd">
+										<div class="overlaybody">
+											<div layout="row">
+												<md-input-container class="md-block flex-gt-sm md-input-has-value" md-is-error="false" flex-gt-xs="">
+													<label>Practice Name</label>
+													<input type="text" ng-model="practicelocationtmp.pl_name" title="Practice Name" aria-required="false">
+												</md-input-container>
+												<md-input-container class="md-block" flex-gt-sm="">
+													<md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="practicelocationtmp.pl_here" class="md-primary">
+														Do You Currently Practice Here?
+													</md-checkbox>
+												</md-input-container>
+
+											</div>
+											<div layout="row">
+												<md-input-container flex>
+													<label>Street1</label>
+													<input type="text" ng-model="practicelocationtmp.pl_address_line1" title="Street1" style=" margin-right:3%;">
+												</md-input-container>
+												<div hide-sm="" hide-xs="" flex="2" class="hide-sm hide-xs flex-2"></div>
+												<md-input-container flex>
+													<label>Street2</label>
+													<input type="text" ng-model="practicelocationtmp.pl_address_line2" title="street2" style=" margin-right:3%;">
+												</md-input-container>
+											</div>
+
+											<div layout-gt-sm="row">
+												<md-input-container class="md-block" flex-gt-sm="">
+													<label>Postal Code</label>
+													<input name="postalCode" ng-model="practicelocationtmp.pl_postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5"  onkeyup="fillbyzip(this.value,'pl_city','pl_state','');">
+
+												</md-input-container>
+												<md-input-container class="md-block" flex-gt-sm="">
+													<label>City</label>
+													<input id="pl_city" disabled ng-model="practicelocationtmp.pl_city" placeholder="Select Postal Code to Auto fill" >
+												</md-input-container>
+
+												<md-input-container class="md-block" flex-gt-sm="">
+													<label>State</label>
+													<input id="pl_state" disabled ng-model="practicelocationtmp.pl_state" placeholder="Select Postal Code to Auto fill">
+												</md-input-container>
+
+											</div>
+											<div layout="row">
+												<md-input-container class="md-block" flex-gt-sm="">
+													<label>Practice Type</label>
+													<md-select ng-model="practicelocationtmp.pl_type">
+														<md-option ng-repeat="practicetype in practicelocationtmp.pl_types">
+															{{practicetype.text}}
+														</md-option>
+													</md-select>
+												</md-input-container>
+												<div layout="column" flex >
+													<label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">Start Date</label>
+													<md-datepicker name="p_startdate" ng-model="practicelocationtmp.pl_startdate" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												</div>
+
+												<div layout="column" flex >
+													<label class="md-caption" style="font-size: 11px; opacity: .54 ;padding-left: 11px;">End Date</label>
+													<md-datepicker name="p_enddate" ng-model="practicelocationtmp.pl_enddate" required md-placeholder="MM / DD / YYYY"></md-datepicker>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<div class="" id="practiceidentifireadd">
+										<div class="overlaybody">
+											<div layout="row">
+												<md-input-container flex>
+													<label>NPI (Type2)</label>
+													<input type="text" ng-model="practicelocationtmp.pl_ndi" title="NPI Type2" style=" margin-right: 3%;">
+												</md-input-container>
+
+											</div>
+											<div layout="row">
+												<md-input-container flex>
+													<label>Group Medicare Number</label>
+													<input type="text" ng-model="practicelocationtmp.pl_gmedicare" title="Group Medicare Number" style=" margin-right:3%;">
+												</md-input-container>
+												<div hide-sm="" hide-xs="" flex="2" class="hide-sm hide-xs flex-2"></div>
+												<md-input-container flex>
+													<label>Group Medicart Number</label>
+													<input type="text" ng-model="practicelocationtmp.pl_gmedicart" title="Group Medicart Number" style=" margin-right:3%;">
+												</md-input-container>
+											</div>
+											<div layout="row">
+												<md-input-container flex>
+													<label>Tax ID</label>
+													<input type="text" ng-model="practicelocationtmp.pl_txid" title="Tax Id" required="" style=" margin-right: 3%;">
+												</md-input-container>
+												<div hide-sm="" hide-xs="" flex="2" class="hide-sm hide-xs flex-2"></div>
+												<md-input-container class="md-block" flex-gt-sm="">
+													<label>Tax ID Type</label>
+													<md-select ng-model="practicelocationtmp.pl_taxid_type">
+														<md-option ng-repeat="taxidtype in practicelocationtmp.pl_taxidtypes">
+															{{taxidtype}}
+														</md-option>
+													</md-select>
+												</md-input-container>
+											</div>
+
+											<div layout="row">
+												<md-input-container flex>
+													<label>Name as it appears on W-2</label>
+													<input type="text" ng-model="practicelocationtmp.pl_nameasng" title="Name as it appears on W-2" style=" margin-right: 3%;">
+												</md-input-container>
+
+											</div>
+
+										</div>
+
+									</div>
+									<div class="" id='officetimeadd'>
+										<div class="overlaybody">
+											<div style="display: flex">
+												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationtmp.time1" style="margin: 0;" ng-change='updatesliderfn("time-range11",practicelocationtmp.time1)'></md-checkbox>
+												</md-input-container>
+												<div id="time-range11" class="time-range" style="display: flex; width: 90%;float: right; margin: 18px 10px 0;" >
+
+													<div  style="display: flex; width:10% ;opacity: 0.80;" >
+														Mon:
+													</div>
+													<div class="sliders_step1" style="display: flex; width:70%">
+														<div class="slider-range"></div>
+													</div>
+													<div style="display: flex;width: 10%;opacity: 0.80;">
+														<span  >9:00 AM</span> - <span  >5:00 PM</span>
+													</div>
+												</div>
+											</div>
+											<div style="display: flex">
+												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationtmp.time2" style="margin: 0;" ng-change='updatesliderfn("time-range12",practicelocationtmp.time2)'></md-checkbox>
+												</md-input-container>
+												<div id="time-range12" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
+													<div  style="display: flex; width:10% ;opacity: 0.80;" >
+														Tue:
+													</div>
+													<div class="sliders_step1" style="display: flex; width:70%">
+														<div class="slider-range"></div>
+													</div>
+													<div style="display: flex;width: 10%;opacity: 0.80;">
+														<span   >9:00 AM</span> - <span  >5:00 PM</span>
+													</div>
+												</div>
+											</div>
+											<div style="display: flex">
+												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationtmp.time3" style="margin: 0;" ng-change='updatesliderfn("time-range13",practicelocationtmp.time3)'></md-checkbox>
+												</md-input-container>
+												<div id="time-range13" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
+													<div style="display: flex; width:10% ;opacity: 0.80;" >
+														Wed:
+													</div>
+													<div class="sliders_step1" style="display: flex; width:70%">
+														<div class="slider-range"></div>
+													</div>
+													<div style="display: flex;width: 10% ;opacity: 0.80;">
+														<span   >9:00 AM</span> - <span  >5:00 PM</span>
+													</div>
+												</div>
+											</div>
+											<div style="display: flex">
+												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationtmp.time4" style="margin: 0;" ng-change='updatesliderfn("time-range14",practicelocationtmp.time4)'></md-checkbox>
+												</md-input-container>
+												<div id="time-range14" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
+													<div  style="display: flex; width:10% ;opacity: 0.80;" >
+														Thu:
+													</div>
+													<div class="sliders_step1" style="display: flex; width:70%">
+														<div class="slider-range"></div>
+													</div>
+													<div style="display: flex;width: 10%;opacity: 0.80;">
+														<span   >9:00 AM</span> - <span  >5:00 PM</span>
+													</div>
+												</div>
+											</div>
+											<div style="display: flex">
+												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationtmp.time5" style="margin: 0;" ng-change='updatesliderfn("time-range15",practicelocationtmp.time5)'></md-checkbox>
+												</md-input-container>
+												<div id="time-range15" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
+													<div  style="display: flex; width:10% ;opacity: 0.80;" >
+														Fri:
+													</div>
+													<div class="sliders_step1" style="display: flex; width:70%">
+														<div class="slider-range"></div>
+													</div>
+													<div style="display: flex;width: 10%;opacity: 0.80;">
+														<span   >9:00 AM</span> - <span  >5:00 PM</span>
+													</div>
+												</div>
+											</div>
+											<div style="display: flex">
+												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationtmp.time6" style="margin: 0;" ng-change='updatesliderfn("time-range16",practicelocationtmp.time6)'></md-checkbox>
+												</md-input-container>
+												<div id="time-range16" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
+													<div  style="display: flex; width:10% ;opacity: 0.80;" >
+														Sat:
+													</div>
+													<div class="sliders_step1" style="display: flex; width:70%">
+														<div class="slider-range"></div>
+													</div>
+													<div style="display: flex;width: 10%;opacity: 0.80;">
+														<span   >9:00 AM</span> - <span  >5:00 PM</span>
+													</div>
+												</div>
+											</div>
+											<div style="display: flex">
+												<md-input-container flex-gt-sm="" style="margin: -5px -12px 0px;!important " >
+													<md-checkbox md-no-ink aria-label="No Ink" ng-model="practicelocationtmp.time7" style="margin: 0;" ng-change='updatesliderfn("time-range17",practicelocationtmp.time7)'></md-checkbox>
+												</md-input-container>
+												<div id="time-range17" class="time-range" style="display: flex; width: 90%;float: right;  margin: 18px 10px 0;">
+													<div  style="display: flex; width:10% ;opacity: 0.80;" >
+														Sun:
+													</div>
+													<div class="sliders_step1" style="display: flex; width:70%">
+														<div class="slider-range"></div>
+													</div>
+													<div style="display: flex;width: 10%;opacity: 0.80;">
+														<span   >9:00 AM</span> - <span  >5:00 PM</span>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<div class="" id='autossibilityadd'>
+										<div class="overlaybody">
+
+											<div layout="row" flex >
+												<md-input-container flex>
+													<label>Handicapped Accessbility</label>
+													<md-select ng-model="practicelocationtmp.pl_haccessibility">
+														<md-option ng-repeat="pl_haccessibility in practicelocationtmp.pl_haccessibilities">
+															{{pl_haccessibility}}
+														</md-option>
+													</md-select>
+													</md-input-container flex>
+											</div>
+
+											<div layout="row" flex >
+												<md-input-container flex>
+													<label>Public Transportation Accessibility</label>
+
+													<md-select ng-model="practicelocationtmp.pl_ptaccessibility">
+														<md-option ng-repeat="pl_ptaccessibility in practicelocationtmp.pl_ptaccessibilities">
+															{{pl_ptaccessibility}}
+														</md-option>
+													</md-select>
+													</md-input-container flex>
+											</div>
+											<div layout="row" flex >
+												<md-input-container flex>
+													<label>Disabled Accessibility</label>
+
+													<md-select ng-model="practicelocationtmp.pl_daccessibility">
+														<md-option ng-repeat="pl_daccessibility in practicelocationtmp.pl_daccessibilities">
+															{{pl_daccessibility}}
+														</md-option>
+													</md-select>
+													</md-input-container flex>
+											</div>
+										</div>
+
+									</div>
+									<div class="overlayfooter">
+										<button type="button" class="obtn" style="float: right" ng-click="add()">
+											Save
+										</button>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+					</form>
+					<div class="clear"></div>
+				</div>
+
+			</div>
 
 		</div>
 		</div>
 		<script type="text/javascript">
+			var p_location_tmp = $('#p_location1').wrap('<p/>').parent().html();
+			$('#p_location1').unwrap();
+			
+				
+		
+			
 			var elTop = 0;
 			$(window).scroll(function() {
 				$('.nav').toggleClass('sticky', $(window).scrollTop() > elTop);
 		        $('.leftbar').toggleClass('sticky1', $(window).scrollTop() > elTop);
+		        $('#update_res').toggleClass('sticky2', $(window).scrollTop() > elTop);
+		        
 		    });
 			console.log("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
 			function buildviewpage() {
@@ -2483,6 +2808,7 @@
 				 $("#view_page_link").css("display", "none");
 				 } */
 			}
+			
 			function updateviewpagebyid(type,id) {
 				var view_page_length = 1;
 				 currentid_acrd_swipper = id;
@@ -2776,7 +3102,7 @@
 				$('.arc-gauge-text .value').text(value);
 			}, 200);
 
-			$('.fa-pencil-square-o').click(function() {
+			$('.fa-pencil-square-o , #practice_locationadd').click(function() {
 				overlay_edit_id = this.id;
 				if ((overlay_edit_id).indexOf("_inline") > 0)
 					return;

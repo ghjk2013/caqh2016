@@ -271,8 +271,45 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
     return practicelocationDataArray;
   });
   
-  myApp.controller('Practicelocation', function($scope, PracticelocationData) {
+  myApp.controller('Practicelocation', function($scope, $compile, PracticelocationData) {
       $scope.practicelocationData = PracticelocationData;
+      $scope.practicelocationtmp = {
+		time1 : true,
+    	time2 : true,
+    	time3 : true,
+    	time4 : true,
+    	time5 : true,
+    	time6 : false,
+    	time7 : false,
+    	pl_type : '',
+    	pl_types : new GlobalPracticeType().types,
+    	pl_name : '',
+		pl_postalCode : '',
+		pl_email : '',
+		pl_address_line1 : '',
+		pl_address_line2 : '',
+		pl_city : '',
+		pl_state : '',
+		pl_cityies : [],
+		pl_states : [],
+		pl_txid : '',
+		pl_ndi : '',
+		pl_here : true,
+		pl_startdate : new Date(),
+		pl_enddate : new Date(),
+		pl_pni : '',
+		pl_gmedicare : '',
+		pl_gmedicart : '',
+		pl_taxid_type : '',
+		pl_taxidtypes : ['Group','Individual'],
+		pl_nameasng : '',
+		pl_haccessibility : '',
+		pl_haccessibilities : ['Building Access','Parking Access','Restroom Access','Wheelchair Access'],
+		pl_ptaccessibility : '',
+		pl_ptaccessibilities : ['Bus Transportation','Subway','Train'],
+		pl_daccessibility : '',
+		pl_daccessibilities : ['Text Telephony (TTL)','American Sign Language','Mental/Physical Impairment Services']
+	}; 
        $scope.updatesliderfn =  function(slider_id,time_checked){
 
 	if(time_checked == false){
@@ -289,6 +326,19 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
 	  $scope.updatesliderfn("time-range7", false);
       $scope.updatesliderfn("time-range16", false);
       $scope.updatesliderfn("time-range17",false );
+      $scope.add =  function(){
+      	// alert($scope.practicelocationData.length);
+      	index = $scope.practicelocationData.length;
+      	$scope.practicelocationData[index] = angular.copy($scope.practicelocationtmp);
+      	tmp = p_location_tmp.replace(/practicelocationData\[0\]/g , 'practicelocationData['+ index +']' );
+      	tmp = tmp.replace(/p_location1/g , 'p_location'+ (index + 1));
+      	// alert(tmp);
+		var linkFn = $compile(tmp);
+		var content = linkFn($scope);
+        $('#p_location'+ index).after(content);
+		buildviewpage();
+		save('practice_locationadd_boxclose');
+	  }
   });
   
   myApp.factory('SpecialityData', function () {

@@ -846,4 +846,9 @@ md-datepicker.md-default-theme, md-datepicker
 	 top: 0;
 	 left: 0;
 	 margin-left: 9px;
+ }
+ .sticky2 {
+     position: fixed !important;
+     width: 98% !important;
+     margin-top: -20px!important;
   }
