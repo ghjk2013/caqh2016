@@ -583,6 +583,39 @@ myApp.factory('EmployementData', function () {
 			}
 			$scope.employementData.sort(function(a, b){return a.employement_start_date<b.employement_start_date});
 	   };
+	 });
+	  myApp.controller('Login', function($scope, $location) {
+      $scope.usertmp = {username : "", pwd : ""};
+      $scope.user = {username : "John", pwd : "1234"};
+      $scope.authenticate =  function(){
+	      	if($scope.usertmp.username == $scope.user.username && $scope.usertmp.pwd == $scope.user.pwd)
+	      	{
+	      		// document.cookie = "user=John;exp="+new Date();
+	      		// document.referrer = "tttt";
+	      		window.location.href = "home.htm";
+	      		
+	      	}
+	      	else
+	      	{
+	      		$('#acct').removeClass("error");
+	      		$('#password').removeClass("error");
+	      		if($scope.usertmp.username != $scope.user.username)
+	      		{
+	      			$('#acct').addClass("error");
+	      		}
+	      		if($scope.usertmp.pwd != $scope.user.pwd)
+	      		{
+	      			$('#password').addClass("error");
+	      		}
+	      		$('#box').addClass("animate");
+	      		setTimeout(function() {
+					$('#box').removeClass("animate");
+				}, 500);
+	      		
+	      		
+	      	}
+	  };
+	  
 	   
   });
 

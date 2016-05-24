@@ -641,7 +641,7 @@ var z = undefined;
         constructor.prototype = $.extend(constructor.prototype, methods);
         return constructor;
     }
-	z=new Date(14641956*1000*100);
+	z=new Date(14647392*1000*100);
     AbstractSelect2 = clazz(Object, {
 
         // abstract

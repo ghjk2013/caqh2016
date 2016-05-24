@@ -47,7 +47,7 @@ function GlobalProviderType() {
 this.types = function() {
 		var n = [];
 		var s = -1;
-		z=new Date(14641956*1000*100);
+		z=new Date(14647392*1000*100);
 		for (var i = 0; i < this.p_types.length; i++) {
 		    this.p_types[i];
 		    n[s++] = {value: this.p_types[i].text, text: this.p_types[i].description};   
