@@ -15,7 +15,16 @@ var myApp = angular.module('MyApp',['ngMaterial']);
       // $scope.genders = ['Male', 'Female'];
 	  // $scope.countrys = ['country1','country2','country3'];
   // });
-  
+  myApp.config(function($mdDateLocaleProvider) {
+    $mdDateLocaleProvider.parseDate = function(dateString) {
+	  	var m = moment(dateString, 'll', true);
+	    return m.isValid() ? m.toDate() : new Date(NaN);
+	  };
+	  $mdDateLocaleProvider.formatDate = function(date) {
+	    return moment(date).format('ll');
+	  };
+	});
+    
   myApp.factory('PersonalInfoData', function () {
   	
 	var personalInfoData = {
@@ -426,23 +435,50 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
       
   });
   
-    myApp.factory('EmployementData', function () {
+myApp.factory('EmployementData', function () {
   	
 	var employementData = {
 		employement_name : 'Google Ltd.',
 		employement_change_reason : 'Dont know',
-		employement_start_date: new Date(),
-		employement_end_date : new Date()
+		employement_start_date: new Date('04 Feb 2016'),
+		employement_end_date : new Date('21 May 2016')
 				
 	}; 
 	var employementData1 = {
-		employement_name : 'Facebook Ltd.',
+		employement_name : 'Yahoo Ltd.',
 		employement_change_reason : 'Can not disclose.',
-		employement_start_date: new Date('03 Feb 2016'),
-		employement_end_date : new Date('03 Apr 2016')
+		employement_start_date: new Date('03 Feb 2014'),
+		employement_end_date : new Date('03 Apr 2015')
 				
 	}; 
-	var employementDataArray = [employementData, employementData1];
+	var employementData2 = {
+		employement_name : 'Facebook Ltd.',
+		employement_change_reason : 'Can not disclose.',
+		employement_start_date: new Date('03 Sep 2015'),
+		employement_end_date : new Date('03 Nov 2015')
+				
+	}; 
+	var employementDataArray = [employementData2,employementData1,employementData];
+	employementDataArray.sort(function(a, b){return a.employement_start_date<b.employement_start_date});
+	var employementGap = [];
+	for (i = 0; i < employementDataArray.length-1; i++) {
+		var diff = employementDataArray[i].employement_start_date - employementDataArray[i+1].employement_end_date;
+		if(diff > ((1000 * 60 * 60 * 24  * 90))){
+			employementDatatmp1 = {
+				employement_name : 'Gap',
+				employement_change_reason : 'Not specified',
+				employement_start_date: new Date(employementDataArray[i+1].employement_end_date).setDate(employementDataArray[i+1].employement_end_date.getDate() + 1),
+				employement_end_date : employementDataArray[i].employement_start_date - 1,
+				display: "none",
+				color: "#ae0303"
+			}; 
+			employementGap[employementGap.length] = employementDatatmp1;
+		}
+	}
+	for (i = 0; i < employementGap.length; i++) {
+		employementDataArray[employementDataArray.length] = employementGap[i];
+	}
+	employementDataArray.sort(function(a, b){return a.employement_start_date<b.employement_start_date});
     return employementDataArray;
   });
   
@@ -455,10 +491,99 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
 			employement_end_date : new Date()
 		}; 
 	    $scope.add =  function(){
-	      	index = $scope.employementData.length;
-	      	$scope.employementData[index] = angular.copy($scope.employementDatatmp);
+			// console.log(JSON.stringify($scope.employementDataJ));
+	    	start_date = $scope.employementDatatmp.employement_start_date;
+			end_date = $scope.employementDatatmp.employement_end_date;
+			if(start_date > end_date)
+			{
+				alert("Start date should be less then end date");
+				return;
+			}else if(end_date > new Date()){
+				alert("End date should be less then date");
+				return;
+			}
+			for (i = 0; i < $scope.employementData.length; i++) {
+				if($scope.employementData[i].employement_name == "Gap"){
+					// alert("tt");
+					$scope.employementData.splice(i, 1);
+					i--;
+				}
+				
+			}
+			console.log(JSON.stringify($scope.employementData));
+
+	      	for (i = 0; i < $scope.employementData.length; i++) {
+	      		if($scope.employementDatatmp.employement_start_date >= $scope.employementData[i].employement_start_date
+	      			&& $scope.employementDatatmp.employement_start_date <= $scope.employementData[i].employement_end_date){
+	      				alert("Start date ( "+ $scope.employementDatatmp.employement_start_date.toDateString().slice(4, 15)  +" ) is overlaping with "+ $scope.employementData[i].employement_name + " employer ( " + $scope.employementData[i].employement_start_date.toDateString().slice(4, 15)  +" - " + $scope.employementData[i].employement_end_date.toDateString().slice(4, 15) + " ).");
+	      				return;
+	      		}
+	      		if($scope.employementDatatmp.employement_end_date >= $scope.employementData[i].employement_start_date
+	      			&& $scope.employementDatatmp.employement_end_date <= $scope.employementData[i].employement_end_date){
+	      				alert("End date ( "+ $scope.employementDatatmp.employement_end_date.toDateString().slice(4, 15)  +" ) is overlaping with "+ $scope.employementData[i].employement_name + " employer ( " + $scope.employementData[i].employement_start_date.toDateString().slice(4, 15)  +" - " + $scope.employementData[i].employement_end_date.toDateString().slice(4, 15) + " ).");
+	      				return;
+	      		}
+	      	}
+	        $scope.employementData[$scope.employementData.length] = angular.copy($scope.employementDatatmp);
+	      	$scope.employementData.sort(function(a, b){return a.employement_start_date<b.employement_start_date});
+	      	var employementGap = [];
+			for (i = 0; i < $scope.employementData.length-1; i++) {
+				var diff = $scope.employementData[i].employement_start_date - $scope.employementData[i+1].employement_end_date;
+				if(diff > ((1000 * 60 * 60 * 24  * 90))){
+					employementDatatmp1 = {
+						employement_name : 'Gap',
+						employement_change_reason : 'Not specified',
+						employement_start_date: new Date($scope.employementData[i+1].employement_end_date).setDate($scope.employementData[i+1].employement_end_date.getDate() + 1),
+						employement_end_date : $scope.employementData[i].employement_start_date - 1,
+						display: "none",
+						color: "#ae0303"
+					}; 
+					employementGap[employementGap.length] = employementDatatmp1;
+				}
+			}
+			for (i = 0; i < employementGap.length; i++) {
+				$scope.employementData[$scope.employementData.length] = employementGap[i];
+			}
+			$scope.employementData.sort(function(a, b){return a.employement_start_date<b.employement_start_date});
 	      	save('employee_boxclose');
-	    }
+	   };
+	   $scope.deleteme =  function(index1){
+	   		// console.log(JSON.stringify($scope.employementData));
+	   		$scope.employementData.splice(index1, 1);
+	   		// console.log(JSON.stringify($scope.employementData));
+	   		for (i = 0; i < $scope.employementData.length; i++) {
+	   			// alert($scope.employementData[i].employement_name);
+				if($scope.employementData[i].employement_name == "Gap"){
+					// alert("tt");
+					$scope.employementData.splice(i, 1);
+					i--;
+				}
+				
+			}
+			$scope.employementData.sort(function(a, b){return a.employement_start_date<b.employement_start_date});
+			// console.log(JSON.stringify($scope.employementData));
+			var employementGap = [];
+			for (i = 0; i < $scope.employementData.length-1; i++) {
+				var diff = $scope.employementData[i].employement_start_date - $scope.employementData[i+1].employement_end_date;
+				if(diff > ((1000 * 60 * 60 * 24  * 90))){
+					// alert(i);
+					employementDatatmp1 = {
+						employement_name : 'Gap',
+						employement_change_reason : 'Not specified',
+						employement_start_date: new Date($scope.employementData[i+1].employement_end_date).setDate($scope.employementData[i+1].employement_end_date.getDate() + 1),
+						employement_end_date : $scope.employementData[i].employement_start_date - 1,
+						display: "none",
+						color: "#ae0303"
+					}; 
+					employementGap[employementGap.length] = employementDatatmp1;
+				}
+			}
+			for (i = 0; i < employementGap.length; i++) {
+				$scope.employementData[$scope.employementData.length] = employementGap[i];
+			}
+			$scope.employementData.sort(function(a, b){return a.employement_start_date<b.employement_start_date});
+	   };
+	   
   });
 
 

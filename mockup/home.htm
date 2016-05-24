@@ -52,6 +52,8 @@
 		<script src="js/speciality-json.js"></script>
 		<script src="js/practice-type-json.js"></script>
 		<script src="js/lang-json.js"></script>
+		<script src="http://momentjs.com/downloads/moment.js"></script>
+		
 
 		<!--	<script type="text/javascript" src="xeditable.js"></script>
 		<script src="myApp.js"></script> -->
@@ -598,11 +600,11 @@
 							         	</thead>
 							         	 <tbody md-body id="epmtable">
 									      <tr md-row md-select="dessert" md-select-id="name" md-auto-select ng-repeat="emp in employementData" style="height: 35px;">
-									        <td md-cell>{{emp.employement_name}}</td>
-									        <td md-cell>{{emp.employement_start_date | date}}</td>
-									        <td md-cell>{{emp.employement_end_date | date}}</td>
-									        <td md-cell>{{emp.employement_change_reason}}</td>
-									        <td md-cell><span style="margin-right: 20px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg"></span><span style="cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span></td>
+									        <td md-cell style="color: {{employementData[$index].color}}">{{employementData[$index].employement_name}}</td>
+									        <td md-cell style="color: {{employementData[$index].color}}">{{employementData[$index].employement_start_date | date}}</td>
+									        <td md-cell style="color: {{employementData[$index].color}}">{{employementData[$index].employement_end_date | date}}</td>
+									        <td md-cell style="color: {{employementData[$index].color}}">{{employementData[$index].employement_change_reason}}</td>
+									        <td md-cell style="color: {{employementData[$index].color}}"><span onclick="alert('Functionality not available.');" style="margin-right: 20px;cursor: pointer;display: {{employementData[$index].display}}" title="Update" class="fa fa-pencil-square-o fa-lg"></span><span ng-click="deleteme($index)" style="cursor: pointer;display: {{employementData[$index].display}}" title="Delete" class="fa fa-trash fa-lg"></span></td>
 									      </tr>
 							         		
 							         	</tbody>
@@ -2775,11 +2777,13 @@
 		<script type="text/javascript">
 		    // alert(new Date('04 Jan 1980').toString());
 			// alert(dateformater(new Date('04 Jan 1980')));
-			
+
 			var p_location_tmp = $('#p_location1').wrap('<p/>').parent().html();
 			$('#p_location1').unwrap();
-			var elTop = 0;
+			var elTop = 65;
 			$(window).scroll(function() {
+				// console.log($(window).scrollTop());
+				// console.log(elTop);
 				$('.nav').toggleClass('sticky', $(window).scrollTop() > elTop);
 		        $('.leftbar').toggleClass('sticky1', $(window).scrollTop() > elTop);
 		        $('#update_res').toggleClass('sticky2', $(window).scrollTop() > elTop);
@@ -3049,7 +3053,7 @@
 
 			var mainblockhight;
 			$(document).ready(function() {
-				elTop = $('.nav').offset().top;
+				// elTop = $('.nav').offset().top;
 				// alert(elTop);
 				/*	build_accordion("personal_info_menu","personal_info_menu_div");
 				build_accordion("practice_location_menu","practice_location_menu_div");
