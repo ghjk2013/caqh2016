@@ -135,6 +135,8 @@ body {
 	background-color: #fff;
     /*overflow-y: scroll;*/
 	/*letter-spacing: 1px;*/
+	position: relative !important;
+	top: 0px !important;
 }
 
 /* Top Main Navigation Starts  */
@@ -839,6 +841,10 @@ md-datepicker.md-default-theme, md-datepicker
 }
 .md-virtual-repeat-container.md-autocomplete-suggestions-container{
 	z-index: 111 !important;
+}
+.epmtables md-select-value{
+	border: none !important;
+	color: #ae0303 !important;
 }
 /*--------------Angular matarial End----------*/
 .sticky {

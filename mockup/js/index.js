@@ -69,7 +69,7 @@ var myApp = angular.module('MyApp',['ngMaterial']);
     $scope.searchText = null;
       $scope.querySearch =  function(query) {
 	      var results = query ? $scope.personalInfoData.langs.filter(function filterFn(lang) {
-	        return (lang.name.indexOf(query) === 0);
+	        return (lang.name.toLowerCase().indexOf(query.toLowerCase()) === 0);
 	      } ) : [];
 	      return results;
 	    }
@@ -439,9 +439,9 @@ myApp.factory('EmployementData', function () {
   	
 	var employementData = {
 		employement_name : 'Google Ltd.',
-		employement_change_reason : 'Dont know',
+		employement_change_reason : 'Can not disclose.',
 		employement_start_date: new Date('04 Feb 2016'),
-		employement_end_date : new Date('21 May 2016')
+		employement_end_date : new Date()
 				
 	}; 
 	var employementData1 = {
@@ -466,11 +466,12 @@ myApp.factory('EmployementData', function () {
 		if(diff > ((1000 * 60 * 60 * 24  * 90))){
 			employementDatatmp1 = {
 				employement_name : 'Gap',
-				employement_change_reason : 'Not specified',
+				employement_change_reason : "- Select Reason -",
 				employement_start_date: new Date(employementDataArray[i+1].employement_end_date).setDate(employementDataArray[i+1].employement_end_date.getDate() + 1),
 				employement_end_date : employementDataArray[i].employement_start_date - 1,
 				display: "none",
-				color: "#ae0303"
+				color: "#ae0303",
+				employement_change_reasons : ["- Select Reason -", "Gap Reason 1", "Gap Reason 2", "Gap Reason 3"]	
 			}; 
 			employementGap[employementGap.length] = employementDatatmp1;
 		}
@@ -486,7 +487,7 @@ myApp.factory('EmployementData', function () {
       $scope.employementData = EmployementData;
       $scope.employementDatatmp = {
 			employement_name : '',
-			employement_change_reason : '',
+			employement_change_reason : "- Select Reason -",
 			employement_start_date: new Date(),
 			employement_end_date : new Date()
 		}; 
@@ -532,11 +533,12 @@ myApp.factory('EmployementData', function () {
 				if(diff > ((1000 * 60 * 60 * 24  * 90))){
 					employementDatatmp1 = {
 						employement_name : 'Gap',
-						employement_change_reason : 'Not specified',
+						employement_change_reason : '',
 						employement_start_date: new Date($scope.employementData[i+1].employement_end_date).setDate($scope.employementData[i+1].employement_end_date.getDate() + 1),
 						employement_end_date : $scope.employementData[i].employement_start_date - 1,
 						display: "none",
-						color: "#ae0303"
+						color: "#ae0303",
+						employement_change_reasons : ["- Select Reason -", "Gap Reason 1", "Gap Reason 2", "Gap Reason 3"]	
 					}; 
 					employementGap[employementGap.length] = employementDatatmp1;
 				}
@@ -569,11 +571,12 @@ myApp.factory('EmployementData', function () {
 					// alert(i);
 					employementDatatmp1 = {
 						employement_name : 'Gap',
-						employement_change_reason : 'Not specified',
+						employement_change_reason : "- Select Reason -",
 						employement_start_date: new Date($scope.employementData[i+1].employement_end_date).setDate($scope.employementData[i+1].employement_end_date.getDate() + 1),
 						employement_end_date : $scope.employementData[i].employement_start_date - 1,
 						display: "none",
-						color: "#ae0303"
+						color: "#ae0303",
+						employement_change_reasons : ["- Select Reason -", "Gap Reason 1", "Gap Reason 2", "Gap Reason 3"]	
 					}; 
 					employementGap[employementGap.length] = employementDatatmp1;
 				}

@@ -579,15 +579,15 @@
 							</ul>
 						</li>
 						<li>
-							<a scroll=5 id="employement">Employee History<span class="fa fa-exclamation fa-lg exclamation" style=" "></span><span class="b_fa-exclamation" style="font-weight: normal">Incomplete</span><span class="fa fa-check fa-lg check " style=" "></span><span class="b_fa-check" style="font-weight: normal">Complete</span></a>
+							<a scroll=5 id="employement">Employment History<span class="fa fa-exclamation fa-lg exclamation" style=" "></span><span class="b_fa-exclamation" style="font-weight: normal">Incomplete</span><span class="fa fa-check fa-lg check " style=" "></span><span class="b_fa-check" style="font-weight: normal">Complete</span></a>
 							<ul>
 							<div ng-controller="Employement">
 								<div class="heading">
 											
-											<span style="display: inline-flex;width: 84%;">Employee History</span>
+											<span style="display: inline-flex;width: 82%;">Employment History</span>
 											<span style="cursor: pointer" id="employee">
 												<div style="bottom: -3px; font-size: 19px; position: relative; padding-right: 2px;" class="fa fa-plus-square-o"></div>
-												<span style="font-weight: normal;" class="" >Add Employee</span>
+												<span style="font-weight: normal;" class="" >Add Employement</span>
 											</span>
 							           </div>
 							         <table border="1px" cellpadding="1px" cellspacing="1px" style="width: 100%; text-align: center;">
@@ -603,7 +603,14 @@
 									        <td md-cell style="color: {{employementData[$index].color}}">{{employementData[$index].employement_name}}</td>
 									        <td md-cell style="color: {{employementData[$index].color}}">{{employementData[$index].employement_start_date | date}}</td>
 									        <td md-cell style="color: {{employementData[$index].color}}">{{employementData[$index].employement_end_date | date}}</td>
-									        <td md-cell style="color: {{employementData[$index].color}}">{{employementData[$index].employement_change_reason}}</td>
+									        <td md-cell style="color: {{employementData[$index].color}}" ng-if="employementData[$index].employement_name != 'Gap'">{{employementData[$index].employement_change_reason}}</td>
+									        <td md-cell style="color: {{employementData[$index].color}}" ng-if="employementData[$index].employement_name == 'Gap'">
+												<md-select ng-model="employementData[$index].employement_change_reason" style="margin:0;" class="epmtables">
+													<md-option ng-repeat="reason in employementData[$index].employement_change_reasons" placeholder="- Select Reason -" value="{{reason}}"  required="">
+														{{reason}}
+													</md-option>
+												</md-select>
+									        </td>
 									        <td md-cell style="color: {{employementData[$index].color}}"><span onclick="alert('Functionality not available.');" style="margin-right: 20px;cursor: pointer;display: {{employementData[$index].display}}" title="Update" class="fa fa-pencil-square-o fa-lg"></span><span ng-click="deleteme($index)" style="cursor: pointer;display: {{employementData[$index].display}}" title="Delete" class="fa fa-trash fa-lg"></span></td>
 									      </tr>
 							         		
@@ -2717,12 +2724,12 @@
 								<div id="employee_res" style="color: green"></div>
 								<div id="employee_content" class="custom_swiper_item">
 									<div class="overlayheader">
-										Employee History
+										Employment History
 									</div>
 									<div class="menu_container">
 										<ul id="employee_menu" class="menu">
 											<li>
-												<a href="#"  link='employeehistory'>Employee History</a>
+												<a href="#"  link='employeehistory'>Employment History</a>
 											</li>
 										</ul>
 									</div>
@@ -2777,7 +2784,7 @@
 		<script type="text/javascript">
 		    // alert(new Date('04 Jan 1980').toString());
 			// alert(dateformater(new Date('04 Jan 1980')));
-
+			
 			var p_location_tmp = $('#p_location1').wrap('<p/>').parent().html();
 			$('#p_location1').unwrap();
 			var elTop = 65;
@@ -2787,6 +2794,8 @@
 				$('.nav').toggleClass('sticky', $(window).scrollTop() > elTop);
 		        $('.leftbar').toggleClass('sticky1', $(window).scrollTop() > elTop);
 		        $('#update_res').toggleClass('sticky2', $(window).scrollTop() > elTop);
+		        $("._md-select-menu-container._md-active").hide();
+				$("._md-select-menu-container._md-active").attr('aria-hidden', 'true');
 		        
 		    });
 			console.log("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");

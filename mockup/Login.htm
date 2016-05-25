@@ -13,9 +13,18 @@
       <link href="default.css" media="screen" rel="stylesheet" type="text/css">
       <link href="fonts.css" media="screen" rel="stylesheet" type="text/css">
       <link href="jquery.css" media="screen" rel="stylesheet" type="text/css">
+      <script src='jquery-2.2.3.min.js'></script>
+      <script src='angular-material/angular-1.4.8.js'></script>
+      <script src="js/index.js"></script>
+		<script src='angular-material/angular-animate-1.4.8.min.js'></script>
+		<script src='angular-material/angular-route-1.4.8.min.js'></script>
+		<script src='angular-material/angular-aria-1.4.8.min.js'></script>
+		<script src='angular-material/angular-messages-1.4.8.min.js'></script>
+		<!-- <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js'></script> -->
+		<script src='angular-material/angular-material-v1.0.6.js'></script>
       <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
    </head>
-   <body style="min-width:1100px;background:url('healthcare4.png') no-repeat scroll center 0px #ffffff; background-size:100% 100%" class="">
+   <body ng-app="MyApp" style="min-width:1100px;background:url('healthcare4.png') no-repeat scroll center 0px #ffffff; background-size:100% 100%" class="">
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <title>Home User</title>
       <div class="homeuser_bg" style="">
@@ -27,7 +36,7 @@
                   else str = session[:branding].value("top_logo")
                   end%-->
                <div class="topblock" style="background-color: #fff">
-                  <div class="header_logo" style="background:url('logo2.png') no-repeat no-repeat center center ;background-color:#f6f8ff; background-size: auto auto;height: 65px;width: 100%"></div>
+                  <div class="header_logo" style="background:url('logo2.png') no-repeat no-repeat center center ;background-color:#fff; background-size: auto auto;height: 65px;width: 100%"></div>
                   <!--%=image_tag(str,:class=>"logo")%> <span></span></a-->
                   
                   
@@ -42,8 +51,8 @@
 Spend more time with patients, not health plan paperwork </div>
 
                <!--Login block start onclick="window.location='movius'"-->
-               <div class="login_main entr-adm-lgin-scrn">
-                  <div class="midbg selected_color">
+               <div class="login_main entr-adm-lgin-scrn" ng-controller="Login">
+                  <div class="midbg selected_color" id="box">
                      <span class="entp-txt-blck" style=""></span>
                      <div style="color:red;" id="modifystatus"></div>
                      <form accept-charset="UTF-8" action="/cafe/login/login" id="loginform" method="post">
@@ -52,8 +61,8 @@ Spend more time with patients, not health plan paperwork </div>
                         <fieldset style="margin-bottom:5px;">
                            <div class="input_bg">
                            		<div class="on-focus clearfix" style="position: relative;  ">
-	                              <input id="acct" name="acct" placeholder="User name" type="text" class="error">
-								  <div class="tool-tip left ">You'll use this when you log in and if you ever need to reset your password.</div>
+	                              <input id="acct" name="acct" placeholder="User name" type="text" class="" ng-model="usertmp.username">
+								  <div class="tool-tip left ">You'll use this when you log in or if you ever need to reset your password.</div>
 							    </div>	
                            </div>
                         </fieldset>
@@ -61,8 +70,8 @@ Spend more time with patients, not health plan paperwork </div>
                         <fieldset>
                            <div class="input_bg" onkeydown="if(event.keyCode == 13){ $('#modifystatus').html(''); $('#loginform').submit();return false;}">
           					<div class="on-focus clearfix" style="position: relative;  ">
-								<input autocomplete="off" id="password" name="password" placeholder="Password" type="password">
-								<div class="tool-tip left">Tool Tip</div>
+								<input autocomplete="off" id="password" name="password" placeholder="Password" type="password" ng-model="usertmp.pwd">
+								<div class="tool-tip left">Do not disclose your password to others.</div>
 							</div>		
                            </div>
                         </fieldset>
@@ -77,7 +86,7 @@ Spend more time with patients, not health plan paperwork </div>
                         </fieldset> -->
                         <fieldset>
                            <div class="submit_btn" id="resetLogin" title="Reset" style="display:none;" onclick="reset_login();"> <a>Reset</a></div>
-                           <div class="submit_btn" id="idLogin" title="Login" style=""> <a>Sign In</a></div>
+                           <div class="submit_btn" id="idLogin" title="Login" style="" ng-click="authenticate()"> <a>Sign In</a></div>
                            <div style="float: left;margin-top: 18px" class="keepme_sec">
                            		<input autocomplete="off" id="keepme_i" class="checkbox-custom" name="keepme_i" type="checkbox" style="float: left" value="keep me logged in.">
 
