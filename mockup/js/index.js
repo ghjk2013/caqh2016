@@ -293,7 +293,7 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
     return practicelocationDataArray;
   });
   
-  myApp.controller('Practicelocation', function($scope, $compile, PracticelocationData) {
+  myApp.controller('Practicelocation', function($scope, $compile, $http, PracticelocationData) {
       $scope.practicelocationData = PracticelocationData;
       $scope.practicelocationtmp = {
 		time1 : true,
@@ -348,8 +348,89 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
 	  $scope.updatesliderfn("time-range7", false);
       $scope.updatesliderfn("time-range16", false);
       $scope.updatesliderfn("time-range17",false );
-      $scope.add =  function(){
-      	// alert($scope.practicelocationData.length);
+      $scope.action =  function(act){
+      	Locale = 'en';
+        if(act == "add")
+    	{
+    		datatmp = $.param({ StreetAddress: $scope.practicelocationtmp.pl_address_line1 + ", " + $scope.practicelocationtmp.pl_address_line2,
+	                City: $scope.practicelocationtmp.pl_city,
+	                PostalCode: $scope.practicelocationtmp.pl_postalCode,
+	                State: $scope.practicelocationtmp.pl_state,
+	                CountryCode: "us",
+	                Locale: Locale,
+	                APIKey: 'uv-facee3692d6e49b335bd4b80586469ac'});
+    	}else if(act == "edit1"){
+    		datatmp = $.param({ StreetAddress: $scope.practicelocationData[1].pl_address_line1 + ", " + $scope.practicelocationData[1].pl_address_line2,
+	                City: $scope.practicelocationData[1].pl_city,
+	                PostalCode: $scope.practicelocationData[1].pl_postalCode,
+	                State: $scope.practicelocationData[1].pl_state,
+	                CountryCode: "us",
+	                Locale: Locale,
+	                APIKey: 'uv-facee3692d6e49b335bd4b80586469ac'});
+    	}
+    	else if(act == "edit"){
+    		datatmp = $.param({ StreetAddress: $scope.practicelocationData[0].pl_address_line1 + ", " + $scope.practicelocationData[0].pl_address_line2,
+	                City: $scope.practicelocationData[0].pl_city,
+	                PostalCode: $scope.practicelocationData[0].pl_postalCode,
+	                State: $scope.practicelocationData[0].pl_state,
+	                CountryCode: "us",
+	                Locale: Locale,
+	                APIKey: 'uv-facee3692d6e49b335bd4b80586469ac'});
+    	}
+      	
+	    $http({
+	       	url: 'http://api.address-validator.net/api/verify',
+	        method: "POST",
+	        data: datatmp,
+	        headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+	    })
+	    .then(function(responce) {
+		    	console.log("HHHHH" + JSON.stringify(responce));
+		    	json = responce.data;
+		    	console.log("HHHHH" + JSON.stringify(json));
+		    	console.log("HHHHH" + JSON.stringify(json.status));
+	        	// check API result
+	            if (typeof(json.status) != "undefined") {
+	                status = json.status;
+	                formattedaddress = json.formattedaddress;
+	                if(status == "VALID")
+	                {
+	                	alert("Your address validation is done.");
+	                	if(act == "add")
+	                	{
+	                		process();
+	                	}else if(act == "edit1"){
+	                		save('practice_location1_boxclose');
+	                	}
+	                	else if(act == "edit"){
+	                		save('practice_location_boxclose');
+	                	}
+	                }else{
+	                	var r = confirm("Address validation has fail. Do you want to varify you address again?");
+	                	if (r == true) {
+						    //Nothing to Do;
+						} else {
+							if(act == "add")
+	                		{
+		                		process();
+		                	}else if(act == "edit1"){
+		                		save('practice_location1_boxclose');
+		                	}
+		                	else if(act == "edit"){
+		                		save('practice_location_boxclose');
+		                	}
+						} 
+	                }
+	                
+	                
+	            }
+	    }, 
+	    function(response) { // optional
+	            // failed
+	    });
+	  };
+	  function process(){
+	    alert($scope.practicelocationData.length);
       	index = $scope.practicelocationData.length;
       	$scope.practicelocationData[index] = angular.copy($scope.practicelocationtmp);
       	tmp = p_location_tmp.replace(/practicelocationData\[0\]/g , 'practicelocationData['+ index +']' );
@@ -360,6 +441,8 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
         $('#p_location'+ index).after(content);
 		buildviewpage();
 		save('practice_locationadd_boxclose');
+		
+		
 	  }
   });
   
