@@ -88,7 +88,7 @@
 
 											<span class="changepwd" onclick="#" >Change Password</span>
 
-											<span class="lastlogin">12-02-2015 8:08 PM</span>
+											<!-- <span class="lastlogin">12-02-2015 8:08 PM</span> -->
 										</div>
 
 									</li>
@@ -544,7 +544,7 @@
 												<br />
 												<span class="testheading">Email:</span> {{practicelocationData[0].pl_email}} </span>
 											<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Practice NDI: </span><span style="margin: 2px 4px;float: left;">{{practicelocationData[0].pl_ndi}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="practice_location"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span>
+											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Practice NPI: </span><span style="margin: 2px 4px;float: left;">{{practicelocationData[0].pl_ndi}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="practice_location"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span>
 												<br style="clear: both"/>
 												<span class="testheading">Primary TaxID No:</span> {{practicelocationData[0].pl_txid}}
 												<br />
@@ -562,7 +562,7 @@
 												<br />
 												<span class="testheading">Email:</span> {{practicelocationData[1].pl_email}} </span>
 											<span style="float: left; width: 1px; height: 100%;border-left: 1px ridge; height: 80px; margin-top: 2%;"></span>
-											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Practice NDI: {{practicelocationData[1].pl_ndi}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="practice_location1"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span> 
+											<span style="float: right; width: 46%"> <span style="float: left;" class="testheading">Practice NPI: {{practicelocationData[1].pl_ndi}}</span> <span style=" float: right;"> <span style="margin-right: 30px;cursor: pointer;" title="Update" class="fa fa-pencil-square-o fa-lg" id="practice_location1"></span><span style="margin-right: 30px;cursor: pointer;" title="Delete" class="fa fa-trash fa-lg"></span> </span> 
 												<br style="clear: both"/>
 												<span class="testheading">Primary TaxID No:</span> {{practicelocationData[1].pl_txid}}
 												<br />
@@ -603,8 +603,8 @@
 									        <td md-cell style="color: {{employementData[$index].color}}">{{employementData[$index].employement_name}}</td>
 									        <td md-cell style="color: {{employementData[$index].color}}">{{employementData[$index].employement_start_date | date}}</td>
 									        <td md-cell style="color: {{employementData[$index].color}}">{{employementData[$index].employement_end_date | date}}</td>
-									        <td md-cell style="color: {{employementData[$index].color}}" ng-if="employementData[$index].employement_name != 'Gap'">{{employementData[$index].employement_change_reason}}</td>
-									        <td md-cell style="color: {{employementData[$index].color}}" ng-if="employementData[$index].employement_name == 'Gap'">
+									        <td md-cell style="color: {{employementData[$index].color}}" ng-if="employementData[$index].employement_name != 'Employment Gap'">{{employementData[$index].employement_change_reason}}</td>
+									        <td md-cell style="color: {{employementData[$index].color}}" ng-if="employementData[$index].employement_name == 'Employment Gap'">
 												<md-select ng-model="employementData[$index].employement_change_reason" style="margin:0;" class="epmtables">
 													<md-option ng-repeat="reason in employementData[$index].employement_change_reasons" placeholder="- Select Reason -" value="{{reason}}"  required="">
 														{{reason}}

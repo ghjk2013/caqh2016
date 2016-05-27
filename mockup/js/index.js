@@ -229,7 +229,7 @@ var myApp = angular.module('MyApp',['ngMaterial']);
     	time7 : false,
     	pl_type : 'Group Primary Care',
     	pl_types : new GlobalPracticeType().types,
-    	pl_name : 'John M Doe',
+    	pl_name : 'ABC Pediatrics',
 		pl_postalCode : '20001',
 		pl_email : 'john_koshy@hotmail.com',
 		pl_address_line1 : '23 Main',
@@ -262,7 +262,7 @@ var myApp = angular.module('MyApp',['ngMaterial']);
     	time7 : false,
     	pl_type : 'Group Primary Care',
     	pl_types : new GlobalPracticeType().types,
-    	pl_name : 'John M Doe',
+    	pl_name : 'XYZ Pediatrics',
 		pl_postalCode : '20001',
 		pl_email : 'john_koshy@hotmail.com',
 		pl_address_line1 : '23 Main',
@@ -406,7 +406,7 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
 	                		save('practice_location_boxclose');
 	                	}
 	                }else{
-	                	var r = confirm("Address validation has fail. Do you want to varify you address again?");
+	                	var r = confirm("Address validation has failed. Do you want to varify you address again?");
 	                	if (r == true) {
 						    //Nothing to Do;
 						} else {
@@ -521,22 +521,22 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
 myApp.factory('EmployementData', function () {
   	
 	var employementData = {
-		employement_name : 'Google Ltd.',
-		employement_change_reason : 'Can not disclose.',
+		employement_name : 'Employer A',
+		employement_change_reason : 'Departure Reason A.',
 		employement_start_date: new Date('04 Feb 2016'),
 		employement_end_date : new Date()
 				
 	}; 
 	var employementData1 = {
-		employement_name : 'Yahoo Ltd.',
-		employement_change_reason : 'Can not disclose.',
+		employement_name : 'Employer B',
+		employement_change_reason : 'Departure Reason B.',
 		employement_start_date: new Date('03 Feb 2014'),
 		employement_end_date : new Date('03 Apr 2015')
 				
 	}; 
 	var employementData2 = {
-		employement_name : 'Facebook Ltd.',
-		employement_change_reason : 'Can not disclose.',
+		employement_name : 'Employer C',
+		employement_change_reason : 'Departure Reason C.',
 		employement_start_date: new Date('03 Sep 2015'),
 		employement_end_date : new Date('03 Nov 2015')
 				
@@ -548,7 +548,7 @@ myApp.factory('EmployementData', function () {
 		var diff = employementDataArray[i].employement_start_date - employementDataArray[i+1].employement_end_date;
 		if(diff > ((1000 * 60 * 60 * 24  * 90))){
 			employementDatatmp1 = {
-				employement_name : 'Gap',
+				employement_name : 'Employment Gap',
 				employement_change_reason : "- Select Reason -",
 				employement_start_date: new Date(employementDataArray[i+1].employement_end_date).setDate(employementDataArray[i+1].employement_end_date.getDate() + 1),
 				employement_end_date : employementDataArray[i].employement_start_date - 1,
@@ -615,7 +615,7 @@ myApp.factory('EmployementData', function () {
 				var diff = $scope.employementData[i].employement_start_date - $scope.employementData[i+1].employement_end_date;
 				if(diff > ((1000 * 60 * 60 * 24  * 90))){
 					employementDatatmp1 = {
-						employement_name : 'Gap',
+						employement_name : 'Employment Gap',
 						employement_change_reason : '',
 						employement_start_date: new Date($scope.employementData[i+1].employement_end_date).setDate($scope.employementData[i+1].employement_end_date.getDate() + 1),
 						employement_end_date : $scope.employementData[i].employement_start_date - 1,
@@ -653,7 +653,7 @@ myApp.factory('EmployementData', function () {
 				if(diff > ((1000 * 60 * 60 * 24  * 90))){
 					// alert(i);
 					employementDatatmp1 = {
-						employement_name : 'Gap',
+						employement_name : 'Employment Gap',
 						employement_change_reason : "- Select Reason -",
 						employement_start_date: new Date($scope.employementData[i+1].employement_end_date).setDate($scope.employementData[i+1].employement_end_date.getDate() + 1),
 						employement_end_date : $scope.employementData[i].employement_start_date - 1,

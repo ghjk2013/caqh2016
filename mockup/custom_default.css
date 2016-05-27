@@ -652,7 +652,7 @@ body {
 	left: -8px;
 }
 .userdropdata span:hover{
-	color: #ff8133;
+	color: #29699d;
 	cursor: pointer;
 }
 .userdropdata span.selected{
@@ -662,7 +662,7 @@ body {
 	color: #ff8133;
 }
 .userdropdata .profile.selected::before,.userdropdata .profile:hover::before,.userdropdata .contactmobile:hover::before,.userdropdata .contactemail:hover::before,.userdropdata .changepwd:hover::before{
-	color: #ff8133;
+	color: #29699d;
 }
 .userdropdata .profile:before{
     position: relative;
