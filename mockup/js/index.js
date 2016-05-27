@@ -672,7 +672,7 @@ myApp.factory('EmployementData', function () {
 	 });
 	  myApp.controller('Login', function($scope, $location) {
       $scope.usertmp = {username : "", pwd : ""};
-      $scope.user = {username : "John", pwd : "1234"};
+      $scope.user = {username : "caqh2016", pwd : "1234"};
       $scope.authenticate =  function(){
 	      	if($scope.usertmp.username == $scope.user.username && $scope.usertmp.pwd == $scope.user.pwd)
 	      	{
