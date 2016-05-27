@@ -345,7 +345,7 @@ body {
 .homeuser_bg .organ_03block .txtdiscrip {
 	font-size: 19px;
     line-height: 38px;
-    margin-top: 18px;
+    /*margin-top: 18px;*/
     text-align: center;
     color: #818285;
    	letter-spacing: 1px;
