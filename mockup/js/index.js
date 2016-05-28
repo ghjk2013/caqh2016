@@ -638,7 +638,7 @@ myApp.factory('EmployementData', function () {
 	   		// console.log(JSON.stringify($scope.employementData));
 	   		for (i = 0; i < $scope.employementData.length; i++) {
 	   			// alert($scope.employementData[i].employement_name);
-				if($scope.employementData[i].employement_name == "Gap"){
+				if($scope.employementData[i].employement_name == "Employment Gap"){
 					// alert("tt");
 					$scope.employementData.splice(i, 1);
 					i--;
