@@ -1818,17 +1818,17 @@
 											<div layout-gt-sm="row">
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>Postal Code</label>
-													<input name="postalCode" ng-model="practicelocationData[0].pl_postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5"  onkeyup="fillbyzip(this.value,'pl_city','pl_state','');">
+													<input name="postalCode" ng-model="practicelocationData[0].pl_postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5"  onkeyup="fillbyzip(this.value,'pl_city0','pl_state0','');">
 
 												</md-input-container>
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>City</label>
-													<input id="pl_city" disabled ng-model="practicelocationData[0].pl_city" placeholder="Select Postal Code to Auto fill" >
+													<input id="pl_city0" disabled ng-model="practicelocationData[0].pl_city" placeholder="Select Postal Code to Auto fill" >
 												</md-input-container>
 
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>State</label>
-													<input id="pl_state" disabled ng-model="practicelocationData[0].pl_state" placeholder="Select Postal Code to Auto fill">
+													<input id="pl_state0" disabled ng-model="practicelocationData[0].pl_state" placeholder="Select Postal Code to Auto fill">
 												</md-input-container>
 
 											</div>
@@ -2022,39 +2022,46 @@
 									<div class="" id='autossibility'>
 										<div class="overlaybody">
 
-											<div layout="row" flex >
+										<div layout="row" flex >
 												<md-input-container flex>
 													<label>Handicapped Accessbility</label>
-													<md-select ng-model="practicelocationData[0].pl_haccessibility">
-														<md-option ng-repeat="pl_haccessibility in practicelocationData[0].pl_haccessibilities">
-															{{pl_haccessibility}}
-														</md-option>
-													</md-select>
-													</md-input-container flex>
+													<md-chips ng-model="practicelocationData[0].pl_haccessibility" md-autocomplete-snap=""  md-require-match="true">
+										      <md-autocomplete md-selected-item="practicelocationData[0].selectedItem1" md-min-length="0" md-search-text="searchText1" md-items="item in querySearch01(searchText1)" md-item-text="item.name" placeholder="Search for Accessbility">
+										        <span md-highlight-text="practicelocationData[0].searchText1">{{item.name}}</span>
+										      </md-autocomplete>
+										      <md-chip-template>
+										        <span>{{$chip.name}}</span>
+										      </md-chip-template>
+										    </md-chips>
+										 </md-input-container flex>
 											</div>
 
 											<div layout="row" flex >
 												<md-input-container flex>
 													<label>Public Transportation Accessibility</label>
-
-													<md-select ng-model="practicelocationData[0].pl_ptaccessibility">
-														<md-option ng-repeat="pl_ptaccessibility in practicelocationData[0].pl_ptaccessibilities">
-															{{pl_ptaccessibility}}
-														</md-option>
-													</md-select>
-													</md-input-container flex>
+                                           <md-chips ng-model="practicelocationData[0].pl_ptaccessibility" md-autocomplete-snap=""  md-require-match="true">
+										      <md-autocomplete md-selected-item="practicelocationData[0].selectedItem2" md-min-length="0" md-search-text="searchText2" md-items="item in querySearch02(searchText2)" md-item-text="item.name" placeholder="Search for Accessbility">
+										        <span md-highlight-text="practicelocationData[0].searchText2">{{item.name}}</span>
+										      </md-autocomplete>
+										      <md-chip-template>
+										        <span>{{$chip.name}}</span>
+										      </md-chip-template>
+										    </md-chips>
+						   </md-input-container flex>
 											</div>
 											<div layout="row" flex >
 												<md-input-container flex>
 													<label>Disabled Accessibility</label>
-
-													<md-select ng-model="practicelocationData[0].pl_daccessibility">
-														<md-option ng-repeat="pl_daccessibility in practicelocationData[0].pl_daccessibilities">
-															{{pl_daccessibility}}
-														</md-option>
-													</md-select>
-													</md-input-container flex>
-											</div>
+                                       <md-chips ng-model="practicelocationData[0].pl_daccessibility" md-autocomplete-snap=""  md-require-match="true">
+										      <md-autocomplete md-selected-item="practicelocationData[0].selectedItem3" md-min-length="0"  md-search-text="searchText3" md-items="item in querySearch03(searchText3)" md-item-text="item.name" placeholder="Search for Accessbility">
+										        <span md-highlight-text="practicelocationData[0].searchText3">{{item.name}}</span>
+										      </md-autocomplete>
+										      <md-chip-template>
+										        <span>{{$chip.name}}</span>
+										      </md-chip-template>
+										    </md-chips>
+										</md-input-container flex>
+									</div>
 										</div>
 
 									</div>
@@ -2136,17 +2143,17 @@
 											<div layout-gt-sm="row">
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>Postal Code</label>
-													<input name="postalCode" ng-model="practicelocationData[1].pl_postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5"  onkeyup="fillbyzip(this.value,'pl_city','pl_state','');">
+													<input name="postalCode" ng-model="practicelocationData[1].pl_postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5"  onkeyup="fillbyzip(this.value,'pl_city1','pl_state1','');">
 
 												</md-input-container>
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>City</label>
-													<input id="pl_city" disabled ng-model="practicelocationData[1].pl_city" placeholder="Select Postal Code to Auto fill" >
+													<input id="pl_city1" disabled ng-model="practicelocationData[1].pl_city" placeholder="Select Postal Code to Auto fill" >
 												</md-input-container>
 
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>State</label>
-													<input id="pl_state" disabled ng-model="practicelocationData[1].pl_state" placeholder="Select Postal Code to Auto fill">
+													<input id="pl_state1" disabled ng-model="practicelocationData[1].pl_state" placeholder="Select Postal Code to Auto fill">
 												</md-input-container>
 
 											</div>
@@ -2343,35 +2350,42 @@
 											<div layout="row" flex >
 												<md-input-container flex>
 													<label>Handicapped Accessbility</label>
-													<md-select ng-model="practicelocationData[1].pl_haccessibility">
-														<md-option ng-repeat="pl_haccessibility in practicelocationData[1].pl_haccessibilities">
-															{{pl_haccessibility}}
-														</md-option>
-													</md-select>
-													</md-input-container flex>
+													<md-chips ng-model="practicelocationData[1].pl_haccessibility" md-autocomplete-snap=""  md-require-match="true">
+										      <md-autocomplete md-selected-item="practicelocationData[1].selectedItem1" md-min-length="0" md-search-text="searchText1" md-items="item in querySearch11(searchText1)" md-item-text="item.name" placeholder="Search for Accessbility">
+										        <span md-highlight-text="practicelocationData[1].searchText1">{{item.name}}</span>
+										      </md-autocomplete>
+										      <md-chip-template>
+										        <span>{{$chip.name}}</span>
+										      </md-chip-template>
+										    </md-chips>
+										 </md-input-container flex>
 											</div>
 
 											<div layout="row" flex >
 												<md-input-container flex>
 													<label>Public Transportation Accessibility</label>
-
-													<md-select ng-model="practicelocationData[1].pl_ptaccessibility">
-														<md-option ng-repeat="pl_ptaccessibility in practicelocationData[1].pl_ptaccessibilities">
-															{{pl_ptaccessibility}}
-														</md-option>
-													</md-select>
-													</md-input-container flex>
+                                           <md-chips ng-model="practicelocationData[1].pl_ptaccessibility" md-autocomplete-snap=""  md-require-match="true">
+										      <md-autocomplete md-selected-item="practicelocationData[1].selectedItem2" md-min-length="0" md-search-text="searchText2" md-items="item in querySearch12(searchText2)" md-item-text="item.name" placeholder="Search for Accessbility">
+										        <span md-highlight-text="practicelocationData[1].searchText2">{{item.name}}</span>
+										      </md-autocomplete>
+										      <md-chip-template>
+										        <span>{{$chip.name}}</span>
+										      </md-chip-template>
+										    </md-chips>
+						   </md-input-container flex>
 											</div>
 											<div layout="row" flex >
 												<md-input-container flex>
 													<label>Disabled Accessibility</label>
-
-													<md-select ng-model="practicelocationData[1].pl_daccessibility">
-														<md-option ng-repeat="pl_daccessibility in practicelocationData[1].pl_daccessibilities">
-															{{pl_daccessibility}}
-														</md-option>
-													</md-select>
-													</md-input-container flex>
+                                       <md-chips ng-model="practicelocationData[1].pl_daccessibility" md-autocomplete-snap=""  md-require-match="true">
+										      <md-autocomplete md-selected-item="practicelocationData[1].selectedItem3" md-min-length="0" md-search-text="searchText3" md-items="item in querySearch13(searchText3)" md-item-text="item.name" placeholder="Search for Accessbility">
+										        <span md-highlight-text="practicelocationData[1].searchText3">{{item.name}}</span>
+										      </md-autocomplete>
+										      <md-chip-template>
+										        <span>{{$chip.name}}</span>
+										      </md-chip-template>
+										    </md-chips>
+										</md-input-container flex>
 											</div>
 										</div>
 
@@ -2660,36 +2674,43 @@
 											<div layout="row" flex >
 												<md-input-container flex>
 													<label>Handicapped Accessbility</label>
-													<md-select ng-model="practicelocationtmp.pl_haccessibility">
-														<md-option ng-repeat="pl_haccessibility in practicelocationtmp.pl_haccessibilities">
-															{{pl_haccessibility}}
-														</md-option>
-													</md-select>
-													</md-input-container flex>
+													<md-chips ng-model="practicelocationtmp.pl_haccessibility" md-autocomplete-snap=""  md-require-match="true">
+										      <md-autocomplete md-selected-item="practicelocationtmp.selectedItem1" md-min-length="0" md-search-text="searchText1" md-items="item in querySearch01(searchText1)" md-item-text="item.name" placeholder="Search for Accessbility">
+										        <span md-highlight-text="practicelocationtmp.searchText1">{{item.name}}</span>
+										      </md-autocomplete>
+										      <md-chip-template>
+										        <span>{{$chip.name}}</span>
+										      </md-chip-template>
+										    </md-chips>
+										 </md-input-container flex>
 											</div>
 
 											<div layout="row" flex >
 												<md-input-container flex>
 													<label>Public Transportation Accessibility</label>
-
-													<md-select ng-model="practicelocationtmp.pl_ptaccessibility">
-														<md-option ng-repeat="pl_ptaccessibility in practicelocationtmp.pl_ptaccessibilities">
-															{{pl_ptaccessibility}}
-														</md-option>
-													</md-select>
-													</md-input-container flex>
+                                           <md-chips ng-model="practicelocationtmp.pl_ptaccessibility" md-autocomplete-snap=""  md-require-match="true">
+										      <md-autocomplete md-selected-item="practicelocationtmp.selectedItem2" md-min-length="0" md-search-text="searchText2" md-items="item in querySearch02(searchText2)" md-item-text="item.name" placeholder="Search for Accessbility">
+										        <span md-highlight-text="practicelocationtmp.searchText2">{{item.name}}</span>
+										      </md-autocomplete>
+										      <md-chip-template>
+										        <span>{{$chip.name}}</span>
+										      </md-chip-template>
+										    </md-chips>
+						   </md-input-container flex>
 											</div>
 											<div layout="row" flex >
 												<md-input-container flex>
 													<label>Disabled Accessibility</label>
-
-													<md-select ng-model="practicelocationtmp.pl_daccessibility">
-														<md-option ng-repeat="pl_daccessibility in practicelocationtmp.pl_daccessibilities">
-															{{pl_daccessibility}}
-														</md-option>
-													</md-select>
-													</md-input-container flex>
-											</div>
+                                       <md-chips ng-model="practicelocationtmp.pl_daccessibility" md-autocomplete-snap=""  md-require-match="true">
+										      <md-autocomplete md-selected-item="practicelocationtmp.selectedItem3" md-min-length="0" md-search-text="searchText3" md-items="item in querySearch03(searchText3)" md-item-text="item.name" placeholder="Search for Accessbility">
+										        <span md-highlight-text="practicelocationtmp.searchText3">{{item.name}}</span>
+										      </md-autocomplete>
+										      <md-chip-template>
+										        <span>{{$chip.name}}</span>
+										      </md-chip-template>
+										    </md-chips>
+										</md-input-container flex>
+									</div>
 										</div>
 
 									</div>

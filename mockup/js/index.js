@@ -245,12 +245,21 @@ var myApp = angular.module('MyApp',['ngMaterial']);
 		pl_taxid_type : '',
 		pl_taxidtypes : ['Group','Individual'],
 		pl_nameasng : '',
-		pl_haccessibility : '',
-		pl_haccessibilities : ['Building Access','Parking Access','Restroom Access','Wheelchair Access'],
-		pl_ptaccessibility : '',
-		pl_ptaccessibilities : ['Bus Transportation','Subway','Train'],
-		pl_daccessibility : '',
-		pl_daccessibilities : ['Text Telephony (TTL)','American Sign Language','Mental/Physical Impairment Services']
+		pl_haccessibility : [],
+		pl_haccessibilities : [
+	 {id:1, name: 'Building Access'},
+	        { id:2, name: 'Parking Access'},
+	        { id:3, name: 'Restroom Access'},
+	         {id:4, name: 'Wheelchair Access'}
+	      ],
+		pl_ptaccessibility : [],
+		pl_ptaccessibilities : [{id:1, name: 'Bus Transportation'},
+	        { id:2, name: 'Subway'},
+	         {id:3, name: 'Train'}],
+		pl_daccessibility : [],
+		pl_daccessibilities : [{ id:1, name: 'Text Telephony (TTL)'},
+	         {id:2, name: 'American Sign Language'},
+	         {id:3, name: 'Mental/Physical Impairment Services'}]
 	};
 	 var practicelocationData1 = {
 		time1 : true,
@@ -282,12 +291,21 @@ var myApp = angular.module('MyApp',['ngMaterial']);
 		pl_taxid_type : '',
 		pl_taxidtypes : ['Group','Individual'],
 		pl_nameasng : '',
-		pl_haccessibility : '',
-		pl_haccessibilities : ['Building Access','Parking Access','Restroom Access','Wheelchair Access'],
-		pl_ptaccessibility : '',
-		pl_ptaccessibilities : ['Bus Transportation','Subway','Train'],
-		pl_daccessibility : '',
-		pl_daccessibilities : ['Text Telephony (TTL)','American Sign Language','Mental/Physical Impairment Services']
+		pl_haccessibility : [],
+		pl_haccessibilities : [
+	 {id:1, name: 'Building Access'},
+	        { id:2, name: 'Parking Access'},
+	        { id:3, name: 'Restroom Access'},
+	         {id:4, name: 'Wheelchair Access'}
+	      ],
+		pl_ptaccessibility : [],
+		pl_ptaccessibilities : [{id:1, name: 'Bus Transportation'},
+	        { id:2, name: 'Subway'},
+	         {id:3, name: 'Train'}],
+		pl_daccessibility : [],
+		pl_daccessibilities : [{ id:1, name: 'Text Telephony (TTL)'},
+	         {id:2, name: 'American Sign Language'},
+	         {id:3, name: 'Mental/Physical Impairment Services'}]
 	}; 
 var practicelocationDataArray = [practicelocationData,practicelocationData1]; 
     return practicelocationDataArray;
@@ -295,6 +313,18 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
   
   myApp.controller('Practicelocation', function($scope, $compile, $http, PracticelocationData) {
       $scope.practicelocationData = PracticelocationData;
+      $scope.practicelocationData[0].selectedItem1 = null;
+       $scope.practicelocationData[0].searchText1 = null;
+       $scope.practicelocationData[0].selectedItem2 = null;
+       $scope.practicelocationData[0].searchText2 = null;
+       $scope.practicelocationData[0].selectedItem3 = null;
+       $scope.practicelocationData[0].searchText3 = null;
+       $scope.practicelocationData[1].selectedItem1 = null;
+       $scope.practicelocationData[1].searchText1 = null;
+       $scope.practicelocationData[1].selectedItem2 = null;
+       $scope.practicelocationData[1].searchText2 = null;
+       $scope.practicelocationData[1].selectedItem3 = null;
+       $scope.practicelocationData[1].searchText3 = null;
       $scope.practicelocationtmp = {
 		time1 : true,
     	time2 : true,
@@ -325,13 +355,28 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
 		pl_taxid_type : '',
 		pl_taxidtypes : ['Group','Individual'],
 		pl_nameasng : '',
-		pl_haccessibility : '',
-		pl_haccessibilities : ['Building Access','Parking Access','Restroom Access','Wheelchair Access'],
-		pl_ptaccessibility : '',
-		pl_ptaccessibilities : ['Bus Transportation','Subway','Train'],
-		pl_daccessibility : '',
-		pl_daccessibilities : ['Text Telephony (TTL)','American Sign Language','Mental/Physical Impairment Services']
-	}; 
+		pl_haccessibility : [],
+		pl_haccessibilities : [
+	 {id:1, name: 'Building Access'},
+	        { id:2, name: 'Parking Access'},
+	        { id:3, name: 'Restroom Access'},
+	         {id:4, name: 'Wheelchair Access'}
+	      ],
+		pl_ptaccessibility : [],
+		pl_ptaccessibilities : [{id:1, name: 'Bus Transportation'},
+	        { id:2, name: 'Subway'},
+	         {id:3, name: 'Train'}],
+		pl_daccessibility : [],
+		pl_daccessibilities : [{ id:1, name: 'Text Telephony (TTL)'},
+	         {id:2, name: 'American Sign Language'},
+	         {id:3, name: 'Mental/Physical Impairment Services'}]
+	};
+	   $scope.practicelocationtmp.selectedItem1 = null;
+       $scope.practicelocationtmp.searchText1 = null;
+       $scope.practicelocationtmp.selectedItem2 = null;
+       $scope.practicelocationtmp.searchText2 = null;
+       $scope.practicelocationtmp.selectedItem3 = null;
+       $scope.practicelocationtmp.searchText3 = null;
        $scope.updatesliderfn =  function(slider_id,time_checked){
 
 	if(time_checked == false){
@@ -430,7 +475,7 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
 	    });
 	  };
 	  function process(){
-	    alert($scope.practicelocationData.length);
+	    // alert($scope.practicelocationData.length);
       	index = $scope.practicelocationData.length;
       	$scope.practicelocationData[index] = angular.copy($scope.practicelocationtmp);
       	tmp = p_location_tmp.replace(/practicelocationData\[0\]/g , 'practicelocationData['+ index +']' );
@@ -444,6 +489,61 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
 		
 		
 	  }
+	  $scope.querySearch01 =  function(query) {
+	      var results = query ? $scope.practicelocationData[0].pl_haccessibilities.filter(function filterFn(lang) {
+	        return (lang.name.toLowerCase().indexOf(query.toLowerCase()) === 0);
+	      } ) : $scope.practicelocationData[0].pl_haccessibilities;
+	      return results;
+	    }
+	    $scope.querySearch02 =  function(query) {
+	      var results = query ? $scope.practicelocationData[0].pl_ptaccessibilities.filter(function filterFn(lang) {
+	        return (lang.name.toLowerCase().indexOf(query.toLowerCase()) === 0);
+	      } ) : $scope.practicelocationData[0].pl_ptaccessibilities;
+	      return results;
+	    }
+	    $scope.querySearch03 =  function(query) {
+	      var results = query ? $scope.practicelocationData[0].pl_daccessibilities.filter(function filterFn(lang) {
+	        return (lang.name.toLowerCase().indexOf(query.toLowerCase()) === 0);
+	      } ) : $scope.practicelocationData[0].pl_daccessibilities;
+	      return results;
+	    }
+	    $scope.querySearch11 =  function(query) {
+	      var results = query ? $scope.practicelocationData[0].pl_haccessibilities.filter(function filterFn(lang) {
+	        return (lang.name.toLowerCase().indexOf(query.toLowerCase()) === 0);
+	      } ) : $scope.practicelocationData[0].pl_haccessibilities;
+	      return results;
+	    }
+	    $scope.querySearch12 =  function(query) {
+	      var results = query ? $scope.practicelocationData[0].pl_ptaccessibilities.filter(function filterFn(lang) {
+	        return (lang.name.toLowerCase().indexOf(query.toLowerCase()) === 0);
+	      } ) : $scope.practicelocationData[0].pl_ptaccessibilities;
+	      return results;
+	    }
+	    $scope.querySearch13 =  function(query) {
+	      var results = query ? $scope.practicelocationData[0].pl_daccessibilities.filter(function filterFn(lang) {
+	        return (lang.name.toLowerCase().indexOf(query.toLowerCase()) === 0);
+	      } ) : $scope.practicelocationData[0].pl_daccessibilities;
+	      return results;
+	    }
+	    $scope.querySearch1 =  function(query) {
+	      var results = query ? $scope.practicelocationData[1].pl_haccessibilities.filter(function filterFn(lang) {
+	        return (lang.name.toLowerCase().indexOf(query.toLowerCase()) === 0);
+	      } ) : $scope.practicelocationData[1].pl_haccessibilities;
+	      return results;
+	    }
+	    $scope.querySearch2 =  function(query) {
+	      var results = query ? $scope.practicelocationData[1].pl_ptaccessibilities.filter(function filterFn(lang) {
+	        return (lang.name.toLowerCase().indexOf(query.toLowerCase()) === 0);
+	      } ) : $scope.practicelocationData[1].pl_ptaccessibilities;
+	      return results;
+	    }
+	    $scope.querySearch3 =  function(query) {
+	      var results = query ? $scope.practicelocationData[1].pl_daccessibilities.filter(function filterFn(lang) {
+	        return (lang.name.toLowerCase().indexOf(query.toLowerCase()) === 0);
+	      } ) : $scope.practicelocationData[1].pl_daccessibilities;
+	      return results;
+	    }
+	    	    
   });
   
   myApp.factory('SpecialityData', function () {
