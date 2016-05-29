@@ -112,7 +112,7 @@
 										|
 									</li>
 									<li style="width: 50px;padding-left: 12px;">
-										<a href="#"><span class=" fa fa-sign-out fa-lg" title="Logout"></span> </a>
+										<a href="#"><span class=" fa fa-sign-out fa-lg" title="Logout" onclick="logout();"></span> </a>
 									</li>
 								</ul>
 							</div>
@@ -2820,6 +2820,9 @@
 		        
 		    });
 			console.log("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
+			function logout(){
+				window.location.href = "Login.htm";
+			}
 			function buildviewpage() {
 				var hitemArray = $(".horizon-item:visible");
 				for ( j = 0; j < hitemArray.length; j++) {
