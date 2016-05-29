@@ -440,7 +440,7 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
 	                formattedaddress = json.formattedaddress;
 	                if(status == "VALID")
 	                {
-	                	alert("Address validation complete.");
+	                	alert("Your address validation is done.");
 	                	if(act == "add")
 	                	{
 	                		process();
@@ -451,7 +451,7 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
 	                		save('practice_location_boxclose');
 	                	}
 	                }else{
-	                	var r = confirm("Address Validation failed. Would you like to updated your address?");
+	                	var r = confirm("Address validation has failed. Do you want to varify you address again?");
 	                	if (r == true) {
 						    //Nothing to Do;
 						} else {
@@ -543,6 +543,53 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
 	      } ) : $scope.practicelocationData[1].pl_daccessibilities;
 	      return results;
 	    }
+	   $scope.fillbyzipfn = function(zipcode,index) {
+	  	if (zipcode != undefined && zipcode.length == 5) {
+   
+    // Make Ajax call, etc
+    var geocoder = new google.maps.Geocoder();
+	//var $this = $(this);
+    //if ($this.val().length == 5) {
+        geocoder.geocode({ 'address': zipcode }, function (result, status) {
+            var state = "N/A";
+            var city = "N/A";
+            console.log(result);
+            //start loop to get state from zip
+            if(result.length > 0) {
+            for (var component in result[0]['address_components']) {
+                for (var i in result[0]['address_components'][component]['types']) {
+                    if (result[0]['address_components'][component]['types'][i] == "administrative_area_level_1") {
+                        state = result[0]['address_components'][component]['short_name'];
+                        // do stuff with the state here!
+                        console.log(state);
+                       // document.getElementById("p_state").value = state;
+                        // get city name
+                        city = result[0]['address_components'][1]['long_name'];
+                        // Insert city name into some input box
+                        console.log(city);
+                        //document.getElementById("p_city").value = city;
+                        if(index == -1){
+                        $scope.practicelocationtmp.pl_city =  city;
+                        $scope.practicelocationtmp.pl_state =  state;
+                        }else{
+                        $scope.practicelocationData[index].pl_city =  city;
+                        $scope.practicelocationData[index].pl_state =  state;
+                        }
+      					$scope.$apply();
+                       
+                    }
+                }
+            }
+           }
+        });
+ 
+  }
+  
+  
+  
+
+       
+    }
 	    	    
   });
   

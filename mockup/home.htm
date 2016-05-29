@@ -1818,7 +1818,7 @@
 											<div layout-gt-sm="row">
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>Postal Code</label>
-													<input name="postalCode" ng-model="practicelocationData[0].pl_postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5"  ng-change="fillbyzipfn3(practicelocationData[0].pl_postalCode);">
+													<input name="postalCode" ng-model="practicelocationData[0].pl_postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5"  ng-change='fillbyzipfn(practicelocationData[0].pl_postalCode,0)'>
 
 												</md-input-container>
 												<md-input-container class="md-block" flex-gt-sm="">
@@ -2143,7 +2143,7 @@
 											<div layout-gt-sm="row">
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>Postal Code</label>
-													<input name="postalCode" ng-model="practicelocationData[1].pl_postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5"  onkeyup="fillbyzip(this.value,'pl_city1','pl_state1','');">
+													<input name="postalCode" ng-model="practicelocationData[1].pl_postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5"  ng-change='fillbyzipfn(practicelocationData[1].pl_postalCode,1)'>
 
 												</md-input-container>
 												<md-input-container class="md-block" flex-gt-sm="">
@@ -2467,7 +2467,7 @@
 											<div layout-gt-sm="row">
 												<md-input-container class="md-block" flex-gt-sm="">
 													<label>Postal Code</label>
-													<input name="postalCode" ng-model="practicelocationtmp.pl_postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5"  onkeyup="fillbyzip(this.value,'pl_city','pl_state','');">
+													<input name="postalCode" ng-model="practicelocationtmp.pl_postalCode"  required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5"  ng-change='fillbyzipfn(practicelocationtmp.pl_postalCode,-1)'>
 
 												</md-input-container>
 												<md-input-container class="md-block" flex-gt-sm="">
