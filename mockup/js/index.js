@@ -440,7 +440,7 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
 	                formattedaddress = json.formattedaddress;
 	                if(status == "VALID")
 	                {
-	                	alert("Your address validation is done.");
+	                	alert("Address validation successful.");
 	                	if(act == "add")
 	                	{
 	                		process();
@@ -451,7 +451,7 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
 	                		save('practice_location_boxclose');
 	                	}
 	                }else{
-	                	var r = confirm("Address validation has failed. Do you want to varify you address again?");
+	                	var r = confirm("Address validation failed. Would you like to update the address?");
 	                	if (r == true) {
 						    //Nothing to Do;
 						} else {
