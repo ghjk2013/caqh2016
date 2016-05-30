@@ -403,7 +403,7 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
 	                State: $scope.practicelocationtmp.pl_state,
 	                CountryCode: "us",
 	                Locale: Locale,
-	                APIKey: 'uv-facee3692d6e49b335bd4b80586469ac'});
+	                APIKey: 'iv-5dd72a51052ec8cca91bf3f16a42d8a6'});
     	}else if(act == "edit1"){
     		datatmp = $.param({ StreetAddress: $scope.practicelocationData[1].pl_address_line1 + ", " + $scope.practicelocationData[1].pl_address_line2,
 	                City: $scope.practicelocationData[1].pl_city,
@@ -411,7 +411,7 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
 	                State: $scope.practicelocationData[1].pl_state,
 	                CountryCode: "us",
 	                Locale: Locale,
-	                APIKey: 'uv-facee3692d6e49b335bd4b80586469ac'});
+	                APIKey: 'iv-5dd72a51052ec8cca91bf3f16a42d8a6'});
     	}
     	else if(act == "edit"){
     		datatmp = $.param({ StreetAddress: $scope.practicelocationData[0].pl_address_line1 + ", " + $scope.practicelocationData[0].pl_address_line2,
@@ -420,7 +420,7 @@ var practicelocationDataArray = [practicelocationData,practicelocationData1];
 	                State: $scope.practicelocationData[0].pl_state,
 	                CountryCode: "us",
 	                Locale: Locale,
-	                APIKey: 'uv-facee3692d6e49b335bd4b80586469ac'});
+	                APIKey: 'iv-5dd72a51052ec8cca91bf3f16a42d8a6'});
     	}
       	
 	    $http({
